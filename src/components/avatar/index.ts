@@ -1,0 +1,9 @@
+export { default as AvatarTree } from "./AvatarTree";
+export { default as Jellyfish } from "./Jellyfish";
+export { default as FloatingMountain } from "./FloatingMountain";
+export { default as BioButterfly } from "./BioButterfly";
+export { default as CoralReef } from "./CoralReef";
+export { default as GlowMushroom } from "./GlowMushroom";
+export { default as WaterDragon } from "./WaterDragon";
+export { default as SpiritSprite } from "./SpiritSprite";
+export { default as AvatarScene } from "./AvatarScene";
