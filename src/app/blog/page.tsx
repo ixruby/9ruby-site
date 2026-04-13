@@ -6,6 +6,7 @@ import Link from "next/link"
 import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer"
 import Breadcrumb from "@/components/Breadcrumb"
+import { blogArticles, blogCategories } from "@/data/blog-articles"
 
 /* ------------------------------------------------------------------ */
 /*  Scroll reveal                                                      */
@@ -26,143 +27,7 @@ function useScrollReveal() {
   return ref
 }
 
-/* ------------------------------------------------------------------ */
-/*  Article data                                                       */
-/* ------------------------------------------------------------------ */
-interface Article {
-  id: number
-  title: string
-  excerpt: string
-  date: string
-  readTime: string
-  category: string
-  gradient: string
-}
-
-const articles: Article[] = [
-  {
-    id: 1,
-    title: "The End of Manual Marketing",
-    excerpt:
-      "How AI agents are replacing repetitive marketing tasks and freeing teams to focus on strategy and creativity.",
-    date: "Dec 2025",
-    readTime: "8 min read",
-    category: "Marketing",
-    gradient: "linear-gradient(135deg, #E8D5C4 0%, #F0E6D8 50%, #D4C4B0 100%)",
-  },
-  {
-    id: 2,
-    title: "Building Self-Optimizing Funnels",
-    excerpt:
-      "Why static funnels are dead and what replaces them. A new framework for conversion that adapts in real time.",
-    date: "Jan 2026",
-    readTime: "6 min read",
-    category: "Marketing",
-    gradient: "linear-gradient(135deg, #D5C4B0 0%, #E8DDD0 50%, #C4B8A8 100%)",
-  },
-  {
-    id: 3,
-    title: "AI Email Subject Lines That Convert",
-    excerpt:
-      "We tested 10,000 subject lines with AI-generated variations. Here's what actually works and why.",
-    date: "Jan 2026",
-    readTime: "5 min read",
-    category: "Marketing",
-    gradient: "linear-gradient(135deg, #E0D8CC 0%, #F2EDE6 50%, #D8CFC2 100%)",
-  },
-  {
-    id: 4,
-    title: "How We 3.8x'd Client Revenue",
-    excerpt:
-      "A deep dive into our AI-powered growth strategy that transformed a mid-market brand's entire pipeline.",
-    date: "Feb 2026",
-    readTime: "10 min read",
-    category: "Case Studies",
-    gradient: "linear-gradient(135deg, #C8BEB0 0%, #DDD5C8 50%, #B8AE9E 100%)",
-  },
-  {
-    id: 5,
-    title: "The Solo CEO Playbook",
-    excerpt:
-      "Running a company with AI agents as your team. How to orchestrate, delegate, and scale alone.",
-    date: "Feb 2026",
-    readTime: "7 min read",
-    category: "Product",
-    gradient: "linear-gradient(135deg, #D8D0C4 0%, #EAE4DA 50%, #CCC4B6 100%)",
-  },
-  {
-    id: 6,
-    title: "Open Source vs Closed AI",
-    excerpt:
-      "Why we open-sourced our tools and what it means for you. The case for transparent AI infrastructure.",
-    date: "Mar 2026",
-    readTime: "6 min read",
-    category: "Product",
-    gradient: "linear-gradient(135deg, #E4DCD0 0%, #F0EAE0 50%, #D4CCC0 100%)",
-  },
-  {
-    id: 7,
-    title: "Building 9Ruby: The Technical Stack",
-    excerpt:
-      "Next.js, Supabase, Vercel, Claude — a complete walkthrough of our architecture and why each piece matters.",
-    date: "Mar 2026",
-    readTime: "12 min read",
-    category: "Engineering",
-    gradient: "linear-gradient(135deg, #CCC6B8 0%, #E0DAD0 50%, #BEB8AA 100%)",
-  },
-  {
-    id: 8,
-    title: "Template-First Development",
-    excerpt:
-      "Why we build templates before custom code. The economics and speed advantage of starting with proven patterns.",
-    date: "Mar 2026",
-    readTime: "5 min read",
-    category: "Engineering",
-    gradient: "linear-gradient(135deg, #DAD4C8 0%, #ECE8E0 50%, #D0CAC0 100%)",
-  },
-  {
-    id: 9,
-    title: "The 211 Tools Directory",
-    excerpt:
-      "How we curated the best open-source developer tools into a single searchable, categorized directory.",
-    date: "Apr 2026",
-    readTime: "4 min read",
-    category: "Product",
-    gradient: "linear-gradient(135deg, #E2DACE 0%, #F0ECE4 50%, #D6CEC2 100%)",
-  },
-  {
-    id: 10,
-    title: "AI Agents for Real Estate",
-    excerpt:
-      "How Saumya Properties automated 80% of their workflow with custom AI agents and template-first design.",
-    date: "Apr 2026",
-    readTime: "8 min read",
-    category: "Case Studies",
-    gradient: "linear-gradient(135deg, #D0C8BA 0%, #E4DED4 50%, #C4BEB0 100%)",
-  },
-  {
-    id: 11,
-    title: "From Zero to 13K Integrations",
-    excerpt:
-      "Building the 9Ruby App Store. The technical challenges, partnerships, and lessons from scaling an ecosystem.",
-    date: "Apr 2026",
-    readTime: "9 min read",
-    category: "Engineering",
-    gradient: "linear-gradient(135deg, #D6D0C6 0%, #E8E4DC 50%, #CAC4B8 100%)",
-  },
-  {
-    id: 12,
-    title: "Deploying at Scale with Vercel",
-    excerpt:
-      "Edge functions, ISR, and our deployment pipeline. How we serve millions of requests with zero downtime.",
-    date: "Apr 2026",
-    readTime: "7 min read",
-    category: "Engineering",
-    gradient: "linear-gradient(135deg, #DED8CC 0%, #EEE8E0 50%, #D0CAC0 100%)",
-  },
-]
-
-const categories = ["All", "Engineering", "Marketing", "Product", "Case Studies"]
+const categories = [...blogCategories]
 
 /* ================================================================== */
 /*  Blog Page                                                          */
@@ -172,7 +37,7 @@ export default function BlogPage() {
   const [activeCategory, setActiveCategory] = useState("All")
   const [searchQuery, setSearchQuery] = useState("")
 
-  const filtered = articles.filter((a) => {
+  const filtered = blogArticles.filter((a) => {
     const matchesCategory =
       activeCategory === "All" || a.category === activeCategory
     const matchesSearch =
@@ -190,7 +55,7 @@ export default function BlogPage() {
       id="main-content"
       ref={revealRef}
       className="relative min-h-screen"
-      style={{ background: "#F8F7F4" }}
+      style={{ background: "var(--page-bg)" }}
     >
       <Navbar />
       <Breadcrumb items={[{ label: "Blog" }]} />
@@ -213,7 +78,7 @@ export default function BlogPage() {
             data-reveal
             data-reveal-delay={100}
             className="reveal-item text-5xl md:text-6xl lg:text-[80px] font-serif italic leading-[0.95] tracking-tighter mb-6"
-            style={{ color: "#1A1A1A" }}
+            style={{ color: "var(--ink-strong)" }}
           >
             Insights &amp; Updates
           </h1>
@@ -222,7 +87,7 @@ export default function BlogPage() {
             data-reveal
             data-reveal-delay={200}
             className="reveal-item text-lg md:text-xl leading-relaxed max-w-2xl mx-auto"
-            style={{ color: "#7A7A72" }}
+            style={{ color: "var(--ink-muted)" }}
           >
             Deep dives on AI agents, engineering decisions, marketing
             automation, and lessons from building 9Ruby.
@@ -255,7 +120,7 @@ export default function BlogPage() {
                         }
                       : {
                           background: "rgba(0,0,0,0.03)",
-                          color: "#7A7A72",
+                          color: "var(--ink-muted)",
                           border: "1px solid rgba(0,0,0,0.04)",
                         }
                   }
@@ -273,7 +138,7 @@ export default function BlogPage() {
               <Search
                 size={15}
                 className="absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none"
-                style={{ color: "#B8B8B0" }}
+                style={{ color: "var(--ink-soft)" }}
               />
               <input
                 type="text"
@@ -283,7 +148,7 @@ export default function BlogPage() {
                 className="w-full text-[13px] rounded-full pl-10 pr-4 h-10 outline-none transition-all duration-200 focus:ring-2 focus:ring-[#1A1A1A]/10"
                 style={{
                   background: "#FFFFFF",
-                  color: "#1A1A1A",
+                  color: "var(--ink-strong)",
                   border: "1px solid rgba(0,0,0,0.06)",
                 }}
               />
@@ -315,7 +180,7 @@ export default function BlogPage() {
                       className="text-[11px] font-semibold tracking-[0.12em] uppercase px-3 py-1.5 rounded-full"
                       style={{
                         background: "rgba(255,255,255,0.7)",
-                        color: "#7A7A72",
+                        color: "var(--ink-muted)",
                         backdropFilter: "blur(8px)",
                       }}
                     >
@@ -335,14 +200,14 @@ export default function BlogPage() {
 
                   <h2
                     className="text-2xl md:text-3xl lg:text-[2.25rem] font-serif italic tracking-tight leading-[1.15] mb-4"
-                    style={{ color: "#1A1A1A" }}
+                    style={{ color: "var(--ink-strong)" }}
                   >
                     {featured.title}
                   </h2>
 
                   <p
                     className="text-base leading-relaxed mb-6"
-                    style={{ color: "#7A7A72" }}
+                    style={{ color: "var(--ink-muted)" }}
                   >
                     {featured.excerpt}
                   </p>
@@ -350,14 +215,14 @@ export default function BlogPage() {
                   <div className="flex items-center gap-4 mb-8">
                     <span
                       className="flex items-center gap-1.5 text-xs"
-                      style={{ color: "#B8B8B0" }}
+                      style={{ color: "var(--ink-soft)" }}
                     >
                       <Calendar size={12} />
                       {featured.date}
                     </span>
                     <span
                       className="flex items-center gap-1.5 text-xs"
-                      style={{ color: "#B8B8B0" }}
+                      style={{ color: "var(--ink-soft)" }}
                     >
                       <Clock size={12} />
                       {featured.readTime}
@@ -365,11 +230,11 @@ export default function BlogPage() {
                   </div>
 
                   <div>
-                    <Link
-                      href="#"
-                      className="inline-flex items-center gap-2 text-sm font-semibold rounded-full px-6 h-10 transition-all duration-200 hover:shadow-lg hover:shadow-black/[0.06] group/btn"
-                      style={{ background: "#1A1A1A", color: "#F8F7F4" }}
-                    >
+                      <Link
+                        href={`/blog/${featured.slug}`}
+                        className="inline-flex items-center gap-2 text-sm font-semibold rounded-full px-6 h-10 transition-all duration-200 hover:shadow-lg hover:shadow-black/[0.06] group/btn"
+                        style={{ background: "var(--button-bg)", color: "var(--button-fg)" }}
+                      >
                       Read Article
                       <ArrowRight
                         size={14}
@@ -409,7 +274,7 @@ export default function BlogPage() {
                         className="text-[10px] font-semibold tracking-[0.08em] uppercase px-2.5 py-1 rounded-full"
                         style={{
                           background: "rgba(255,255,255,0.7)",
-                          color: "#7A7A72",
+                          color: "var(--ink-muted)",
                           backdropFilter: "blur(8px)",
                         }}
                       >
@@ -422,14 +287,14 @@ export default function BlogPage() {
                   <div className="p-6">
                     <h3
                       className="text-[16px] font-semibold tracking-tight leading-snug mb-2 line-clamp-2"
-                      style={{ color: "#1A1A1A" }}
+                      style={{ color: "var(--ink-strong)" }}
                     >
                       {article.title}
                     </h3>
 
                     <p
                       className="text-[13px] leading-relaxed mb-4 line-clamp-2"
-                      style={{ color: "#7A7A72" }}
+                      style={{ color: "var(--ink-muted)" }}
                     >
                       {article.excerpt}
                     </p>
@@ -438,14 +303,14 @@ export default function BlogPage() {
                       <div className="flex items-center gap-3">
                         <span
                           className="flex items-center gap-1 text-[11px]"
-                          style={{ color: "#B8B8B0" }}
+                          style={{ color: "var(--ink-soft)" }}
                         >
                           <Calendar size={11} />
                           {article.date}
                         </span>
                         <span
                           className="flex items-center gap-1 text-[11px]"
-                          style={{ color: "#B8B8B0" }}
+                          style={{ color: "var(--ink-soft)" }}
                         >
                           <Clock size={11} />
                           {article.readTime}
@@ -453,9 +318,9 @@ export default function BlogPage() {
                       </div>
 
                       <Link
-                        href="#"
+                        href={`/blog/${article.slug}`}
                         className="text-[12px] font-medium flex items-center gap-1 group-hover:gap-1.5 transition-all duration-200"
-                        style={{ color: "#1A1A1A" }}
+                        style={{ color: "var(--ink-strong)" }}
                       >
                         Read
                         <ArrowRight size={12} />
@@ -475,11 +340,11 @@ export default function BlogPage() {
           <div className="max-w-[1200px] mx-auto px-6 text-center py-20">
             <p
               className="text-lg font-serif italic"
-              style={{ color: "#B8B8B0" }}
+              style={{ color: "var(--ink-soft)" }}
             >
               No articles found.
             </p>
-            <p className="text-sm mt-2" style={{ color: "#B8B8B0" }}>
+            <p className="text-sm mt-2" style={{ color: "var(--ink-soft)" }}>
               Try adjusting your search or category filter.
             </p>
           </div>
@@ -503,7 +368,7 @@ export default function BlogPage() {
             data-reveal
             data-reveal-delay={100}
             className="reveal-item text-3xl md:text-[2.75rem] font-serif italic tracking-tight leading-[1.15] mb-5"
-            style={{ color: "#1A1A1A" }}
+            style={{ color: "var(--ink-strong)" }}
           >
             Never miss an insight
           </h2>
@@ -511,7 +376,7 @@ export default function BlogPage() {
             data-reveal
             data-reveal-delay={200}
             className="reveal-item text-base leading-relaxed mb-10"
-            style={{ color: "#7A7A72" }}
+            style={{ color: "var(--ink-muted)" }}
           >
             Get our latest articles on AI, engineering, and growth
             delivered straight to your inbox. No spam, ever.
@@ -524,7 +389,7 @@ export default function BlogPage() {
             <Link
               href="/contact"
               className="inline-flex items-center gap-2 text-sm font-semibold rounded-full px-7 h-12 transition-all duration-200 hover:shadow-lg hover:shadow-black/[0.06]"
-              style={{ background: "#1A1A1A", color: "#F8F7F4" }}
+              style={{ background: "var(--button-bg)", color: "var(--button-fg)" }}
             >
               Subscribe to Updates
               <ArrowRight size={14} />

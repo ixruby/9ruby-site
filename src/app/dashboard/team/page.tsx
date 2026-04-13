@@ -228,7 +228,7 @@ export default function TeamPage() {
   }
 
   return (
-    <main className="min-h-screen" style={{ background: "#F8F7F4" }}>
+    <main className="min-h-screen" style={{ background: "var(--page-bg)" }}>
       <Navbar />
 
       <div className="pt-28 pb-20 max-w-[1400px] mx-auto px-6">
@@ -242,7 +242,7 @@ export default function TeamPage() {
             <ArrowLeft size={12} />
             Back to Dashboard
           </Link>
-          <h1 className="text-4xl sm:text-5xl font-serif italic tracking-tighter" style={{ color: "#1A1A1A" }}>
+          <h1 className="text-4xl sm:text-5xl font-serif italic tracking-tighter" style={{ color: "var(--ink-strong)" }}>
             Team Management
           </h1>
           <p className="text-[#7A7A72] text-sm font-mono mt-2">

@@ -628,7 +628,7 @@ export default function AppStorePage() {
       <Navbar />
       <Breadcrumb items={[{ label: "App Store" }]} />
 
-      <main className="min-h-screen pt-20" style={{ background: "#F8F7F4" }}>
+      <main className="min-h-screen pt-20" style={{ background: "var(--page-bg)" }}>
         {/* ============================================================ */}
         {/*  HERO                                                         */}
         {/* ============================================================ */}
@@ -646,9 +646,9 @@ export default function AppStorePage() {
                 Powering 13,000+ businesses worldwide
               </div>
 
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif italic leading-[0.92] tracking-tight mb-6" style={{ color: "#1A1A1A" }}>
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif italic leading-[0.92] tracking-tight mb-6" style={{ color: "var(--ink-strong)" }}>
                 9Ruby{" "}
-                <span style={{ color: "#7A7A72" }}>App Store</span>
+                <span style={{ color: "var(--ink-muted)" }}>App Store</span>
               </h1>
 
               <p className="text-lg md:text-xl text-[#7A7A72] leading-relaxed mb-10 max-w-2xl mx-auto">

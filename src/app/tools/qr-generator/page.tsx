@@ -342,11 +342,11 @@ export default function QrGeneratorPage() {
   const inputCls = "flex-1 h-11 px-3 bg-white border border-black/[0.08] rounded-xl text-[#1A1A1A] text-sm font-mono focus:border-[#C41A3B]/50 focus:ring-1 focus:ring-[#C41A3B]/20 focus:outline-none transition-all"
 
   return (
-    <main className="relative min-h-screen" style={{ background: "#F8F7F4" }}>
+    <main className="relative min-h-screen" style={{ background: "var(--page-bg)" }}>
       <Navbar />
       <Breadcrumb items={[{ label: "Tools", href: "/tools" }, { label: "QR Generator" }]} />
       <div className="relative max-w-4xl mx-auto px-6 pt-8 pb-24">
-        <Link href="/tools" className="inline-flex items-center gap-2 text-sm hover:text-[#1A1A1A] transition-colors mb-12" style={{ color: "#7A7A72" }}>
+        <Link href="/tools" className="inline-flex items-center gap-2 text-sm hover:text-[#1A1A1A] transition-colors mb-12" style={{ color: "var(--ink-muted)" }}>
           <ArrowLeft size={14} /> Back to Tools
         </Link>
 
@@ -354,10 +354,10 @@ export default function QrGeneratorPage() {
           <div className="text-[11px] font-semibold tracking-[0.12em] uppercase" style={{ color: "#C41A3B" }}>
             Free Tool
           </div>
-          <h1 className="text-4xl md:text-5xl font-serif italic tracking-tighter leading-[1.1] mb-4 mt-3" style={{ color: "#1A1A1A" }}>
+          <h1 className="text-4xl md:text-5xl font-serif italic tracking-tighter leading-[1.1] mb-4 mt-3" style={{ color: "var(--ink-strong)" }}>
             QR Code Generator
           </h1>
-          <p className="text-lg max-w-xl leading-relaxed" style={{ color: "#7A7A72" }}>
+          <p className="text-lg max-w-xl leading-relaxed" style={{ color: "var(--ink-muted)" }}>
             Generate QR codes for any text or URL. Customize colors and download as PNG. No external APIs used.
           </p>
         </div>

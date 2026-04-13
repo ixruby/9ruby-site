@@ -1,7 +1,8 @@
 import { MetadataRoute } from "next"
+import { blogArticles } from "@/data/blog-articles"
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://home.9ruby.com"
+  const baseUrl = "https://www.9ruby.com"
 
   return [
     {
@@ -21,6 +22,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/blog`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.8,
     },
     {
       url: `${baseUrl}/apps`,
@@ -77,12 +84,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.5,
     },
     {
-      url: `${baseUrl}/dashboard`,
-      lastModified: new Date(),
-      changeFrequency: "daily",
-      priority: 0.5,
-    },
-    {
       url: `${baseUrl}/tools/seo-checker`,
       lastModified: new Date(),
       changeFrequency: "monthly",
@@ -112,5 +113,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.6,
     },
+    ...blogArticles.map((article) => ({
+      url: `${baseUrl}/blog/${article.slug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    })),
   ]
 }

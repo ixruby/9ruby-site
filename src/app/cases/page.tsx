@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 import { useEffect, useRef } from "react"
@@ -21,6 +22,7 @@ const caseStudies = [
       "Deployed AI-powered content agents paired with technical SEO automation to build a compounding growth loop.",
     result: "3.2x",
     resultLabel: "revenue in 90 days",
+    image: "/images/neural-globe.png",
   },
   {
     client: "Kayupinus",
@@ -33,6 +35,7 @@ const caseStudies = [
       "Built automated email flows with dynamic pricing triggers and behavior-based segmentation.",
     result: "287%",
     resultLabel: "increase in email revenue",
+    image: "/images/garden-graph.png",
   },
   {
     client: "QAN LLC",
@@ -45,6 +48,7 @@ const caseStudies = [
       "AI-optimized subject lines, smart send-time delivery, and deep audience segmentation.",
     result: "340%",
     resultLabel: "increase in open rates",
+    image: "/images/bonsai-tree.png",
   },
   {
     client: "Novavox",
@@ -57,18 +61,20 @@ const caseStudies = [
       "Coordinated social, email, and paid ads campaign orchestrated by AI agents for maximum reach.",
     result: "10K",
     resultLabel: "leads in 30 days",
+    image: "/images/94c49ecc1eee.png",
   },
   {
     client: "Chaiwala Taste House",
-    title: "Café AI Platform",
+    title: "Cafe AI Platform",
     industry: "F&B Tech",
     tags: ["Web App", "AI Integration"],
     challenge:
       "Needed a modern ordering platform with an embedded AI assistant to handle customer queries and menu discovery.",
     solution:
-      "Built a full-stack café platform with embedded AI assistant, full docs site, and autonomous menu management.",
+      "Built a full-stack cafe platform with embedded AI assistant, full docs site, and autonomous menu management.",
     result: "450+",
     resultLabel: "qualified leads/month",
+    image: "/images/12582fd183df.jpg",
   },
   {
     client: "Saumya Properties",
@@ -81,6 +87,7 @@ const caseStudies = [
       "AI-generated property descriptions, automated photo scheduling, and a self-updating listings portal.",
     result: "80%",
     resultLabel: "time saved, 25 listings managed",
+    image: "/images/mossy-stairs.png",
   },
   {
     client: "AZKA ADS",
@@ -93,6 +100,7 @@ const caseStudies = [
       "Developed a samurai-meets-agency identity: eagle iconography, sword SFX on interaction, and a dark cinematic palette.",
     result: "100%",
     resultLabel: "brand recognition uplift",
+    image: "/images/23b28bc580f1.png",
   },
   {
     client: "PRISM Internal",
@@ -102,9 +110,10 @@ const caseStudies = [
     challenge:
       "IX Ruby needed an internal AI infrastructure to handle research, execution, frontend, and ops at scale.",
     solution:
-      "Built PRISM — a five-agent orchestration system (PRISM, FORGE, SCOUT, PIXEL, JUNO) running on private infrastructure.",
-    result: "5×",
+      "Built PRISM - a five-agent orchestration system (PRISM, FORGE, SCOUT, PIXEL, JUNO) running on private infrastructure.",
+    result: "5x",
     resultLabel: "throughput vs. single-agent setup",
+    image: "/images/7f27b449b048.png",
   },
 ]
 
@@ -145,7 +154,7 @@ export default function CaseStudiesPage() {
       id="main-content"
       className="relative min-h-screen"
       ref={revealRef}
-      style={{ background: "#F8F7F4" }}
+      style={{ background: "var(--page-bg)" }}
     >
       <Navbar />
       <Breadcrumb items={[{ label: "Case Studies" }]} />
@@ -167,16 +176,16 @@ export default function CaseStudiesPage() {
             data-reveal-delay={100}
             className="reveal-item text-5xl md:text-6xl lg:text-[80px] font-serif italic leading-[0.95] tracking-tighter mb-6"
           >
-            <span style={{ color: "#1A1A1A" }}>Real results,</span>
+            <span style={{ color: "var(--ink-strong)" }}>Real results,</span>
             <br />
-            <span style={{ color: "#1A1A1A" }}>real clients</span>
+            <span style={{ color: "var(--ink-strong)" }}>real clients</span>
           </h1>
 
           <p
             data-reveal
             data-reveal-delay={200}
             className="reveal-item text-lg md:text-xl leading-relaxed max-w-2xl mx-auto mb-4"
-            style={{ color: "#7A7A72" }}
+            style={{ color: "var(--ink-muted)" }}
           >
             See how teams use 9Ruby to ship faster and scale smarter.
           </p>
@@ -184,7 +193,7 @@ export default function CaseStudiesPage() {
             data-reveal
             data-reveal-delay={300}
             className="reveal-item font-mono text-xs"
-            style={{ color: "#B8B8B0" }}
+            style={{ color: "var(--ink-soft)" }}
           >
             47+ projects delivered across 6 industries
           </p>
@@ -207,13 +216,13 @@ export default function CaseStudiesPage() {
               >
                 <div
                   className="text-5xl md:text-6xl lg:text-7xl font-serif italic tracking-tighter mb-3"
-                  style={{ color: "#1A1A1A" }}
+                  style={{ color: "var(--ink-strong)" }}
                 >
                   {stat.value}
                 </div>
                 <div
                   className="font-mono text-xs uppercase tracking-wider"
-                  style={{ color: "#B8B8B0" }}
+                  style={{ color: "var(--ink-soft)" }}
                 >
                   {stat.label}
                 </div>
@@ -226,7 +235,6 @@ export default function CaseStudiesPage() {
       {/* -- CASE STUDIES GRID ------------------------------------- */}
       <section className="relative py-16 lg:py-24">
         <div className="max-w-[1200px] mx-auto px-6">
-          {/* section header */}
           <div className="text-center mb-16 lg:mb-20">
             <div
               data-reveal
@@ -241,12 +249,11 @@ export default function CaseStudiesPage() {
               data-reveal-delay={100}
               className="reveal-item text-4xl md:text-5xl lg:text-6xl font-serif italic tracking-tighter"
             >
-              <span style={{ color: "#1A1A1A" }}>Proven </span>
-              <span style={{ color: "#B8B8B0" }}>Impact</span>
+              <span style={{ color: "var(--ink-strong)" }}>Proven </span>
+              <span style={{ color: "var(--ink-soft)" }}>Impact</span>
             </h2>
           </div>
 
-          {/* grid */}
           <div className="grid md:grid-cols-2 gap-4">
             {caseStudies.map((cs, i) => (
               <div
@@ -256,8 +263,36 @@ export default function CaseStudiesPage() {
                 className="reveal-item group relative rounded-2xl bg-white overflow-hidden transition-all duration-500 hover:shadow-lg hover:shadow-black/[0.03]"
                 style={{ border: "1px solid rgba(0,0,0,0.04)" }}
               >
+                <div className="relative aspect-[16/9] overflow-hidden" style={{ background: "linear-gradient(135deg, rgba(0,0,0,0.03), rgba(196,26,59,0.06))" }}>
+                  <Image
+                    src={cs.image}
+                    alt={cs.title}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                  />
+                  <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, rgba(0,0,0,0.02) 0%, rgba(0,0,0,0.28) 100%)" }} />
+                  <div className="absolute left-4 right-4 bottom-4 flex items-center justify-between gap-3">
+                    <span
+                      className="text-[11px] font-semibold tracking-[0.12em] uppercase px-3 py-1 rounded-full"
+                      style={{
+                        color: "#111",
+                        background: "rgba(255,255,255,0.82)",
+                      }}
+                    >
+                      {cs.client}
+                    </span>
+                    <span
+                      className="text-[10px] font-semibold tracking-[0.12em] uppercase px-3 py-1 rounded-full"
+                      style={{
+                        color: "#fff",
+                        background: "rgba(0,0,0,0.45)",
+                      }}
+                    >
+                      {cs.industry}
+                    </span>
+                  </div>
+                </div>
                 <div className="p-8 lg:p-10">
-                  {/* industry tag */}
                   <div className="flex items-center justify-between mb-6">
                     <span
                       className="text-[11px] font-semibold tracking-[0.12em] uppercase px-3 py-1 rounded-full"
@@ -275,7 +310,7 @@ export default function CaseStudiesPage() {
                           key={tag}
                           className="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded-full"
                           style={{
-                            color: "#B8B8B0",
+                            color: "var(--ink-soft)",
                             background: "rgba(0,0,0,0.02)",
                             border: "1px solid rgba(0,0,0,0.04)",
                           }}
@@ -286,32 +321,30 @@ export default function CaseStudiesPage() {
                     </div>
                   </div>
 
-                  {/* client + title */}
                   <h3
                     className="text-xl font-semibold tracking-tight mb-1"
-                    style={{ color: "#1A1A1A" }}
+                    style={{ color: "var(--ink-strong)" }}
                   >
                     {cs.title}
                   </h3>
                   <p
                     className="text-sm font-medium mb-6"
-                    style={{ color: "#7A7A72" }}
+                    style={{ color: "var(--ink-muted)" }}
                   >
                     Client: {cs.client}
                   </p>
 
-                  {/* challenge / solution / result */}
                   <div className="space-y-4 mb-8">
                     <div>
                       <div
                         className="text-[10px] font-semibold tracking-[0.1em] uppercase mb-1.5"
-                        style={{ color: "#B8B8B0" }}
+                        style={{ color: "var(--ink-soft)" }}
                       >
                         Challenge
                       </div>
                       <p
                         className="text-sm leading-relaxed"
-                        style={{ color: "#7A7A72" }}
+                        style={{ color: "var(--ink-muted)" }}
                       >
                         {cs.challenge}
                       </p>
@@ -320,13 +353,13 @@ export default function CaseStudiesPage() {
                     <div>
                       <div
                         className="text-[10px] font-semibold tracking-[0.1em] uppercase mb-1.5"
-                        style={{ color: "#B8B8B0" }}
+                        style={{ color: "var(--ink-soft)" }}
                       >
                         Solution
                       </div>
                       <p
                         className="text-sm leading-relaxed"
-                        style={{ color: "#7A7A72" }}
+                        style={{ color: "var(--ink-muted)" }}
                       >
                         {cs.solution}
                       </p>
@@ -335,20 +368,20 @@ export default function CaseStudiesPage() {
                     <div>
                       <div
                         className="text-[10px] font-semibold tracking-[0.1em] uppercase mb-1.5"
-                        style={{ color: "#B8B8B0" }}
+                        style={{ color: "var(--ink-soft)" }}
                       >
                         Result
                       </div>
                       <div className="flex items-baseline gap-2">
                         <span
                           className="text-3xl lg:text-4xl font-serif italic tracking-tighter"
-                          style={{ color: "#1A1A1A" }}
+                          style={{ color: "var(--ink-strong)" }}
                         >
                           {cs.result}
                         </span>
                         <span
                           className="text-sm"
-                          style={{ color: "#7A7A72" }}
+                          style={{ color: "var(--ink-muted)" }}
                         >
                           {cs.resultLabel}
                         </span>
@@ -356,11 +389,10 @@ export default function CaseStudiesPage() {
                     </div>
                   </div>
 
-                  {/* read full story link */}
                   <Link
                     href="/contact"
                     className="inline-flex items-center gap-2 text-sm font-medium hover:text-[#1A1A1A] transition-colors duration-300 group/btn"
-                    style={{ color: "#7A7A72" }}
+                    style={{ color: "var(--ink-muted)" }}
                   >
                     Read Full Story
                     <ArrowRight
@@ -383,18 +415,18 @@ export default function CaseStudiesPage() {
             data-reveal-delay={0}
             className="reveal-item text-4xl md:text-5xl lg:text-7xl font-serif italic tracking-tighter leading-tight mb-6"
           >
-            <span style={{ color: "#1A1A1A" }}>Ready to be our</span>
+            <span style={{ color: "var(--ink-strong)" }}>Ready to be our</span>
             <br />
-            <span style={{ color: "#B8B8B0" }}>next success story?</span>
+            <span style={{ color: "var(--ink-soft)" }}>next success story?</span>
           </h2>
           <p
             data-reveal
             data-reveal-delay={100}
             className="reveal-item text-lg leading-relaxed max-w-xl mx-auto mb-10"
-            style={{ color: "#7A7A72" }}
+            style={{ color: "var(--ink-muted)" }}
           >
             Tell us about your challenge. We&apos;ll show you how AI agents can
-            transform your business — just like they did for these clients.
+            transform your business - just like they did for these clients.
           </p>
           <div
             data-reveal
@@ -413,7 +445,7 @@ export default function CaseStudiesPage() {
               className="h-10 px-7 rounded-full text-sm font-medium hover:bg-black/[0.02] transition-all duration-300 inline-flex items-center"
               style={{
                 border: "1px solid rgba(0,0,0,0.08)",
-                color: "#7A7A72",
+                color: "var(--ink-muted)",
               }}
             >
               View Services
@@ -424,7 +456,6 @@ export default function CaseStudiesPage() {
 
       <Footer />
 
-      {/* -- inline styles for animations -------------------------- */}
       <style jsx>{`
         .reveal-item {
           opacity: 0;

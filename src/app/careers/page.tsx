@@ -104,7 +104,7 @@ export default function CareersPage() {
   const revealRef = useScrollReveal()
 
   return (
-    <main id="main-content" className="relative min-h-screen" style={{ background: "#F8F7F4" }}>
+    <main id="main-content" className="relative min-h-screen" style={{ background: "var(--page-bg)" }}>
       <Navbar />
       <Breadcrumb items={[{ label: "Careers" }]} />
 
@@ -122,15 +122,15 @@ export default function CareersPage() {
             </div>
             <h1
               className="text-5xl md:text-6xl lg:text-[80px] font-serif italic tracking-tighter leading-[0.9] mb-8"
-              style={{ color: "#1A1A1A" }}
+              style={{ color: "var(--ink-strong)" }}
             >
               Join the team building
               <br />
-              <span style={{ color: "#7A7A72" }}>the future.</span>
+              <span style={{ color: "var(--ink-muted)" }}>the future.</span>
             </h1>
             <p
               className="text-lg md:text-xl leading-relaxed max-w-2xl"
-              style={{ color: "#7A7A72" }}
+              style={{ color: "var(--ink-muted)" }}
             >
               IX Ruby is a small, fast-moving team building AI-powered products that serve
               thousands of brands. If you want ownership, speed, and meaningful work — we
@@ -152,13 +152,13 @@ export default function CareersPage() {
             </span>
             <h2
               className="text-3xl md:text-4xl font-serif italic tracking-tighter mb-6"
-              style={{ color: "#1A1A1A" }}
+              style={{ color: "var(--ink-strong)" }}
             >
               How we work
             </h2>
             <p
               className="text-[15px] leading-relaxed max-w-2xl"
-              style={{ color: "#7A7A72" }}
+              style={{ color: "var(--ink-muted)" }}
             >
               We&apos;re a small team building big things. Remote-first, async, AI-augmented.
               We don&apos;t do standups or status meetings. We ship code, designs, and
@@ -177,7 +177,7 @@ export default function CareersPage() {
             </span>
             <h2
               className="text-3xl md:text-4xl font-serif italic tracking-tighter mb-12"
-              style={{ color: "#1A1A1A" }}
+              style={{ color: "var(--ink-strong)" }}
             >
               What we stand for
             </h2>
@@ -198,18 +198,18 @@ export default function CareersPage() {
                   >
                     <span
                       className="group-hover:text-[#C41A3B] transition-colors"
-                      style={{ color: "#7A7A72" }}
+                      style={{ color: "var(--ink-muted)" }}
                     >
                       {v.icon}
                     </span>
                   </div>
                   <h3
                     className="text-lg font-semibold tracking-tight mb-2"
-                    style={{ color: "#1A1A1A" }}
+                    style={{ color: "var(--ink-strong)" }}
                   >
                     {v.title}
                   </h3>
-                  <p className="leading-relaxed text-sm" style={{ color: "#B8B8B0" }}>
+                  <p className="leading-relaxed text-sm" style={{ color: "var(--ink-soft)" }}>
                     {v.desc}
                   </p>
                 </div>
@@ -227,7 +227,7 @@ export default function CareersPage() {
             </span>
             <h2
               className="text-3xl md:text-4xl font-serif italic tracking-tighter mb-12"
-              style={{ color: "#1A1A1A" }}
+              style={{ color: "var(--ink-strong)" }}
             >
               Current openings
             </h2>
@@ -243,20 +243,20 @@ export default function CareersPage() {
                     <div>
                       <h3
                         className="text-xl font-semibold tracking-tight mb-2"
-                        style={{ color: "#1A1A1A" }}
+                        style={{ color: "var(--ink-strong)" }}
                       >
                         {pos.title}
                       </h3>
                       <div className="flex flex-wrap items-center gap-3">
-                        <span className="inline-flex items-center gap-1.5 text-xs" style={{ color: "#7A7A72" }}>
+                        <span className="inline-flex items-center gap-1.5 text-xs" style={{ color: "var(--ink-muted)" }}>
                           <MapPin size={12} />
                           {pos.location}
                         </span>
-                        <span className="inline-flex items-center gap-1.5 text-xs" style={{ color: "#7A7A72" }}>
+                        <span className="inline-flex items-center gap-1.5 text-xs" style={{ color: "var(--ink-muted)" }}>
                           <Clock size={12} />
                           {pos.type}
                         </span>
-                        <span className="inline-flex items-center gap-1.5 text-xs" style={{ color: "#7A7A72" }}>
+                        <span className="inline-flex items-center gap-1.5 text-xs" style={{ color: "var(--ink-muted)" }}>
                           <Briefcase size={12} />
                           IX Ruby Agency
                         </span>
@@ -270,7 +270,7 @@ export default function CareersPage() {
                       Apply <ArrowRight size={13} />
                     </Link>
                   </div>
-                  <p className="text-sm leading-relaxed" style={{ color: "#B8B8B0" }}>
+                  <p className="text-sm leading-relaxed" style={{ color: "var(--ink-soft)" }}>
                     {pos.description}
                   </p>
                 </div>
@@ -282,13 +282,13 @@ export default function CareersPage() {
           <div className="text-center py-8" data-reveal>
             <h2
               className="text-4xl md:text-5xl font-serif italic tracking-tighter mb-4"
-              style={{ color: "#1A1A1A" }}
+              style={{ color: "var(--ink-strong)" }}
             >
               Don&apos;t see your role?
             </h2>
             <p
               className="text-lg mb-10 max-w-md mx-auto"
-              style={{ color: "#B8B8B0" }}
+              style={{ color: "var(--ink-soft)" }}
             >
               We&apos;re always looking for exceptional people. Reach out and tell us what you&apos;d bring to the team.
             </p>

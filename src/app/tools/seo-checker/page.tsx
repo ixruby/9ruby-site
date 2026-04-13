@@ -46,7 +46,7 @@ function ScoreRing({ score }: { score: number }) {
       </svg>
       <div className="absolute inset-0 flex flex-col items-center justify-center">
         <span className="text-3xl font-bold font-mono" style={{ color }}>{score}</span>
-        <span className="text-xs font-mono" style={{ color: "#B8B8B0" }}>/ 100</span>
+        <span className="text-xs font-mono" style={{ color: "var(--ink-soft)" }}>/ 100</span>
       </div>
     </div>
   )
@@ -188,12 +188,12 @@ export default function SeoCheckerPage() {
   }
 
   return (
-    <main className="relative min-h-screen" style={{ background: "#F8F7F4" }}>
+    <main className="relative min-h-screen" style={{ background: "var(--page-bg)" }}>
       <Navbar />
       <Breadcrumb items={[{ label: "Tools", href: "/tools" }, { label: "SEO Checker" }]} />
       <div className="relative max-w-4xl mx-auto px-6 pt-8 pb-24">
         {/* Back link */}
-        <Link href="/tools" className="inline-flex items-center gap-2 text-sm hover:text-[#1A1A1A] transition-colors mb-12" style={{ color: "#7A7A72" }}>
+        <Link href="/tools" className="inline-flex items-center gap-2 text-sm hover:text-[#1A1A1A] transition-colors mb-12" style={{ color: "var(--ink-muted)" }}>
           <ArrowLeft size={14} /> Back to Tools
         </Link>
 
@@ -202,10 +202,10 @@ export default function SeoCheckerPage() {
           <div className="text-[11px] font-semibold tracking-[0.12em] uppercase" style={{ color: "#C41A3B" }}>
             Free Tool
           </div>
-          <h1 className="text-4xl md:text-5xl font-serif italic tracking-tighter leading-[1.1] mb-4 mt-3" style={{ color: "#1A1A1A" }}>
+          <h1 className="text-4xl md:text-5xl font-serif italic tracking-tighter leading-[1.1] mb-4 mt-3" style={{ color: "var(--ink-strong)" }}>
             SEO Checker
           </h1>
-          <p className="text-lg max-w-xl leading-relaxed" style={{ color: "#7A7A72" }}>
+          <p className="text-lg max-w-xl leading-relaxed" style={{ color: "var(--ink-muted)" }}>
             Analyze any URL for SEO performance. Get actionable recommendations for titles, meta descriptions, headings, images, and more.
           </p>
         </div>
@@ -213,7 +213,7 @@ export default function SeoCheckerPage() {
         {/* Input */}
         <div className="flex gap-3 mb-10">
           <div className="flex-1 relative">
-            <Globe size={18} className="absolute left-4 top-1/2 -translate-y-1/2" style={{ color: "#B8B8B0" }} />
+            <Globe size={18} className="absolute left-4 top-1/2 -translate-y-1/2" style={{ color: "var(--ink-soft)" }} />
             <input
               type="text"
               value={url}
@@ -221,7 +221,7 @@ export default function SeoCheckerPage() {
               onKeyDown={e => e.key === "Enter" && handleAnalyze()}
               placeholder="Enter a URL to analyze..."
               className="w-full h-12 pl-12 pr-4 bg-white border border-black/[0.08] rounded-xl placeholder:text-[#B8B8B0] focus:border-[#C41A3B]/50 focus:ring-1 focus:ring-[#C41A3B]/20 focus:outline-none transition-all font-mono text-sm"
-              style={{ color: "#1A1A1A" }}
+              style={{ color: "var(--ink-strong)" }}
             />
           </div>
           <button
@@ -245,9 +245,9 @@ export default function SeoCheckerPage() {
           <div className="space-y-4 animate-slide-up">
             {/* Score */}
             <div className="p-8 bg-white border border-black/[0.04] rounded-2xl">
-              <h2 className="text-sm font-semibold tracking-tight mb-6 text-center" style={{ color: "#7A7A72" }}>SEO Score</h2>
+              <h2 className="text-sm font-semibold tracking-tight mb-6 text-center" style={{ color: "var(--ink-muted)" }}>SEO Score</h2>
               <ScoreRing score={result.score} />
-              <p className="text-center text-sm mt-4" style={{ color: "#7A7A72" }}>
+              <p className="text-center text-sm mt-4" style={{ color: "var(--ink-muted)" }}>
                 {result.score >= 80 ? "Great! Your page is well-optimized." : result.score >= 50 ? "Decent, but there is room for improvement." : "Needs work. Check the recommendations below."}
               </p>
             </div>
@@ -257,20 +257,20 @@ export default function SeoCheckerPage() {
               <div className="p-5 bg-white border border-black/[0.04] rounded-2xl">
                 <div className="flex items-center gap-2 mb-3">
                   <StatusIcon status={result.title.status} />
-                  <h3 className="text-sm font-semibold tracking-tight" style={{ color: "#1A1A1A" }}>Page Title</h3>
-                  <span className="text-xs font-mono ml-auto" style={{ color: "#B8B8B0" }}>{result.title.length} chars</span>
+                  <h3 className="text-sm font-semibold tracking-tight" style={{ color: "var(--ink-strong)" }}>Page Title</h3>
+                  <span className="text-xs font-mono ml-auto" style={{ color: "var(--ink-soft)" }}>{result.title.length} chars</span>
                 </div>
-                <p className="text-sm font-mono break-all leading-relaxed" style={{ color: "#7A7A72" }}>
+                <p className="text-sm font-mono break-all leading-relaxed" style={{ color: "var(--ink-muted)" }}>
                   {result.title.value || <span className="text-red-500 italic">Missing</span>}
                 </p>
               </div>
               <div className="p-5 bg-white border border-black/[0.04] rounded-2xl">
                 <div className="flex items-center gap-2 mb-3">
                   <StatusIcon status={result.description.status} />
-                  <h3 className="text-sm font-semibold tracking-tight" style={{ color: "#1A1A1A" }}>Meta Description</h3>
-                  <span className="text-xs font-mono ml-auto" style={{ color: "#B8B8B0" }}>{result.description.length} chars</span>
+                  <h3 className="text-sm font-semibold tracking-tight" style={{ color: "var(--ink-strong)" }}>Meta Description</h3>
+                  <span className="text-xs font-mono ml-auto" style={{ color: "var(--ink-soft)" }}>{result.description.length} chars</span>
                 </div>
-                <p className="text-sm font-mono break-all line-clamp-3 leading-relaxed" style={{ color: "#7A7A72" }}>
+                <p className="text-sm font-mono break-all line-clamp-3 leading-relaxed" style={{ color: "var(--ink-muted)" }}>
                   {result.description.value || <span className="text-red-500 italic">Missing</span>}
                 </p>
               </div>
@@ -280,35 +280,35 @@ export default function SeoCheckerPage() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               <div className="p-5 bg-white border border-black/[0.04] rounded-2xl text-center">
                 <FileText size={18} className="text-[#C41A3B] mx-auto mb-2" />
-                <div className="text-2xl font-bold font-mono" style={{ color: "#1A1A1A" }}>{result.headings.h1}</div>
-                <div className="text-xs mt-1" style={{ color: "#7A7A72" }}>H1 Tags</div>
+                <div className="text-2xl font-bold font-mono" style={{ color: "var(--ink-strong)" }}>{result.headings.h1}</div>
+                <div className="text-xs mt-1" style={{ color: "var(--ink-muted)" }}>H1 Tags</div>
               </div>
               <div className="p-5 bg-white border border-black/[0.04] rounded-2xl text-center">
                 <FileText size={18} className="text-blue-500 mx-auto mb-2" />
-                <div className="text-2xl font-bold font-mono" style={{ color: "#1A1A1A" }}>{result.headings.h2 + result.headings.h3 + result.headings.h4}</div>
-                <div className="text-xs mt-1" style={{ color: "#7A7A72" }}>Subheadings</div>
+                <div className="text-2xl font-bold font-mono" style={{ color: "var(--ink-strong)" }}>{result.headings.h2 + result.headings.h3 + result.headings.h4}</div>
+                <div className="text-xs mt-1" style={{ color: "var(--ink-muted)" }}>Subheadings</div>
               </div>
               <div className="p-5 bg-white border border-black/[0.04] rounded-2xl text-center">
                 <ImageIcon size={18} className="text-emerald-500 mx-auto mb-2" />
-                <div className="text-2xl font-bold font-mono" style={{ color: "#1A1A1A" }}>{result.images.total}</div>
-                <div className="text-xs mt-1" style={{ color: "#7A7A72" }}>Images</div>
+                <div className="text-2xl font-bold font-mono" style={{ color: "var(--ink-strong)" }}>{result.images.total}</div>
+                <div className="text-xs mt-1" style={{ color: "var(--ink-muted)" }}>Images</div>
               </div>
               <div className="p-5 bg-white border border-black/[0.04] rounded-2xl text-center">
                 <Link2 size={18} className="text-yellow-500 mx-auto mb-2" />
-                <div className="text-2xl font-bold font-mono" style={{ color: "#1A1A1A" }}>{result.links.total}</div>
-                <div className="text-xs mt-1" style={{ color: "#7A7A72" }}>Links</div>
+                <div className="text-2xl font-bold font-mono" style={{ color: "var(--ink-strong)" }}>{result.links.total}</div>
+                <div className="text-xs mt-1" style={{ color: "var(--ink-muted)" }}>Links</div>
               </div>
             </div>
 
             {/* OG Tags */}
             {result.ogTags.length > 0 && (
               <div className="p-5 bg-white border border-black/[0.04] rounded-2xl">
-                <h3 className="text-sm font-semibold tracking-tight mb-4" style={{ color: "#1A1A1A" }}>Open Graph Tags</h3>
+                <h3 className="text-sm font-semibold tracking-tight mb-4" style={{ color: "var(--ink-strong)" }}>Open Graph Tags</h3>
                 <div className="space-y-2">
                   {result.ogTags.map((og, i) => (
                     <div key={i} className="flex gap-3 text-sm">
                       <span className="text-[#C41A3B] font-mono whitespace-nowrap text-xs">{og.property}</span>
-                      <span className="truncate text-xs" style={{ color: "#7A7A72" }}>{og.content}</span>
+                      <span className="truncate text-xs" style={{ color: "var(--ink-muted)" }}>{og.content}</span>
                     </div>
                   ))}
                 </div>
@@ -317,12 +317,12 @@ export default function SeoCheckerPage() {
 
             {/* Issues / Recommendations */}
             <div className="p-5 bg-white border border-black/[0.04] rounded-2xl">
-              <h3 className="text-sm font-semibold tracking-tight mb-4" style={{ color: "#1A1A1A" }}>Recommendations</h3>
+              <h3 className="text-sm font-semibold tracking-tight mb-4" style={{ color: "var(--ink-strong)" }}>Recommendations</h3>
               <div className="space-y-3">
                 {result.issues.map((issue, i) => (
                   <div key={i} className="flex items-start gap-3">
                     <StatusIcon status={issue.type} />
-                    <span className="text-sm leading-relaxed" style={{ color: "#7A7A72" }}>{issue.message}</span>
+                    <span className="text-sm leading-relaxed" style={{ color: "var(--ink-muted)" }}>{issue.message}</span>
                   </div>
                 ))}
               </div>

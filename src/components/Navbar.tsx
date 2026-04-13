@@ -3,6 +3,7 @@
 import Link from "next/link"
 import { useState, useRef, useEffect } from "react"
 import { Menu, X, ChevronDown } from "lucide-react"
+import ThemeToggle from "@/components/ThemeToggle"
 
 interface DropdownItem {
   label: string
@@ -19,27 +20,29 @@ const navGroups: NavGroup[] = [
   {
     label: "Products",
     items: [
-      { label: "App Store", href: "/apps", desc: "13,000+ integrations" },
+      { label: "9Ruby AI", href: "https://ai.9ruby.com", desc: "Start with AI access" },
       { label: "Templates", href: "/templates", desc: "Production-ready starters" },
       { label: "Tools", href: "/tools", desc: "Free AI-powered utilities" },
-      { label: "Directory", href: "/directory", desc: "211 open-source tools" },
-      { label: "Documentation", href: "/docs", desc: "Guides & API reference" },
+      { label: "Apps", href: "/apps", desc: "13,000+ integrations" },
+      { label: "Documentation", href: "/docs", desc: "Guides and API reference" },
     ],
   },
   {
     label: "Solutions",
     items: [
-      { label: "Services", href: "/services", desc: "AI-powered agency work" },
+      { label: "Services", href: "/services", desc: "Managed execution" },
+      { label: "Voice AI Agents", href: "/services/voice-agents", desc: "Sub-500ms voice agents" },
+      { label: "Pricing", href: "/pricing", desc: "Starter, Core, Prime, Black" },
       { label: "Ecosystem", href: "/ecosystem", desc: "All 9Ruby products" },
-      { label: "Universe", href: "/universe", desc: "Explore the platform" },
-      { label: "Dashboard", href: "/dashboard", desc: "Command center" },
+      { label: "Universe", href: "/universe", desc: "How the brand fits together" },
+      { label: "Dashboard", href: "/dashboard", desc: "Internal workspace" },
+      { label: "Prospector", href: "/dashboard/prospector", desc: "Find & pitch leads" },
       { label: "Case Studies", href: "/cases", desc: "Real client results" },
     ],
   },
 ]
 
 const directLinks = [
-  { label: "Pricing", href: "/pricing" },
   { label: "Blog", href: "/blog" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
@@ -65,7 +68,8 @@ function Dropdown({ group }: { group: NavGroup }) {
   return (
     <div ref={ref} className="relative" onMouseEnter={enter} onMouseLeave={leave}>
       <button
-        className="flex items-center gap-1 text-[13px] font-medium text-black/60 hover:text-black transition-colors duration-200"
+        className="flex items-center gap-1 text-[13px] font-medium transition-colors duration-200"
+        style={{ color: "var(--ink-muted)" }}
         onClick={() => setOpen(!open)}
       >
         {group.label}
@@ -80,17 +84,17 @@ function Dropdown({ group }: { group: NavGroup }) {
           className="absolute top-full left-1/2 -translate-x-1/2 pt-3"
           style={{ animation: "fadeIn 0.15s ease" }}
         >
-          <div className="bg-white rounded-xl border border-black/[0.06] shadow-xl shadow-black/[0.06] p-2 min-w-[240px]">
+          <div className="rounded-xl p-2 min-w-[240px]" style={{ background: "var(--surface)", border: "1px solid var(--border-subtle)", boxShadow: "0 20px 50px var(--shadow-color)" }}>
             {group.items.map((item, i) => (
               <Link
                 key={item.href}
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className="flex flex-col gap-0.5 px-3 py-2.5 rounded-lg hover:bg-black/[0.03] transition-colors duration-150"
+                className="flex flex-col gap-0.5 px-3 py-2.5 rounded-lg transition-colors duration-150"
                 style={{ animationDelay: `${i * 30}ms` }}
               >
-                <span className="text-[13px] font-semibold text-black/80">{item.label}</span>
-                <span className="text-[11px] text-black/35">{item.desc}</span>
+                <span className="text-[13px] font-semibold" style={{ color: "var(--ink-strong)" }}>{item.label}</span>
+                <span className="text-[11px]" style={{ color: "var(--ink-soft)" }}>{item.desc}</span>
               </Link>
             ))}
           </div>
@@ -105,13 +109,13 @@ export default function Navbar() {
   const [mobileExpanded, setMobileExpanded] = useState<string | null>(null)
 
   return (
-    <header className="fixed z-50 top-0 left-0 right-0 backdrop-blur-xl border-b border-black/[0.08]" style={{ background: "rgba(245,243,238,0.9)" }}>
+    <header className="fixed z-50 top-0 left-0 right-0 backdrop-blur-xl" style={{ background: "var(--header-bg)", borderBottom: "1px solid var(--border-subtle)" }}>
       <style>{`@keyframes fadeIn { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: translateY(0); } }`}</style>
 
       <nav aria-label="Main navigation" className="mx-auto max-w-[1200px] flex items-center justify-between px-6 h-16">
         <Link href="/" className="flex items-center gap-0.5 shrink-0 group">
           <span className="font-serif italic text-[1.75rem] font-bold tracking-tight text-[#C41A3B]">9</span>
-          <span className="text-lg font-bold tracking-tight text-[#111]">Ruby</span>
+          <span className="text-lg font-bold tracking-tight" style={{ color: "var(--ink-strong)" }}>Ruby</span>
         </Link>
 
         {/* Desktop */}
@@ -123,7 +127,8 @@ export default function Navbar() {
             <Link
               key={item.href}
               href={item.href}
-              className="text-[13px] font-medium text-black/60 hover:text-black transition-colors duration-200"
+              className="text-[13px] font-medium transition-colors duration-200"
+              style={{ color: "var(--ink-muted)" }}
             >
               {item.label}
             </Link>
@@ -131,20 +136,23 @@ export default function Navbar() {
         </div>
 
         <div className="hidden lg:flex items-center gap-4 shrink-0">
-          <a href="https://ai.9ruby.com" className="text-[13px] font-medium text-black/60 hover:text-black transition-colors">
+          <ThemeToggle />
+          <a href="https://ai.9ruby.com" className="text-[13px] font-medium transition-colors" style={{ color: "var(--ink-muted)" }}>
             Sign in
           </a>
           <a
             href="https://ai.9ruby.com"
-            className="text-[13px] font-semibold bg-black text-white rounded-full px-5 h-9 inline-flex items-center hover:bg-black/85 transition-colors"
+            className="text-[13px] font-semibold rounded-full px-5 h-9 inline-flex items-center transition-colors"
+            style={{ background: "var(--button-bg)", color: "var(--button-fg)" }}
           >
-            Get Started
+            Start with AI
           </a>
         </div>
 
         {/* Mobile toggle */}
         <button
-          className="lg:hidden text-black/40 hover:text-black transition-colors"
+          className="lg:hidden transition-colors"
+          style={{ color: "var(--ink-muted)" }}
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle menu"
           aria-expanded={mobileOpen}
@@ -155,17 +163,19 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="lg:hidden bg-white border-t border-black/[0.04] px-6 py-5 max-h-[80vh] overflow-y-auto">
+        <div className="lg:hidden px-6 py-5 max-h-[80vh] overflow-y-auto" style={{ background: "var(--surface)", borderTop: "1px solid var(--border-subtle)" }}>
           {navGroups.map((group) => (
-            <div key={group.label} className="border-b border-black/[0.04] pb-2 mb-2">
+            <div key={group.label} className="pb-2 mb-2" style={{ borderBottom: "1px solid var(--border-subtle)" }}>
               <button
                 onClick={() => setMobileExpanded(mobileExpanded === group.label ? null : group.label)}
-                className="flex items-center justify-between w-full py-2.5 text-[15px] font-semibold text-black/70"
+                className="flex items-center justify-between w-full py-2.5 text-[15px] font-semibold"
+                style={{ color: "var(--ink-strong)" }}
               >
                 {group.label}
                 <ChevronDown
                   size={14}
-                  className={`text-black/30 transition-transform duration-200 ${mobileExpanded === group.label ? "rotate-180" : ""}`}
+                  className={`transition-transform duration-200 ${mobileExpanded === group.label ? "rotate-180" : ""}`}
+                  style={{ color: "var(--ink-soft)" }}
                 />
               </button>
               {mobileExpanded === group.label && (
@@ -175,10 +185,11 @@ export default function Navbar() {
                       key={item.href}
                       href={item.href}
                       onClick={() => setMobileOpen(false)}
-                      className="block py-2 text-[14px] text-black/60 hover:text-black transition-colors"
+                      className="block py-2 text-[14px] transition-colors"
+                      style={{ color: "var(--ink-muted)" }}
                     >
                       {item.label}
-                      <span className="ml-2 text-[11px] text-black/25">{item.desc}</span>
+                      <span className="ml-2 text-[11px]" style={{ color: "var(--ink-soft)" }}>{item.desc}</span>
                     </Link>
                   ))}
                 </div>
@@ -191,19 +202,24 @@ export default function Navbar() {
               key={item.href}
               href={item.href}
               onClick={() => setMobileOpen(false)}
-              className="block py-2.5 text-[15px] font-medium text-black/55 hover:text-black transition-colors"
+              className="block py-2.5 text-[15px] font-medium transition-colors"
+              style={{ color: "var(--ink-muted)" }}
             >
               {item.label}
             </Link>
           ))}
 
-          <div className="pt-4 border-t border-black/[0.04] mt-2 space-y-2">
-            <a href="https://ai.9ruby.com" className="block text-center text-[13px] text-black/60 py-2">Sign in</a>
+          <div className="pt-4 mt-2 space-y-2" style={{ borderTop: "1px solid var(--border-subtle)" }}>
+            <div className="flex justify-center pb-2">
+              <ThemeToggle />
+            </div>
+            <a href="https://ai.9ruby.com" className="block text-center text-[13px] py-2" style={{ color: "var(--ink-muted)" }}>Sign in</a>
             <a
               href="https://ai.9ruby.com"
-              className="block text-center text-[13px] font-semibold bg-black text-white rounded-full h-10 leading-10"
+              className="block text-center text-[13px] font-semibold rounded-full h-10 leading-10"
+              style={{ background: "var(--button-bg)", color: "var(--button-fg)" }}
             >
-              Get Started
+              Start with AI
             </a>
           </div>
         </div>

@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { CheckCircle2, X, ArrowRight, Zap, Shield, ChevronDown, Users, Building2, Sparkles } from "lucide-react"
+import { CheckCircle2, X, ArrowRight, Zap, Shield, ChevronDown, Users, Building2, Sparkles, Orbit, Crown } from "lucide-react"
 import Link from "next/link"
 import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer"
@@ -9,87 +9,81 @@ import Breadcrumb from "@/components/Breadcrumb"
 
 /* --- Data --- */
 
-const monthlyPrices = { free: 0, starter: 49, pro: 149, enterprise: null }
-const annualPrices  = { free: 0, starter: 39, pro: 119, enterprise: null }
+const monthlyPrices = { starter: 49, core: 99.99, prime: 999.99, black: 9999.99 }
+const annualPrices  = { starter: 39, core: 79.99, prime: 799.99, black: 7999.99 }
 
 const tiers = [
   {
-    key: "free" as const,
-    name: "Free",
-    desc: "Get started with 9Ruby AI",
-    icon: Sparkles,
-    cta: "Get Started",
-    ctaHref: "https://ai.9ruby.com",
-    style: "glass" as const,
-    features: [
-      "9Ruby AI Chat (50 msgs/day)",
-      "Ruby 9 Sonnet model",
-      "3 Design Studio generations",
-      "Basic templates",
-      "Community support",
-      "1 project",
-    ],
-  },
-  {
     key: "starter" as const,
     name: "Starter",
-    desc: "For individuals",
-    icon: Zap,
-    cta: "Start Free Trial",
+    desc: "Start with 9Ruby AI",
+    icon: Sparkles,
+    eyebrow: "Launch access",
+    cta: "Start with AI",
     ctaHref: "https://ai.9ruby.com",
     style: "glass" as const,
     features: [
-      "Everything in Free",
-      "500 messages/day",
-      "Ruby 9 Opus model",
-      "20 Design generations/mo",
-      "5 AI tool uses/day",
-      "Priority email support",
-      "5 projects",
-      "Basic integrations",
+      "9Ruby AI workspace",
+      "Ruby 9 Sonnet + starter tools",
+      "Design Studio generations",
+      "Templates and prompt kits",
+      "Best for solo builders",
+      "Self-serve onboarding",
     ],
   },
   {
-    key: "pro" as const,
-    name: "Pro",
-    desc: "For growing businesses",
-    icon: Zap,
-    badge: "Most Popular",
-    cta: "Start Free Trial",
-    ctaHref: "https://ai.9ruby.com",
-    style: "highlighted" as const,
+    key: "core" as const,
+    name: "Core",
+    desc: "For focused operators",
+    icon: Orbit,
+    eyebrow: "Orbital ring one",
+    cta: "Choose Core",
+    ctaHref: "/contact",
+    style: "glass" as const,
     features: [
       "Everything in Starter",
-      "Unlimited messages",
-      "Unlimited Design Studio",
-      "Dispatch mode (parallel agents)",
-      "25 concurrent agents",
-      "All integrations",
-      "Unlimited projects",
-      "All premium templates",
-      "Priority support",
-      "Custom agent workflows",
+      "Website refresh or landing page support",
+      "Automation setup for one workflow",
+      "Monthly SEO or content sprint",
+      "Priority async support",
+      "Best for founders validating offers",
     ],
   },
   {
-    key: "enterprise" as const,
-    name: "Enterprise",
-    desc: "For teams",
-    icon: Building2,
-    cta: "Contact Sales",
+    key: "prime" as const,
+    name: "Prime",
+    desc: "For growth-stage brands",
+    icon: Zap,
+    eyebrow: "Orbital ring two",
+    badge: "Most Popular",
+    cta: "Book Prime",
+    ctaHref: "/contact",
+    style: "highlighted" as const,
+    features: [
+      "AI agents + website + marketing stack",
+      "Voice agent or chatbot deployment",
+      "Growth analytics and reporting",
+      "Parallel execution across content, SEO, and dev",
+      "Dedicated strategy cadence",
+      "Best for brands scaling offers fast",
+    ],
+  },
+  {
+    key: "black" as const,
+    name: "Black",
+    desc: "For flagship systems",
+    icon: Crown,
+    eyebrow: "Orbital ring three",
+    cta: "Apply for Black",
     ctaHref: "/contact",
     style: "dark" as const,
     features: [
-      "Everything in Pro",
-      "Rubix Terminal access",
-      "Custom model routing",
-      "On-premise deployment",
-      "SSO & SAML",
-      "Dedicated infrastructure",
-      "SLA guarantee (99.99%)",
-      "24/7 phone support",
-      "Custom training",
-      "White-label option",
+      "Everything in Prime",
+      "Full product system or platform build",
+      "Custom voice and AI infrastructure",
+      "Executive advisory and launch operations",
+      "Dedicated build capacity",
+      "Best for category-defining brands",
     ],
   },
 ]
@@ -108,41 +102,35 @@ type FeatureCategory = {
 const comparisonData: FeatureCategory[] = [
   {
     category: "AI & Models",
+      features: [
+        { name: "AI workspace access", free: "Starter", starter: "Full", pro: "Full", enterprise: "Full" },
+        { name: "Model depth", free: "Sonnet", starter: "Sonnet + tools", pro: "Advanced routing", enterprise: "Custom routing" },
+        { name: "Agent involvement", free: "Self-serve", starter: "Guided", pro: "Managed", enterprise: "Dedicated" },
+        { name: "Voice AI", free: false, starter: false, pro: true, enterprise: true },
+      ],
+  },
+  {
+    category: "Build & Delivery",
     features: [
-      { name: "AI Chat messages", free: "50/day", starter: "500/day", pro: "Unlimited", enterprise: "Unlimited" },
-      { name: "AI Models", free: "Sonnet", starter: "Sonnet + Opus", pro: "All models", enterprise: "Custom routing" },
-      { name: "Concurrent agents", free: "1", starter: "3", pro: "25", enterprise: "Unlimited" },
-      { name: "AI Tools access", free: "Basic", starter: "5/day", pro: "Unlimited", enterprise: "Unlimited" },
+      { name: "Website work", free: "DIY", starter: "Refreshes", pro: "Growth builds", enterprise: "Full systems" },
+      { name: "Automation buildout", free: false, starter: "1 workflow", pro: "Multi-workflow", enterprise: "Full stack" },
+      { name: "Custom software scope", free: false, starter: false, pro: "Selective", enterprise: "Extensive" },
     ],
   },
   {
-    category: "Design & Creation",
+    category: "Growth & Ops",
     features: [
-      { name: "Design Studio", free: "3/mo", starter: "20/mo", pro: "Unlimited", enterprise: "Unlimited" },
-      { name: "Premium templates", free: false, starter: false, pro: true, enterprise: true },
-      { name: "Projects", free: "1", starter: "5", pro: "Unlimited", enterprise: "Unlimited" },
+      { name: "SEO / content ops", free: false, starter: "Light", pro: "Managed", enterprise: "Full engine" },
+      { name: "Analytics", free: "Basic", starter: "Monthly", pro: "Real-time", enterprise: "Executive" },
+      { name: "Integrations", free: "Core", starter: "Business stack", pro: "Growth stack", enterprise: "Custom stack" },
     ],
   },
   {
-    category: "Collaboration & Integrations",
+    category: "Access & Support",
     features: [
-      { name: "Dispatch (parallel agents)", free: false, starter: false, pro: true, enterprise: true },
-      { name: "Integrations", free: "None", starter: "Basic", pro: "All", enterprise: "All + Custom" },
-      { name: "Rubix Terminal", free: false, starter: false, pro: false, enterprise: true },
-    ],
-  },
-  {
-    category: "Security & Compliance",
-    features: [
-      { name: "SSO / SAML", free: false, starter: false, pro: false, enterprise: true },
-      { name: "SLA guarantee", free: false, starter: false, pro: false, enterprise: true },
-      { name: "White-label", free: false, starter: false, pro: false, enterprise: true },
-    ],
-  },
-  {
-    category: "Support",
-    features: [
-      { name: "Support level", free: "Community", starter: "Email", pro: "Priority", enterprise: "24/7 phone" },
+      { name: "Strategy support", free: "Community", starter: "Async", pro: "Dedicated cadence", enterprise: "Executive line" },
+      { name: "Turnaround speed", free: "Self-paced", starter: "Standard", pro: "Priority", enterprise: "Fastest lane" },
+      { name: "White-label / private ops", free: false, starter: false, pro: false, enterprise: true },
     ],
   },
 ]
@@ -150,35 +138,35 @@ const comparisonData: FeatureCategory[] = [
 const faqItems = [
   {
     q: "Can I switch plans at any time?",
-    a: "Yes. Upgrade or downgrade anytime from your dashboard. When upgrading, you'll be charged the prorated difference. When downgrading, unused credit rolls into your next billing cycle.",
+    a: "Yes. Start with Starter, then move into Core, Prime, or Black as your needs expand. We scope the upgrade path around your workflows and delivery volume.",
   },
   {
-    q: "What happens when my free tier limits are reached?",
-    a: "You'll receive a notification when you're at 80% usage. Once the limit is reached, you can upgrade instantly or wait for the daily/monthly reset depending on the feature.",
+    q: "Is this just SaaS pricing?",
+    a: "No. Starter is self-serve AI access. Core, Prime, and Black combine software, automation, websites, voice systems, and agency execution into one offer.",
   },
   {
-    q: "Is there a free trial for paid plans?",
-    a: "Absolutely. Both Starter and Pro plans come with a 14-day free trial with full access. No credit card required to start.",
+    q: "What is the difference between Core and Prime?",
+    a: "Core is for a focused execution lane like a landing page, one automation, or a monthly growth sprint. Prime is for brands that need multiple channels moving together with dedicated strategy.",
   },
   {
-    q: "How does the annual billing discount work?",
-    a: "Annual billing saves you 20% compared to monthly. You pay once per year and get the full 12 months at the discounted rate. Cancel anytime for a prorated refund.",
+    q: "When should I choose Black?",
+    a: "Choose Black when you need a flagship product system, deep AI infrastructure, voice agents, launch operations, and consistent executive-level delivery capacity.",
   },
   {
-    q: "What AI models are included?",
-    a: "Free includes Ruby 9 Sonnet. Starter adds Ruby 9 Opus. Pro unlocks all models including latest releases. Enterprise gets custom model routing tailored to your workflows.",
+    q: "Can voice AI be included?",
+    a: "Yes. Voice AI sits inside Prime and Black, or it can be scoped as a focused engagement if you need outbound calling, inbound support, or appointment booking.",
   },
   {
-    q: "Can I get a custom Enterprise quote?",
-    a: "Yes. Enterprise pricing is tailored to your team size, usage patterns, and specific requirements. Contact our sales team for a custom proposal within 24 hours.",
+    q: "Can I get a custom quote?",
+    a: "Yes. Prime and Black engagements are scoped around your stack, timelines, and deliverables. Contact us and we will shape the right build lane.",
   },
   {
     q: "Is my data secure?",
-    a: "All plans include encryption at rest and in transit. Enterprise adds SSO/SAML, SOC 2 compliance, dedicated infrastructure, and custom data retention policies.",
+    a: "All plans include secure delivery practices. Higher tiers can add private infrastructure, tighter access controls, and custom deployment requirements.",
   },
   {
-    q: "What is Dispatch mode?",
-    a: "Dispatch mode lets you run multiple AI agents in parallel on different tasks simultaneously. Available on Pro (25 concurrent) and Enterprise (unlimited) plans.",
+    q: "Can 9Ruby replace separate vendors?",
+    a: "That is the point. The combined offer pulls AI tooling, websites, growth systems, and agency execution into one operating layer instead of four separate vendors.",
   },
 ]
 
@@ -188,9 +176,9 @@ function CellValue({ value }: { value: string | boolean }) {
   if (typeof value === "boolean") {
     return value
       ? <CheckCircle2 size={16} className="text-[#C41A3B] mx-auto" />
-      : <X size={16} className="mx-auto" style={{ color: "#B8B8B0" }} />
+      : <X size={16} className="mx-auto" style={{ color: "var(--ink-soft)" }} />
   }
-  return <span className="text-sm" style={{ color: "#7A7A72" }}>{value}</span>
+  return <span className="text-sm" style={{ color: "var(--ink-muted)" }}>{value}</span>
 }
 
 function FAQItem({ question, answer }: { question: string; answer: string }) {
@@ -202,7 +190,7 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
         onClick={() => setOpen(!open)}
         className="w-full flex items-center justify-between py-6 text-left group"
       >
-        <span className="text-base font-medium group-hover:text-[#1A1A1A] transition-colors pr-8" style={{ color: "#7A7A72" }}>
+        <span className="text-base font-medium group-hover:text-[#1A1A1A] transition-colors pr-8" style={{ color: "var(--ink-muted)" }}>
           {question}
         </span>
         <ChevronDown
@@ -216,7 +204,7 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
           open ? "max-h-96 opacity-100 pb-6" : "max-h-0 opacity-0"
         }`}
       >
-        <p className="text-sm leading-relaxed pr-12" style={{ color: "#7A7A72" }}>{answer}</p>
+        <p className="text-sm leading-relaxed pr-12" style={{ color: "var(--ink-muted)" }}>{answer}</p>
       </div>
     </div>
   )
@@ -227,30 +215,52 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
 export default function PricingPage() {
   const [annual, setAnnual] = useState(false)
 
-  const getPrice = (key: "free" | "starter" | "pro" | "enterprise") => {
+  const getPrice = (key: "starter" | "core" | "prime" | "black") => {
     const prices = annual ? annualPrices : monthlyPrices
     return prices[key]
   }
 
   return (
-    <main id="main-content" className="relative min-h-screen" style={{ background: "#F8F7F4" }}>
+    <main id="main-content" className="relative min-h-screen" style={{ background: "var(--page-bg)" }}>
       <Navbar />
       <Breadcrumb items={[{ label: "Pricing" }]} />
 
       {/* HERO */}
       <section className="relative pt-36 lg:pt-44 pb-16 lg:pb-20">
         <div className="relative max-w-[1200px] mx-auto px-6 text-center">
-          <div className="text-[11px] font-semibold tracking-[0.12em] uppercase mb-6" style={{ color: "#C41A3B" }}>
+            <div className="text-[11px] font-semibold tracking-[0.12em] uppercase mb-6" style={{ color: "#C41A3B" }}>
             Pricing
           </div>
 
-          <h1 className="text-5xl md:text-6xl lg:text-[80px] font-serif italic leading-[0.95] tracking-tighter mb-6" style={{ color: "#1A1A1A" }}>
-            Invest in Growth
+          <h1 className="text-5xl md:text-6xl lg:text-[80px] font-serif italic leading-[0.95] tracking-tighter mb-6" style={{ color: "var(--ink-strong)" }}>
+            One ladder for AI,
+            <br />
+            agency, and systems
           </h1>
 
-          <p className="text-lg leading-relaxed max-w-2xl mx-auto mb-12" style={{ color: "#7A7A72" }}>
-            Start free. Scale when you&apos;re ready. Simple pricing, no hidden fees.
+          <p className="text-lg leading-relaxed max-w-2xl mx-auto mb-12" style={{ color: "var(--ink-muted)" }}>
+            Start with 9Ruby AI. Scale into IX Ruby execution. The same brand now covers self-serve tools, growth retainers, and flagship product builds.
           </p>
+
+          <div className="grid sm:grid-cols-3 gap-4 max-w-4xl mx-auto mb-12 text-left">
+            {[
+              { label: "Starter", value: "AI workspace", copy: "Self-serve access to 9Ruby AI, templates, and launch tools." },
+              { label: "Core / Prime", value: "Agency execution", copy: "Websites, automations, SEO, analytics, and voice systems." },
+              { label: "Black", value: "Flagship builds", copy: "Full operating systems, custom products, and dedicated launch capacity." },
+            ].map((item) => (
+              <div key={item.label} className="rounded-2xl p-5 bg-white" style={{ border: "1px solid rgba(0,0,0,0.06)" }}>
+                <div className="font-mono text-[10px] uppercase tracking-[0.14em] mb-2" style={{ color: "var(--ink-soft)" }}>
+                  {item.label}
+                </div>
+                <div className="text-base font-semibold mb-2" style={{ color: "var(--ink-strong)" }}>
+                  {item.value}
+                </div>
+                <p className="text-sm leading-relaxed" style={{ color: "var(--ink-muted)" }}>
+                  {item.copy}
+                </p>
+              </div>
+            ))}
+          </div>
 
           {/* Billing toggle */}
           <div className="inline-flex items-center gap-1 bg-white rounded-full p-1" style={{ border: "1px solid rgba(0,0,0,0.06)" }}>
@@ -261,7 +271,7 @@ export default function PricingPage() {
                   ? "bg-[#1A1A1A] text-[#F8F7F4]"
                   : "hover:text-[#1A1A1A]"
               }`}
-              style={annual ? { color: "#7A7A72" } : {}}
+              style={annual ? { color: "var(--ink-muted)" } : {}}
             >
               Monthly
             </button>
@@ -272,7 +282,7 @@ export default function PricingPage() {
                   ? "bg-[#1A1A1A] text-[#F8F7F4]"
                   : "hover:text-[#1A1A1A]"
               }`}
-              style={!annual ? { color: "#7A7A72" } : {}}
+              style={!annual ? { color: "var(--ink-muted)" } : {}}
             >
               Annual
               <span className="absolute -top-2.5 -right-4 font-mono text-[10px] font-bold px-2 py-0.5 rounded-full bg-[#C41A3B] text-white whitespace-nowrap">
@@ -334,26 +344,23 @@ export default function PricingPage() {
                         <Icon
                           size={14}
                           className={isHighlighted ? "text-white" : ""}
-                          style={!isHighlighted ? { color: "#7A7A72" } : {}}
+                          style={!isHighlighted ? { color: "var(--ink-muted)" } : {}}
                         />
                       </div>
                       <h3 className="text-lg font-semibold tracking-tight" style={{ color: isHighlighted ? "#F8F7F4" : "#1A1A1A" }}>{t.name}</h3>
                     </div>
                     <p className="text-sm mb-6 ml-11" style={{ color: isHighlighted ? "rgba(248,247,244,0.5)" : "#7A7A72" }}>{t.desc}</p>
+                    <p className="font-mono text-[10px] uppercase tracking-[0.14em] mb-6 ml-11" style={{ color: isHighlighted ? "rgba(248,247,244,0.3)" : "#B8B8B0" }}>
+                      {t.eyebrow}
+                    </p>
 
                     {/* Price */}
                     <div className="mb-8">
-                      {price !== null ? (
-                        <div className="flex items-baseline gap-1">
-                          <span className="text-5xl font-serif italic tracking-tighter" style={{ color: isHighlighted ? "#F8F7F4" : "#1A1A1A" }}>${price}</span>
-                          <span className="text-sm" style={{ color: isHighlighted ? "rgba(248,247,244,0.3)" : "#B8B8B0" }}>/mo</span>
-                        </div>
-                      ) : (
-                        <div className="flex items-baseline gap-1">
-                          <span className="text-5xl font-serif italic tracking-tighter" style={{ color: isHighlighted ? "#F8F7F4" : "#1A1A1A" }}>Custom</span>
-                        </div>
-                      )}
-                      {annual && price !== null && price > 0 && (
+                      <div className="flex items-baseline gap-1">
+                        <span className="text-5xl font-serif italic tracking-tighter" style={{ color: isHighlighted ? "#F8F7F4" : "#1A1A1A" }}>${price}</span>
+                        <span className="text-sm" style={{ color: isHighlighted ? "rgba(248,247,244,0.3)" : "#B8B8B0" }}>/mo</span>
+                      </div>
+                      {annual && price > 0 && (
                         <p className="font-mono text-xs mt-1.5" style={{ color: isHighlighted ? "rgba(248,247,244,0.3)" : "#B8B8B0" }}>
                           Billed ${price * 12}/year
                         </p>
@@ -369,7 +376,7 @@ export default function PricingPage() {
                             className={`shrink-0 mt-0.5 ${
                               isHighlighted ? "text-[#C41A3B]" : ""
                             }`}
-                            style={!isHighlighted ? { color: "#B8B8B0" } : {}}
+                            style={!isHighlighted ? { color: "var(--ink-soft)" } : {}}
                           />
                           {f}
                         </li>
@@ -384,7 +391,7 @@ export default function PricingPage() {
                           ? "bg-[#F8F7F4] text-[#1A1A1A] hover:bg-white"
                           : "hover:bg-black/[0.02]"
                       }`}
-                      style={!isHighlighted ? { border: "1px solid rgba(0,0,0,0.08)", color: "#7A7A72" } : {}}
+                      style={!isHighlighted ? { border: "1px solid rgba(0,0,0,0.08)", color: "var(--ink-muted)" } : {}}
                     >
                       {t.cta}
                     </a>
@@ -399,27 +406,27 @@ export default function PricingPage() {
       {/* COMPARISON TABLE */}
       <section className="relative pb-24 lg:pb-32">
         <div className="relative max-w-[1200px] mx-auto px-6">
-          <h2 className="text-3xl lg:text-4xl font-serif italic tracking-tighter mb-2" style={{ color: "#1A1A1A" }}>Compare plans</h2>
-          <p className="text-base mb-12" style={{ color: "#7A7A72" }}>Every feature, side by side.</p>
+          <h2 className="text-3xl lg:text-4xl font-serif italic tracking-tighter mb-2" style={{ color: "var(--ink-strong)" }}>Compare plans</h2>
+          <p className="text-base mb-12" style={{ color: "var(--ink-muted)" }}>Every feature, side by side.</p>
 
           <div className="overflow-x-auto rounded-2xl bg-white" style={{ border: "1px solid rgba(0,0,0,0.04)" }}>
             <table className="w-full min-w-[750px]">
               <thead>
                 <tr style={{ background: "rgba(0,0,0,0.01)" }}>
-                  <th className="text-left text-sm font-normal py-4 px-6 w-[30%]" style={{ color: "#7A7A72" }}>
+                  <th className="text-left text-sm font-normal py-4 px-6 w-[30%]" style={{ color: "var(--ink-muted)" }}>
                     Feature
                   </th>
-                  <th className="text-center text-sm font-normal py-4 px-4" style={{ color: "#7A7A72" }}>
-                    Free
-                  </th>
-                  <th className="text-center text-sm font-normal py-4 px-4" style={{ color: "#7A7A72" }}>
+                  <th className="text-center text-sm font-normal py-4 px-4" style={{ color: "var(--ink-muted)" }}>
                     Starter
                   </th>
-                  <th className="text-center text-sm font-medium py-4 px-4" style={{ color: "#1A1A1A" }}>
-                    Pro
+                  <th className="text-center text-sm font-normal py-4 px-4" style={{ color: "var(--ink-muted)" }}>
+                    Core
                   </th>
-                  <th className="text-center text-sm font-normal py-4 px-4" style={{ color: "#7A7A72" }}>
-                    Enterprise
+                  <th className="text-center text-sm font-medium py-4 px-4" style={{ color: "var(--ink-strong)" }}>
+                    Prime
+                  </th>
+                  <th className="text-center text-sm font-normal py-4 px-4" style={{ color: "var(--ink-muted)" }}>
+                    Black
                   </th>
                 </tr>
               </thead>
@@ -430,7 +437,7 @@ export default function PricingPage() {
                       <td
                         colSpan={5}
                         className="font-mono text-[11px] font-medium uppercase tracking-widest pt-8 pb-3 px-6"
-                        style={{ color: "#B8B8B0", borderBottom: "1px solid rgba(0,0,0,0.04)" }}
+                        style={{ color: "var(--ink-soft)", borderBottom: "1px solid rgba(0,0,0,0.04)" }}
                       >
                         {group.category}
                       </td>
@@ -441,7 +448,7 @@ export default function PricingPage() {
                         className="transition-colors hover:bg-black/[0.01]"
                         style={{ borderBottom: "1px solid rgba(0,0,0,0.04)" }}
                       >
-                        <td className="text-sm py-4 px-6" style={{ color: "#7A7A72" }}>{f.name}</td>
+                        <td className="text-sm py-4 px-6" style={{ color: "var(--ink-muted)" }}>{f.name}</td>
                         <td className="text-center py-4 px-4">
                           <CellValue value={f.free} />
                         </td>
@@ -471,8 +478,8 @@ export default function PricingPage() {
             <div className="text-[11px] font-semibold tracking-[0.12em] uppercase mb-6" style={{ color: "#C41A3B" }}>
               FAQ
             </div>
-            <h2 className="text-3xl lg:text-4xl font-serif italic tracking-tighter mb-2" style={{ color: "#1A1A1A" }}>Common questions</h2>
-            <p className="text-base" style={{ color: "#7A7A72" }}>Everything you need to know about our plans.</p>
+            <h2 className="text-3xl lg:text-4xl font-serif italic tracking-tighter mb-2" style={{ color: "var(--ink-strong)" }}>Common questions</h2>
+            <p className="text-base" style={{ color: "var(--ink-muted)" }}>Everything you need to know about the merged 9Ruby and IX Ruby offer.</p>
           </div>
 
           <div style={{ borderTop: "1px solid rgba(0,0,0,0.06)" }}>
@@ -489,14 +496,13 @@ export default function PricingPage() {
           <div className="relative overflow-hidden rounded-2xl bg-white px-8 py-10 lg:px-16 lg:py-14 text-center" style={{ border: "1px solid rgba(0,0,0,0.04)" }}>
             <div className="relative flex flex-col items-center gap-5">
               <div className="w-14 h-14 rounded-full flex items-center justify-center" style={{ background: "rgba(0,0,0,0.02)", border: "1px solid rgba(0,0,0,0.06)" }}>
-                <Shield size={24} style={{ color: "#7A7A72" }} />
+                <Shield size={24} style={{ color: "var(--ink-muted)" }} />
               </div>
-              <h3 className="text-2xl lg:text-3xl font-serif italic tracking-tighter" style={{ color: "#1A1A1A" }}>
+              <h3 className="text-2xl lg:text-3xl font-serif italic tracking-tighter" style={{ color: "var(--ink-strong)" }}>
                 30-Day Money Back Guarantee
               </h3>
-              <p className="max-w-lg leading-relaxed text-sm" style={{ color: "#7A7A72" }}>
-                Try any paid plan risk-free. If you&apos;re not completely satisfied within the first
-                30 days, we&apos;ll refund every penny. No questions asked.
+              <p className="max-w-lg leading-relaxed text-sm" style={{ color: "var(--ink-muted)" }}>
+                Start with AI or move into a managed engagement. If the fit is wrong early, we reset scope fast instead of trapping you inside a vague retainer.
               </p>
             </div>
           </div>
@@ -507,11 +513,11 @@ export default function PricingPage() {
       <section className="relative pb-24 lg:pb-32">
         <div className="relative max-w-[1200px] mx-auto px-6 text-center">
           <div className="relative">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif italic tracking-tighter mb-4" style={{ color: "#1A1A1A" }}>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif italic tracking-tighter mb-4" style={{ color: "var(--ink-strong)" }}>
               Start Building Today
             </h2>
-            <p className="text-lg mb-10 max-w-xl mx-auto" style={{ color: "#7A7A72" }}>
-              Join thousands of builders using 9Ruby to ship faster with AI.
+            <p className="text-lg mb-10 max-w-xl mx-auto" style={{ color: "var(--ink-muted)" }}>
+              Use one system for AI access, websites, growth ops, voice agents, and flagship launches.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -520,12 +526,12 @@ export default function PricingPage() {
                 className="h-10 px-7 rounded-full bg-[#1A1A1A] text-sm font-medium hover:bg-[#1A1A1A]/90 transition-all duration-300 inline-flex items-center gap-2"
                 style={{ color: "#F8F7F4" }}
               >
-                Start Free <ArrowRight size={14} />
+            Start with AI <ArrowRight size={14} />
               </a>
               <Link
                 href="/contact"
                 className="h-10 px-7 rounded-full text-sm font-medium hover:bg-black/[0.02] transition-all duration-300 inline-flex items-center gap-2"
-                style={{ border: "1px solid rgba(0,0,0,0.08)", color: "#7A7A72" }}
+                style={{ border: "1px solid rgba(0,0,0,0.08)", color: "var(--ink-muted)" }}
               >
                 <Users size={14} /> Book a Call
               </Link>

@@ -1,6 +1,8 @@
 {
-  "name": "9ruby-home",
-  "version": "0.1.0",
+  "name": "9ruby-site",
+  "version": "1.0.0",
+  "description": "9ruby.com — Corporate website for Nine Ruby Management",
+  "author": "Nine Ruby Management FZ-LLC",
   "private": true,
   "scripts": {
     "dev": "next dev",

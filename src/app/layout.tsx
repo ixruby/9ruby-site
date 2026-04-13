@@ -1,8 +1,17 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Instrument_Serif, Playfair_Display, JetBrains_Mono } from "next/font/google";
+import {
+  Geist,
+  Geist_Mono,
+  Instrument_Serif,
+  JetBrains_Mono,
+  Playfair_Display,
+} from "next/font/google";
 import "./globals.css";
 import BotanicalEffects from "@/components/BotanicalEffects";
 import CookieConsent from "@/components/CookieConsent";
+
+const siteUrl = "https://www.9ruby.com";
+const themeInitScript = `(function(){try{var saved=localStorage.getItem("theme");var system=window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";var theme=saved||system;document.documentElement.dataset.theme=theme;document.documentElement.style.colorScheme=theme;}catch(e){document.documentElement.dataset.theme="light";document.documentElement.style.colorScheme="light";}})();`;
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -35,41 +44,53 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://home.9ruby.com"),
+  metadataBase: new URL(siteUrl),
   title: {
-    default: "9Ruby — AI-Powered Agency by IX Ruby",
-    template: "%s",
+    default: "9Ruby | AI Agents, Websites, and Automation by IX Ruby",
+    template: "%s | 9Ruby",
   },
   description:
-    "The world's most intelligent AI agency. Autonomous agents that plan, create, and scale — 24/7. Explore 9Ruby AI, Design Studio, Dispatch, and more.",
+    "9Ruby builds AI agents, websites, voice systems, and automation for modern brands. Powered by IX Ruby.",
   keywords: [
     "9Ruby",
     "Nine Ruby",
     "IX Ruby",
+    "IXR",
     "AI agency",
     "AI agents",
-    "autonomous marketing",
-    "AI chatbots",
+    "voice agents",
     "website design",
+    "automation",
     "SEO",
     "Next.js templates",
     "AI tools",
-    "design studio",
   ],
   manifest: "/manifest.json",
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
-    title: "9Ruby — AI-Powered Agency",
+    title: "9Ruby | AI Agents, Websites, and Automation",
     description:
-      "Autonomous AI agents that never sleep. Built by IX Ruby Agency.",
+      "AI agents, websites, voice systems, and automation built by IX Ruby.",
     type: "website",
-    url: "https://home.9ruby.com",
+    url: siteUrl,
     siteName: "9Ruby",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "9Ruby by IX Ruby",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "9Ruby — AI-Powered Agency by IX Ruby",
+    title: "9Ruby | AI Agents, Websites, and Automation",
     description:
-      "Autonomous AI agents that plan, create, and scale — 24/7. Explore 9Ruby AI, Design Studio, Dispatch, and more.",
+      "AI agents, websites, voice systems, and automation built by IX Ruby.",
+    images: ["/twitter-image"],
   },
 };
 
@@ -78,21 +99,58 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": `${siteUrl}/#organization`,
+        name: "9Ruby",
+        alternateName: ["IX Ruby", "IX Ruby Agency", "IXR"],
+        url: siteUrl,
+        logo: `${siteUrl}/icons/icon-512.png`,
+        sameAs: ["https://ai.9ruby.com", "https://home.9ruby.com"],
+      },
+      {
+        "@type": "WebSite",
+        "@id": `${siteUrl}/#website`,
+        url: siteUrl,
+        name: "9Ruby",
+        publisher: {
+          "@id": `${siteUrl}/#organization`,
+        },
+      },
+    ],
+  };
+
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} ${instrumentSerif.variable} ${playfair.variable} ${jetbrainsMono.variable} h-full antialiased dark`}
+      suppressHydrationWarning
+      className={`${geistSans.variable} ${geistMono.variable} ${instrumentSerif.variable} ${playfair.variable} ${jetbrainsMono.variable} h-full antialiased`}
     >
       <head>
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
         <meta name="theme-color" content="#C41A3B" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta
+          name="apple-mobile-web-app-status-bar-style"
+          content="black-translucent"
+        />
         <link rel="apple-touch-icon" href="/icons/icon-192.png" />
       </head>
-      <body className="min-h-full" style={{ background: "#F5F3EE", color: "#111111" }}>
-        <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-[#C41A3B] focus:text-white focus:rounded-full focus:text-sm">
+      <body className="min-h-full">
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:rounded-full focus:text-sm"
+          style={{ background: "var(--accent)", color: "var(--accent-foreground)" }}
+        >
           Skip to content
         </a>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
         <BotanicalEffects />
         {children}
         <CookieConsent />

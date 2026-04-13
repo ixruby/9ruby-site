@@ -520,7 +520,7 @@ export default function DirectoryPage() {
   const activeCategoryLabel = categories.find((c) => c.id === activeCategory)?.label || "All"
 
   return (
-    <main className="relative min-h-screen overflow-x-hidden" style={{ background: "#F8F7F4" }}>
+    <main className="relative min-h-screen overflow-x-hidden" style={{ background: "var(--page-bg)" }}>
       <Navbar />
       <Breadcrumb items={[{ label: "Directory" }]} />
 
@@ -533,10 +533,10 @@ export default function DirectoryPage() {
           </p>
 
           {/* Title */}
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif italic tracking-tighter leading-[0.95] mb-6" style={{ color: "#1A1A1A" }}>
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif italic tracking-tighter leading-[0.95] mb-6" style={{ color: "var(--ink-strong)" }}>
             The 9Ruby
             <br />
-            <span style={{ color: "#7A7A72" }}>Directory</span>
+            <span style={{ color: "var(--ink-muted)" }}>Directory</span>
           </h1>
 
           {/* Subtitle */}

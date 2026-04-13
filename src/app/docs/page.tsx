@@ -81,7 +81,7 @@ export default function DocsPage() {
   const revealRef = useScrollReveal()
 
   return (
-    <main id="main-content" className="relative min-h-screen" style={{ background: "#F8F7F4" }}>
+    <main id="main-content" className="relative min-h-screen" style={{ background: "var(--page-bg)" }}>
       <Navbar />
       <Breadcrumb items={[{ label: "Documentation" }]} />
 
@@ -99,13 +99,13 @@ export default function DocsPage() {
             </div>
             <h1
               className="text-5xl md:text-6xl lg:text-[80px] font-serif italic tracking-tighter leading-[0.9] mb-8"
-              style={{ color: "#1A1A1A" }}
+              style={{ color: "var(--ink-strong)" }}
             >
               Documentation
             </h1>
             <p
               className="text-lg md:text-xl leading-relaxed max-w-2xl"
-              style={{ color: "#7A7A72" }}
+              style={{ color: "var(--ink-muted)" }}
             >
               Everything you need to build with 9Ruby. From quick starts to deep API
               references — find the guide that fits your workflow.
@@ -131,18 +131,18 @@ export default function DocsPage() {
                 >
                   <span
                     className="group-hover:text-[#C41A3B] transition-colors"
-                    style={{ color: "#7A7A72" }}
+                    style={{ color: "var(--ink-muted)" }}
                   >
                     {section.icon}
                   </span>
                 </div>
                 <h3
                   className="text-lg font-semibold tracking-tight mb-2"
-                  style={{ color: "#1A1A1A" }}
+                  style={{ color: "var(--ink-strong)" }}
                 >
                   {section.title}
                 </h3>
-                <p className="leading-relaxed text-sm mb-4" style={{ color: "#B8B8B0" }}>
+                <p className="leading-relaxed text-sm mb-4" style={{ color: "var(--ink-soft)" }}>
                   {section.description}
                 </p>
                 <span
@@ -159,13 +159,13 @@ export default function DocsPage() {
           <div className="text-center py-8" data-reveal>
             <h2
               className="text-4xl md:text-5xl font-serif italic tracking-tighter mb-4"
-              style={{ color: "#1A1A1A" }}
+              style={{ color: "var(--ink-strong)" }}
             >
               Can&apos;t find what you need?
             </h2>
             <p
               className="text-lg mb-10 max-w-md mx-auto"
-              style={{ color: "#B8B8B0" }}
+              style={{ color: "var(--ink-soft)" }}
             >
               Our team is here to help. Reach out and we&apos;ll point you in the right direction.
             </p>

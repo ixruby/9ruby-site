@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <main id="main-content" className="relative min-h-screen" style={{ background: "#F8F7F4" }}>
+    <main id="main-content" className="relative min-h-screen" style={{ background: "var(--page-bg)" }}>
       <Navbar />
       <Breadcrumb items={[{ label: "Contact" }]} />
 
@@ -35,50 +35,50 @@ export default function ContactPage() {
           <div className="grid lg:grid-cols-5 gap-6">
             {/* Contact form */}
             <div className="lg:col-span-3 p-8 lg:p-10 rounded-2xl bg-white" style={{ border: "1px solid rgba(0,0,0,0.04)" }}>
-              <h2 className="text-2xl font-semibold tracking-tight mb-2" style={{ color: "#1A1A1A" }}>
+              <h2 className="text-2xl font-semibold tracking-tight mb-2" style={{ color: "var(--ink-strong)" }}>
                 Send us a message
               </h2>
-              <p className="text-sm mb-8" style={{ color: "#B8B8B0" }}>
+              <p className="text-sm mb-8" style={{ color: "var(--ink-soft)" }}>
                 Fill out the form and we will get back to you within 24 hours.
               </p>
 
               <form className="space-y-5">
                 <div className="grid sm:grid-cols-2 gap-5">
                   <div>
-                    <label className="block text-sm mb-2 font-medium" style={{ color: "#7A7A72" }}>Name</label>
+                    <label className="block text-sm mb-2 font-medium" style={{ color: "var(--ink-muted)" }}>Name</label>
                     <input
                       type="text"
                       placeholder="Your name"
                       className="w-full h-11 px-4 rounded-xl bg-white text-sm focus:outline-none transition-all"
-                      style={{ border: "1px solid rgba(0,0,0,0.08)", color: "#1A1A1A" }}
+                      style={{ border: "1px solid rgba(0,0,0,0.08)", color: "var(--ink-strong)" }}
                     />
                   </div>
                   <div>
-                    <label className="block text-sm mb-2 font-medium" style={{ color: "#7A7A72" }}>Email</label>
+                    <label className="block text-sm mb-2 font-medium" style={{ color: "var(--ink-muted)" }}>Email</label>
                     <input
                       type="email"
                       placeholder="you@company.com"
                       className="w-full h-11 px-4 rounded-xl bg-white text-sm focus:outline-none transition-all"
-                      style={{ border: "1px solid rgba(0,0,0,0.08)", color: "#1A1A1A" }}
+                      style={{ border: "1px solid rgba(0,0,0,0.08)", color: "var(--ink-strong)" }}
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-sm mb-2 font-medium" style={{ color: "#7A7A72" }}>Company</label>
+                  <label className="block text-sm mb-2 font-medium" style={{ color: "var(--ink-muted)" }}>Company</label>
                   <input
                     type="text"
                     placeholder="Your company (optional)"
                     className="w-full h-11 px-4 rounded-xl bg-white text-sm focus:outline-none transition-all"
-                    style={{ border: "1px solid rgba(0,0,0,0.08)", color: "#1A1A1A" }}
+                    style={{ border: "1px solid rgba(0,0,0,0.08)", color: "var(--ink-strong)" }}
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm mb-2 font-medium" style={{ color: "#7A7A72" }}>What do you need?</label>
+                  <label className="block text-sm mb-2 font-medium" style={{ color: "var(--ink-muted)" }}>What do you need?</label>
                   <select
                     className="w-full h-11 px-4 rounded-xl bg-white text-sm focus:outline-none transition-all appearance-none cursor-pointer"
-                    style={{ border: "1px solid rgba(0,0,0,0.08)", color: "#7A7A72" }}
+                    style={{ border: "1px solid rgba(0,0,0,0.08)", color: "var(--ink-muted)" }}
                   >
                     <option value="">Select a service</option>
                     <option value="chatbots">AI Chatbots & Agents</option>
@@ -95,10 +95,10 @@ export default function ContactPage() {
                 </div>
 
                 <div>
-                  <label className="block text-sm mb-2 font-medium" style={{ color: "#7A7A72" }}>Budget range</label>
+                  <label className="block text-sm mb-2 font-medium" style={{ color: "var(--ink-muted)" }}>Budget range</label>
                   <select
                     className="w-full h-11 px-4 rounded-xl bg-white text-sm focus:outline-none transition-all appearance-none cursor-pointer"
-                    style={{ border: "1px solid rgba(0,0,0,0.08)", color: "#7A7A72" }}
+                    style={{ border: "1px solid rgba(0,0,0,0.08)", color: "var(--ink-muted)" }}
                   >
                     <option value="">Select budget range</option>
                     <option value="1k">Under $1,000</option>
@@ -111,12 +111,12 @@ export default function ContactPage() {
                 </div>
 
                 <div>
-                  <label className="block text-sm mb-2 font-medium" style={{ color: "#7A7A72" }}>Message</label>
+                  <label className="block text-sm mb-2 font-medium" style={{ color: "var(--ink-muted)" }}>Message</label>
                   <textarea
                     rows={5}
                     placeholder="Tell us about your project, goals, and timeline..."
                     className="w-full px-4 py-3 rounded-xl bg-white text-sm focus:outline-none transition-all resize-none"
-                    style={{ border: "1px solid rgba(0,0,0,0.08)", color: "#1A1A1A" }}
+                    style={{ border: "1px solid rgba(0,0,0,0.08)", color: "var(--ink-strong)" }}
                   />
                 </div>
 
@@ -144,8 +144,8 @@ export default function ContactPage() {
                   <MessageSquare size={16} className="text-emerald-500" />
                 </div>
                 <div>
-                  <h3 className="text-sm font-semibold mb-0.5" style={{ color: "#1A1A1A" }}>WhatsApp</h3>
-                  <p className="text-xs leading-relaxed" style={{ color: "#7A7A72" }}>Chat with us directly. Usually reply within minutes.</p>
+                  <h3 className="text-sm font-semibold mb-0.5" style={{ color: "var(--ink-strong)" }}>WhatsApp</h3>
+                  <p className="text-xs leading-relaxed" style={{ color: "var(--ink-muted)" }}>Chat with us directly. Usually reply within minutes.</p>
                 </div>
               </a>
 
@@ -156,24 +156,24 @@ export default function ContactPage() {
                 style={{ border: "1px solid rgba(0,0,0,0.04)" }}
               >
                 <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0" style={{ background: "rgba(0,0,0,0.02)", border: "1px solid rgba(0,0,0,0.06)" }}>
-                  <Mail size={16} className="group-hover:text-[#C41A3B] transition-colors" style={{ color: "#7A7A72" }} />
+                  <Mail size={16} className="group-hover:text-[#C41A3B] transition-colors" style={{ color: "var(--ink-muted)" }} />
                 </div>
                 <div>
-                  <h3 className="text-sm font-semibold mb-0.5" style={{ color: "#1A1A1A" }}>Email</h3>
-                  <p className="text-xs" style={{ color: "#7A7A72" }}>hello@9ruby.com</p>
-                  <p className="text-xs mt-1" style={{ color: "#B8B8B0" }}>Reply within 24 hours</p>
+                  <h3 className="text-sm font-semibold mb-0.5" style={{ color: "var(--ink-strong)" }}>Email</h3>
+                  <p className="text-xs" style={{ color: "var(--ink-muted)" }}>hello@9ruby.com</p>
+                  <p className="text-xs mt-1" style={{ color: "var(--ink-soft)" }}>Reply within 24 hours</p>
                 </div>
               </a>
 
               {/* Phone */}
               <div className="flex items-start gap-4 p-5 rounded-2xl bg-white" style={{ border: "1px solid rgba(0,0,0,0.04)" }}>
                 <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0" style={{ background: "rgba(0,0,0,0.02)", border: "1px solid rgba(0,0,0,0.06)" }}>
-                  <Phone size={16} style={{ color: "#7A7A72" }} />
+                  <Phone size={16} style={{ color: "var(--ink-muted)" }} />
                 </div>
                 <div>
-                  <h3 className="text-sm font-semibold mb-0.5" style={{ color: "#1A1A1A" }}>Phone</h3>
-                  <p className="text-xs" style={{ color: "#7A7A72" }}>Enterprise clients only</p>
-                  <p className="text-xs mt-1" style={{ color: "#B8B8B0" }}>Schedule via form</p>
+                  <h3 className="text-sm font-semibold mb-0.5" style={{ color: "var(--ink-strong)" }}>Phone</h3>
+                  <p className="text-xs" style={{ color: "var(--ink-muted)" }}>Enterprise clients only</p>
+                  <p className="text-xs mt-1" style={{ color: "var(--ink-soft)" }}>Schedule via form</p>
                 </div>
               </div>
 
@@ -186,22 +186,22 @@ export default function ContactPage() {
                 style={{ border: "1px solid rgba(0,0,0,0.04)" }}
               >
                 <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0" style={{ background: "rgba(0,0,0,0.02)", border: "1px solid rgba(0,0,0,0.06)" }}>
-                  <Globe size={16} className="group-hover:text-[#C41A3B] transition-colors" style={{ color: "#7A7A72" }} />
+                  <Globe size={16} className="group-hover:text-[#C41A3B] transition-colors" style={{ color: "var(--ink-muted)" }} />
                 </div>
                 <div>
-                  <h3 className="text-sm font-semibold mb-0.5" style={{ color: "#1A1A1A" }}>9Ruby AI</h3>
-                  <p className="text-xs" style={{ color: "#7A7A72" }}>Chat with our AI assistant for instant answers.</p>
+                  <h3 className="text-sm font-semibold mb-0.5" style={{ color: "var(--ink-strong)" }}>9Ruby AI</h3>
+                  <p className="text-xs" style={{ color: "var(--ink-muted)" }}>Chat with our AI assistant for instant answers.</p>
                 </div>
               </a>
 
               {/* Hours */}
               <div className="flex items-start gap-4 p-5 rounded-2xl bg-white" style={{ border: "1px solid rgba(0,0,0,0.04)" }}>
                 <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0" style={{ background: "rgba(0,0,0,0.02)", border: "1px solid rgba(0,0,0,0.06)" }}>
-                  <Clock size={16} style={{ color: "#7A7A72" }} />
+                  <Clock size={16} style={{ color: "var(--ink-muted)" }} />
                 </div>
                 <div>
-                  <h3 className="text-sm font-semibold mb-0.5" style={{ color: "#1A1A1A" }}>Hours</h3>
-                  <p className="text-xs" style={{ color: "#7A7A72" }}>Humans: Mon-Fri, 9am-6pm IST</p>
+                  <h3 className="text-sm font-semibold mb-0.5" style={{ color: "var(--ink-strong)" }}>Hours</h3>
+                  <p className="text-xs" style={{ color: "var(--ink-muted)" }}>Humans: Mon-Fri, 9am-6pm IST</p>
                   <p className="text-xs text-[#C41A3B]/60 mt-0.5">AI Agents: 24/7/365</p>
                 </div>
               </div>
@@ -209,12 +209,12 @@ export default function ContactPage() {
               {/* Location */}
               <div className="flex items-start gap-4 p-5 rounded-2xl bg-white" style={{ border: "1px solid rgba(0,0,0,0.04)" }}>
                 <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0" style={{ background: "rgba(0,0,0,0.02)", border: "1px solid rgba(0,0,0,0.06)" }}>
-                  <MapPin size={16} style={{ color: "#7A7A72" }} />
+                  <MapPin size={16} style={{ color: "var(--ink-muted)" }} />
                 </div>
                 <div>
-                  <h3 className="text-sm font-semibold mb-0.5" style={{ color: "#1A1A1A" }}>Location</h3>
-                  <p className="text-xs" style={{ color: "#7A7A72" }}>Remote-first. Global delivery.</p>
-                  <p className="text-xs mt-1" style={{ color: "#B8B8B0" }}>Based in India</p>
+                  <h3 className="text-sm font-semibold mb-0.5" style={{ color: "var(--ink-strong)" }}>Location</h3>
+                  <p className="text-xs" style={{ color: "var(--ink-muted)" }}>Remote-first. Global delivery.</p>
+                  <p className="text-xs mt-1" style={{ color: "var(--ink-soft)" }}>Based in India</p>
                 </div>
               </div>
             </div>

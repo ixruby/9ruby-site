@@ -122,11 +122,11 @@ export default function ColorPalettePage() {
   }
 
   return (
-    <main className="relative min-h-screen" style={{ background: "#F8F7F4" }}>
+    <main className="relative min-h-screen" style={{ background: "var(--page-bg)" }}>
       <Navbar />
       <Breadcrumb items={[{ label: "Tools", href: "/tools" }, { label: "Color Palette" }]} />
       <div className="relative max-w-5xl mx-auto px-6 pt-8 pb-24">
-        <Link href="/tools" className="inline-flex items-center gap-2 text-sm hover:text-[#1A1A1A] transition-colors mb-12" style={{ color: "#7A7A72" }}>
+        <Link href="/tools" className="inline-flex items-center gap-2 text-sm hover:text-[#1A1A1A] transition-colors mb-12" style={{ color: "var(--ink-muted)" }}>
           <ArrowLeft size={14} /> Back to Tools
         </Link>
 
@@ -134,10 +134,10 @@ export default function ColorPalettePage() {
           <div className="text-[11px] font-semibold tracking-[0.12em] uppercase" style={{ color: "#C41A3B" }}>
             Free Tool
           </div>
-          <h1 className="text-4xl md:text-5xl font-serif italic tracking-tighter leading-[1.1] mb-4 mt-3" style={{ color: "#1A1A1A" }}>
+          <h1 className="text-4xl md:text-5xl font-serif italic tracking-tighter leading-[1.1] mb-4 mt-3" style={{ color: "var(--ink-strong)" }}>
             Color Palette Generator
           </h1>
-          <p className="text-lg max-w-xl leading-relaxed" style={{ color: "#7A7A72" }}>
+          <p className="text-lg max-w-xl leading-relaxed" style={{ color: "var(--ink-muted)" }}>
             Generate harmonious color palettes instantly. Lock colors you like, pick a harmony type, and export as CSS variables.
           </p>
         </div>
@@ -148,7 +148,7 @@ export default function ColorPalettePage() {
             value={harmony}
             onChange={e => setHarmony(e.target.value as Harmony)}
             className="h-10 px-4 bg-white border border-black/[0.08] rounded-xl text-sm focus:border-[#C41A3B]/50 focus:ring-1 focus:ring-[#C41A3B]/20 focus:outline-none appearance-none cursor-pointer"
-            style={{ color: "#1A1A1A" }}
+            style={{ color: "var(--ink-strong)" }}
           >
             <option value="random">Random</option>
             <option value="analogous">Analogous</option>
@@ -168,7 +168,7 @@ export default function ColorPalettePage() {
             onClick={undo}
             disabled={history.length === 0}
             className="h-10 px-4 bg-white border border-black/[0.08] rounded-xl text-sm hover:border-black/[0.12] disabled:opacity-30 disabled:cursor-not-allowed transition-all"
-            style={{ color: "#7A7A72" }}
+            style={{ color: "var(--ink-muted)" }}
           >
             Undo
           </button>
@@ -176,13 +176,13 @@ export default function ColorPalettePage() {
           <button
             onClick={copyAllAsCSS}
             className="h-10 px-4 bg-white border border-black/[0.08] rounded-xl text-sm hover:border-black/[0.12] transition-all flex items-center gap-2"
-            style={{ color: "#7A7A72" }}
+            style={{ color: "var(--ink-muted)" }}
           >
             {copied === -1 ? <Check size={14} className="text-emerald-500" /> : <Copy size={14} />}
             {copied === -1 ? "Copied!" : "Copy CSS"}
           </button>
 
-          <span className="text-xs ml-auto hidden sm:block font-mono" style={{ color: "#B8B8B0" }}>Press spacebar to regenerate</span>
+          <span className="text-xs ml-auto hidden sm:block font-mono" style={{ color: "var(--ink-soft)" }}>Press spacebar to regenerate</span>
         </div>
 
         {/* Palette display */}
@@ -234,7 +234,7 @@ export default function ColorPalettePage() {
         <div className="grid md:grid-cols-2 gap-4">
           {/* Text preview */}
           <div className="p-6 bg-white border border-black/[0.04] rounded-2xl">
-            <h3 className="text-sm font-semibold tracking-tight mb-4" style={{ color: "#7A7A72" }}>Text Preview</h3>
+            <h3 className="text-sm font-semibold tracking-tight mb-4" style={{ color: "var(--ink-muted)" }}>Text Preview</h3>
             <div className="space-y-3">
               {colors.map((c, i) => (
                 <p key={i} className="text-base" style={{ color: c.hex }}>
@@ -246,7 +246,7 @@ export default function ColorPalettePage() {
 
           {/* Button preview */}
           <div className="p-6 bg-white border border-black/[0.04] rounded-2xl">
-            <h3 className="text-sm font-semibold tracking-tight mb-4" style={{ color: "#7A7A72" }}>Button Preview</h3>
+            <h3 className="text-sm font-semibold tracking-tight mb-4" style={{ color: "var(--ink-muted)" }}>Button Preview</h3>
             <div className="flex flex-wrap gap-3">
               {colors.map((c, i) => (
                 <button
@@ -268,8 +268,8 @@ export default function ColorPalettePage() {
 
         {/* Keyboard hint */}
         <div className="mt-8 text-center">
-          <kbd className="px-3 py-1.5 bg-white border border-black/[0.06] rounded-lg text-xs font-mono" style={{ color: "#7A7A72" }}>Space</kbd>
-          <span className="text-xs ml-2" style={{ color: "#B8B8B0" }}>to generate new palette</span>
+          <kbd className="px-3 py-1.5 bg-white border border-black/[0.06] rounded-lg text-xs font-mono" style={{ color: "var(--ink-muted)" }}>Space</kbd>
+          <span className="text-xs ml-2" style={{ color: "var(--ink-soft)" }}>to generate new palette</span>
         </div>
       </div>
 

@@ -19,12 +19,12 @@ export default function PageHeader({
       </div>
 
       {/* Serif headline */}
-      <h1 className="text-5xl md:text-6xl lg:text-[80px] font-serif italic tracking-tighter leading-[0.9] mb-8" style={{ color: "#1A1A1A" }}>
+      <h1 className="text-5xl md:text-6xl lg:text-[80px] font-serif italic tracking-tighter leading-[0.9] mb-8" style={{ color: "var(--ink-strong)" }}>
         {title}
         {highlight && (
           <>
             <br />
-            <span style={{ color: "#7A7A72" }}>
+            <span style={{ color: "var(--ink-muted)" }}>
               {highlight}
             </span>
           </>
@@ -32,7 +32,7 @@ export default function PageHeader({
       </h1>
 
       {description && (
-        <p className="text-lg md:text-xl leading-relaxed max-w-2xl" style={{ color: "#7A7A72" }}>
+        <p className="text-lg md:text-xl leading-relaxed max-w-2xl" style={{ color: "var(--ink-muted)" }}>
           {description}
         </p>
       )}

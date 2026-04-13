@@ -132,7 +132,7 @@ const tools = [
 
 export default function ToolsPage() {
   return (
-    <main className="relative min-h-screen" style={{ background: "#F8F7F4" }}>
+    <main className="relative min-h-screen" style={{ background: "var(--page-bg)" }}>
       <Navbar />
       <Breadcrumb items={[{ label: "Tools" }]} />
 
@@ -143,12 +143,12 @@ export default function ToolsPage() {
             <div className="text-[11px] font-semibold tracking-[0.12em] uppercase" style={{ color: "#C41A3B" }}>
               Free Tools
             </div>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif italic tracking-tighter leading-[1.05] mb-6 mt-4" style={{ color: "#1A1A1A" }}>
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif italic tracking-tighter leading-[1.05] mb-6 mt-4" style={{ color: "var(--ink-strong)" }}>
               AI-powered tools,
               <br />
-              <span style={{ color: "#7A7A72" }}>zero cost.</span>
+              <span style={{ color: "var(--ink-muted)" }}>zero cost.</span>
             </h1>
-            <p className="text-lg max-w-lg mx-auto leading-relaxed" style={{ color: "#7A7A72" }}>
+            <p className="text-lg max-w-lg mx-auto leading-relaxed" style={{ color: "var(--ink-muted)" }}>
               A growing collection of free developer and marketing tools powered by 9Ruby AI. No sign-up required.
             </p>
           </div>
@@ -168,13 +168,13 @@ export default function ToolsPage() {
                   <span className={`text-[10px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full ${t.badgeColor}`}>{t.badge}</span>
                 </div>
 
-                <h3 className="text-[15px] font-semibold tracking-tight mb-2 group-hover:text-[#1A1A1A] transition-colors" style={{ color: "#1A1A1A" }}>{t.title}</h3>
-                <p className="text-[13px] leading-relaxed mb-5 flex-1" style={{ color: "#7A7A72" }}>{t.desc}</p>
+                <h3 className="text-[15px] font-semibold tracking-tight mb-2 group-hover:text-[#1A1A1A] transition-colors" style={{ color: "var(--ink-strong)" }}>{t.title}</h3>
+                <p className="text-[13px] leading-relaxed mb-5 flex-1" style={{ color: "var(--ink-muted)" }}>{t.desc}</p>
 
                 <div className="flex items-center justify-between pt-4 border-t border-black/[0.04]">
                   <div className="flex items-center gap-2">
                     <div className={`w-1.5 h-1.5 rounded-full ${t.status === "Live" ? "bg-emerald-400" : "bg-yellow-400"}`} />
-                    <span className="text-[11px] font-mono" style={{ color: "#B8B8B0" }}>{t.status}</span>
+                    <span className="text-[11px] font-mono" style={{ color: "var(--ink-soft)" }}>{t.status}</span>
                   </div>
                   <span className="flex items-center gap-1.5 text-[13px] font-medium text-[#7A7A72] group-hover:text-[#C41A3B] group-hover:gap-2.5 transition-all duration-300">
                     Open <ArrowRight size={12} />
@@ -189,8 +189,8 @@ export default function ToolsPage() {
             <div className="w-10 h-10 rounded-xl bg-[#C41A3B]/10 border border-[#C41A3B]/20 flex items-center justify-center mx-auto mb-5">
               <Sparkles size={18} className="text-[#C41A3B]" />
             </div>
-            <h3 className="text-xl font-semibold tracking-tight mb-2" style={{ color: "#1A1A1A" }}>More tools coming soon</h3>
-            <p className="text-sm max-w-md mx-auto mb-6 leading-relaxed" style={{ color: "#7A7A72" }}>We&apos;re building new AI-powered tools every week. Request a tool or suggest an idea.</p>
+            <h3 className="text-xl font-semibold tracking-tight mb-2" style={{ color: "var(--ink-strong)" }}>More tools coming soon</h3>
+            <p className="text-sm max-w-md mx-auto mb-6 leading-relaxed" style={{ color: "var(--ink-muted)" }}>We&apos;re building new AI-powered tools every week. Request a tool or suggest an idea.</p>
             <Link href="/contact" className="inline-flex items-center gap-2 h-10 px-6 rounded-full bg-[#1A1A1A] text-[#F8F7F4] text-sm font-medium hover:bg-[#333] transition-all duration-300">
               Request a tool <ArrowRight size={14} />
             </Link>

@@ -109,11 +109,11 @@ export default function MetaGeneratorPage() {
   const selectCls = "w-full h-11 px-4 bg-white border border-black/[0.08] rounded-xl text-sm focus:border-[#C41A3B]/50 focus:ring-1 focus:ring-[#C41A3B]/20 focus:outline-none appearance-none transition-all"
 
   return (
-    <main className="relative min-h-screen" style={{ background: "#F8F7F4" }}>
+    <main className="relative min-h-screen" style={{ background: "var(--page-bg)" }}>
       <Navbar />
       <Breadcrumb items={[{ label: "Tools", href: "/tools" }, { label: "Meta Generator" }]} />
       <div className="relative max-w-5xl mx-auto px-6 pt-8 pb-24">
-        <Link href="/tools" className="inline-flex items-center gap-2 text-sm hover:text-[#1A1A1A] transition-colors mb-12" style={{ color: "#7A7A72" }}>
+        <Link href="/tools" className="inline-flex items-center gap-2 text-sm hover:text-[#1A1A1A] transition-colors mb-12" style={{ color: "var(--ink-muted)" }}>
           <ArrowLeft size={14} /> Back to Tools
         </Link>
 
@@ -121,10 +121,10 @@ export default function MetaGeneratorPage() {
           <div className="text-[11px] font-semibold tracking-[0.12em] uppercase" style={{ color: "#C41A3B" }}>
             Free Tool
           </div>
-          <h1 className="text-4xl md:text-5xl font-serif italic tracking-tighter leading-[1.1] mb-4 mt-3" style={{ color: "#1A1A1A" }}>
+          <h1 className="text-4xl md:text-5xl font-serif italic tracking-tighter leading-[1.1] mb-4 mt-3" style={{ color: "var(--ink-strong)" }}>
             Meta Tag Generator
           </h1>
-          <p className="text-lg max-w-xl leading-relaxed" style={{ color: "#7A7A72" }}>
+          <p className="text-lg max-w-xl leading-relaxed" style={{ color: "var(--ink-muted)" }}>
             Generate perfect SEO, Open Graph, and Twitter Card meta tags. Preview how your page will look when shared.
           </p>
         </div>
@@ -136,47 +136,47 @@ export default function MetaGeneratorPage() {
               <h3 className="text-[11px] font-semibold tracking-[0.12em] uppercase" style={{ color: "#C41A3B" }}>Basic SEO</h3>
 
               <div>
-                <label className="text-xs mb-1.5 block" style={{ color: "#7A7A72" }}>Page Title *</label>
+                <label className="text-xs mb-1.5 block" style={{ color: "var(--ink-muted)" }}>Page Title *</label>
                 <input
                   type="text" value={form.title} onChange={e => update("title", e.target.value)}
                   placeholder="My Awesome Website"
                   className={inputCls}
-                  style={{ color: "#1A1A1A" }}
+                  style={{ color: "var(--ink-strong)" }}
                 />
                 <div className="flex justify-between mt-1.5">
-                  <span className="text-xs" style={{ color: "#B8B8B0" }}>Recommended: 50-60 characters</span>
-                  <span className={`text-xs font-mono ${form.title.length > 60 ? "text-yellow-500" : ""}`} style={form.title.length <= 60 ? { color: "#B8B8B0" } : undefined}>{form.title.length}/60</span>
+                  <span className="text-xs" style={{ color: "var(--ink-soft)" }}>Recommended: 50-60 characters</span>
+                  <span className={`text-xs font-mono ${form.title.length > 60 ? "text-yellow-500" : ""}`} style={form.title.length <= 60 ? { color: "var(--ink-soft)" } : undefined}>{form.title.length}/60</span>
                 </div>
               </div>
 
               <div>
-                <label className="text-xs mb-1.5 block" style={{ color: "#7A7A72" }}>Meta Description *</label>
+                <label className="text-xs mb-1.5 block" style={{ color: "var(--ink-muted)" }}>Meta Description *</label>
                 <textarea
                   value={form.description} onChange={e => update("description", e.target.value)}
                   placeholder="A brief description of your page content..."
                   rows={3}
                   className="w-full px-4 py-3 bg-white border border-black/[0.08] rounded-xl placeholder:text-[#B8B8B0] focus:border-[#C41A3B]/50 focus:ring-1 focus:ring-[#C41A3B]/20 focus:outline-none text-sm resize-none transition-all"
-                  style={{ color: "#1A1A1A" }}
+                  style={{ color: "var(--ink-strong)" }}
                 />
                 <div className="flex justify-between mt-1.5">
-                  <span className="text-xs" style={{ color: "#B8B8B0" }}>Recommended: 150-160 characters</span>
-                  <span className={`text-xs font-mono ${form.description.length > 160 ? "text-yellow-500" : ""}`} style={form.description.length <= 160 ? { color: "#B8B8B0" } : undefined}>{form.description.length}/160</span>
+                  <span className="text-xs" style={{ color: "var(--ink-soft)" }}>Recommended: 150-160 characters</span>
+                  <span className={`text-xs font-mono ${form.description.length > 160 ? "text-yellow-500" : ""}`} style={form.description.length <= 160 ? { color: "var(--ink-soft)" } : undefined}>{form.description.length}/160</span>
                 </div>
               </div>
 
               <div>
-                <label className="text-xs mb-1.5 block" style={{ color: "#7A7A72" }}>Keywords</label>
-                <input type="text" value={form.keywords} onChange={e => update("keywords", e.target.value)} placeholder="seo, tools, web development" className={inputCls} style={{ color: "#1A1A1A" }} />
+                <label className="text-xs mb-1.5 block" style={{ color: "var(--ink-muted)" }}>Keywords</label>
+                <input type="text" value={form.keywords} onChange={e => update("keywords", e.target.value)} placeholder="seo, tools, web development" className={inputCls} style={{ color: "var(--ink-strong)" }} />
               </div>
 
               <div>
-                <label className="text-xs mb-1.5 block" style={{ color: "#7A7A72" }}>Page URL</label>
-                <input type="text" value={form.url} onChange={e => update("url", e.target.value)} placeholder="https://example.com/page" className={inputCls} style={{ color: "#1A1A1A" }} />
+                <label className="text-xs mb-1.5 block" style={{ color: "var(--ink-muted)" }}>Page URL</label>
+                <input type="text" value={form.url} onChange={e => update("url", e.target.value)} placeholder="https://example.com/page" className={inputCls} style={{ color: "var(--ink-strong)" }} />
               </div>
 
               <div>
-                <label className="text-xs mb-1.5 block" style={{ color: "#7A7A72" }}>Author</label>
-                <input type="text" value={form.author} onChange={e => update("author", e.target.value)} placeholder="John Doe" className={inputCls} style={{ color: "#1A1A1A" }} />
+                <label className="text-xs mb-1.5 block" style={{ color: "var(--ink-muted)" }}>Author</label>
+                <input type="text" value={form.author} onChange={e => update("author", e.target.value)} placeholder="John Doe" className={inputCls} style={{ color: "var(--ink-strong)" }} />
               </div>
             </div>
 
@@ -184,15 +184,15 @@ export default function MetaGeneratorPage() {
               <h3 className="text-[11px] font-semibold tracking-[0.12em] uppercase" style={{ color: "#C41A3B" }}>Social / Open Graph</h3>
 
               <div>
-                <label className="text-xs mb-1.5 block" style={{ color: "#7A7A72" }}>OG Image URL</label>
-                <input type="text" value={form.ogImage} onChange={e => update("ogImage", e.target.value)} placeholder="https://example.com/og-image.jpg" className={inputCls} style={{ color: "#1A1A1A" }} />
-                <span className="text-xs mt-1 block" style={{ color: "#B8B8B0" }}>Recommended: 1200x630px</span>
+                <label className="text-xs mb-1.5 block" style={{ color: "var(--ink-muted)" }}>OG Image URL</label>
+                <input type="text" value={form.ogImage} onChange={e => update("ogImage", e.target.value)} placeholder="https://example.com/og-image.jpg" className={inputCls} style={{ color: "var(--ink-strong)" }} />
+                <span className="text-xs mt-1 block" style={{ color: "var(--ink-soft)" }}>Recommended: 1200x630px</span>
               </div>
 
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className="text-xs mb-1.5 block" style={{ color: "#7A7A72" }}>OG Type</label>
-                  <select value={form.ogType} onChange={e => update("ogType", e.target.value)} className={selectCls} style={{ color: "#1A1A1A" }}>
+                  <label className="text-xs mb-1.5 block" style={{ color: "var(--ink-muted)" }}>OG Type</label>
+                  <select value={form.ogType} onChange={e => update("ogType", e.target.value)} className={selectCls} style={{ color: "var(--ink-strong)" }}>
                     <option value="website">website</option>
                     <option value="article">article</option>
                     <option value="product">product</option>
@@ -200,26 +200,26 @@ export default function MetaGeneratorPage() {
                   </select>
                 </div>
                 <div>
-                  <label className="text-xs mb-1.5 block" style={{ color: "#7A7A72" }}>Locale</label>
-                  <input type="text" value={form.locale} onChange={e => update("locale", e.target.value)} className={inputCls} style={{ color: "#1A1A1A" }} />
+                  <label className="text-xs mb-1.5 block" style={{ color: "var(--ink-muted)" }}>Locale</label>
+                  <input type="text" value={form.locale} onChange={e => update("locale", e.target.value)} className={inputCls} style={{ color: "var(--ink-strong)" }} />
                 </div>
               </div>
 
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className="text-xs mb-1.5 block" style={{ color: "#7A7A72" }}>Site Name</label>
-                  <input type="text" value={form.siteName} onChange={e => update("siteName", e.target.value)} placeholder="My Website" className={inputCls} style={{ color: "#1A1A1A" }} />
+                  <label className="text-xs mb-1.5 block" style={{ color: "var(--ink-muted)" }}>Site Name</label>
+                  <input type="text" value={form.siteName} onChange={e => update("siteName", e.target.value)} placeholder="My Website" className={inputCls} style={{ color: "var(--ink-strong)" }} />
                 </div>
                 <div>
-                  <label className="text-xs mb-1.5 block" style={{ color: "#7A7A72" }}>Twitter Handle</label>
-                  <input type="text" value={form.twitterHandle} onChange={e => update("twitterHandle", e.target.value)} placeholder="@username" className={inputCls} style={{ color: "#1A1A1A" }} />
+                  <label className="text-xs mb-1.5 block" style={{ color: "var(--ink-muted)" }}>Twitter Handle</label>
+                  <input type="text" value={form.twitterHandle} onChange={e => update("twitterHandle", e.target.value)} placeholder="@username" className={inputCls} style={{ color: "var(--ink-strong)" }} />
                 </div>
               </div>
 
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className="text-xs mb-1.5 block" style={{ color: "#7A7A72" }}>Robots</label>
-                  <select value={form.robots} onChange={e => update("robots", e.target.value)} className={selectCls} style={{ color: "#1A1A1A" }}>
+                  <label className="text-xs mb-1.5 block" style={{ color: "var(--ink-muted)" }}>Robots</label>
+                  <select value={form.robots} onChange={e => update("robots", e.target.value)} className={selectCls} style={{ color: "var(--ink-strong)" }}>
                     <option value="index, follow">index, follow</option>
                     <option value="noindex, follow">noindex, follow</option>
                     <option value="index, nofollow">index, nofollow</option>
@@ -227,10 +227,10 @@ export default function MetaGeneratorPage() {
                   </select>
                 </div>
                 <div>
-                  <label className="text-xs mb-1.5 block" style={{ color: "#7A7A72" }}>Theme Color</label>
+                  <label className="text-xs mb-1.5 block" style={{ color: "var(--ink-muted)" }}>Theme Color</label>
                   <div className="flex gap-2">
                     <input type="color" value={form.themeColor} onChange={e => update("themeColor", e.target.value)} className="w-11 h-11 bg-transparent border border-black/[0.08] rounded-xl cursor-pointer" />
-                    <input type="text" value={form.themeColor} onChange={e => update("themeColor", e.target.value)} className="flex-1 h-11 px-4 bg-white border border-black/[0.08] rounded-xl text-sm font-mono focus:border-[#C41A3B]/50 focus:ring-1 focus:ring-[#C41A3B]/20 focus:outline-none transition-all" style={{ color: "#1A1A1A" }} />
+                    <input type="text" value={form.themeColor} onChange={e => update("themeColor", e.target.value)} className="flex-1 h-11 px-4 bg-white border border-black/[0.08] rounded-xl text-sm font-mono focus:border-[#C41A3B]/50 focus:ring-1 focus:ring-[#C41A3B]/20 focus:outline-none transition-all" style={{ color: "var(--ink-strong)" }} />
                   </div>
                 </div>
               </div>
@@ -260,14 +260,14 @@ export default function MetaGeneratorPage() {
                 {form.ogImage ? (
                   <div className="w-full h-40 bg-cover bg-center" style={{ backgroundImage: `url(${form.ogImage})` }} />
                 ) : (
-                  <div className="w-full h-40 bg-black/[0.02] flex items-center justify-center text-sm" style={{ color: "#B8B8B0" }}>
+                  <div className="w-full h-40 bg-black/[0.02] flex items-center justify-center text-sm" style={{ color: "var(--ink-soft)" }}>
                     No image set
                   </div>
                 )}
                 <div className="p-4">
-                  <div className="text-xs uppercase font-mono" style={{ color: "#B8B8B0" }}>{form.siteName || (form.url ? new URL(form.url).hostname : "example.com")}</div>
-                  <div className="font-semibold mt-1 truncate" style={{ color: "#1A1A1A" }}>{form.title || "Page Title"}</div>
-                  <div className="text-sm mt-1 line-clamp-2" style={{ color: "#7A7A72" }}>{form.description || "Description..."}</div>
+                  <div className="text-xs uppercase font-mono" style={{ color: "var(--ink-soft)" }}>{form.siteName || (form.url ? new URL(form.url).hostname : "example.com")}</div>
+                  <div className="font-semibold mt-1 truncate" style={{ color: "var(--ink-strong)" }}>{form.title || "Page Title"}</div>
+                  <div className="text-sm mt-1 line-clamp-2" style={{ color: "var(--ink-muted)" }}>{form.description || "Description..."}</div>
                 </div>
               </div>
             </div>
@@ -292,7 +292,7 @@ export default function MetaGeneratorPage() {
                 <button
                   onClick={copyToClipboard}
                   className="text-sm flex items-center gap-1.5 transition-colors hover:text-[#1A1A1A]"
-                  style={{ color: "#7A7A72" }}
+                  style={{ color: "var(--ink-muted)" }}
                 >
                   {copied ? <Check size={14} className="text-emerald-500" /> : <Copy size={14} />}
                   {copied ? "Copied!" : "Copy"}

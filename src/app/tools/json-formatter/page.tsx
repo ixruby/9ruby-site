@@ -157,11 +157,11 @@ export default function JsonFormatterPage() {
   const stats = formatted ? getStats(formatted) : null
 
   return (
-    <main className="relative min-h-screen" style={{ background: "#F8F7F4" }}>
+    <main className="relative min-h-screen" style={{ background: "var(--page-bg)" }}>
       <Navbar />
       <Breadcrumb items={[{ label: "Tools", href: "/tools" }, { label: "JSON Formatter" }]} />
       <div className="relative max-w-6xl mx-auto px-6 pt-8 pb-24">
-        <Link href="/tools" className="inline-flex items-center gap-2 text-sm hover:text-[#1A1A1A] transition-colors mb-12" style={{ color: "#7A7A72" }}>
+        <Link href="/tools" className="inline-flex items-center gap-2 text-sm hover:text-[#1A1A1A] transition-colors mb-12" style={{ color: "var(--ink-muted)" }}>
           <ArrowLeft size={14} /> Back to Tools
         </Link>
 
@@ -169,10 +169,10 @@ export default function JsonFormatterPage() {
           <div className="text-[11px] font-semibold tracking-[0.12em] uppercase" style={{ color: "#C41A3B" }}>
             Free Tool
           </div>
-          <h1 className="text-4xl md:text-5xl font-serif italic tracking-tighter leading-[1.1] mb-4 mt-3" style={{ color: "#1A1A1A" }}>
+          <h1 className="text-4xl md:text-5xl font-serif italic tracking-tighter leading-[1.1] mb-4 mt-3" style={{ color: "var(--ink-strong)" }}>
             JSON Formatter
           </h1>
-          <p className="text-lg max-w-xl leading-relaxed" style={{ color: "#7A7A72" }}>
+          <p className="text-lg max-w-xl leading-relaxed" style={{ color: "var(--ink-muted)" }}>
             Paste JSON to auto-format with syntax highlighting. Validate, beautify, minify, and download.
           </p>
         </div>
@@ -182,22 +182,22 @@ export default function JsonFormatterPage() {
           <button onClick={() => format()} className="h-10 px-5 bg-[#1A1A1A] text-[#F8F7F4] text-sm font-medium rounded-full hover:bg-[#333] transition-all flex items-center gap-2">
             <Maximize2 size={14} /> Beautify
           </button>
-          <button onClick={minify} className="h-10 px-5 bg-white border border-black/[0.08] rounded-xl text-sm hover:border-black/[0.12] transition-all flex items-center gap-2" style={{ color: "#7A7A72" }}>
+          <button onClick={minify} className="h-10 px-5 bg-white border border-black/[0.08] rounded-xl text-sm hover:border-black/[0.12] transition-all flex items-center gap-2" style={{ color: "var(--ink-muted)" }}>
             <Minimize2 size={14} /> Minify
           </button>
-          <button onClick={copyOutput} disabled={!formatted && !input} className="h-10 px-5 bg-white border border-black/[0.08] rounded-xl text-sm hover:border-black/[0.12] disabled:opacity-30 disabled:cursor-not-allowed transition-all flex items-center gap-2" style={{ color: "#7A7A72" }}>
+          <button onClick={copyOutput} disabled={!formatted && !input} className="h-10 px-5 bg-white border border-black/[0.08] rounded-xl text-sm hover:border-black/[0.12] disabled:opacity-30 disabled:cursor-not-allowed transition-all flex items-center gap-2" style={{ color: "var(--ink-muted)" }}>
             {copied ? <Check size={14} className="text-emerald-500" /> : <Copy size={14} />}
             {copied ? "Copied!" : "Copy"}
           </button>
-          <button onClick={downloadJson} disabled={!formatted} className="h-10 px-5 bg-white border border-black/[0.08] rounded-xl text-sm hover:border-black/[0.12] disabled:opacity-30 disabled:cursor-not-allowed transition-all flex items-center gap-2" style={{ color: "#7A7A72" }}>
+          <button onClick={downloadJson} disabled={!formatted} className="h-10 px-5 bg-white border border-black/[0.08] rounded-xl text-sm hover:border-black/[0.12] disabled:opacity-30 disabled:cursor-not-allowed transition-all flex items-center gap-2" style={{ color: "var(--ink-muted)" }}>
             <Download size={14} /> Download
           </button>
-          <button onClick={() => { setInput(""); setFormatted(""); setError("") }} className="h-10 px-5 bg-white border border-black/[0.08] rounded-xl text-sm hover:border-black/[0.12] transition-all flex items-center gap-2" style={{ color: "#7A7A72" }}>
+          <button onClick={() => { setInput(""); setFormatted(""); setError("") }} className="h-10 px-5 bg-white border border-black/[0.08] rounded-xl text-sm hover:border-black/[0.12] transition-all flex items-center gap-2" style={{ color: "var(--ink-muted)" }}>
             <Trash2 size={14} /> Clear
           </button>
 
           <div className="flex items-center gap-2 ml-auto">
-            <span className="text-xs font-mono" style={{ color: "#B8B8B0" }}>Indent:</span>
+            <span className="text-xs font-mono" style={{ color: "var(--ink-soft)" }}>Indent:</span>
             {[2, 4].map(n => (
               <button
                 key={n}
@@ -223,7 +223,7 @@ export default function JsonFormatterPage() {
           {/* Input */}
           <div className="relative border-b lg:border-b-0 lg:border-r border-black/[0.04]">
             <div className="flex items-center justify-between px-5 py-3 border-b border-black/[0.04] bg-white">
-              <span className="text-xs font-mono" style={{ color: "#B8B8B0" }}>INPUT</span>
+              <span className="text-xs font-mono" style={{ color: "var(--ink-soft)" }}>INPUT</span>
               <button onClick={loadSample} className="text-xs text-[#C41A3B] hover:text-[#333] transition-colors font-medium">
                 Load sample
               </button>
@@ -234,15 +234,15 @@ export default function JsonFormatterPage() {
               placeholder="Paste your JSON here..."
               spellCheck={false}
               className="w-full h-[500px] p-5 bg-white placeholder:text-[#B8B8B0] font-mono text-sm leading-relaxed resize-none focus:outline-none"
-              style={{ color: "#1A1A1A" }}
+              style={{ color: "var(--ink-strong)" }}
             />
           </div>
 
           {/* Output */}
           <div className="relative">
             <div className="flex items-center justify-between px-5 py-3 border-b border-black/[0.04] bg-white">
-              <span className="text-xs font-mono" style={{ color: "#B8B8B0" }}>OUTPUT</span>
-              {formatted && <span className="text-xs font-mono" style={{ color: "#B8B8B0" }}>{getLineCount(formatted)} lines</span>}
+              <span className="text-xs font-mono" style={{ color: "var(--ink-soft)" }}>OUTPUT</span>
+              {formatted && <span className="text-xs font-mono" style={{ color: "var(--ink-soft)" }}>{getLineCount(formatted)} lines</span>}
             </div>
             <div className="h-[500px] overflow-auto p-5" style={{ background: "#1A1A1A" }}>
               {formatted ? (
@@ -251,7 +251,7 @@ export default function JsonFormatterPage() {
                   dangerouslySetInnerHTML={{ __html: syntaxHighlight(formatted) }}
                 />
               ) : (
-                <div className="flex items-center justify-center h-full text-sm" style={{ color: "#B8B8B0" }}>
+                <div className="flex items-center justify-center h-full text-sm" style={{ color: "var(--ink-soft)" }}>
                   {input.trim() ? "Fix JSON errors to see output" : "Formatted output appears here"}
                 </div>
               )}
@@ -264,19 +264,19 @@ export default function JsonFormatterPage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
             <div className="p-4 bg-white border border-black/[0.04] rounded-2xl text-center">
               <div className="text-xl font-bold font-mono text-[#C41A3B]">{stats.keys}</div>
-              <div className="text-xs mt-1" style={{ color: "#7A7A72" }}>Keys</div>
+              <div className="text-xs mt-1" style={{ color: "var(--ink-muted)" }}>Keys</div>
             </div>
             <div className="p-4 bg-white border border-black/[0.04] rounded-2xl text-center">
               <div className="text-xl font-bold font-mono text-emerald-500">{stats.values}</div>
-              <div className="text-xs mt-1" style={{ color: "#7A7A72" }}>Values</div>
+              <div className="text-xs mt-1" style={{ color: "var(--ink-muted)" }}>Values</div>
             </div>
             <div className="p-4 bg-white border border-black/[0.04] rounded-2xl text-center">
               <div className="text-xl font-bold font-mono text-blue-500">{stats.depth}</div>
-              <div className="text-xs mt-1" style={{ color: "#7A7A72" }}>Max Depth</div>
+              <div className="text-xs mt-1" style={{ color: "var(--ink-muted)" }}>Max Depth</div>
             </div>
             <div className="p-4 bg-white border border-black/[0.04] rounded-2xl text-center">
               <div className="text-xl font-bold font-mono text-yellow-500">{stats.size}</div>
-              <div className="text-xs mt-1" style={{ color: "#7A7A72" }}>Size</div>
+              <div className="text-xs mt-1" style={{ color: "var(--ink-muted)" }}>Size</div>
             </div>
           </div>
         )}

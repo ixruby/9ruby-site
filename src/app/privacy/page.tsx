@@ -98,7 +98,7 @@ export default function PrivacyPage() {
   const revealRef = useScrollReveal()
 
   return (
-    <main id="main-content" className="relative min-h-screen" style={{ background: "#F8F7F4" }}>
+    <main id="main-content" className="relative min-h-screen" style={{ background: "var(--page-bg)" }}>
       <Navbar />
       <Breadcrumb items={[{ label: "Privacy Policy" }]} />
 
@@ -116,18 +116,18 @@ export default function PrivacyPage() {
             </div>
             <h1
               className="text-5xl md:text-6xl font-serif italic tracking-tighter leading-[0.9] mb-6"
-              style={{ color: "#1A1A1A" }}
+              style={{ color: "var(--ink-strong)" }}
             >
               Privacy Policy
             </h1>
-            <p className="text-sm" style={{ color: "#B8B8B0" }}>
+            <p className="text-sm" style={{ color: "var(--ink-soft)" }}>
               Last updated: April 2026
             </p>
           </div>
 
           {/* Intro */}
           <div className="mb-12" data-reveal>
-            <p className="text-[15px] leading-relaxed" style={{ color: "#7A7A72" }}>
+            <p className="text-[15px] leading-relaxed" style={{ color: "var(--ink-muted)" }}>
               IX Ruby Agency (&quot;9Ruby&quot;, &quot;we&quot;, &quot;us&quot;, or &quot;our&quot;) operates the
               9Ruby platform, including the website at home.9ruby.com, the AI platform at
               ai.9ruby.com, and all related services. This policy describes how we collect,
@@ -143,7 +143,7 @@ export default function PrivacyPage() {
           >
             <h2
               className="text-sm font-semibold mb-4"
-              style={{ color: "#1A1A1A" }}
+              style={{ color: "var(--ink-strong)" }}
             >
               Contents
             </h2>
@@ -153,7 +153,7 @@ export default function PrivacyPage() {
                   <a
                     href={`#${s.id}`}
                     className="text-[13px] hover:underline transition-colors"
-                    style={{ color: "#7A7A72" }}
+                    style={{ color: "var(--ink-muted)" }}
                   >
                     {i + 1}. {s.title}
                   </a>
@@ -168,7 +168,7 @@ export default function PrivacyPage() {
               <section key={s.id} id={s.id} data-reveal>
                 <h2
                   className="text-2xl font-serif italic tracking-tight mb-6"
-                  style={{ color: "#1A1A1A" }}
+                  style={{ color: "var(--ink-strong)" }}
                 >
                   {i + 1}. {s.title}
                 </h2>
@@ -177,7 +177,7 @@ export default function PrivacyPage() {
                     <p
                       key={j}
                       className="text-[15px] leading-relaxed"
-                      style={{ color: "#7A7A72" }}
+                      style={{ color: "var(--ink-muted)" }}
                     >
                       {paragraph}
                     </p>
@@ -189,7 +189,7 @@ export default function PrivacyPage() {
 
           {/* Bottom CTA */}
           <div className="mt-20 text-center" data-reveal>
-            <p className="text-sm mb-6" style={{ color: "#B8B8B0" }}>
+            <p className="text-sm mb-6" style={{ color: "var(--ink-soft)" }}>
               Questions about your data? We&apos;re happy to help.
             </p>
             <Link

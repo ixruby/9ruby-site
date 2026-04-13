@@ -12,11 +12,11 @@ import Breadcrumb from "@/components/Breadcrumb"
 export const metadata: Metadata = {
   title: "About | 9Ruby",
   description:
-    "The story behind Nine Ruby. An AI-powered agency building the future of autonomous marketing and technology.",
+    "The story behind 9Ruby and IX Ruby. AI agents, websites, voice systems, and automation for modern brands.",
   openGraph: {
     title: "About | 9Ruby",
     description:
-      "The story behind Nine Ruby. An AI-powered agency building the future of autonomous marketing and technology.",
+      "The story behind 9Ruby and IX Ruby. AI agents, websites, voice systems, and automation for modern brands.",
   },
 }
 
@@ -39,12 +39,12 @@ const values = [
   {
     icon: <Zap size={18} />,
     title: "Speed as a Feature",
-    desc: "Deploy in hours, not weeks. Our autonomous agents work 24/7. While others plan, we ship.",
+    desc: "Deploy in hours, not weeks. Our AI agents work 24/7. While others plan, we ship.",
   },
   {
     icon: <Globe size={18} />,
     title: "Global by Default",
-    desc: "Built for the world from day one. Multi-language, multi-timezone, multi-platform. No borders.",
+    desc: "Built for the world from day one. Multi-language, multi-timezone, and cross-channel by default.",
   },
   {
     icon: <Code size={18} />,
@@ -56,22 +56,22 @@ const values = [
 const stats = [
   { value: "2024", label: "Founded" },
   { value: "50+", label: "Brands served" },
-  { value: "10+", label: "Products shipped" },
+  { value: "14+", label: "Service lanes" },
   { value: "24/7", label: "Agent uptime" },
 ]
 
 const milestones = [
   { year: "2024 Q1", event: "IX Ruby Agency founded. First client projects delivered." },
   { year: "2024 Q2", event: "Launched 9Ruby AI platform with Claude integration." },
-  { year: "2024 Q3", event: "Design Studio and Dispatch mode shipped. 10+ templates live." },
-  { year: "2024 Q4", event: "OpenClaw open-sourced. 50+ brands onboarded." },
-  { year: "2025 Q1", event: "Rubix Terminal beta. Ruby OS architecture started." },
-  { year: "2025 Q2", event: "Enterprise tier launched. Global infrastructure expanded to 29 regions." },
+  { year: "2024 Q3", event: "Design Studio and dispatch workflows shipped. Templates and utility tools expanded." },
+  { year: "2024 Q4", event: "OpenClaw open-sourced. Service delivery matured into a tighter AI-native agency model." },
+  { year: "2025 Q1", event: "Ruby OS pricing language and IX Ruby service architecture converged into one operating ladder." },
+  { year: "2025 Q2", event: "9Ruby became the public front door for AI access, managed execution, and flagship system builds." },
 ]
 
 export default function AboutPage() {
   return (
-    <main id="main-content" className="relative min-h-screen" style={{ background: "#F8F7F4" }}>
+    <main id="main-content" className="relative min-h-screen" style={{ background: "var(--page-bg)" }}>
       <Navbar />
       <Breadcrumb items={[{ label: "About" }]} />
 
@@ -79,9 +79,9 @@ export default function AboutPage() {
         <div className="relative max-w-[1200px] mx-auto px-6">
           <PageHeader
             tag="About"
-            title="Nine is final."
-            highlight="We build what's next."
-            description="IX Ruby is an AI-powered agency that deploys autonomous agents to plan, create, and scale brands. No handoffs. No delays. Just results."
+            title="One brand."
+            highlight="Three delivery lanes."
+            description="9Ruby is the public operating layer for IX Ruby. AI access, managed execution, and flagship systems now live inside one structure."
           />
 
           {/* Stats */}
@@ -92,10 +92,10 @@ export default function AboutPage() {
                 className="p-8 rounded-2xl bg-white text-center hover:shadow-lg hover:shadow-black/[0.03] transition-all"
                 style={{ border: "1px solid rgba(0,0,0,0.04)" }}
               >
-                <span className="text-4xl md:text-5xl font-serif italic tracking-tighter block mb-2" style={{ color: "#1A1A1A" }}>
+                <span className="text-4xl md:text-5xl font-serif italic tracking-tighter block mb-2" style={{ color: "var(--ink-strong)" }}>
                   {s.value}
                 </span>
-                <span className="font-mono text-xs uppercase tracking-wider" style={{ color: "#B8B8B0" }}>
+                <span className="font-mono text-xs uppercase tracking-wider" style={{ color: "var(--ink-soft)" }}>
                   {s.label}
                 </span>
               </div>
@@ -106,28 +106,28 @@ export default function AboutPage() {
           <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 mb-28">
             <div>
               <span className="text-[11px] font-semibold tracking-[0.12em] uppercase mb-4 block" style={{ color: "#C41A3B" }}>Our story</span>
-              <h2 className="text-3xl md:text-4xl font-serif italic tracking-tighter mb-8" style={{ color: "#1A1A1A" }}>
+              <h2 className="text-3xl md:text-4xl font-serif italic tracking-tighter mb-8" style={{ color: "var(--ink-strong)" }}>
                 The story
               </h2>
-              <div className="space-y-5 leading-relaxed text-[15px]" style={{ color: "#7A7A72" }}>
+              <div className="space-y-5 leading-relaxed text-[15px]" style={{ color: "var(--ink-muted)" }}>
                 <p>
-                  Nine Ruby started with a simple observation: most agencies are slow, expensive, and disconnected from the AI revolution. Brands deserve better.
+                  9Ruby started with a simple observation: most agencies are slow, fragmented, and disconnected from modern AI workflows. Brands end up managing too many vendors and too many tools.
                 </p>
                 <p>
-                  We built an agency where AI agents do the heavy lifting — research, strategy, content creation, design, analytics — while humans provide creative direction and quality control.
+                  We built IX Ruby so AI agents could handle research, strategy, content creation, design support, and analytics while humans provide direction, taste, and quality control.
                 </p>
                 <p>
-                  The result is faster delivery, lower costs, and campaigns that learn and improve autonomously. Our agents work around the clock, across every channel, optimizing for the metrics that matter.
+                  That model worked, but the offer was spread across separate names, pages, and pricing stories. So we collapsed it into one clearer ladder: 9Ruby AI for access, IX Ruby for execution, and Black-tier builds for full systems.
                 </p>
                 <p>
-                  Today, the 9Ruby ecosystem spans a full AI platform, a template library, developer tools, and an open-source agent framework. We&apos;re building the operating system for the AI-native agency.
+                  Today, the 9Ruby ecosystem spans AI tools, agency services, websites, voice systems, templates, utilities, and internal infrastructure. The goal is simple: one brand, one structure, faster outcomes.
                 </p>
               </div>
             </div>
 
             <div>
               <span className="text-[11px] font-semibold tracking-[0.12em] uppercase mb-4 block" style={{ color: "#C41A3B" }}>Milestones</span>
-              <h2 className="text-3xl md:text-4xl font-serif italic tracking-tighter mb-8" style={{ color: "#1A1A1A" }}>
+              <h2 className="text-3xl md:text-4xl font-serif italic tracking-tighter mb-8" style={{ color: "var(--ink-strong)" }}>
                 Timeline
               </h2>
               <div className="space-y-0">
@@ -145,7 +145,7 @@ export default function AboutPage() {
                     </div>
                     <div className="pb-8">
                       <span className="font-mono text-xs text-[#C41A3B] block mb-1.5">{m.year}</span>
-                      <p className="text-sm leading-relaxed" style={{ color: "#7A7A72" }}>{m.event}</p>
+                      <p className="text-sm leading-relaxed" style={{ color: "var(--ink-muted)" }}>{m.event}</p>
                     </div>
                   </div>
                 ))}
@@ -156,12 +156,12 @@ export default function AboutPage() {
           {/* Mission */}
           <div className="mb-28 relative overflow-hidden rounded-2xl bg-white p-12 lg:p-20 text-center" style={{ border: "1px solid rgba(0,0,0,0.04)" }}>
             <div className="relative">
-              <Bot size={28} className="mx-auto mb-6" style={{ color: "#B8B8B0" }} />
-              <h2 className="text-4xl lg:text-5xl font-serif italic tracking-tighter mb-6" style={{ color: "#1A1A1A" }}>
+              <Bot size={28} className="mx-auto mb-6" style={{ color: "var(--ink-soft)" }} />
+              <h2 className="text-4xl lg:text-5xl font-serif italic tracking-tighter mb-6" style={{ color: "var(--ink-strong)" }}>
                 Our mission
               </h2>
-              <p className="text-lg leading-relaxed max-w-2xl mx-auto" style={{ color: "#7A7A72" }}>
-                To make world-class marketing and technology accessible to every brand on earth — through autonomous AI agents that never sleep, never burn out, and never stop improving.
+              <p className="text-lg leading-relaxed max-w-2xl mx-auto" style={{ color: "var(--ink-muted)" }}>
+                To give brands one operating layer for AI, execution, and launch systems instead of a patchwork of freelancers, tools, and disconnected retainers.
               </p>
             </div>
           </div>
@@ -169,7 +169,7 @@ export default function AboutPage() {
           {/* Values */}
           <div className="mb-28">
             <span className="text-[11px] font-semibold tracking-[0.12em] uppercase mb-4 block" style={{ color: "#C41A3B" }}>Principles</span>
-            <h2 className="text-3xl md:text-4xl font-serif italic tracking-tighter mb-12" style={{ color: "#1A1A1A" }}>
+            <h2 className="text-3xl md:text-4xl font-serif italic tracking-tighter mb-12" style={{ color: "var(--ink-strong)" }}>
               What we believe
             </h2>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -180,10 +180,10 @@ export default function AboutPage() {
                   style={{ border: "1px solid rgba(0,0,0,0.04)" }}
                 >
                   <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-5" style={{ background: "rgba(0,0,0,0.02)", border: "1px solid rgba(0,0,0,0.06)" }}>
-                    <span className="group-hover:text-[#C41A3B] transition-colors" style={{ color: "#7A7A72" }}>{v.icon}</span>
+                    <span className="group-hover:text-[#C41A3B] transition-colors" style={{ color: "var(--ink-muted)" }}>{v.icon}</span>
                   </div>
-                  <h3 className="text-lg font-semibold tracking-tight mb-2" style={{ color: "#1A1A1A" }}>{v.title}</h3>
-                  <p className="leading-relaxed text-sm" style={{ color: "#B8B8B0" }}>{v.desc}</p>
+                  <h3 className="text-lg font-semibold tracking-tight mb-2" style={{ color: "var(--ink-strong)" }}>{v.title}</h3>
+                  <p className="leading-relaxed text-sm" style={{ color: "var(--ink-soft)" }}>{v.desc}</p>
                 </div>
               ))}
             </div>
@@ -192,10 +192,10 @@ export default function AboutPage() {
           {/* Team */}
           <div className="mb-28">
             <span className="text-[11px] font-semibold tracking-[0.12em] uppercase mb-4 block" style={{ color: "#C41A3B" }}>People</span>
-            <h2 className="text-3xl md:text-4xl font-serif italic tracking-tighter mb-3" style={{ color: "#1A1A1A" }}>
+            <h2 className="text-3xl md:text-4xl font-serif italic tracking-tighter mb-3" style={{ color: "var(--ink-strong)" }}>
               The team
             </h2>
-            <p className="mb-12 max-w-lg text-[15px] leading-relaxed" style={{ color: "#B8B8B0" }}>
+            <p className="mb-12 max-w-lg text-[15px] leading-relaxed" style={{ color: "var(--ink-soft)" }}>
               A lean crew of humans + an army of AI agents. We believe the best teams are small, fast, and AI-augmented.
             </p>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -212,12 +212,12 @@ export default function AboutPage() {
                 >
                   <div className="w-14 h-14 rounded-full flex items-center justify-center mb-5" style={{ background: "rgba(0,0,0,0.02)", border: "1px solid rgba(0,0,0,0.06)" }}>
                     {t.tag === "Human"
-                      ? <Users size={20} style={{ color: "#B8B8B0" }} />
+                      ? <Users size={20} style={{ color: "var(--ink-soft)" }} />
                       : <Bot size={20} className="text-[#C41A3B]/50" />
                     }
                   </div>
-                  <h4 className="text-[15px] font-semibold mb-0.5" style={{ color: "#1A1A1A" }}>{t.name}</h4>
-                  <p className="text-xs mb-3" style={{ color: "#B8B8B0" }}>{t.role}</p>
+                  <h4 className="text-[15px] font-semibold mb-0.5" style={{ color: "var(--ink-strong)" }}>{t.name}</h4>
+                  <p className="text-xs mb-3" style={{ color: "var(--ink-soft)" }}>{t.role}</p>
                   <span className={`font-mono text-[10px] uppercase tracking-wider px-2.5 py-1 rounded-full ${
                     t.tag === "Human"
                       ? "text-[#7A7A72]"
@@ -236,10 +236,10 @@ export default function AboutPage() {
           {/* PRISM */}
           <div className="mb-28">
             <span className="text-[11px] font-semibold tracking-[0.12em] uppercase mb-4 block" style={{ color: "#C41A3B" }}>Infrastructure</span>
-            <h2 className="text-3xl md:text-4xl font-serif italic tracking-tighter mb-3" style={{ color: "#1A1A1A" }}>
+            <h2 className="text-3xl md:text-4xl font-serif italic tracking-tighter mb-3" style={{ color: "var(--ink-strong)" }}>
               Meet PRISM.
             </h2>
-            <p className="mb-12 max-w-lg text-[15px] leading-relaxed" style={{ color: "#B8B8B0" }}>
+            <p className="mb-12 max-w-lg text-[15px] leading-relaxed" style={{ color: "var(--ink-soft)" }}>
               Five specialized agents running on our private infrastructure. Each owns a domain. Together they operate like a full studio.
             </p>
             <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
@@ -261,8 +261,8 @@ export default function AboutPage() {
                   >
                     {agent.name}
                   </div>
-                  <div className="text-sm font-semibold mb-3" style={{ color: "#1A1A1A" }}>{agent.role}</div>
-                  <p className="text-xs leading-relaxed" style={{ color: "#B8B8B0" }}>{agent.desc}</p>
+                  <div className="text-sm font-semibold mb-3" style={{ color: "var(--ink-strong)" }}>{agent.role}</div>
+                  <p className="text-xs leading-relaxed" style={{ color: "var(--ink-soft)" }}>{agent.desc}</p>
                 </div>
               ))}
             </div>
@@ -270,10 +270,10 @@ export default function AboutPage() {
 
           {/* CTA */}
           <div className="text-center py-8">
-            <h2 className="text-4xl md:text-5xl font-serif italic tracking-tighter mb-4" style={{ color: "#1A1A1A" }}>
+            <h2 className="text-4xl md:text-5xl font-serif italic tracking-tighter mb-4" style={{ color: "var(--ink-strong)" }}>
               Want to join the mission?
             </h2>
-            <p className="text-lg mb-10 max-w-md mx-auto" style={{ color: "#B8B8B0" }}>
+            <p className="text-lg mb-10 max-w-md mx-auto" style={{ color: "var(--ink-soft)" }}>
               We&apos;re always looking for talented humans (and training new agents).
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4">
@@ -287,7 +287,7 @@ export default function AboutPage() {
               <Link
                 href="/ecosystem"
                 className="rounded-full px-7 h-10 text-sm font-medium hover:bg-black/[0.02] transition-all inline-flex items-center"
-                style={{ border: "1px solid rgba(0,0,0,0.08)", color: "#7A7A72" }}
+                style={{ border: "1px solid rgba(0,0,0,0.08)", color: "var(--ink-muted)" }}
               >
                 Explore ecosystem
               </Link>

@@ -299,10 +299,10 @@ function renderStars(rating: number) {
               ? "fill-amber-300 text-amber-300"
               : ""
           }
-          style={i >= full && !(i === full && hasHalf) ? { color: "#B8B8B0" } : {}}
+          style={i >= full && !(i === full && hasHalf) ? { color: "var(--ink-soft)" } : {}}
         />
       ))}
-      <span className="text-[11px] ml-1" style={{ color: "#B8B8B0" }}>{rating}</span>
+      <span className="text-[11px] ml-1" style={{ color: "var(--ink-soft)" }}>{rating}</span>
     </div>
   )
 }
@@ -360,7 +360,7 @@ export default function TemplatesPage() {
   const featuredTemplates = templates.filter((t) => t.featured).slice(0, 3)
 
   return (
-    <main className="relative min-h-screen" ref={revealRef} style={{ background: "#F8F7F4" }}>
+    <main className="relative min-h-screen" ref={revealRef} style={{ background: "var(--page-bg)" }}>
       <Navbar />
       <Breadcrumb items={[{ label: "Templates" }]} />
 
@@ -380,17 +380,17 @@ export default function TemplatesPage() {
             data-reveal-delay={100}
             className="reveal-item text-5xl md:text-6xl lg:text-[80px] font-serif italic leading-[0.95] tracking-tighter mb-6"
           >
-            <span style={{ color: "#1A1A1A" }}>
+            <span style={{ color: "var(--ink-strong)" }}>
               Production-ready templates,
             </span>
             <br />
-            <span style={{ color: "#B8B8B0" }}>launch in minutes.</span>
+            <span style={{ color: "var(--ink-soft)" }}>launch in minutes.</span>
           </h1>
           <p
             data-reveal
             data-reveal-delay={200}
             className="reveal-item text-lg leading-relaxed max-w-2xl mx-auto"
-            style={{ color: "#7A7A72" }}
+            style={{ color: "var(--ink-muted)" }}
           >
             Free and premium templates built with Next.js, React, and Tailwind CSS. Clone, customize, and ship your next project today.
           </p>
@@ -402,8 +402,8 @@ export default function TemplatesPage() {
         {/* --- Featured Templates --- */}
         <div className="mb-20" data-reveal data-reveal-delay={0}>
           <div className="reveal-item flex items-center gap-3 mb-8">
-            <Sparkles size={16} style={{ color: "#B8B8B0" }} />
-            <h2 className="text-xl font-semibold tracking-tight" style={{ color: "#1A1A1A" }}>Featured Templates</h2>
+            <Sparkles size={16} style={{ color: "var(--ink-soft)" }} />
+            <h2 className="text-xl font-semibold tracking-tight" style={{ color: "var(--ink-strong)" }}>Featured Templates</h2>
           </div>
           <div className="grid md:grid-cols-3 gap-4">
             {featuredTemplates.map((t, i) => (
@@ -432,31 +432,31 @@ export default function TemplatesPage() {
 
                 <div className="flex flex-col flex-1 p-6">
                   <div className="flex items-center justify-between mb-3">
-                    <span className="font-mono text-[10px] uppercase tracking-wider" style={{ color: "#B8B8B0" }}>{t.category}</span>
+                    <span className="font-mono text-[10px] uppercase tracking-wider" style={{ color: "var(--ink-soft)" }}>{t.category}</span>
                   </div>
 
-                  <h3 className="text-lg font-semibold tracking-tight mb-2 group-hover:text-[#1A1A1A] transition-colors" style={{ color: "#1A1A1A" }}>{t.name}</h3>
-                  <p className="text-sm mb-4 leading-relaxed" style={{ color: "#7A7A72" }}>{t.description}</p>
+                  <h3 className="text-lg font-semibold tracking-tight mb-2 group-hover:text-[#1A1A1A] transition-colors" style={{ color: "var(--ink-strong)" }}>{t.name}</h3>
+                  <p className="text-sm mb-4 leading-relaxed" style={{ color: "var(--ink-muted)" }}>{t.description}</p>
 
                   <div className="flex items-center gap-4 mb-4">
                     {renderStars(t.stars)}
                     <div className="flex items-center gap-1">
-                      <Download size={11} style={{ color: "#B8B8B0" }} />
-                      <span className="text-[11px]" style={{ color: "#B8B8B0" }}>{t.downloads}</span>
+                      <Download size={11} style={{ color: "var(--ink-soft)" }} />
+                      <span className="text-[11px]" style={{ color: "var(--ink-soft)" }}>{t.downloads}</span>
                     </div>
                   </div>
 
                   {/* Tech stack */}
                   <div className="flex flex-wrap gap-1.5 mb-5">
                     {t.techStack.map((tech) => (
-                      <span key={tech} className="px-2 py-0.5 font-mono text-[10px] rounded" style={{ color: "#B8B8B0", border: "1px solid rgba(0,0,0,0.06)" }}>
+                      <span key={tech} className="px-2 py-0.5 font-mono text-[10px] rounded" style={{ color: "var(--ink-soft)", border: "1px solid rgba(0,0,0,0.06)" }}>
                         {tech}
                       </span>
                     ))}
                   </div>
 
                   <div className="flex items-center justify-between mt-auto pt-4" style={{ borderTop: "1px solid rgba(0,0,0,0.04)" }}>
-                    <span className="text-xl font-serif italic tracking-tight" style={{ color: "#1A1A1A" }}>{t.price}</span>
+                    <span className="text-xl font-serif italic tracking-tight" style={{ color: "var(--ink-strong)" }}>{t.price}</span>
                     <a
                       href={t.stripeUrl}
                       target="_blank"
@@ -486,7 +486,7 @@ export default function TemplatesPage() {
                     ? "bg-[#1A1A1A] text-[#F8F7F4]"
                     : "hover:bg-black/[0.02]"
                 }`}
-                style={cat !== activeCategory ? { border: "1px solid rgba(0,0,0,0.06)", color: "#B8B8B0" } : {}}
+                style={cat !== activeCategory ? { border: "1px solid rgba(0,0,0,0.06)", color: "var(--ink-soft)" } : {}}
               >
                 {cat}
               </button>
@@ -495,12 +495,12 @@ export default function TemplatesPage() {
 
           {/* Sort dropdown */}
           <div className="flex items-center gap-2">
-            <SlidersHorizontal size={14} style={{ color: "#B8B8B0" }} />
+            <SlidersHorizontal size={14} style={{ color: "var(--ink-soft)" }} />
             <select
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value as typeof sortBy)}
               className="bg-white text-sm px-3 py-2 rounded-lg appearance-none cursor-pointer transition-colors focus:outline-none pr-8"
-              style={{ border: "1px solid rgba(0,0,0,0.06)", color: "#7A7A72", backgroundImage: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%23999' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e")`, backgroundPosition: "right 0.5rem center", backgroundRepeat: "no-repeat", backgroundSize: "1.5em 1.5em" }}
+              style={{ border: "1px solid rgba(0,0,0,0.06)", color: "var(--ink-muted)", backgroundImage: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%23999' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e")`, backgroundPosition: "right 0.5rem center", backgroundRepeat: "no-repeat", backgroundSize: "1.5em 1.5em" }}
             >
               {sortOptions.map((opt) => (
                 <option key={opt} value={opt}>
@@ -512,7 +512,7 @@ export default function TemplatesPage() {
         </div>
 
         {/* Template count */}
-        <p className="font-mono text-xs mb-6" style={{ color: "#B8B8B0" }}>
+        <p className="font-mono text-xs mb-6" style={{ color: "var(--ink-soft)" }}>
           Showing {filtered.length} template{filtered.length !== 1 ? "s" : ""}
           {activeCategory !== "All" && ` in ${activeCategory}`}
         </p>
@@ -558,35 +558,35 @@ export default function TemplatesPage() {
                 </div>
 
                 {/* Category label */}
-                <span className="absolute top-3 left-3 font-mono text-[10px] bg-white/90 backdrop-blur-sm px-2 py-1 rounded" style={{ color: "#7A7A72" }}>
+                <span className="absolute top-3 left-3 font-mono text-[10px] bg-white/90 backdrop-blur-sm px-2 py-1 rounded" style={{ color: "var(--ink-muted)" }}>
                   {t.category}
                 </span>
               </div>
 
               <div className="flex flex-col flex-1 p-5">
                 <div className="flex items-center justify-between mb-2">
-                  <h3 className="text-base font-semibold tracking-tight group-hover:text-[#1A1A1A] transition-colors" style={{ color: "#1A1A1A" }}>{t.name}</h3>
+                  <h3 className="text-base font-semibold tracking-tight group-hover:text-[#1A1A1A] transition-colors" style={{ color: "var(--ink-strong)" }}>{t.name}</h3>
                   {t.badge && (
-                    <span className="font-mono text-[9px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full" style={{ border: "1px solid rgba(0,0,0,0.06)", color: "#B8B8B0" }}>
+                    <span className="font-mono text-[9px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full" style={{ border: "1px solid rgba(0,0,0,0.06)", color: "var(--ink-soft)" }}>
                       {t.badge}
                     </span>
                   )}
                 </div>
 
-                <p className="text-xs mb-3 leading-relaxed line-clamp-2" style={{ color: "#7A7A72" }}>{t.description}</p>
+                <p className="text-xs mb-3 leading-relaxed line-clamp-2" style={{ color: "var(--ink-muted)" }}>{t.description}</p>
 
                 <div className="flex items-center gap-4 mb-3">
                   {renderStars(t.stars)}
                   <div className="flex items-center gap-1">
-                    <Download size={11} style={{ color: "#B8B8B0" }} />
-                    <span className="text-[11px]" style={{ color: "#B8B8B0" }}>{t.downloads}</span>
+                    <Download size={11} style={{ color: "var(--ink-soft)" }} />
+                    <span className="text-[11px]" style={{ color: "var(--ink-soft)" }}>{t.downloads}</span>
                   </div>
                 </div>
 
                 {/* Tech stack */}
                 <div className="flex flex-wrap gap-1.5 mb-4">
                   {t.techStack.map((tech) => (
-                    <span key={tech} className="px-2 py-0.5 font-mono text-[10px] rounded" style={{ color: "#B8B8B0", border: "1px solid rgba(0,0,0,0.04)" }}>
+                    <span key={tech} className="px-2 py-0.5 font-mono text-[10px] rounded" style={{ color: "var(--ink-soft)", border: "1px solid rgba(0,0,0,0.04)" }}>
                       {tech}
                     </span>
                   ))}
@@ -601,7 +601,7 @@ export default function TemplatesPage() {
                     <a
                       href={t.previewUrl}
                       className="flex items-center gap-1 text-xs transition-colors hover:text-[#1A1A1A]"
-                      style={{ color: "#B8B8B0" }}
+                      style={{ color: "var(--ink-soft)" }}
                     >
                       <Eye size={12} /> Preview
                     </a>
@@ -614,7 +614,7 @@ export default function TemplatesPage() {
                           ? "hover:bg-black/[0.02]"
                           : "bg-[#1A1A1A] hover:bg-[#1A1A1A]/90"
                       }`}
-                      style={t.price === "Free" ? { border: "1px solid rgba(0,0,0,0.06)", color: "#7A7A72" } : { color: "#F8F7F4" }}
+                      style={t.price === "Free" ? { border: "1px solid rgba(0,0,0,0.06)", color: "var(--ink-muted)" } : { color: "#F8F7F4" }}
                     >
                       {t.price === "Free" ? (
                         <><Download size={11} /> Download</>
@@ -632,11 +632,11 @@ export default function TemplatesPage() {
         {/* Empty state */}
         {filtered.length === 0 && (
           <div className="text-center py-20">
-            <p className="text-base mb-4" style={{ color: "#B8B8B0" }}>No templates found in this category.</p>
+            <p className="text-base mb-4" style={{ color: "var(--ink-soft)" }}>No templates found in this category.</p>
             <button
               onClick={() => setActiveCategory("All")}
               className="text-sm transition-colors hover:text-[#1A1A1A]"
-              style={{ color: "#7A7A72" }}
+              style={{ color: "var(--ink-muted)" }}
             >
               View all templates
             </button>
@@ -649,8 +649,8 @@ export default function TemplatesPage() {
             <span className="text-[11px] font-semibold tracking-[0.12em] uppercase mb-6 block" style={{ color: "#C41A3B" }}>
               Custom Work
             </span>
-            <h2 className="text-3xl lg:text-4xl font-serif italic tracking-tighter mb-4" style={{ color: "#1A1A1A" }}>Want a custom template?</h2>
-            <p className="text-base mb-8 max-w-lg mx-auto" style={{ color: "#7A7A72" }}>
+            <h2 className="text-3xl lg:text-4xl font-serif italic tracking-tighter mb-4" style={{ color: "var(--ink-strong)" }}>Want a custom template?</h2>
+            <p className="text-base mb-8 max-w-lg mx-auto" style={{ color: "var(--ink-muted)" }}>
               We design and build bespoke templates tailored to your brand, industry, and workflow. From concept to deployment.
             </p>
             <Link

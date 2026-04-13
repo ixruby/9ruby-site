@@ -3,7 +3,7 @@
 import {
   Bot, Globe, TrendingUp, Mail, BarChart3, Code, Smartphone,
   Palette, Video, Share2, ArrowRight, CheckCircle2,
-  Search, Lightbulb, Rocket,
+  Search, Lightbulb, Rocket, Mic, Layers, Orbit,
 } from "lucide-react"
 import Link from "next/link"
 import { useEffect, useRef } from "react"
@@ -27,7 +27,7 @@ const services = [
     icon: <Globe size={24} />,
     num: "02",
     title: "Website Design & Dev",
-    desc: "Full-stack websites from landing pages to platforms. AI-assisted design, hand-polished code.",
+    desc: "Full-stack websites from landing pages to business systems. AI-assisted design, hand-polished code.",
     features: ["Mobile-first responsive", "SEO optimized", "CMS & e-commerce ready"],
     metric: "48hr", metricLabel: "avg turnaround",
     cta: "Build My Site",
@@ -63,7 +63,7 @@ const services = [
     icon: <BarChart3 size={24} />,
     num: "06",
     title: "Analytics & Insights",
-    desc: "Real-time dashboards, custom reports, and AI-powered insights. Know exactly what works.",
+    desc: "Real-time dashboards, custom reports, and practical AI insights. Know exactly what works.",
     features: ["Custom dashboards", "Predictive analytics", "Automated reports"],
     metric: "Real-time", metricLabel: "data processing",
     cta: "Get Insights",
@@ -72,7 +72,7 @@ const services = [
     icon: <Code size={24} />,
     num: "07",
     title: "Custom Software",
-    desc: "Bespoke APIs, automation pipelines, internal tools, and SaaS platforms with modern stacks.",
+    desc: "Bespoke APIs, automation pipelines, internal tools, and SaaS products with modern stacks.",
     features: ["Full-stack development", "API integrations", "Cloud deployment"],
     metric: "100+", metricLabel: "projects delivered",
     cta: "Start Building",
@@ -104,6 +104,34 @@ const services = [
     metric: "1000+", metricLabel: "videos per month",
     cta: "Create Videos",
   },
+  {
+    icon: <Layers size={24} />,
+    num: "12",
+    title: "Launch Systems",
+    desc: "Offer architecture, landing pages, automations, CRM flows, and content ops built as one launch-ready operating system.",
+    features: ["Offer funnel design", "CRM and booking flows", "Launch dashboards"],
+    metric: "1 stack", metricLabel: "single system",
+    cta: "Unify My Launch",
+  },
+  {
+    icon: <Orbit size={24} />,
+    num: "13",
+    title: "Ecosystem Strategy",
+    desc: "We connect 9Ruby AI, IX Ruby services, templates, and internal tools into one brand system with clear execution lanes.",
+    features: ["Brand architecture", "Toolchain mapping", "Cross-product roadmap"],
+    metric: "13K+", metricLabel: "integrations ready",
+    cta: "Map My Stack",
+  },
+  {
+    icon: <Mic size={24} />,
+    num: "14",
+    title: "Voice AI Agents",
+    desc: "Ultra-realistic voice agents for outbound sales, inbound support, and appointment booking. Sub-500ms latency, 24/7 operation, full CRM sync.",
+    features: ["Sub-500ms latency", "Outbound cold calling", "CRM integration"],
+    metric: "<500ms", metricLabel: "response latency",
+    cta: "Deploy Voice Agent",
+    href: "/services/voice-agents",
+  },
 ]
 
 const processSteps = [
@@ -116,8 +144,8 @@ const processSteps = [
   {
     num: "02",
     icon: <Lightbulb size={20} />,
-    title: "Strategy",
-    desc: "Our AI agents analyze the data and craft a bespoke roadmap with clear milestones and KPIs.",
+    title: "System Design",
+    desc: "We shape the offer into one stack across AI, website, automation, voice, and analytics so execution does not fragment.",
   },
   {
     num: "03",
@@ -129,7 +157,7 @@ const processSteps = [
     num: "04",
     icon: <Rocket size={20} />,
     title: "Launch",
-    desc: "We deploy, monitor, and optimize. Post-launch support ensures sustained growth and performance.",
+    desc: "We deploy, monitor, and optimize. Post-launch support keeps the stack compounding instead of stalling after launch week.",
   },
 ]
 
@@ -167,7 +195,7 @@ export default function ServicesPage() {
   const revealRef = useScrollReveal()
 
   return (
-    <main id="main-content" className="relative min-h-screen" ref={revealRef} style={{ background: "#F8F7F4" }}>
+    <main id="main-content" className="relative min-h-screen" ref={revealRef} style={{ background: "var(--page-bg)" }}>
       <Navbar />
       <Breadcrumb items={[{ label: "Services" }]} />
 
@@ -180,7 +208,7 @@ export default function ServicesPage() {
             className="reveal-item text-[11px] font-semibold tracking-[0.12em] uppercase mb-8"
             style={{ color: "#C41A3B" }}
           >
-            10 Premium Services
+            14 Premium Services
           </div>
 
           <h1
@@ -188,11 +216,11 @@ export default function ServicesPage() {
             data-reveal-delay={100}
             className="reveal-item text-5xl md:text-6xl lg:text-[80px] font-serif italic leading-[0.95] tracking-tighter mb-6"
           >
-            <span style={{ color: "#1A1A1A" }}>
-              Services That
-            </span>
+            <span style={{ color: "var(--ink-strong)" }}>
+            Services That
+          </span>
             <br />
-            <span style={{ color: "#1A1A1A" }}>
+            <span style={{ color: "var(--ink-strong)" }}>
               Drive Growth
             </span>
           </h1>
@@ -201,19 +229,49 @@ export default function ServicesPage() {
             data-reveal
             data-reveal-delay={200}
             className="reveal-item text-lg md:text-xl leading-relaxed max-w-2xl mx-auto mb-4"
-            style={{ color: "#7A7A72" }}
+            style={{ color: "var(--ink-muted)" }}
           >
-            From AI chatbots to full video production — autonomous agents and
+            From AI agents to websites, voice systems, and content production,
             expert humans deliver end-to-end services that scale your brand.
           </p>
           <p
             data-reveal
             data-reveal-delay={300}
             className="reveal-item font-mono text-xs"
-            style={{ color: "#B8B8B0" }}
+            style={{ color: "var(--ink-soft)" }}
           >
             Avg 3.2x revenue increase within 6 months
           </p>
+
+          <div
+            data-reveal
+            data-reveal-delay={360}
+            className="reveal-item grid sm:grid-cols-3 gap-4 max-w-4xl mx-auto mt-12 text-left"
+          >
+            {[
+              {
+                title: "AI + agency",
+                copy: "One team handles self-serve AI, managed execution, and custom systems.",
+              },
+              {
+                title: "Web + voice + ops",
+                copy: "Sites, agents, analytics, automations, and voice all move inside one stack.",
+              },
+              {
+                title: "Built for launch",
+                copy: "Designed to replace disconnected freelancers, tools, and retainers.",
+              },
+            ].map((item) => (
+              <div key={item.title} className="rounded-2xl bg-white p-5" style={{ border: "1px solid rgba(0,0,0,0.06)" }}>
+                <div className="font-mono text-[10px] uppercase tracking-[0.14em] mb-2" style={{ color: "var(--ink-soft)" }}>
+                  {item.title}
+                </div>
+                <p className="text-sm leading-relaxed" style={{ color: "var(--ink-muted)" }}>
+                  {item.copy}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -233,30 +291,30 @@ export default function ServicesPage() {
                   {/* header row */}
                   <div className="flex items-start justify-between mb-6">
                     <div className="flex items-center gap-4">
-                      <span className="font-mono text-xs" style={{ color: "#B8B8B0" }}>{s.num}</span>
-                      <div className="w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-500" style={{ background: "rgba(0,0,0,0.02)", border: "1px solid rgba(0,0,0,0.06)", color: "#7A7A72" }}>
+                      <span className="font-mono text-xs" style={{ color: "var(--ink-soft)" }}>{s.num}</span>
+                      <div className="w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-500" style={{ background: "rgba(0,0,0,0.02)", border: "1px solid rgba(0,0,0,0.06)", color: "var(--ink-muted)" }}>
                         {s.icon}
                       </div>
                     </div>
                     <div className="flex items-center gap-2 px-3 py-1.5 rounded-full" style={{ background: "rgba(0,0,0,0.02)", border: "1px solid rgba(0,0,0,0.04)" }}>
-                      <span className="text-base font-serif italic font-semibold" style={{ color: "#1A1A1A" }}>{s.metric}</span>
-                      <span className="font-mono text-[10px] uppercase tracking-wider" style={{ color: "#B8B8B0" }}>{s.metricLabel}</span>
+                      <span className="text-base font-serif italic font-semibold" style={{ color: "var(--ink-strong)" }}>{s.metric}</span>
+                      <span className="font-mono text-[10px] uppercase tracking-wider" style={{ color: "var(--ink-soft)" }}>{s.metricLabel}</span>
                     </div>
                   </div>
 
                   {/* title + desc */}
-                  <h3 className="text-xl font-semibold tracking-tight mb-2" style={{ color: "#1A1A1A" }}>
+                  <h3 className="text-xl font-semibold tracking-tight mb-2" style={{ color: "var(--ink-strong)" }}>
                     {s.title}
                   </h3>
-                  <p className="text-sm leading-relaxed mb-6" style={{ color: "#7A7A72" }}>
+                  <p className="text-sm leading-relaxed mb-6" style={{ color: "var(--ink-muted)" }}>
                     {s.desc}
                   </p>
 
                   {/* feature bullets */}
                   <ul className="space-y-2.5 mb-8">
                     {s.features.map((f) => (
-                      <li key={f} className="flex items-center gap-2.5 text-sm" style={{ color: "#7A7A72" }}>
-                        <CheckCircle2 size={14} className="shrink-0" style={{ color: "#B8B8B0" }} />
+                      <li key={f} className="flex items-center gap-2.5 text-sm" style={{ color: "var(--ink-muted)" }}>
+                        <CheckCircle2 size={14} className="shrink-0" style={{ color: "var(--ink-soft)" }} />
                         {f}
                       </li>
                     ))}
@@ -264,9 +322,9 @@ export default function ServicesPage() {
 
                   {/* CTA */}
                   <Link
-                    href="/contact"
+                    href={(s as { href?: string }).href ?? "/contact"}
                     className="inline-flex items-center gap-2 text-sm font-medium hover:text-[#1A1A1A] transition-colors duration-300 group/btn"
-                    style={{ color: "#7A7A72" }}
+                    style={{ color: "var(--ink-muted)" }}
                   >
                     {s.cta}
                     <ArrowRight size={14} className="group-hover/btn:translate-x-1 transition-transform duration-300" />
@@ -296,8 +354,8 @@ export default function ServicesPage() {
               data-reveal-delay={100}
               className="reveal-item text-4xl md:text-5xl lg:text-6xl font-serif italic tracking-tighter"
             >
-              <span style={{ color: "#1A1A1A" }}>How We </span>
-              <span style={{ color: "#B8B8B0" }}>Work</span>
+              <span style={{ color: "var(--ink-strong)" }}>How We </span>
+              <span style={{ color: "var(--ink-soft)" }}>Work</span>
             </h2>
           </div>
 
@@ -315,14 +373,14 @@ export default function ServicesPage() {
               >
                 {/* step circle */}
                 <div className="relative inline-flex items-center justify-center w-[72px] h-[72px] rounded-full bg-white mb-6 mx-auto" style={{ border: "1px solid rgba(0,0,0,0.06)" }}>
-                  <div className="relative" style={{ color: "#7A7A72" }}>{step.icon}</div>
+                  <div className="relative" style={{ color: "var(--ink-muted)" }}>{step.icon}</div>
                   <div className="absolute -top-1 -right-1 w-6 h-6 rounded-full bg-[#C41A3B] flex items-center justify-center text-[10px] font-mono font-bold text-white">
                     {step.num}
                   </div>
                 </div>
 
-                <h3 className="text-lg font-semibold tracking-tight mb-2" style={{ color: "#1A1A1A" }}>{step.title}</h3>
-                <p className="text-sm leading-relaxed max-w-[240px] mx-auto" style={{ color: "#7A7A72" }}>
+                <h3 className="text-lg font-semibold tracking-tight mb-2" style={{ color: "var(--ink-strong)" }}>{step.title}</h3>
+                <p className="text-sm leading-relaxed max-w-[240px] mx-auto" style={{ color: "var(--ink-muted)" }}>
                   {step.desc}
                 </p>
               </div>
@@ -345,10 +403,10 @@ export default function ServicesPage() {
                 data-reveal-delay={i * 120}
                 className="reveal-item text-center"
               >
-                <div className="text-5xl md:text-6xl lg:text-7xl font-serif italic tracking-tighter mb-3" style={{ color: "#1A1A1A" }}>
+                <div className="text-5xl md:text-6xl lg:text-7xl font-serif italic tracking-tighter mb-3" style={{ color: "var(--ink-strong)" }}>
                   {stat.value}
                 </div>
-                <div className="font-mono text-xs uppercase tracking-wider" style={{ color: "#B8B8B0" }}>
+                <div className="font-mono text-xs uppercase tracking-wider" style={{ color: "var(--ink-soft)" }}>
                   {stat.label}
                 </div>
               </div>
@@ -365,17 +423,17 @@ export default function ServicesPage() {
             data-reveal-delay={0}
             className="reveal-item text-4xl md:text-5xl lg:text-7xl font-serif italic tracking-tighter leading-tight mb-6"
           >
-            <span style={{ color: "#1A1A1A" }}>
+            <span style={{ color: "var(--ink-strong)" }}>
               Let&apos;s Build
             </span>
             <br />
-            <span style={{ color: "#B8B8B0" }}>Together</span>
+            <span style={{ color: "var(--ink-soft)" }}>Together</span>
           </h2>
           <p
             data-reveal
             data-reveal-delay={100}
             className="reveal-item text-lg leading-relaxed max-w-xl mx-auto mb-10"
-            style={{ color: "#7A7A72" }}
+            style={{ color: "var(--ink-muted)" }}
           >
             Tell us what you need and we&apos;ll assemble the perfect agent team
             for your project. No fluff, just results.
@@ -395,7 +453,7 @@ export default function ServicesPage() {
             <Link
               href="/pricing"
               className="h-10 px-7 rounded-full text-sm font-medium hover:bg-black/[0.02] transition-all duration-300 inline-flex items-center"
-              style={{ border: "1px solid rgba(0,0,0,0.08)", color: "#7A7A72" }}
+              style={{ border: "1px solid rgba(0,0,0,0.08)", color: "var(--ink-muted)" }}
             >
               View Pricing
             </Link>
