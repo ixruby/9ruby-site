@@ -109,7 +109,7 @@ export default function PrivacyPage() {
             <div className="inline-flex items-center gap-2 mb-8">
               <span
                 className="text-[11px] font-semibold tracking-[0.12em] uppercase"
-                style={{ color: "#C41A3B" }}
+                style={{ color: "#8B6B3D" }}
               >
                 Legal
               </span>

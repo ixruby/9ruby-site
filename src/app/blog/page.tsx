@@ -69,7 +69,7 @@ export default function BlogPage() {
             data-reveal
             data-reveal-delay={0}
             className="reveal-item text-[11px] font-semibold tracking-[0.12em] uppercase mb-8"
-            style={{ color: "#C41A3B" }}
+            style={{ color: "#8B6B3D" }}
           >
             Blog
           </div>
@@ -193,7 +193,7 @@ export default function BlogPage() {
                 <div className="p-8 lg:p-12 flex flex-col justify-center">
                   <span
                     className="text-[11px] font-semibold tracking-[0.12em] uppercase mb-4 inline-block"
-                    style={{ color: "#C41A3B" }}
+                    style={{ color: "#8B6B3D" }}
                   >
                     {featured.category}
                   </span>
@@ -360,7 +360,7 @@ export default function BlogPage() {
             data-reveal
             data-reveal-delay={0}
             className="reveal-item text-[11px] font-semibold tracking-[0.12em] uppercase mb-6"
-            style={{ color: "#C41A3B" }}
+            style={{ color: "#8B6B3D" }}
           >
             Stay Updated
           </div>

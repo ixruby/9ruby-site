@@ -190,7 +190,7 @@ export default function GlowMushroom({ className = "", size = 200 }: GlowMushroo
             cx={spot.cx}
             cy={spot.cy}
             r={spot.r}
-            fill="#c41a3b"
+            fill="#8b6b3d"
             opacity="0.5"
           >
             <animate

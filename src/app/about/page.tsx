@@ -105,7 +105,7 @@ export default function AboutPage() {
           {/* Story + Timeline */}
           <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 mb-28">
             <div>
-              <span className="text-[11px] font-semibold tracking-[0.12em] uppercase mb-4 block" style={{ color: "#C41A3B" }}>Our story</span>
+              <span className="text-[11px] font-semibold tracking-[0.12em] uppercase mb-4 block" style={{ color: "#8B6B3D" }}>Our story</span>
               <h2 className="text-3xl md:text-4xl font-serif italic tracking-tighter mb-8" style={{ color: "var(--ink-strong)" }}>
                 The story
               </h2>
@@ -126,7 +126,7 @@ export default function AboutPage() {
             </div>
 
             <div>
-              <span className="text-[11px] font-semibold tracking-[0.12em] uppercase mb-4 block" style={{ color: "#C41A3B" }}>Milestones</span>
+              <span className="text-[11px] font-semibold tracking-[0.12em] uppercase mb-4 block" style={{ color: "#8B6B3D" }}>Milestones</span>
               <h2 className="text-3xl md:text-4xl font-serif italic tracking-tighter mb-8" style={{ color: "var(--ink-strong)" }}>
                 Timeline
               </h2>
@@ -138,13 +138,13 @@ export default function AboutPage() {
                   >
                     {/* Timeline line */}
                     <div className="flex flex-col items-center">
-                      <div className="w-2 h-2 rounded-full bg-[#C41A3B] mt-2 shrink-0 group-hover:ring-4 group-hover:ring-[#C41A3B]/10 transition-all" />
+                      <div className="w-2 h-2 rounded-full bg-[#8B6B3D] mt-2 shrink-0 group-hover:ring-4 group-hover:ring-[#8B6B3D]/10 transition-all" />
                       {i < milestones.length - 1 && (
                         <div className="w-px flex-1" style={{ background: "rgba(0,0,0,0.06)" }} />
                       )}
                     </div>
                     <div className="pb-8">
-                      <span className="font-mono text-xs text-[#C41A3B] block mb-1.5">{m.year}</span>
+                      <span className="font-mono text-xs text-[#8B6B3D] block mb-1.5">{m.year}</span>
                       <p className="text-sm leading-relaxed" style={{ color: "var(--ink-muted)" }}>{m.event}</p>
                     </div>
                   </div>
@@ -168,7 +168,7 @@ export default function AboutPage() {
 
           {/* Values */}
           <div className="mb-28">
-            <span className="text-[11px] font-semibold tracking-[0.12em] uppercase mb-4 block" style={{ color: "#C41A3B" }}>Principles</span>
+            <span className="text-[11px] font-semibold tracking-[0.12em] uppercase mb-4 block" style={{ color: "#8B6B3D" }}>Principles</span>
             <h2 className="text-3xl md:text-4xl font-serif italic tracking-tighter mb-12" style={{ color: "var(--ink-strong)" }}>
               What we believe
             </h2>
@@ -180,7 +180,7 @@ export default function AboutPage() {
                   style={{ border: "1px solid rgba(0,0,0,0.04)" }}
                 >
                   <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-5" style={{ background: "rgba(0,0,0,0.02)", border: "1px solid rgba(0,0,0,0.06)" }}>
-                    <span className="group-hover:text-[#C41A3B] transition-colors" style={{ color: "var(--ink-muted)" }}>{v.icon}</span>
+                    <span className="group-hover:text-[#8B6B3D] transition-colors" style={{ color: "var(--ink-muted)" }}>{v.icon}</span>
                   </div>
                   <h3 className="text-lg font-semibold tracking-tight mb-2" style={{ color: "var(--ink-strong)" }}>{v.title}</h3>
                   <p className="leading-relaxed text-sm" style={{ color: "var(--ink-soft)" }}>{v.desc}</p>
@@ -191,7 +191,7 @@ export default function AboutPage() {
 
           {/* Team */}
           <div className="mb-28">
-            <span className="text-[11px] font-semibold tracking-[0.12em] uppercase mb-4 block" style={{ color: "#C41A3B" }}>People</span>
+            <span className="text-[11px] font-semibold tracking-[0.12em] uppercase mb-4 block" style={{ color: "#8B6B3D" }}>People</span>
             <h2 className="text-3xl md:text-4xl font-serif italic tracking-tighter mb-3" style={{ color: "var(--ink-strong)" }}>
               The team
             </h2>
@@ -213,7 +213,7 @@ export default function AboutPage() {
                   <div className="w-14 h-14 rounded-full flex items-center justify-center mb-5" style={{ background: "rgba(0,0,0,0.02)", border: "1px solid rgba(0,0,0,0.06)" }}>
                     {t.tag === "Human"
                       ? <Users size={20} style={{ color: "var(--ink-soft)" }} />
-                      : <Bot size={20} className="text-[#C41A3B]/50" />
+                      : <Bot size={20} className="text-[#8B6B3D]/50" />
                     }
                   </div>
                   <h4 className="text-[15px] font-semibold mb-0.5" style={{ color: "var(--ink-strong)" }}>{t.name}</h4>
@@ -221,10 +221,10 @@ export default function AboutPage() {
                   <span className={`font-mono text-[10px] uppercase tracking-wider px-2.5 py-1 rounded-full ${
                     t.tag === "Human"
                       ? "text-[#7A7A72]"
-                      : "text-[#C41A3B]/70"
+                      : "text-[#8B6B3D]/70"
                   }`} style={{
-                    background: t.tag === "Human" ? "rgba(0,0,0,0.02)" : "rgba(196,26,59,0.06)",
-                    border: t.tag === "Human" ? "1px solid rgba(0,0,0,0.06)" : "1px solid rgba(196,26,59,0.08)",
+                    background: t.tag === "Human" ? "rgba(0,0,0,0.02)" : "rgba(139,107,61,0.06)",
+                    border: t.tag === "Human" ? "1px solid rgba(0,0,0,0.06)" : "1px solid rgba(139,107,61,0.08)",
                   }}>
                     {t.tag}
                   </span>
@@ -235,7 +235,7 @@ export default function AboutPage() {
 
           {/* PRISM */}
           <div className="mb-28">
-            <span className="text-[11px] font-semibold tracking-[0.12em] uppercase mb-4 block" style={{ color: "#C41A3B" }}>Infrastructure</span>
+            <span className="text-[11px] font-semibold tracking-[0.12em] uppercase mb-4 block" style={{ color: "#8B6B3D" }}>Infrastructure</span>
             <h2 className="text-3xl md:text-4xl font-serif italic tracking-tighter mb-3" style={{ color: "var(--ink-strong)" }}>
               Meet PRISM.
             </h2>
@@ -257,12 +257,42 @@ export default function AboutPage() {
                 >
                   <div
                     className="font-mono text-xs font-semibold tracking-wider mb-1"
-                    style={{ color: "#C41A3B" }}
+                    style={{ color: "#8B6B3D" }}
                   >
                     {agent.name}
                   </div>
                   <div className="text-sm font-semibold mb-3" style={{ color: "var(--ink-strong)" }}>{agent.role}</div>
                   <p className="text-xs leading-relaxed" style={{ color: "var(--ink-soft)" }}>{agent.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* How 9Ruby is structured */}
+          <div className="mb-28">
+            <span className="text-[11px] font-semibold tracking-[0.12em] uppercase mb-4 block" style={{ color: "#8B6B3D" }}>Structure</span>
+            <h2 className="text-3xl md:text-4xl font-serif italic tracking-tighter mb-3" style={{ color: "var(--ink-strong)" }}>
+              Three layers, one system
+            </h2>
+            <p className="text-[15px] mb-10 max-w-2xl" style={{ color: "var(--ink-muted)" }}>
+              AI access, managed execution, and flagship systems — structured so you can enter at any layer and scale without switching providers.
+            </p>
+            <div className="grid lg:grid-cols-3 gap-4">
+              {[
+                { id: "01", title: "Access", sub: "Start with AI", copy: "9Ruby AI gives founders and teams direct access to chat, prompts, design support, and launch tools.", links: ["9Ruby AI", "Templates", "Tools", "Docs"] },
+                { id: "02", title: "Execution", sub: "Move into services", copy: "IX Ruby services turn the tooling into action: websites, automation, SEO, analytics, content systems, and growth operations.", links: ["Services", "Voice agents", "Case studies", "Pricing"] },
+                { id: "03", title: "Systems", sub: "Build bigger products", copy: "The highest layer is flagship execution: custom product systems, internal platforms, AI infrastructure, and launch operations.", links: ["Black tier", "Products", "Ecosystem", "Contact"] },
+              ].map((layer) => (
+                <div key={layer.id} className="rounded-2xl bg-white p-8" style={{ border: "1px solid rgba(0,0,0,0.06)" }}>
+                  <div className="font-mono text-[10px] uppercase tracking-[0.14em] mb-4" style={{ color: "var(--ink-soft)" }}>Layer {layer.id}</div>
+                  <h3 className="text-2xl font-semibold tracking-tight mb-1" style={{ color: "var(--ink-strong)" }}>{layer.title}</h3>
+                  <p className="font-mono text-[10px] uppercase tracking-[0.14em] mb-4" style={{ color: "#8B6B3D" }}>{layer.sub}</p>
+                  <p className="text-sm leading-relaxed mb-6" style={{ color: "var(--ink-muted)" }}>{layer.copy}</p>
+                  <div className="flex flex-wrap gap-2">
+                    {layer.links.map((item) => (
+                      <span key={item} className="inline-flex items-center rounded-full px-3 py-1.5 text-[11px] font-medium" style={{ background: "rgba(0,0,0,0.03)", border: "1px solid rgba(0,0,0,0.06)", color: "var(--ink-muted)" }}>{item}</span>
+                    ))}
+                  </div>
                 </div>
               ))}
             </div>

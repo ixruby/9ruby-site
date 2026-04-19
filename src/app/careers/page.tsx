@@ -115,7 +115,7 @@ export default function CareersPage() {
             <div className="inline-flex items-center gap-2 mb-8">
               <span
                 className="text-[11px] font-semibold tracking-[0.12em] uppercase"
-                style={{ color: "#C41A3B" }}
+                style={{ color: "#8B6B3D" }}
               >
                 Careers
               </span>
@@ -146,7 +146,7 @@ export default function CareersPage() {
           >
             <span
               className="text-[11px] font-semibold tracking-[0.12em] uppercase mb-4 block"
-              style={{ color: "#C41A3B" }}
+              style={{ color: "#8B6B3D" }}
             >
               Culture
             </span>
@@ -171,7 +171,7 @@ export default function CareersPage() {
           <div className="mb-28" data-reveal>
             <span
               className="text-[11px] font-semibold tracking-[0.12em] uppercase mb-4 block"
-              style={{ color: "#C41A3B" }}
+              style={{ color: "#8B6B3D" }}
             >
               Values
             </span>
@@ -197,7 +197,7 @@ export default function CareersPage() {
                     }}
                   >
                     <span
-                      className="group-hover:text-[#C41A3B] transition-colors"
+                      className="group-hover:text-[#8B6B3D] transition-colors"
                       style={{ color: "var(--ink-muted)" }}
                     >
                       {v.icon}
@@ -221,7 +221,7 @@ export default function CareersPage() {
           <div className="mb-28" data-reveal>
             <span
               className="text-[11px] font-semibold tracking-[0.12em] uppercase mb-4 block"
-              style={{ color: "#C41A3B" }}
+              style={{ color: "#8B6B3D" }}
             >
               Open Positions
             </span>

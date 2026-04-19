@@ -406,7 +406,7 @@ function PricingBadge({ type, label }: { type: PricingType; label: string }) {
   const colors: Record<PricingType, string> = {
     free: "bg-emerald-500/15 text-emerald-400 border-emerald-500/20",
     freemium: "bg-sky-500/15 text-sky-400 border-sky-500/20",
-    paid: "bg-[#C41A3B]/15 text-[#ff6b81] border-[#C41A3B]/20",
+    paid: "bg-[#8B6B3D]/15 text-[#ff6b81] border-[#8B6B3D]/20",
     subscription: "bg-purple-500/15 text-purple-400 border-purple-500/20",
   }
   return (
@@ -463,7 +463,7 @@ function AppCard({ app, view }: { app: App; view: "grid" | "list" }) {
         </div>
         <div className="flex-shrink-0 flex items-center gap-3">
           <PricingBadge type={app.pricingType} label={app.pricing} />
-          <button className="px-4 py-1.5 text-xs font-medium rounded-lg bg-black/[0.04] border border-black/[0.08] text-[#1A1A1A] hover:bg-[#C41A3B] hover:border-[#C41A3B] hover:text-white transition-all duration-300">
+          <button className="px-4 py-1.5 text-xs font-medium rounded-lg bg-black/[0.04] border border-black/[0.08] text-[#1A1A1A] hover:bg-[#8B6B3D] hover:border-[#8B6B3D] hover:text-white transition-all duration-300">
             Install
           </button>
         </div>
@@ -489,7 +489,7 @@ function AppCard({ app, view }: { app: App; view: "grid" | "list" }) {
       </div>
       <div className="flex items-center justify-between">
         <PricingBadge type={app.pricingType} label={app.pricing} />
-        <button className="flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-medium rounded-lg bg-black/[0.04] border border-black/[0.08] text-[#1A1A1A] hover:bg-[#C41A3B] hover:border-[#C41A3B] hover:text-white transition-all duration-300 group/btn">
+        <button className="flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-medium rounded-lg bg-black/[0.04] border border-black/[0.08] text-[#1A1A1A] hover:bg-[#8B6B3D] hover:border-[#8B6B3D] hover:text-white transition-all duration-300 group/btn">
           <Download size={12} />
           Install
         </button>
@@ -530,7 +530,7 @@ function FeaturedCard({ app }: { app: App }) {
         </div>
         <PricingBadge type={app.pricingType} label={app.pricing} />
       </div>
-      <button className="mt-4 w-full py-2 text-sm font-medium rounded-lg bg-black/[0.04] border border-black/[0.08] text-[#1A1A1A] hover:bg-[#C41A3B] hover:border-[#C41A3B] hover:text-white transition-all duration-300">
+      <button className="mt-4 w-full py-2 text-sm font-medium rounded-lg bg-black/[0.04] border border-black/[0.08] text-[#1A1A1A] hover:bg-[#8B6B3D] hover:border-[#8B6B3D] hover:text-white transition-all duration-300">
         View App
       </button>
     </div>
@@ -635,14 +635,14 @@ export default function AppStorePage() {
         <section className="relative overflow-hidden border-b border-black/[0.04]">
           {/* Background glow */}
           <div className="absolute inset-0 pointer-events-none">
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[#C41A3B]/[0.04] rounded-full blur-[120px]" />
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[#8B6B3D]/[0.04] rounded-full blur-[120px]" />
             <div className="absolute top-1/4 left-1/4 w-[300px] h-[300px] bg-purple-500/[0.03] rounded-full blur-[100px]" />
           </div>
 
           <div className="relative max-w-[1400px] mx-auto px-6 lg:px-8 py-20 lg:py-28">
             <div className="text-center max-w-3xl mx-auto">
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-black/[0.03] border border-black/[0.04] text-xs text-[#7A7A72] mb-8">
-                <Sparkles size={14} className="text-[#C41A3B]" />
+                <Sparkles size={14} className="text-[#8B6B3D]" />
                 Powering 13,000+ businesses worldwide
               </div>
 
@@ -846,7 +846,7 @@ export default function AppStorePage() {
                       onClick={() => { setSelectedCategory(null); setVisibleCount(ITEMS_PER_PAGE) }}
                       className={`w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm transition-all duration-200 ${
                         !selectedCategory
-                          ? "bg-[#C41A3B]/10 text-[#ff6b81] border border-[#C41A3B]/20"
+                          ? "bg-[#8B6B3D]/10 text-[#ff6b81] border border-[#8B6B3D]/20"
                           : "text-[#7A7A72] hover:text-[#1A1A1A] hover:bg-white border border-transparent"
                       }`}
                     >
@@ -865,7 +865,7 @@ export default function AppStorePage() {
                           }}
                           className={`w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm transition-all duration-200 ${
                             selectedCategory === cat.id
-                              ? "bg-[#C41A3B]/10 text-[#ff6b81] border border-[#C41A3B]/20"
+                              ? "bg-[#8B6B3D]/10 text-[#ff6b81] border border-[#8B6B3D]/20"
                               : "text-[#7A7A72] hover:text-[#1A1A1A] hover:bg-white border border-transparent"
                           }`}
                         >
@@ -884,7 +884,7 @@ export default function AppStorePage() {
               {/* ---- MOBILE SIDEBAR TOGGLE ---- */}
               <button
                 onClick={() => setSidebarOpen(!sidebarOpen)}
-                className="lg:hidden fixed bottom-6 left-6 z-40 p-3 rounded-full bg-[#C41A3B] text-white shadow-lg shadow-[#C41A3B]/20"
+                className="lg:hidden fixed bottom-6 left-6 z-40 p-3 rounded-full bg-[#8B6B3D] text-white shadow-lg shadow-[#8B6B3D]/20"
               >
                 <Filter size={20} />
               </button>
@@ -906,7 +906,7 @@ export default function AppStorePage() {
                       <button
                         onClick={() => { setSelectedCategory(null); setSidebarOpen(false); setVisibleCount(ITEMS_PER_PAGE) }}
                         className={`w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-sm transition-all ${
-                          !selectedCategory ? "bg-[#C41A3B]/10 text-[#ff6b81]" : "text-[#7A7A72] hover:text-[#1A1A1A]"
+                          !selectedCategory ? "bg-[#8B6B3D]/10 text-[#ff6b81]" : "text-[#7A7A72] hover:text-[#1A1A1A]"
                         }`}
                       >
                         <span>All Apps</span>
@@ -925,7 +925,7 @@ export default function AppStorePage() {
                             }}
                             className={`w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-sm transition-all ${
                               selectedCategory === cat.id
-                                ? "bg-[#C41A3B]/10 text-[#ff6b81]"
+                                ? "bg-[#8B6B3D]/10 text-[#ff6b81]"
                                 : "text-[#7A7A72] hover:text-[#1A1A1A]"
                             }`}
                           >
@@ -963,7 +963,7 @@ export default function AppStorePage() {
                             onClick={() => { setSortBy(s); setSortOpen(false) }}
                             className={`w-full text-left px-4 py-2.5 text-xs transition-colors ${
                               sortBy === s
-                                ? "bg-[#C41A3B]/10 text-[#ff6b81]"
+                                ? "bg-[#8B6B3D]/10 text-[#ff6b81]"
                                 : "text-[#7A7A72] hover:bg-black/[0.03] hover:text-[#1A1A1A]"
                             }`}
                           >
@@ -994,7 +994,7 @@ export default function AppStorePage() {
                             onClick={() => { setPricingFilter(p); setPricingOpen(false); setVisibleCount(ITEMS_PER_PAGE) }}
                             className={`w-full text-left px-4 py-2.5 text-xs transition-colors ${
                               pricingFilter === p
-                                ? "bg-[#C41A3B]/10 text-[#ff6b81]"
+                                ? "bg-[#8B6B3D]/10 text-[#ff6b81]"
                                 : "text-[#7A7A72] hover:bg-black/[0.03] hover:text-[#1A1A1A]"
                             }`}
                           >
@@ -1068,7 +1068,7 @@ export default function AppStorePage() {
                   <div className="text-center mt-10">
                     <button
                       onClick={() => setVisibleCount((v) => v + ITEMS_PER_PAGE)}
-                      className="inline-flex items-center gap-2 px-8 py-3 text-sm font-medium rounded-xl bg-black/[0.03] border border-black/[0.08] text-white/70 hover:bg-[#C41A3B] hover:border-[#C41A3B] hover:text-white transition-all duration-300"
+                      className="inline-flex items-center gap-2 px-8 py-3 text-sm font-medium rounded-xl bg-black/[0.03] border border-black/[0.08] text-white/70 hover:bg-[#8B6B3D] hover:border-[#8B6B3D] hover:text-white transition-all duration-300"
                     >
                       Load More Apps
                       <ChevronDown size={16} />
@@ -1133,13 +1133,13 @@ export default function AppStorePage() {
             <div className="relative overflow-hidden rounded-3xl border border-black/[0.04] bg-white p-10 lg:p-16">
               {/* Background glow */}
               <div className="absolute inset-0 pointer-events-none">
-                <div className="absolute -top-20 -right-20 w-[400px] h-[400px] bg-[#C41A3B]/[0.06] rounded-full blur-[100px]" />
+                <div className="absolute -top-20 -right-20 w-[400px] h-[400px] bg-[#8B6B3D]/[0.06] rounded-full blur-[100px]" />
                 <div className="absolute -bottom-20 -left-20 w-[300px] h-[300px] bg-purple-500/[0.04] rounded-full blur-[80px]" />
               </div>
 
               <div className="relative grid lg:grid-cols-2 gap-10 items-center">
                 <div>
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#C41A3B]/10 border border-[#C41A3B]/20 text-xs text-[#ff6b81] mb-6">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#8B6B3D]/10 border border-[#8B6B3D]/20 text-xs text-[#ff6b81] mb-6">
                     <Cpu size={12} />
                     Developer Program
                   </div>
@@ -1150,7 +1150,7 @@ export default function AppStorePage() {
                     Join 3,200+ developers building apps for 13,000+ merchants. Access our APIs, SDKs, and partner program to reach millions of businesses worldwide.
                   </p>
                   <div className="flex flex-wrap gap-3">
-                    <a href="#" className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold rounded-xl bg-[#C41A3B] text-white hover:brightness-110 transition-all ruby-btn-glow">
+                    <a href="#" className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold rounded-xl bg-[#8B6B3D] text-white hover:brightness-110 transition-all gold-btn-glow">
                       Start Building <ArrowRight size={16} />
                     </a>
                     <a href="#" className="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium rounded-xl bg-black/[0.03] border border-black/[0.08] text-white/70 hover:text-white hover:border-black/[0.12] transition-all">
@@ -1168,7 +1168,7 @@ export default function AppStorePage() {
                     { icon: Shield, value: "99.99%", label: "Uptime" },
                   ].map((stat) => (
                     <div key={stat.label} className="p-5 rounded-2xl bg-white border border-black/[0.04]">
-                      <stat.icon size={20} className="text-[#C41A3B] mb-3" />
+                      <stat.icon size={20} className="text-[#8B6B3D] mb-3" />
                       <div className="text-2xl font-bold text-white font-mono">{stat.value}</div>
                       <div className="text-xs text-[#7A7A72] mt-1">{stat.label}</div>
                     </div>
@@ -1198,7 +1198,7 @@ export default function AppStorePage() {
                   href={resource.href}
                   className="group p-5 rounded-2xl bg-white border border-black/[0.04] hover:border-black/[0.12] hover:bg-black/[0.03] transition-all duration-300"
                 >
-                  <resource.icon size={20} className="text-[#B8B8B0] group-hover:text-[#C41A3B] transition-colors mb-3" />
+                  <resource.icon size={20} className="text-[#B8B8B0] group-hover:text-[#8B6B3D] transition-colors mb-3" />
                   <h3 className="text-sm font-semibold text-white mb-1">{resource.title}</h3>
                   <p className="text-xs text-[#7A7A72]">{resource.desc}</p>
                 </a>

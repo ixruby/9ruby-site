@@ -206,7 +206,7 @@ export default function ServicesPage() {
             data-reveal
             data-reveal-delay={0}
             className="reveal-item text-[11px] font-semibold tracking-[0.12em] uppercase mb-8"
-            style={{ color: "#C41A3B" }}
+            style={{ color: "#8B6B3D" }}
           >
             14 Premium Services
           </div>
@@ -345,7 +345,7 @@ export default function ServicesPage() {
               data-reveal
               data-reveal-delay={0}
               className="reveal-item text-[11px] font-semibold tracking-[0.12em] uppercase mb-6"
-              style={{ color: "#C41A3B" }}
+              style={{ color: "#8B6B3D" }}
             >
               Process
             </div>
@@ -374,7 +374,7 @@ export default function ServicesPage() {
                 {/* step circle */}
                 <div className="relative inline-flex items-center justify-center w-[72px] h-[72px] rounded-full bg-white mb-6 mx-auto" style={{ border: "1px solid rgba(0,0,0,0.06)" }}>
                   <div className="relative" style={{ color: "var(--ink-muted)" }}>{step.icon}</div>
-                  <div className="absolute -top-1 -right-1 w-6 h-6 rounded-full bg-[#C41A3B] flex items-center justify-center text-[10px] font-mono font-bold text-white">
+                  <div className="absolute -top-1 -right-1 w-6 h-6 rounded-full bg-[#8B6B3D] flex items-center justify-center text-[10px] font-mono font-bold text-white">
                     {step.num}
                   </div>
                 </div>

@@ -135,7 +135,7 @@ function Waveform({ active }: { active: boolean }) {
           style={{
             width: 4,
             height: active ? h : 4,
-            background: "#C41A3B",
+            background: "#8B6B3D",
             opacity: active ? 1 : 0.35,
             animation: active ? `waveBar 1.3s ease-in-out ${i * 0.09}s infinite alternate` : "none",
           }}
@@ -203,7 +203,7 @@ export default function VoiceAgentsPage() {
                 data-reveal
                 data-reveal-delay={0}
                 className="reveal-item text-[11px] font-semibold tracking-[0.12em] uppercase mb-6"
-                style={{ color: "#C41A3B" }}
+                style={{ color: "#8B6B3D" }}
               >
                 New Service
               </div>
@@ -214,7 +214,7 @@ export default function VoiceAgentsPage() {
                 style={{ color: "var(--ink-strong)" }}
               >
                 Give your<br />business a<br />
-                <em style={{ color: "#C41A3B" }}>voice.</em>
+                <em style={{ color: "#8B6B3D" }}>voice.</em>
               </h1>
               <p
                 data-reveal
@@ -233,7 +233,7 @@ export default function VoiceAgentsPage() {
               >
                 <Link
                   href="/contact"
-                  className="h-10 px-7 rounded-full bg-[#1A1A1A] text-sm font-medium hover:bg-[#C41A3B] transition-all duration-300 inline-flex items-center gap-2"
+                  className="h-10 px-7 rounded-full bg-[#1A1A1A] text-sm font-medium hover:bg-[#8B6B3D] transition-all duration-300 inline-flex items-center gap-2"
                   style={{ color: "#F8F7F4" }}
                 >
                   Deploy Your Agent <ArrowRight size={14} />
@@ -292,7 +292,7 @@ export default function VoiceAgentsPage() {
                 data-reveal-delay={i * 80}
                 className="reveal-item text-center"
               >
-                <div className="flex justify-center mb-3" style={{ color: "#C41A3B" }}>
+                <div className="flex justify-center mb-3" style={{ color: "#8B6B3D" }}>
                   {s.icon}
                 </div>
                 <div
@@ -318,7 +318,7 @@ export default function VoiceAgentsPage() {
               data-reveal
               data-reveal-delay={0}
               className="reveal-item text-[11px] font-semibold tracking-[0.12em] uppercase mb-4"
-              style={{ color: "#C41A3B" }}
+              style={{ color: "#8B6B3D" }}
             >
               Use Cases
             </div>
@@ -344,7 +344,7 @@ export default function VoiceAgentsPage() {
                 <div className="flex items-start justify-between mb-5">
                   <div
                     className="w-10 h-10 rounded-xl flex items-center justify-center"
-                    style={{ background: "rgba(196,26,59,0.06)", color: "#C41A3B" }}
+                    style={{ background: "rgba(139,107,61,0.06)", color: "#8B6B3D" }}
                   >
                     {uc.icon}
                   </div>
@@ -381,7 +381,7 @@ export default function VoiceAgentsPage() {
                 data-reveal
                 data-reveal-delay={0}
                 className="reveal-item text-[11px] font-semibold tracking-[0.12em] uppercase mb-4"
-                style={{ color: "#C41A3B" }}
+                style={{ color: "#8B6B3D" }}
               >
                 Our Approach
               </div>
@@ -406,7 +406,7 @@ export default function VoiceAgentsPage() {
                 >
                   <div
                     className="font-mono text-[11px] font-bold pt-0.5 shrink-0 w-6"
-                    style={{ color: "#C41A3B" }}
+                    style={{ color: "#8B6B3D" }}
                   >
                     {step.num}
                   </div>
@@ -439,7 +439,7 @@ export default function VoiceAgentsPage() {
             <div className="p-10 lg:p-14 flex flex-col justify-center">
               <div
                 className="text-[11px] font-semibold tracking-[0.12em] uppercase mb-4"
-                style={{ color: "#C41A3B" }}
+                style={{ color: "#8B6B3D" }}
               >
                 Outbound
               </div>
@@ -481,7 +481,7 @@ export default function VoiceAgentsPage() {
                 <Waveform active={true} />
                 <p
                   className="mt-6 font-mono text-[10px] uppercase tracking-widest"
-                  style={{ color: "rgba(196,26,59,0.5)" }}
+                  style={{ color: "rgba(139,107,61,0.5)" }}
                 >
                   Outbound · Live
                 </p>
@@ -573,7 +573,7 @@ export default function VoiceAgentsPage() {
               data-reveal
               data-reveal-delay={0}
               className="reveal-item text-[11px] font-semibold tracking-[0.12em] uppercase mb-4"
-              style={{ color: "#C41A3B" }}
+              style={{ color: "#8B6B3D" }}
             >
               Ready to Build?
             </div>
@@ -595,14 +595,14 @@ export default function VoiceAgentsPage() {
                 data-reveal-delay={i * 80}
                 className="reveal-item relative bg-white rounded-2xl p-8 flex flex-col transition-all duration-400 hover:shadow-lg hover:shadow-black/[0.04]"
                 style={{
-                  border: card.featured ? "1px solid #C41A3B" : "1px solid rgba(0,0,0,0.04)",
-                  boxShadow: card.featured ? "0 0 0 1px #C41A3B, 0 16px 48px rgba(196,26,59,0.08)" : undefined,
+                  border: card.featured ? "1px solid #8B6B3D" : "1px solid rgba(0,0,0,0.04)",
+                  boxShadow: card.featured ? "0 0 0 1px #8B6B3D, 0 16px 48px rgba(139,107,61,0.08)" : undefined,
                 }}
               >
                 {card.featured && (
                   <div
                     className="absolute -top-px right-8 text-[10px] font-bold tracking-[0.08em] px-3 py-1 rounded-b-lg"
-                    style={{ background: "#C41A3B", color: "#fff" }}
+                    style={{ background: "#8B6B3D", color: "#fff" }}
                   >
                     POPULAR
                   </div>
@@ -610,8 +610,8 @@ export default function VoiceAgentsPage() {
                 <div
                   className="w-10 h-10 rounded-xl flex items-center justify-center mb-6"
                   style={{
-                    background: card.featured ? "rgba(196,26,59,0.08)" : "rgba(0,0,0,0.03)",
-                    color: card.featured ? "#C41A3B" : "#7A7A72",
+                    background: card.featured ? "rgba(139,107,61,0.08)" : "rgba(0,0,0,0.03)",
+                    color: card.featured ? "#8B6B3D" : "#7A7A72",
                   }}
                 >
                   {card.icon}
@@ -627,7 +627,7 @@ export default function VoiceAgentsPage() {
                   className="h-10 rounded-full text-sm font-medium transition-all duration-300 inline-flex items-center justify-center gap-2"
                   style={
                     card.featured
-                      ? { background: "#C41A3B", color: "#fff" }
+                      ? { background: "#8B6B3D", color: "#fff" }
                       : { border: "1px solid rgba(0,0,0,0.1)", color: "var(--ink-muted)" }
                   }
                 >
@@ -649,7 +649,7 @@ export default function VoiceAgentsPage() {
             data-reveal
             data-reveal-delay={0}
             className="reveal-item text-[11px] font-semibold tracking-[0.12em] uppercase mb-4"
-            style={{ color: "#C41A3B" }}
+            style={{ color: "#8B6B3D" }}
           >
             Powered By
           </div>
@@ -713,7 +713,7 @@ export default function VoiceAgentsPage() {
           >
             <Link
               href="/contact"
-              className="h-11 px-8 rounded-full bg-[#1A1A1A] text-sm font-medium hover:bg-[#C41A3B] transition-all duration-300 inline-flex items-center gap-2"
+              className="h-11 px-8 rounded-full bg-[#1A1A1A] text-sm font-medium hover:bg-[#8B6B3D] transition-all duration-300 inline-flex items-center gap-2"
               style={{ color: "#F8F7F4" }}
             >
               Book a Free Call <ArrowRight size={14} />

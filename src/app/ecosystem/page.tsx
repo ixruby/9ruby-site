@@ -1,5 +1,4 @@
 import type { Metadata } from "next"
-import Image from "next/image"
 import {
   MessageSquare, Layout, Zap, Terminal, Globe, Bot,
   ArrowRight, ExternalLink, Sparkles, Package, Cpu,
@@ -146,6 +145,56 @@ const products = [
   },
 ]
 
+const CATEGORY_PALETTE: Record<string, { bg: string; accent: string }> = {
+  Core:             { bg: "linear-gradient(135deg,#0d0d1a,#1a0a2e)", accent: "#8B6B3D" },
+  Agency:           { bg: "linear-gradient(135deg,#0a0a14,#1a1030)", accent: "#7c3aed" },
+  Brand:            { bg: "linear-gradient(135deg,#0f1520,#1a2840)", accent: "#3b82f6" },
+  Products:         { bg: "linear-gradient(135deg,#0a1a0a,#0f2a18)", accent: "#22c55e" },
+  "Developer Tools":{ bg: "linear-gradient(135deg,#1a1000,#2d1e00)", accent: "#f59e0b" },
+  Infra:            { bg: "linear-gradient(135deg,#0a0f18,#121e30)", accent: "#64748b" },
+  Experiments:      { bg: "linear-gradient(135deg,#100a1a,#1e1030)", accent: "#a855f7" },
+  Showcases:        { bg: "linear-gradient(135deg,#120808,#200e0e)", accent: "#ef4444" },
+}
+
+function ProjectVisual({ name, category, status }: { name: string; category: string; status: string }) {
+  const pal = CATEGORY_PALETTE[category] ?? { bg: "linear-gradient(135deg,#0d0d0d,#1a1a1a)", accent: "#8B6B3D" }
+  const seed = name.split("").reduce((a, c) => a + c.charCodeAt(0), 0)
+  const pts = Array.from({ length: 6 }, (_, i) => {
+    const angle = (i / 6) * Math.PI * 2 + seed
+    const r = 55 + ((seed * (i + 3)) % 35)
+    return [200 + Math.cos(angle) * r, 112 + Math.sin(angle) * r] as [number, number]
+  })
+  const hex = pal.bg.match(/#[0-9a-f]{6}/gi) ?? ["#0d0d0d", "#1a1a1a"]
+  return (
+    <svg viewBox="0 0 400 225" xmlns="http://www.w3.org/2000/svg" style={{ position:"absolute", inset:0, width:"100%", height:"100%" }}>
+      <defs>
+        <linearGradient id={`ep-${name}`} x1="0%" y1="0%" x2="100%" y2="100%">
+          {hex.map((c, i) => <stop key={i} offset={`${i * 100}%`} stopColor={c} />)}
+        </linearGradient>
+        <radialGradient id={`eg-${name}`} cx="50%" cy="50%" r="55%">
+          <stop offset="0%" stopColor={pal.accent} stopOpacity="0.3" />
+          <stop offset="100%" stopColor={pal.accent} stopOpacity="0" />
+        </radialGradient>
+      </defs>
+      <rect width="400" height="225" fill={`url(#ep-${name})`} />
+      <ellipse cx="200" cy="112" rx="180" ry="100" fill={`url(#eg-${name})`} />
+      {pts.map(([x, y], i) => (
+        <circle key={i} cx={x} cy={y} r="3.5" fill={pal.accent} fillOpacity={0.55 + i * 0.06} />
+      ))}
+      {pts.map(([x, y], i) => (
+        <line key={i} x1="200" y1="112" x2={x} y2={y} stroke={pal.accent} strokeWidth="0.7" strokeOpacity="0.22" />
+      ))}
+      {pts.map(([x, y], i) => {
+        const next = pts[(i + 1) % pts.length]
+        return <line key={`e${i}`} x1={x} y1={y} x2={next[0]} y2={next[1]} stroke={pal.accent} strokeWidth="0.5" strokeOpacity="0.14" />
+      })}
+      <circle cx="200" cy="112" r="9" fill={pal.accent} fillOpacity="0.8" />
+      <circle cx="200" cy="112" r="4" fill="#fff" fillOpacity="0.6" />
+      <rect width="400" height="225" fill="rgba(0,0,0,0)" />
+    </svg>
+  )
+}
+
 export default function EcosystemPage() {
   return (
     <main className="relative min-h-screen" style={{ background: "var(--page-bg)" }}>
@@ -193,14 +242,14 @@ export default function EcosystemPage() {
                 <div className="grid grid-cols-2 gap-2 mt-auto mb-6">
                   {p.features.map((f) => (
                     <span key={f} className="text-xs flex items-center gap-1.5" style={{ color: "var(--ink-soft)" }}>
-                      <span className="w-1 h-1 rounded-full bg-[#C41A3B]/50 shrink-0" />
+                      <span className="w-1 h-1 rounded-full bg-[#8B6B3D]/50 shrink-0" />
                       {f}
                     </span>
                   ))}
                 </div>
 
                 {/* Link */}
-                <div className="flex items-center gap-2 text-sm group-hover:text-[#C41A3B] group-hover:gap-3 transition-all" style={{ color: "var(--ink-muted)" }}>
+                <div className="flex items-center gap-2 text-sm group-hover:text-[#8B6B3D] group-hover:gap-3 transition-all" style={{ color: "var(--ink-muted)" }}>
                   {p.badge === "Coming Soon" || p.badge === "In Development" ? "Learn more" : "Explore"}
                   <ArrowRight size={14} />
                 </div>
@@ -211,7 +260,7 @@ export default function EcosystemPage() {
           <div className="mb-28">
             <div className="mb-12 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
               <div>
-                <span className="text-[11px] font-semibold tracking-[0.12em] uppercase mb-4 block" style={{ color: "#C41A3B" }}>Vercel Registry</span>
+                <span className="text-[11px] font-semibold tracking-[0.12em] uppercase mb-4 block" style={{ color: "#8B6B3D" }}>Vercel Registry</span>
                 <h2 className="text-3xl md:text-4xl font-serif italic tracking-tighter mb-3" style={{ color: "var(--ink-strong)" }}>
                   Brand projects, tracked
                 </h2>
@@ -269,7 +318,7 @@ export default function EcosystemPage() {
                       </div>
                     </div>
 
-                    <div className="flex items-center gap-2 text-sm group-hover:text-[#C41A3B] transition-colors" style={{ color: "var(--ink-muted)" }}>
+                    <div className="flex items-center gap-2 text-sm group-hover:text-[#8B6B3D] transition-colors" style={{ color: "var(--ink-muted)" }}>
                       {project.publicUrl ? "Open project" : "Tracked in registry"}
                       {project.publicUrl ? <ExternalLink size={14} /> : <Package size={14} />}
                     </div>
@@ -286,22 +335,14 @@ export default function EcosystemPage() {
                     className="group rounded-2xl p-6 bg-white transition-all duration-300 hover:shadow-lg hover:shadow-black/[0.03]"
                     style={{ border: "1px solid rgba(0,0,0,0.04)" }}
                   >
-                    <div className="relative overflow-hidden rounded-[18px] aspect-[16/10] mb-5" style={{ background: "linear-gradient(135deg, rgba(0,0,0,0.04), rgba(196,26,59,0.08))" }}>
-                      {project.previewImage ? (
-                        <Image
-                          src={project.previewImage}
-                          alt={project.name}
-                          fill
-                          className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-                        />
-                      ) : null}
-                      <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, rgba(0,0,0,0.04) 0%, rgba(0,0,0,0.3) 100%)" }} />
+                    <div className="relative overflow-hidden rounded-[18px] aspect-[16/10] mb-5">
+                      <ProjectVisual name={project.name} category={project.category} status={project.status} />
                       <div className="absolute inset-x-4 bottom-4 flex items-center justify-between gap-3">
                         <span className="rounded-full px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] bg-white/85 text-[#111]">
                           {project.name}
                         </span>
                         <span className="rounded-full px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] bg-black/55 text-white">
-                          {project.primaryDomain}
+                          LIVE
                         </span>
                       </div>
                     </div>
@@ -316,14 +357,14 @@ export default function EcosystemPage() {
                   className="group rounded-2xl p-6 bg-white transition-all duration-300 hover:shadow-lg hover:shadow-black/[0.03]"
                   style={{ border: "1px solid rgba(0,0,0,0.04)" }}
                 >
-                  <div className="relative overflow-hidden rounded-[18px] aspect-[16/10] mb-5" style={{ background: "linear-gradient(135deg, rgba(0,0,0,0.03), rgba(196,26,59,0.06))" }}>
-                    <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, rgba(255,255,255,0.12) 0%, rgba(0,0,0,0.08) 100%)" }} />
+                  <div className="relative overflow-hidden rounded-[18px] aspect-[16/10] mb-5">
+                    <ProjectVisual name={project.name} category={project.category} status={project.status} />
                     <div className="absolute inset-x-4 bottom-4 flex items-center justify-between gap-3">
                       <span className="rounded-full px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] bg-white/85 text-[#111]">
                         {project.name}
                       </span>
-                      <span className="rounded-full px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] bg-black/10 text-[#111]">
-                        Registry
+                      <span className="rounded-full px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] bg-black/55 text-white">
+                        {project.status}
                       </span>
                     </div>
                   </div>
@@ -337,7 +378,7 @@ export default function EcosystemPage() {
           {/* Live subdomains */}
           <div className="mb-28">
             <div className="mb-12">
-              <span className="text-[11px] font-semibold tracking-[0.12em] uppercase mb-4 block" style={{ color: "#C41A3B" }}>Infrastructure</span>
+              <span className="text-[11px] font-semibold tracking-[0.12em] uppercase mb-4 block" style={{ color: "#8B6B3D" }}>Infrastructure</span>
               <h2 className="text-3xl md:text-4xl font-serif italic tracking-tighter mb-3" style={{ color: "var(--ink-strong)" }}>
                 Live across the web
               </h2>
@@ -352,7 +393,7 @@ export default function EcosystemPage() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-between p-5 rounded-2xl bg-white transition-all group hover:shadow-lg hover:shadow-black/[0.03]"
-                  style={{ border: project.primaryDomain.endsWith(".9ruby.com") ? "1px solid rgba(196,26,59,0.1)" : "1px solid rgba(0,0,0,0.04)" }}
+                  style={{ border: project.primaryDomain.endsWith(".9ruby.com") ? "1px solid rgba(139,107,61,0.1)" : "1px solid rgba(0,0,0,0.04)" }}
                 >
                   <div>
                     <span className="text-sm font-medium group-hover:text-[#1A1A1A] transition-colors" style={{ color: project.primaryDomain.endsWith(".9ruby.com") ? "#1A1A1A" : "#7A7A72" }}>

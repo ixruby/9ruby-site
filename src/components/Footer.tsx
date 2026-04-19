@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-14">
           <div className="col-span-2">
             <Link href="/" className="flex items-center gap-0.5 mb-4">
-              <span className="font-serif italic text-[1.4rem] font-bold tracking-tight text-[#C41A3B]">9</span>
+              <span className="font-serif italic text-[1.4rem] font-bold tracking-tight text-[#8B6B3D]">9</span>
               <span className="text-base font-bold tracking-tight" style={{ color: "var(--ink-strong)" }}>Ruby</span>
             </Link>
             <p className="text-[13px] leading-relaxed max-w-[260px]" style={{ color: "var(--ink-muted)" }}>

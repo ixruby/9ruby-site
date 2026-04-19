@@ -170,7 +170,7 @@ export default function ElevenLabsSupportWidget() {
     const widget = document.createElement("elevenlabs-convai")
     widget.setAttribute("signed-url", signedUrl)
     widget.setAttribute("variant", "expanded")
-    widget.setAttribute("avatar-orb-color-1", "#C41A3B")
+    widget.setAttribute("avatar-orb-color-1", "#8B6B3D")
     widget.setAttribute("avatar-orb-color-2", "#E8C9CF")
     widget.setAttribute("action-text", "Talk to 9Ruby Support")
     widget.setAttribute("start-call-text", "Start voice support")
@@ -262,7 +262,7 @@ export default function ElevenLabsSupportWidget() {
             <div className="flex min-h-[380px] flex-col items-center justify-center text-center">
               {status === "loading" || status === "idle" ? (
                 <>
-                  <LoaderCircle className="mb-4 animate-spin" size={28} style={{ color: "#C41A3B" }} />
+                  <LoaderCircle className="mb-4 animate-spin" size={28} style={{ color: "#8B6B3D" }} />
                   <div className="mb-2 text-base font-medium" style={{ color: "#F8F7F4" }}>
                     Preparing voice support
                   </div>

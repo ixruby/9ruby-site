@@ -156,7 +156,7 @@ export default function ContactPage() {
                 style={{ border: "1px solid rgba(0,0,0,0.04)" }}
               >
                 <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0" style={{ background: "rgba(0,0,0,0.02)", border: "1px solid rgba(0,0,0,0.06)" }}>
-                  <Mail size={16} className="group-hover:text-[#C41A3B] transition-colors" style={{ color: "var(--ink-muted)" }} />
+                  <Mail size={16} className="group-hover:text-[#8B6B3D] transition-colors" style={{ color: "var(--ink-muted)" }} />
                 </div>
                 <div>
                   <h3 className="text-sm font-semibold mb-0.5" style={{ color: "var(--ink-strong)" }}>Email</h3>
@@ -186,7 +186,7 @@ export default function ContactPage() {
                 style={{ border: "1px solid rgba(0,0,0,0.04)" }}
               >
                 <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0" style={{ background: "rgba(0,0,0,0.02)", border: "1px solid rgba(0,0,0,0.06)" }}>
-                  <Globe size={16} className="group-hover:text-[#C41A3B] transition-colors" style={{ color: "var(--ink-muted)" }} />
+                  <Globe size={16} className="group-hover:text-[#8B6B3D] transition-colors" style={{ color: "var(--ink-muted)" }} />
                 </div>
                 <div>
                   <h3 className="text-sm font-semibold mb-0.5" style={{ color: "var(--ink-strong)" }}>9Ruby AI</h3>
@@ -202,7 +202,7 @@ export default function ContactPage() {
                 <div>
                   <h3 className="text-sm font-semibold mb-0.5" style={{ color: "var(--ink-strong)" }}>Hours</h3>
                   <p className="text-xs" style={{ color: "var(--ink-muted)" }}>Humans: Mon-Fri, 9am-6pm IST</p>
-                  <p className="text-xs text-[#C41A3B]/60 mt-0.5">AI Agents: 24/7/365</p>
+                  <p className="text-xs text-[#8B6B3D]/60 mt-0.5">AI Agents: 24/7/365</p>
                 </div>
               </div>
 

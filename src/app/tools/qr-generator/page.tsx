@@ -339,7 +339,7 @@ export default function QrGeneratorPage() {
     }
   }
 
-  const inputCls = "flex-1 h-11 px-3 bg-white border border-black/[0.08] rounded-xl text-[#1A1A1A] text-sm font-mono focus:border-[#C41A3B]/50 focus:ring-1 focus:ring-[#C41A3B]/20 focus:outline-none transition-all"
+  const inputCls = "flex-1 h-11 px-3 bg-white border border-black/[0.08] rounded-xl text-[#1A1A1A] text-sm font-mono focus:border-[#8B6B3D]/50 focus:ring-1 focus:ring-[#8B6B3D]/20 focus:outline-none transition-all"
 
   return (
     <main className="relative min-h-screen" style={{ background: "var(--page-bg)" }}>
@@ -351,7 +351,7 @@ export default function QrGeneratorPage() {
         </Link>
 
         <div className="mb-12">
-          <div className="text-[11px] font-semibold tracking-[0.12em] uppercase" style={{ color: "#C41A3B" }}>
+          <div className="text-[11px] font-semibold tracking-[0.12em] uppercase" style={{ color: "#8B6B3D" }}>
             Free Tool
           </div>
           <h1 className="text-4xl md:text-5xl font-serif italic tracking-tighter leading-[1.1] mb-4 mt-3" style={{ color: "var(--ink-strong)" }}>
@@ -373,7 +373,7 @@ export default function QrGeneratorPage() {
                   onChange={e => setText(e.target.value)}
                   placeholder="Enter text or URL..."
                   rows={4}
-                  className="w-full px-4 py-3 bg-white/[0.02] border border-black/[0.08] rounded-xl text-white placeholder:text-[#B8B8B0] focus:border-[#C41A3B]/50 focus:ring-1 focus:ring-[#C41A3B]/20 focus:outline-none text-sm font-mono resize-none transition-all"
+                  className="w-full px-4 py-3 bg-white/[0.02] border border-black/[0.08] rounded-xl text-white placeholder:text-[#B8B8B0] focus:border-[#8B6B3D]/50 focus:ring-1 focus:ring-[#8B6B3D]/20 focus:outline-none text-sm font-mono resize-none transition-all"
                 />
                 <span className="text-xs text-[#B8B8B0] mt-1.5 block font-mono">{text.length} characters</span>
               </div>
@@ -423,7 +423,7 @@ export default function QrGeneratorPage() {
                   max={16}
                   value={moduleSize}
                   onChange={e => setModuleSize(Number(e.target.value))}
-                  className="w-full accent-[#C41A3B]"
+                  className="w-full accent-[#8B6B3D]"
                 />
                 <div className="flex justify-between text-xs text-[#B8B8B0] mt-1 font-mono">
                   <span>Small</span>
@@ -436,7 +436,7 @@ export default function QrGeneratorPage() {
                 <label className="text-xs text-[#7A7A72] mb-2 block">Quick Presets</label>
                 <div className="flex flex-wrap gap-2">
                   {[
-                    { label: "9Ruby Dark", fg: "#C41A3B", bg: "#000000" },
+                    { label: "9Ruby Dark", fg: "#8B6B3D", bg: "#000000" },
                     { label: "Classic", fg: "#000000", bg: "#ffffff" },
                     { label: "Inverted", fg: "#ffffff", bg: "#000000" },
                     { label: "Ocean", fg: "#0891b2", bg: "#f0fdfa" },

@@ -34,7 +34,7 @@ export default function AvatarTree({ className = "", height = 400 }: AvatarTreeP
           animation: nodeGlow 3s ease-in-out infinite;
         }
         .glow-node-ruby {
-          --glow: #c41a3b;
+          --glow: #8b6b3d;
           animation: nodeGlow 3.5s ease-in-out infinite;
         }
         .glow-node-gold {
@@ -63,9 +63,9 @@ export default function AvatarTree({ className = "", height = 400 }: AvatarTreeP
             <stop offset="100%" stopColor="#00e5ff" stopOpacity="0" />
           </radialGradient>
           <radialGradient id={`${id}-glow-ruby`}>
-            <stop offset="0%" stopColor="#c41a3b" stopOpacity="1" />
-            <stop offset="50%" stopColor="#c41a3b" stopOpacity="0.4" />
-            <stop offset="100%" stopColor="#c41a3b" stopOpacity="0" />
+            <stop offset="0%" stopColor="#8b6b3d" stopOpacity="1" />
+            <stop offset="50%" stopColor="#8b6b3d" stopOpacity="0.4" />
+            <stop offset="100%" stopColor="#8b6b3d" stopOpacity="0" />
           </radialGradient>
           <filter id={`${id}-blur`}>
             <feGaussianBlur stdDeviation="3" />
@@ -218,7 +218,7 @@ export default function AvatarTree({ className = "", height = 400 }: AvatarTreeP
               cx={n.cx}
               cy={n.cy}
               r={n.r}
-              fill="#c41a3b"
+              fill="#8b6b3d"
               className="glow-node-ruby"
               style={{ animationDelay: n.delay }}
             />

@@ -43,7 +43,7 @@ export default function CoralReef({ className = "", width = 500 }: CoralReefProp
         <defs>
           <linearGradient id="coral-ruby" x1="0%" y1="0%" x2="0%" y2="100%">
             <stop offset="0%" stopColor="#ff5252" />
-            <stop offset="100%" stopColor="#c41a3b" />
+            <stop offset="100%" stopColor="#8b6b3d" />
           </linearGradient>
           <linearGradient id="coral-cyan" x1="0%" y1="0%" x2="0%" y2="100%">
             <stop offset="0%" stopColor="#00e5ff" />
@@ -59,7 +59,7 @@ export default function CoralReef({ className = "", width = 500 }: CoralReefProp
           </linearGradient>
           <linearGradient id="coral-pink" x1="0%" y1="0%" x2="0%" y2="100%">
             <stop offset="0%" stopColor="#ff80ab" />
-            <stop offset="100%" stopColor="#c41a3b" />
+            <stop offset="100%" stopColor="#8b6b3d" />
           </linearGradient>
           <filter id="coral-blur">
             <feGaussianBlur stdDeviation="2" />
@@ -204,7 +204,7 @@ export default function CoralReef({ className = "", width = 500 }: CoralReefProp
 
         {/* Small anemone-like coral - Pink (between center and right) */}
         <g className="coral-sway" style={{ animationDelay: "1.5s" }}>
-          <line x1="310" y1="280" x2="310" y2="250" stroke="#c41a3b" strokeWidth="4" strokeLinecap="round" />
+          <line x1="310" y1="280" x2="310" y2="250" stroke="#8b6b3d" strokeWidth="4" strokeLinecap="round" />
           {[-20, -12, -4, 4, 12, 20].map((a, i) => (
             <path
               key={`anem-${i}`}
@@ -280,7 +280,7 @@ export default function CoralReef({ className = "", width = 500 }: CoralReefProp
             cx={30 + (i * 97) % 440}
             cy={80 + (i * 53) % 180}
             r={0.5 + (i % 3) * 0.3}
-            fill={["#00e5ff", "#c41a3b", "#ffd54f", "#b388ff"][i % 4]}
+            fill={["#00e5ff", "#8b6b3d", "#ffd54f", "#b388ff"][i % 4]}
           >
             <animate
               attributeName="opacity"

@@ -199,7 +199,7 @@ export default function SeoCheckerPage() {
 
         {/* Header */}
         <div className="mb-12">
-          <div className="text-[11px] font-semibold tracking-[0.12em] uppercase" style={{ color: "#C41A3B" }}>
+          <div className="text-[11px] font-semibold tracking-[0.12em] uppercase" style={{ color: "#8B6B3D" }}>
             Free Tool
           </div>
           <h1 className="text-4xl md:text-5xl font-serif italic tracking-tighter leading-[1.1] mb-4 mt-3" style={{ color: "var(--ink-strong)" }}>
@@ -220,7 +220,7 @@ export default function SeoCheckerPage() {
               onChange={e => setUrl(e.target.value)}
               onKeyDown={e => e.key === "Enter" && handleAnalyze()}
               placeholder="Enter a URL to analyze..."
-              className="w-full h-12 pl-12 pr-4 bg-white border border-black/[0.08] rounded-xl placeholder:text-[#B8B8B0] focus:border-[#C41A3B]/50 focus:ring-1 focus:ring-[#C41A3B]/20 focus:outline-none transition-all font-mono text-sm"
+              className="w-full h-12 pl-12 pr-4 bg-white border border-black/[0.08] rounded-xl placeholder:text-[#B8B8B0] focus:border-[#8B6B3D]/50 focus:ring-1 focus:ring-[#8B6B3D]/20 focus:outline-none transition-all font-mono text-sm"
               style={{ color: "var(--ink-strong)" }}
             />
           </div>
@@ -279,7 +279,7 @@ export default function SeoCheckerPage() {
             {/* Stats */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               <div className="p-5 bg-white border border-black/[0.04] rounded-2xl text-center">
-                <FileText size={18} className="text-[#C41A3B] mx-auto mb-2" />
+                <FileText size={18} className="text-[#8B6B3D] mx-auto mb-2" />
                 <div className="text-2xl font-bold font-mono" style={{ color: "var(--ink-strong)" }}>{result.headings.h1}</div>
                 <div className="text-xs mt-1" style={{ color: "var(--ink-muted)" }}>H1 Tags</div>
               </div>
@@ -307,7 +307,7 @@ export default function SeoCheckerPage() {
                 <div className="space-y-2">
                   {result.ogTags.map((og, i) => (
                     <div key={i} className="flex gap-3 text-sm">
-                      <span className="text-[#C41A3B] font-mono whitespace-nowrap text-xs">{og.property}</span>
+                      <span className="text-[#8B6B3D] font-mono whitespace-nowrap text-xs">{og.property}</span>
                       <span className="truncate text-xs" style={{ color: "var(--ink-muted)" }}>{og.content}</span>
                     </div>
                   ))}

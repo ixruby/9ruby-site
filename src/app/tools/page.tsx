@@ -140,7 +140,7 @@ export default function ToolsPage() {
         <div className="relative max-w-[1200px] mx-auto px-6 lg:px-8">
           {/* Header */}
           <div className="text-center mb-16">
-            <div className="text-[11px] font-semibold tracking-[0.12em] uppercase" style={{ color: "#C41A3B" }}>
+            <div className="text-[11px] font-semibold tracking-[0.12em] uppercase" style={{ color: "#8B6B3D" }}>
               Free Tools
             </div>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif italic tracking-tighter leading-[1.05] mb-6 mt-4" style={{ color: "var(--ink-strong)" }}>
@@ -162,7 +162,7 @@ export default function ToolsPage() {
                 className="group relative flex flex-col p-6 bg-white border border-black/[0.04] rounded-2xl hover:border-black/[0.12] hover:shadow-sm transition-all duration-300"
               >
                 <div className="flex items-center justify-between mb-5">
-                  <div className="w-10 h-10 rounded-xl bg-[#F8F7F4] border border-black/[0.06] flex items-center justify-center text-[#7A7A72] group-hover:text-[#C41A3B] group-hover:bg-[#C41A3B]/10 group-hover:border-[#C41A3B]/20 transition-all duration-300">
+                  <div className="w-10 h-10 rounded-xl bg-[#F8F7F4] border border-black/[0.06] flex items-center justify-center text-[#7A7A72] group-hover:text-[#8B6B3D] group-hover:bg-[#8B6B3D]/10 group-hover:border-[#8B6B3D]/20 transition-all duration-300">
                     {t.icon}
                   </div>
                   <span className={`text-[10px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full ${t.badgeColor}`}>{t.badge}</span>
@@ -176,7 +176,7 @@ export default function ToolsPage() {
                     <div className={`w-1.5 h-1.5 rounded-full ${t.status === "Live" ? "bg-emerald-400" : "bg-yellow-400"}`} />
                     <span className="text-[11px] font-mono" style={{ color: "var(--ink-soft)" }}>{t.status}</span>
                   </div>
-                  <span className="flex items-center gap-1.5 text-[13px] font-medium text-[#7A7A72] group-hover:text-[#C41A3B] group-hover:gap-2.5 transition-all duration-300">
+                  <span className="flex items-center gap-1.5 text-[13px] font-medium text-[#7A7A72] group-hover:text-[#8B6B3D] group-hover:gap-2.5 transition-all duration-300">
                     Open <ArrowRight size={12} />
                   </span>
                 </div>
@@ -186,8 +186,8 @@ export default function ToolsPage() {
 
           {/* Coming soon */}
           <div className="mt-16 p-10 bg-white border border-dashed border-black/[0.08] rounded-2xl text-center">
-            <div className="w-10 h-10 rounded-xl bg-[#C41A3B]/10 border border-[#C41A3B]/20 flex items-center justify-center mx-auto mb-5">
-              <Sparkles size={18} className="text-[#C41A3B]" />
+            <div className="w-10 h-10 rounded-xl bg-[#8B6B3D]/10 border border-[#8B6B3D]/20 flex items-center justify-center mx-auto mb-5">
+              <Sparkles size={18} className="text-[#8B6B3D]" />
             </div>
             <h3 className="text-xl font-semibold tracking-tight mb-2" style={{ color: "var(--ink-strong)" }}>More tools coming soon</h3>
             <p className="text-sm max-w-md mx-auto mb-6 leading-relaxed" style={{ color: "var(--ink-muted)" }}>We&apos;re building new AI-powered tools every week. Request a tool or suggest an idea.</p>

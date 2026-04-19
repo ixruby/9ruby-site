@@ -371,7 +371,7 @@ export default function TemplatesPage() {
             data-reveal
             data-reveal-delay={0}
             className="reveal-item text-[11px] font-semibold tracking-[0.12em] uppercase mb-6"
-            style={{ color: "#C41A3B" }}
+            style={{ color: "#8B6B3D" }}
           >
             Template Marketplace
           </div>
@@ -646,7 +646,7 @@ export default function TemplatesPage() {
         {/* --- Bottom CTA --- */}
         <div className="mt-24">
           <div className="rounded-2xl bg-white p-12 lg:p-16 text-center" style={{ border: "1px solid rgba(0,0,0,0.04)" }}>
-            <span className="text-[11px] font-semibold tracking-[0.12em] uppercase mb-6 block" style={{ color: "#C41A3B" }}>
+            <span className="text-[11px] font-semibold tracking-[0.12em] uppercase mb-6 block" style={{ color: "#8B6B3D" }}>
               Custom Work
             </span>
             <h2 className="text-3xl lg:text-4xl font-serif italic tracking-tighter mb-4" style={{ color: "var(--ink-strong)" }}>Want a custom template?</h2>

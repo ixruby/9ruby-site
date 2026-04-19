@@ -131,7 +131,7 @@ export default function ColorPalettePage() {
         </Link>
 
         <div className="mb-12">
-          <div className="text-[11px] font-semibold tracking-[0.12em] uppercase" style={{ color: "#C41A3B" }}>
+          <div className="text-[11px] font-semibold tracking-[0.12em] uppercase" style={{ color: "#8B6B3D" }}>
             Free Tool
           </div>
           <h1 className="text-4xl md:text-5xl font-serif italic tracking-tighter leading-[1.1] mb-4 mt-3" style={{ color: "var(--ink-strong)" }}>
@@ -147,7 +147,7 @@ export default function ColorPalettePage() {
           <select
             value={harmony}
             onChange={e => setHarmony(e.target.value as Harmony)}
-            className="h-10 px-4 bg-white border border-black/[0.08] rounded-xl text-sm focus:border-[#C41A3B]/50 focus:ring-1 focus:ring-[#C41A3B]/20 focus:outline-none appearance-none cursor-pointer"
+            className="h-10 px-4 bg-white border border-black/[0.08] rounded-xl text-sm focus:border-[#8B6B3D]/50 focus:ring-1 focus:ring-[#8B6B3D]/20 focus:outline-none appearance-none cursor-pointer"
             style={{ color: "var(--ink-strong)" }}
           >
             <option value="random">Random</option>

@@ -94,7 +94,7 @@ export default function ProductsPage() {
 
       <section className="relative pt-36 lg:pt-48 pb-20 lg:pb-24">
         <div className="max-w-[1200px] mx-auto px-6 text-center">
-          <div className="text-[11px] font-semibold tracking-[0.12em] uppercase mb-6" style={{ color: "#C41A3B" }}>
+          <div className="text-[11px] font-semibold tracking-[0.12em] uppercase mb-6" style={{ color: "#8B6B3D" }}>
             Products
           </div>
           <h1 className="text-5xl md:text-6xl lg:text-[80px] font-serif italic leading-[0.95] tracking-tighter mb-6" style={{ color: "var(--ink-strong)" }}>
@@ -131,7 +131,7 @@ export default function ProductsPage() {
               <ul className="space-y-3 mb-8 flex-1">
                 {pillar.items.map((item) => (
                   <li key={item} className="flex items-center gap-2.5 text-sm" style={{ color: "var(--ink-muted)" }}>
-                    <span className="w-1.5 h-1.5 rounded-full shrink-0" style={{ background: "#C41A3B" }} />
+                    <span className="w-1.5 h-1.5 rounded-full shrink-0" style={{ background: "#8B6B3D" }} />
                     {item}
                   </li>
                 ))}
@@ -151,7 +151,7 @@ export default function ProductsPage() {
       <section className="pb-20 lg:pb-24">
         <div className="max-w-[1200px] mx-auto px-6">
           <div className="mb-10">
-            <div className="text-[11px] font-semibold tracking-[0.12em] uppercase mb-4" style={{ color: "#C41A3B" }}>
+            <div className="text-[11px] font-semibold tracking-[0.12em] uppercase mb-4" style={{ color: "#8B6B3D" }}>
               Inventory
             </div>
             <h2 className="text-3xl md:text-4xl font-serif italic tracking-tighter mb-3" style={{ color: "var(--ink-strong)" }}>

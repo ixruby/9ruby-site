@@ -7,7 +7,6 @@ import {
   Playfair_Display,
 } from "next/font/google";
 import "./globals.css";
-import BotanicalEffects from "@/components/BotanicalEffects";
 import CookieConsent from "@/components/CookieConsent";
 
 const siteUrl = "https://www.9ruby.com";
@@ -131,7 +130,7 @@ export default function RootLayout({
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
-        <meta name="theme-color" content="#C41A3B" />
+        <meta name="theme-color" content="#8B6B3D" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta
           name="apple-mobile-web-app-status-bar-style"
@@ -151,7 +150,6 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
-        <BotanicalEffects />
         {children}
         <CookieConsent />
         <script

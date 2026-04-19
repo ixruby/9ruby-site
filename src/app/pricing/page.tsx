@@ -175,7 +175,7 @@ const faqItems = [
 function CellValue({ value }: { value: string | boolean }) {
   if (typeof value === "boolean") {
     return value
-      ? <CheckCircle2 size={16} className="text-[#C41A3B] mx-auto" />
+      ? <CheckCircle2 size={16} className="text-[#8B6B3D] mx-auto" />
       : <X size={16} className="mx-auto" style={{ color: "var(--ink-soft)" }} />
   }
   return <span className="text-sm" style={{ color: "var(--ink-muted)" }}>{value}</span>
@@ -228,7 +228,7 @@ export default function PricingPage() {
       {/* HERO */}
       <section className="relative pt-36 lg:pt-44 pb-16 lg:pb-20">
         <div className="relative max-w-[1200px] mx-auto px-6 text-center">
-            <div className="text-[11px] font-semibold tracking-[0.12em] uppercase mb-6" style={{ color: "#C41A3B" }}>
+            <div className="text-[11px] font-semibold tracking-[0.12em] uppercase mb-6" style={{ color: "#8B6B3D" }}>
             Pricing
           </div>
 
@@ -285,7 +285,7 @@ export default function PricingPage() {
               style={!annual ? { color: "var(--ink-muted)" } : {}}
             >
               Annual
-              <span className="absolute -top-2.5 -right-4 font-mono text-[10px] font-bold px-2 py-0.5 rounded-full bg-[#C41A3B] text-white whitespace-nowrap">
+              <span className="absolute -top-2.5 -right-4 font-mono text-[10px] font-bold px-2 py-0.5 rounded-full bg-[#8B6B3D] text-white whitespace-nowrap">
                 -20%
               </span>
             </button>
@@ -374,7 +374,7 @@ export default function PricingPage() {
                           <CheckCircle2
                             size={14}
                             className={`shrink-0 mt-0.5 ${
-                              isHighlighted ? "text-[#C41A3B]" : ""
+                              isHighlighted ? "text-[#8B6B3D]" : ""
                             }`}
                             style={!isHighlighted ? { color: "var(--ink-soft)" } : {}}
                           />
@@ -475,7 +475,7 @@ export default function PricingPage() {
       <section className="relative pb-24 lg:pb-32">
         <div className="relative max-w-3xl mx-auto px-6">
           <div className="text-center mb-14">
-            <div className="text-[11px] font-semibold tracking-[0.12em] uppercase mb-6" style={{ color: "#C41A3B" }}>
+            <div className="text-[11px] font-semibold tracking-[0.12em] uppercase mb-6" style={{ color: "#8B6B3D" }}>
               FAQ
             </div>
             <h2 className="text-3xl lg:text-4xl font-serif italic tracking-tighter mb-2" style={{ color: "var(--ink-strong)" }}>Common questions</h2>

@@ -39,7 +39,7 @@ const MOCK_PROSPECTS: Prospect[] = [
 ]
 
 const STATS = [
-  { label: "Total Prospects", value: "8", icon: Users, color: "#C41A3B" },
+  { label: "Total Prospects", value: "8", icon: Users, color: "#8B6B3D" },
   { label: "Pitches Sent", value: "3", icon: Send, color: "#3B82F6" },
   { label: "Replies", value: "1", icon: MessageSquare, color: "#8B5CF6" },
   { label: "Converted", value: "1", icon: Target, color: "#10B981" },
@@ -97,7 +97,7 @@ export default function ProspectorPage() {
         <div className="max-w-[1280px] mx-auto">
           <div className="flex items-start justify-between gap-6 flex-wrap">
             <div>
-              <div className="text-[11px] font-semibold tracking-[0.12em] uppercase mb-2" style={{ color: "#C41A3B" }}>
+              <div className="text-[11px] font-semibold tracking-[0.12em] uppercase mb-2" style={{ color: "#8B6B3D" }}>
                 Dashboard / Prospector
               </div>
               <h1 className="text-3xl font-serif italic tracking-tighter" style={{ color: "var(--ink-strong)" }}>
@@ -205,8 +205,8 @@ export default function ProspectorPage() {
                       >
                         <td className="px-6 py-4">
                           <div className="flex items-center gap-3">
-                            <div className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0" style={{ background: "rgba(196,26,59,0.06)" }}>
-                              <Building2 size={14} style={{ color: "#C41A3B" }} />
+                            <div className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0" style={{ background: "rgba(139,107,61,0.06)" }}>
+                              <Building2 size={14} style={{ color: "#8B6B3D" }} />
                             </div>
                             <span className="text-sm font-medium" style={{ color: "var(--ink-strong)" }}>{p.business}</span>
                           </div>
@@ -235,7 +235,7 @@ export default function ProspectorPage() {
                         </td>
                         <td className="px-6 py-4">
                           <div className="flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
-                            <button className="h-7 px-3 rounded-lg text-xs font-medium flex items-center gap-1.5 transition-all" style={{ background: "rgba(196,26,59,0.06)", color: "#C41A3B" }}>
+                            <button className="h-7 px-3 rounded-lg text-xs font-medium flex items-center gap-1.5 transition-all" style={{ background: "rgba(139,107,61,0.06)", color: "#8B6B3D" }}>
                               <Zap size={11} /> Pitch
                             </button>
                             <button className="w-7 h-7 rounded-lg flex items-center justify-center transition-all" style={{ background: "rgba(0,0,0,0.03)", color: "var(--ink-muted)" }}>
@@ -263,7 +263,7 @@ export default function ProspectorPage() {
             style={{ background: "#1A1A1A" }}
           >
             <div>
-              <div className="text-[11px] font-semibold tracking-[0.12em] uppercase mb-2" style={{ color: "rgba(196,26,59,0.7)" }}>
+              <div className="text-[11px] font-semibold tracking-[0.12em] uppercase mb-2" style={{ color: "rgba(139,107,61,0.7)" }}>
                 AI Powered
               </div>
               <h3 className="text-xl font-serif italic tracking-tight text-white mb-1">
@@ -276,7 +276,7 @@ export default function ProspectorPage() {
             <Link
               href="/contact"
               className="shrink-0 h-10 px-7 rounded-full text-sm font-medium flex items-center gap-2 transition-all duration-300"
-              style={{ background: "#C41A3B", color: "#fff" }}
+              style={{ background: "#8B6B3D", color: "#fff" }}
             >
               Enable AI Pitching <ArrowRight size={13} />
             </Link>

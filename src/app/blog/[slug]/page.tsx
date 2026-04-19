@@ -157,7 +157,7 @@ export default async function BlogArticlePage({ params }: ArticlePageProps) {
             <div className="mb-10">
               <p
                 className="text-[11px] font-semibold uppercase tracking-[0.14em] mb-3"
-                style={{ color: "#C41A3B" }}
+                style={{ color: "#8B6B3D" }}
               >
                 Overview
               </p>
@@ -172,7 +172,7 @@ export default async function BlogArticlePage({ params }: ArticlePageProps) {
             <div className="mb-10">
               <p
                 className="text-[11px] font-semibold uppercase tracking-[0.14em] mb-4"
-                style={{ color: "#C41A3B" }}
+                style={{ color: "#8B6B3D" }}
               >
                 Key ideas
               </p>
@@ -207,7 +207,7 @@ export default async function BlogArticlePage({ params }: ArticlePageProps) {
                 color: "#F8F7F4",
               }}
             >
-              <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-[#C41A3B] mb-3">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-[#8B6B3D] mb-3">
                 Why it matters
               </p>
               <h2 className="text-2xl md:text-[2rem] font-serif italic tracking-tight mb-4">
@@ -228,7 +228,7 @@ export default async function BlogArticlePage({ params }: ArticlePageProps) {
             >
               <p
                 className="text-[11px] font-semibold uppercase tracking-[0.14em] mb-3"
-                style={{ color: "#C41A3B" }}
+                style={{ color: "#8B6B3D" }}
               >
                 Next step
               </p>
@@ -254,7 +254,7 @@ export default async function BlogArticlePage({ params }: ArticlePageProps) {
             >
               <p
                 className="text-[11px] font-semibold uppercase tracking-[0.14em] mb-4"
-                style={{ color: "#C41A3B" }}
+                style={{ color: "#8B6B3D" }}
               >
                 More reading
               </p>

@@ -7,9 +7,9 @@ interface BioButterflyProps {
 }
 
 const colorSchemes = {
-  ruby: { wing1: "#c41a3b", wing2: "#ff5252", accent: "#ffd54f", vein: "#ff8a80" },
-  cyan: { wing1: "#00e5ff", wing2: "#00bcd4", accent: "#c41a3b", vein: "#80deea" },
-  gold: { wing1: "#ffd54f", wing2: "#ffab40", accent: "#c41a3b", vein: "#ffe082" },
+  ruby: { wing1: "#8b6b3d", wing2: "#ff5252", accent: "#ffd54f", vein: "#d4a870" },
+  cyan: { wing1: "#00e5ff", wing2: "#00bcd4", accent: "#8b6b3d", vein: "#80deea" },
+  gold: { wing1: "#ffd54f", wing2: "#ffab40", accent: "#8b6b3d", vein: "#ffe082" },
   purple: { wing1: "#7c4dff", wing2: "#b388ff", accent: "#00e5ff", vein: "#d1c4e9" },
 };
 

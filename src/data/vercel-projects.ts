@@ -23,7 +23,6 @@ export const vercelBrandProjects: BrandProject[] = [
     description: "Official marketing site for the 9Ruby ecosystem and IX Ruby brand.",
     primaryDomain: "home.9ruby.com",
     publicUrl: "https://home.9ruby.com",
-    previewImage: "/images/94c49ecc1eee.png",
     source: "vercel",
   },
   {
@@ -35,7 +34,6 @@ export const vercelBrandProjects: BrandProject[] = [
     description: "AI workspace for chat, tools, integrations, and product workflows.",
     primaryDomain: "ai.9ruby.com",
     publicUrl: "https://ai.9ruby.com",
-    previewImage: "/images/7f27b449b048.png",
     source: "vercel",
   },
   {
@@ -47,7 +45,6 @@ export const vercelBrandProjects: BrandProject[] = [
     description: "Agency-facing site and service funnel for IX Ruby.",
     primaryDomain: "ix-ruby-agency.vercel.app",
     publicUrl: "https://ix-ruby-agency.vercel.app",
-    previewImage: "/images/23b28bc580f1.png",
     source: "vercel",
   },
   {
@@ -81,7 +78,6 @@ export const vercelBrandProjects: BrandProject[] = [
     description: "Visual page builder product in the Nine Ruby ecosystem.",
     primaryDomain: "nine-builder.vercel.app",
     publicUrl: "https://nine-builder.vercel.app",
-    previewImage: "/images/garden-graph.png",
     source: "vercel",
   },
   {
@@ -93,7 +89,6 @@ export const vercelBrandProjects: BrandProject[] = [
     description: "Operating-system layer concept for cross-product workflows and orchestration.",
     primaryDomain: "nine-ruby-os.vercel.app",
     publicUrl: "https://nine-ruby-os.vercel.app",
-    previewImage: "/images/neural-globe.png",
     source: "vercel",
   },
   {
@@ -105,7 +100,6 @@ export const vercelBrandProjects: BrandProject[] = [
     description: "Visual exploration of how IX Ruby products and layers connect.",
     primaryDomain: "ixr-galaxy.vercel.app",
     publicUrl: "https://ixr-galaxy.vercel.app",
-    previewImage: "/images/e985317f2304.png",
     source: "vercel",
   },
   {
@@ -205,7 +199,6 @@ export const vercelBrandProjects: BrandProject[] = [
     description: "Cafe demo site in the 9Ruby showcase network.",
     primaryDomain: "cafe.9ruby.com",
     publicUrl: "https://cafe.9ruby.com",
-    previewImage: "/images/12582fd183df.jpg",
     source: "vercel",
   },
   {
@@ -239,7 +232,6 @@ export const vercelBrandProjects: BrandProject[] = [
     description: "Restaurant showcase site deployed under the 9Ruby domain network.",
     primaryDomain: "dinecraft.9ruby.com",
     publicUrl: "https://dinecraft.9ruby.com",
-    previewImage: "/images/f4af7f9b7079.png",
     source: "vercel",
   },
   {
@@ -251,7 +243,6 @@ export const vercelBrandProjects: BrandProject[] = [
     description: "Spa and wellness showcase for the 9Ruby template and demo ecosystem.",
     primaryDomain: "serenity.9ruby.com",
     publicUrl: "https://serenity.9ruby.com",
-    previewImage: "/images/5d3f07302fe7.png",
     source: "vercel",
   },
   {

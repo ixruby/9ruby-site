@@ -92,7 +92,7 @@ export default function DocsPage() {
             <div className="inline-flex items-center gap-2 mb-8">
               <span
                 className="text-[11px] font-semibold tracking-[0.12em] uppercase"
-                style={{ color: "#C41A3B" }}
+                style={{ color: "#8B6B3D" }}
               >
                 Docs
               </span>
@@ -130,7 +130,7 @@ export default function DocsPage() {
                   }}
                 >
                   <span
-                    className="group-hover:text-[#C41A3B] transition-colors"
+                    className="group-hover:text-[#8B6B3D] transition-colors"
                     style={{ color: "var(--ink-muted)" }}
                   >
                     {section.icon}
@@ -147,7 +147,7 @@ export default function DocsPage() {
                 </p>
                 <span
                   className="text-[13px] font-medium inline-flex items-center gap-1 group-hover:gap-2 transition-all"
-                  style={{ color: "#C41A3B" }}
+                  style={{ color: "#8B6B3D" }}
                 >
                   Read docs <ArrowRight size={13} />
                 </span>

@@ -7,10 +7,10 @@ interface JellyfishProps {
 }
 
 const colorMap = {
-  cyan: { primary: "#00e5ff", secondary: "#7c4dff", accent: "#c41a3b" },
-  ruby: { primary: "#c41a3b", secondary: "#7c4dff", accent: "#00e5ff" },
-  purple: { primary: "#7c4dff", secondary: "#c41a3b", accent: "#00e5ff" },
-  gold: { primary: "#ffd54f", secondary: "#ff8a65", accent: "#c41a3b" },
+  cyan: { primary: "#00e5ff", secondary: "#7c4dff", accent: "#8b6b3d" },
+  ruby: { primary: "#8b6b3d", secondary: "#7c4dff", accent: "#00e5ff" },
+  purple: { primary: "#7c4dff", secondary: "#8b6b3d", accent: "#00e5ff" },
+  gold: { primary: "#ffd54f", secondary: "#ff8a65", accent: "#8b6b3d" },
 };
 
 export default function Jellyfish({ className = "", size = 200, color = "cyan" }: JellyfishProps) {
