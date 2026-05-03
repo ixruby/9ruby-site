@@ -1,12 +1,15 @@
 "use client";
 
+import { useId } from "react";
+
 interface GlowMushroomProps {
   className?: string;
   size?: number;
 }
 
 export default function GlowMushroom({ className = "", size = 200 }: GlowMushroomProps) {
-  const id = `mush-${Math.random().toString(36).slice(2, 8)}`;
+  const generatedId = useId();
+  const id = `mush-${generatedId.replace(/:/g, "")}`;
 
   return (
     <div className={`relative inline-block ${className}`}>

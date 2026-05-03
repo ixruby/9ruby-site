@@ -336,7 +336,7 @@ export default function TemplatesPage() {
   const revealRef = useScrollReveal()
 
   const filtered = useMemo(() => {
-    let result = activeCategory === "All"
+    const result = activeCategory === "All"
       ? [...templates]
       : templates.filter((t) => t.category === activeCategory)
 

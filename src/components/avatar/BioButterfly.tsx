@@ -1,5 +1,7 @@
 "use client";
 
+import { useId } from "react";
+
 interface BioButterflyProps {
   className?: string;
   size?: number;
@@ -15,7 +17,8 @@ const colorSchemes = {
 
 export default function BioButterfly({ className = "", size = 120, color = "ruby" }: BioButterflyProps) {
   const c = colorSchemes[color];
-  const id = `bio-fly-${Math.random().toString(36).slice(2, 8)}`;
+  const generatedId = useId();
+  const id = `bio-fly-${generatedId.replace(/:/g, "")}`;
 
   return (
     <div className={`relative inline-block ${className}`}>

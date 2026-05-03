@@ -1,5 +1,7 @@
 "use client";
 
+import { useId } from "react";
+
 interface JellyfishProps {
   className?: string;
   size?: number;
@@ -15,7 +17,8 @@ const colorMap = {
 
 export default function Jellyfish({ className = "", size = 200, color = "cyan" }: JellyfishProps) {
   const c = colorMap[color];
-  const id = `jelly-${color}-${Math.random().toString(36).slice(2, 8)}`;
+  const generatedId = useId();
+  const id = `jelly-${color}-${generatedId.replace(/:/g, "")}`;
 
   return (
     <div className={`relative inline-block ${className}`}>

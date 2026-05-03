@@ -6,7 +6,9 @@ export default function CookieConsent() {
 
   useEffect(() => {
     const consent = localStorage.getItem("cookie-consent")
-    if (!consent) setShow(true)
+    if (!consent) {
+      requestAnimationFrame(() => setShow(true))
+    }
   }, [])
 
   const accept = () => {

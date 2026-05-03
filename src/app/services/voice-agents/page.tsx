@@ -703,7 +703,7 @@ export default function VoiceAgentsPage() {
             className="reveal-item text-base leading-relaxed max-w-xl mx-auto mb-10"
             style={{ color: "var(--ink-muted)" }}
           >
-            Book a free strategy call and we'll design your voice agent system from scratch —
+            Book a free strategy call and we&apos;ll design your voice agent system from scratch —
             call flows, CRM integration, and a go-live plan included.
           </p>
           <div

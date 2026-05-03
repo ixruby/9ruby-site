@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useCallback, useRef, useEffect } from "react"
+import { useState, useCallback, useRef, useEffect, useLayoutEffect } from "react"
 import Link from "next/link"
 import { ArrowLeft, RefreshCw, Copy, Check, Lock, Unlock, Palette } from "lucide-react"
 import Navbar from "@/components/Navbar"
@@ -280,7 +280,10 @@ export default function ColorPalettePage() {
 
 function SpacebarListener({ onSpace }: { onSpace: () => void }) {
   const callbackRef = useRef(onSpace)
-  callbackRef.current = onSpace
+  
+  useLayoutEffect(() => {
+    callbackRef.current = onSpace
+  })
 
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {

@@ -17,8 +17,10 @@ export default function ThemeToggle() {
 
   useEffect(() => {
     const initial = (document.documentElement.dataset.theme as Theme) || "light"
-    setTheme(initial)
-    setReady(true)
+    requestAnimationFrame(() => {
+      setTheme(initial)
+      setReady(true)
+    })
   }, [])
 
   const nextTheme = theme === "dark" ? "light" : "dark"

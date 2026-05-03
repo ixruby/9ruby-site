@@ -1,5 +1,7 @@
 "use client";
 
+import { useId } from "react";
+
 interface WaterDragonProps {
   className?: string;
   width?: number;
@@ -7,7 +9,8 @@ interface WaterDragonProps {
 
 export default function WaterDragon({ className = "", width = 500 }: WaterDragonProps) {
   const h = width * 0.4;
-  const id = `dragon-${Math.random().toString(36).slice(2, 8)}`;
+  const generatedId = useId();
+  const id = `dragon-${generatedId.replace(/:/g, "")}`;
 
   return (
     <div className={`relative inline-block ${className}`}>
