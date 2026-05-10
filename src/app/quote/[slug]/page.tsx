@@ -42,7 +42,7 @@ export default async function QuotePage({ params }: { params: Promise<{ slug: st
         <div className="flex items-center justify-between mb-10 pb-6" style={{ borderBottom: "1px solid rgba(0,0,0,0.08)" }}>
           <div>
             <div className="flex items-center gap-2 mb-1">
-              <div className="w-8 h-8 rounded-full flex items-center justify-center text-white font-serif italic text-lg" style={{ background: "#8B6B3D" }}>9</div>
+              <div className="w-8 h-8 rounded-full flex items-center justify-center text-white font-serif italic text-lg" style={{ background: "var(--accent)" }}>9</div>
               <div className="font-serif italic text-xl">9Ruby</div>
             </div>
             <div className="text-xs" style={{ color: "#666" }}>Nine Ruby Management FZ-LLC · domains.9ruby.com</div>
@@ -75,7 +75,7 @@ export default async function QuotePage({ params }: { params: Promise<{ slug: st
             {plans.map(p => (
               <div key={p.years} className={`p-6 rounded-2xl border ${p.best ? "md:scale-105" : ""}`}
                    style={{ background: p.best ? "#1A1A1A" : "white", borderColor: p.best ? "#1A1A1A" : "rgba(0,0,0,0.08)", color: p.best ? "white" : "inherit" }}>
-                {p.best && <div className="text-[10px] uppercase tracking-wider mb-2" style={{ color: "#8B6B3D" }}>Best value · Recommended</div>}
+                {p.best && <div className="text-[10px] uppercase tracking-wider mb-2" style={{ color: "var(--accent)" }}>Best value · Recommended</div>}
                 <div className="text-3xl font-semibold mb-1">{p.years} {p.years === 1 ? "year" : "years"}</div>
                 <div className="text-sm mb-4" style={{ color: p.best ? "#aaa" : "#666" }}>{formatINR(p.perYr)}/year</div>
                 <div className="text-4xl font-semibold mb-1">{formatINR(p.total)}</div>
@@ -88,7 +88,7 @@ export default async function QuotePage({ params }: { params: Promise<{ slug: st
         {/* Notes */}
         {quote.notes && (
           <div className="mb-10 p-6 rounded-xl" style={{ background: "rgba(139,107,61,0.04)" }}>
-            <div className="text-[11px] uppercase tracking-wider mb-2" style={{ color: "#8B6B3D" }}>Notes</div>
+            <div className="text-[11px] uppercase tracking-wider mb-2" style={{ color: "var(--accent)" }}>Notes</div>
             <div className="text-sm whitespace-pre-wrap" style={{ color: "#333" }}>{quote.notes}</div>
           </div>
         )}

@@ -139,7 +139,7 @@ export default function DashboardPage() {
 
         {/* ====== 2. QUICK ACTIONS ====== */}
         <div className="mb-10 animate-slide-up delay-200">
-          <h2 className="text-[11px] font-semibold tracking-[0.12em] uppercase mb-4" style={{ color: '#8B6B3D' }}>Quick Actions</h2>
+          <h2 className="text-[11px] font-semibold tracking-[0.12em] uppercase mb-4" style={{ color: 'var(--accent)' }}>Quick Actions</h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
             {quickActions.map((a) => {
               const Icon = a.icon
@@ -173,7 +173,7 @@ export default function DashboardPage() {
           {/* Active Projects */}
           <div className="lg:col-span-2 rounded-2xl bg-white hover:shadow-lg hover:shadow-black/[0.03] transition-all duration-300" style={{ border: '1px solid rgba(0,0,0,0.04)' }}>
             <div className="px-6 py-5" style={{ borderBottom: '1px solid rgba(0,0,0,0.04)' }}>
-              <h2 className="text-[11px] font-semibold tracking-[0.12em] uppercase" style={{ color: '#8B6B3D' }}>Active Projects</h2>
+              <h2 className="text-[11px] font-semibold tracking-[0.12em] uppercase" style={{ color: 'var(--accent)' }}>Active Projects</h2>
             </div>
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
@@ -225,7 +225,7 @@ export default function DashboardPage() {
           {/* Revenue Chart */}
           <div className="rounded-2xl bg-white hover:shadow-lg hover:shadow-black/[0.03] transition-all duration-300" style={{ border: '1px solid rgba(0,0,0,0.04)' }}>
             <div className="px-6 py-5" style={{ borderBottom: '1px solid rgba(0,0,0,0.04)' }}>
-              <h2 className="text-[11px] font-semibold tracking-[0.12em] uppercase" style={{ color: '#8B6B3D' }}>Monthly Revenue</h2>
+              <h2 className="text-[11px] font-semibold tracking-[0.12em] uppercase" style={{ color: 'var(--accent)' }}>Monthly Revenue</h2>
             </div>
             <div className="p-6">
               <div className="flex items-end justify-between gap-3 h-44">
@@ -258,7 +258,7 @@ export default function DashboardPage() {
           {/* Recent Activity Feed */}
           <div className="rounded-2xl bg-white hover:shadow-lg hover:shadow-black/[0.03] transition-all duration-300" style={{ border: '1px solid rgba(0,0,0,0.04)' }}>
             <div className="px-6 py-5" style={{ borderBottom: '1px solid rgba(0,0,0,0.04)' }}>
-              <h2 className="text-[11px] font-semibold tracking-[0.12em] uppercase" style={{ color: '#8B6B3D' }}>Recent Activity</h2>
+              <h2 className="text-[11px] font-semibold tracking-[0.12em] uppercase" style={{ color: 'var(--accent)' }}>Recent Activity</h2>
             </div>
             <div className="p-6 space-y-0">
               {activityFeed.map((a, i) => {
@@ -285,7 +285,7 @@ export default function DashboardPage() {
           {/* Team / Agents */}
           <div className="rounded-2xl bg-white hover:shadow-lg hover:shadow-black/[0.03] transition-all duration-300" style={{ border: '1px solid rgba(0,0,0,0.04)' }}>
             <div className="px-6 py-5 flex items-center justify-between" style={{ borderBottom: '1px solid rgba(0,0,0,0.04)' }}>
-              <h2 className="text-[11px] font-semibold tracking-[0.12em] uppercase" style={{ color: '#8B6B3D' }}>Team / Agents</h2>
+              <h2 className="text-[11px] font-semibold tracking-[0.12em] uppercase" style={{ color: 'var(--accent)' }}>Team / Agents</h2>
               <Link
                 href="/dashboard/team"
                 className="text-xs font-mono hover:text-[#1A1A1A] transition-colors flex items-center gap-1"
@@ -323,7 +323,7 @@ export default function DashboardPage() {
           {/* System Health */}
           <div className="rounded-2xl bg-white hover:shadow-lg hover:shadow-black/[0.03] transition-all duration-300" style={{ border: '1px solid rgba(0,0,0,0.04)' }}>
             <div className="px-6 py-5" style={{ borderBottom: '1px solid rgba(0,0,0,0.04)' }}>
-              <h2 className="text-[11px] font-semibold tracking-[0.12em] uppercase" style={{ color: '#8B6B3D' }}>System Health</h2>
+              <h2 className="text-[11px] font-semibold tracking-[0.12em] uppercase" style={{ color: 'var(--accent)' }}>System Health</h2>
             </div>
             <div className="p-4 space-y-1">
               {systemHealth.map((s) => {

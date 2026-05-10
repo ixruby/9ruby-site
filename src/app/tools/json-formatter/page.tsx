@@ -2,9 +2,10 @@
 
 import { useState, useCallback } from "react"
 import Link from "next/link"
-import { ArrowLeft, Copy, Check, Minimize2, Maximize2, AlertTriangle, CheckCircle2, Trash2, Download, Braces } from "lucide-react"
+import { ArrowLeft, Copy, Check, Minimize2, Maximize2, AlertTriangle, CheckCircle2, Trash2, Download } from "lucide-react"
 import Navbar from "@/components/Navbar"
 import Breadcrumb from "@/components/Breadcrumb"
+import ToolServiceCta from "@/components/tools/ToolServiceCta"
 
 function syntaxHighlight(json: string): string {
   return json
@@ -17,7 +18,7 @@ function syntaxHighlight(json: string): string {
         let cls = "text-[#f8c555]" // number
         if (/^"/.test(match)) {
           if (/:$/.test(match)) {
-            cls = "text-[#8B6B3D]" // key
+            cls = "text-[var(--accent)]" // key
             match = match.replace(/:$/, "") + ":"
           } else {
             cls = "text-[#6ee7b7]" // string
@@ -143,7 +144,7 @@ export default function JsonFormatterPage() {
       features: ["Autonomous agents", "Multi-channel marketing", "Real-time analytics"],
       config: {
         theme: "dark",
-        primaryColor: "#8B6B3D",
+        primaryColor: "var(--accent)",
         fonts: { heading: "Georgia", body: "system-ui" }
       },
       active: true,
@@ -166,7 +167,7 @@ export default function JsonFormatterPage() {
         </Link>
 
         <div className="mb-12">
-          <div className="text-[11px] font-semibold tracking-[0.12em] uppercase" style={{ color: "#8B6B3D" }}>
+          <div className="text-[11px] font-semibold tracking-[0.12em] uppercase" style={{ color: "var(--accent)" }}>
             Free Tool
           </div>
           <h1 className="text-4xl md:text-5xl font-serif italic tracking-tighter leading-[1.1] mb-4 mt-3" style={{ color: "var(--ink-strong)" }}>
@@ -202,7 +203,7 @@ export default function JsonFormatterPage() {
               <button
                 key={n}
                 onClick={() => { setIndentSize(n); if (formatted) format() }}
-                className={`w-8 h-8 text-xs rounded-lg border transition-colors ${indentSize === n ? "border-[#8B6B3D] text-[#8B6B3D] bg-[#8B6B3D]/10" : "border-black/[0.08] text-[#7A7A72] hover:border-black/[0.12]"}`}
+                className={`w-8 h-8 text-xs rounded-lg border transition-colors ${indentSize === n ? "border-[var(--accent)] text-[var(--accent)] bg-[var(--accent)]/10" : "border-black/[0.08] text-[#7A7A72] hover:border-black/[0.12]"}`}
               >
                 {n}
               </button>
@@ -224,7 +225,7 @@ export default function JsonFormatterPage() {
           <div className="relative border-b lg:border-b-0 lg:border-r border-black/[0.04]">
             <div className="flex items-center justify-between px-5 py-3 border-b border-black/[0.04] bg-white">
               <span className="text-xs font-mono" style={{ color: "var(--ink-soft)" }}>INPUT</span>
-              <button onClick={loadSample} className="text-xs text-[#8B6B3D] hover:text-[#333] transition-colors font-medium">
+              <button onClick={loadSample} className="text-xs text-[var(--accent)] hover:text-[#333] transition-colors font-medium">
                 Load sample
               </button>
             </div>
@@ -263,7 +264,7 @@ export default function JsonFormatterPage() {
         {stats && formatted && (
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
             <div className="p-4 bg-white border border-black/[0.04] rounded-2xl text-center">
-              <div className="text-xl font-bold font-mono text-[#8B6B3D]">{stats.keys}</div>
+              <div className="text-xl font-bold font-mono text-[var(--accent)]">{stats.keys}</div>
               <div className="text-xs mt-1" style={{ color: "var(--ink-muted)" }}>Keys</div>
             </div>
             <div className="p-4 bg-white border border-black/[0.04] rounded-2xl text-center">
@@ -280,6 +281,8 @@ export default function JsonFormatterPage() {
             </div>
           </div>
         )}
+
+        <ToolServiceCta slug="json-formatter" />
       </div>
     </main>
   )

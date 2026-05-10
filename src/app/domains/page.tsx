@@ -144,7 +144,7 @@ function DomainsInner() {
       <section className="px-6 pt-16 pb-12 md:pt-24 md:pb-16">
         <div className="max-w-5xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs tracking-wide mb-6"
-               style={{ background: "rgba(139,107,61,0.08)", color: "#8B6B3D" }}>
+               style={{ background: "rgba(139,107,61,0.08)", color: "var(--accent)" }}>
             <Sparkles size={12} /> 9Ruby Domains — transparent pricing
           </div>
           <h1 className="font-serif italic text-5xl md:text-7xl leading-tight mb-4" style={{ color: "var(--ink)" }}>
@@ -170,7 +170,7 @@ function DomainsInner() {
             </div>
             <button type="submit"
                     className="px-6 py-4 rounded-xl font-medium text-white transition-opacity hover:opacity-90"
-                    style={{ background: "#8B6B3D" }}>
+                    style={{ background: "var(--accent)" }}>
               {loading ? <Loader2 className="animate-spin" size={18} /> : "Search"}
             </button>
           </form>
@@ -210,7 +210,7 @@ function DomainsInner() {
                       {r.available === null && <Loader2 size={18} style={{ color: "var(--ink-soft)" }} />}
                       <span className="font-medium text-base" style={{ color: "var(--ink)" }}>{r.domain}</span>
                       {p.tag && <span className="text-[10px] uppercase tracking-wider px-2 py-0.5 rounded-full"
-                                      style={{ background: "rgba(139,107,61,0.08)", color: "#8B6B3D" }}>{p.tag}</span>}
+                                      style={{ background: "rgba(139,107,61,0.08)", color: "var(--accent)" }}>{p.tag}</span>}
                     </div>
                     <div className="text-right">
                       {p.strike && <div className="text-xs line-through" style={{ color: "var(--ink-soft)" }}>{formatINR(p.strike)}</div>}
@@ -222,7 +222,7 @@ function DomainsInner() {
                       onClick={() => toggleCart(r.domain)}
                       className="px-4 py-2 rounded-lg text-sm font-medium transition-all disabled:opacity-40 disabled:cursor-not-allowed"
                       style={inCart
-                        ? { background: "#8B6B3D", color: "white" }
+                        ? { background: "var(--accent)", color: "white" }
                         : { background: "rgba(0,0,0,0.05)", color: "var(--ink)" }}>
                       {r.available === false ? "Taken" : inCart ? "In cart" : "Add"}
                     </button>
@@ -242,14 +242,14 @@ function DomainsInner() {
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
             {TLDS.map(t => (
               <div key={t.tld}
-                   className="p-5 rounded-xl border transition-colors hover:border-[#8B6B3D]"
+                   className="p-5 rounded-xl border transition-colors hover:border-[var(--accent)]"
                    style={{ background: "var(--surface-elevated)", borderColor: "rgba(0,0,0,0.08)" }}>
                 <div className="flex items-baseline gap-1 mb-3">
-                  <span className="text-xl font-medium" style={{ color: "#8B6B3D" }}>.{t.tld}</span>
+                  <span className="text-xl font-medium" style={{ color: "var(--accent)" }}>.{t.tld}</span>
                 </div>
                 {t.strike && <div className="text-xs line-through" style={{ color: "var(--ink-soft)" }}>{formatINR(t.strike)}</div>}
                 <div className="text-lg font-semibold" style={{ color: "var(--ink)" }}>{formatINR(t.price)}<span className="text-xs font-normal" style={{ color: "var(--ink-muted)" }}>/yr</span></div>
-                {t.tag && <div className="text-[10px] uppercase tracking-wider mt-2" style={{ color: "#8B6B3D" }}>{t.tag}</div>}
+                {t.tag && <div className="text-[10px] uppercase tracking-wider mt-2" style={{ color: "var(--accent)" }}>{t.tag}</div>}
               </div>
             ))}
           </div>
@@ -266,7 +266,7 @@ function DomainsInner() {
           ].map(({ icon: Icon, title, body }) => (
             <div key={title}>
               <div className="w-10 h-10 rounded-lg flex items-center justify-center mb-4"
-                   style={{ background: "rgba(139,107,61,0.08)", color: "#8B6B3D" }}>
+                   style={{ background: "rgba(139,107,61,0.08)", color: "var(--accent)" }}>
                 <Icon size={18} />
               </div>
               <h3 className="text-lg font-medium mb-2" style={{ color: "var(--ink)" }}>{title}</h3>
@@ -281,13 +281,13 @@ function DomainsInner() {
         <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50">
           <div className="flex items-center gap-3 px-5 py-3 rounded-full shadow-lg border"
                style={{ background: "var(--surface-elevated)", borderColor: "rgba(0,0,0,0.08)" }}>
-            <ShoppingCart size={16} style={{ color: "#8B6B3D" }} />
+            <ShoppingCart size={16} style={{ color: "var(--accent)" }} />
             <span className="text-sm" style={{ color: "var(--ink)" }}>
               {cart.length} domain{cart.length > 1 ? "s" : ""} · <strong>{formatINR(cartTotal)}</strong>
             </span>
             <button onClick={payViaRazorpay}
                     className="ml-2 inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-medium text-white hover:opacity-90"
-                    style={{ background: "#8B6B3D" }}>
+                    style={{ background: "var(--accent)" }}>
               <QrCode size={14} /> Pay now
             </button>
             <button onClick={whatsappCheckout}
@@ -307,7 +307,7 @@ function DomainsInner() {
           <div className="rounded-2xl p-8 max-w-sm w-full text-center"
                style={{ background: "var(--surface-elevated)" }}
                onClick={e => e.stopPropagation()}>
-            <div className="w-10 h-10 rounded-full flex items-center justify-center text-white font-serif italic text-lg mx-auto mb-4" style={{ background: "#8B6B3D" }}>9</div>
+            <div className="w-10 h-10 rounded-full flex items-center justify-center text-white font-serif italic text-lg mx-auto mb-4" style={{ background: "var(--accent)" }}>9</div>
             <h3 className="text-xl font-semibold mb-1" style={{ color: "var(--ink)" }}>Pay via 9Ruby</h3>
             <p className="text-sm mb-5" style={{ color: "var(--ink-muted)" }}>Scan the QR code or tap the button to pay {formatINR(cartTotal)}</p>
             {/* QR via Google Charts API */}
@@ -321,7 +321,7 @@ function DomainsInner() {
             <a href={`https://razorpay.me/@9ruby?amount=${cartTotal * 100}`}
                target="_blank"
                className="block w-full px-5 py-3 rounded-xl font-medium text-white mb-3"
-               style={{ background: "#8B6B3D" }}>
+               style={{ background: "var(--accent)" }}>
               Open payment link
             </a>
             <button onClick={() => setShowQR(false)} className="text-sm" style={{ color: "var(--ink-soft)" }}>Close</button>

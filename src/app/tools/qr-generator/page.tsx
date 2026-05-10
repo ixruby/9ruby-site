@@ -2,16 +2,15 @@
 
 import { useState, useRef, useEffect, useCallback } from "react"
 import Link from "next/link"
-import { ArrowLeft, Download, Copy, Check, RefreshCw, QrCode } from "lucide-react"
+import { ArrowLeft, Download, Copy, Check, RefreshCw } from "lucide-react"
 import Navbar from "@/components/Navbar"
 import Breadcrumb from "@/components/Breadcrumb"
+import ToolServiceCta from "@/components/tools/ToolServiceCta"
 
 // ---- Minimal QR Code generator (client-side, no dependencies) ----
 
 // QR code encoding using a compact implementation
 // Supports alphanumeric and byte mode, error correction level M
-
-const EC_LEVEL = 1 // 0=L, 1=M, 2=Q, 3=H
 
 // Galois field math for Reed-Solomon
 const GF_EXP = new Uint8Array(512)
@@ -295,6 +294,32 @@ function drawQR(
   }
 }
 
+function escapeSvg(value: string): string {
+  return value.replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+}
+
+function qrToSvg(matrix: boolean[][], fgColor: string, bgColor: string, moduleSize: number): string {
+  const quietZone = 4
+  const totalModules = matrix.length + quietZone * 2
+  const size = totalModules * moduleSize
+  const rects: string[] = []
+
+  for (let r = 0; r < matrix.length; r++) {
+    for (let c = 0; c < matrix.length; c++) {
+      if (matrix[r][c]) {
+        rects.push(`<rect x="${(c + quietZone) * moduleSize}" y="${(r + quietZone) * moduleSize}" width="${moduleSize}" height="${moduleSize}" />`)
+      }
+    }
+  }
+
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 ${size} ${size}">
+  <rect width="100%" height="100%" fill="${escapeSvg(bgColor)}" />
+  <g fill="${escapeSvg(fgColor)}">
+    ${rects.join("\n    ")}
+  </g>
+</svg>`
+}
+
 export default function QrGeneratorPage() {
   const [text, setText] = useState("")
   const [fgColor, setFgColor] = useState("#ffffff")
@@ -321,6 +346,18 @@ export default function QrGeneratorPage() {
     link.click()
   }
 
+  const downloadSVG = () => {
+    const matrix = generateQR(text || "https://9ruby.com")
+    const svg = qrToSvg(matrix, fgColor, bgColor, moduleSize)
+    const blob = new Blob([svg], { type: "image/svg+xml" })
+    const url = URL.createObjectURL(blob)
+    const link = document.createElement("a")
+    link.download = "qrcode.svg"
+    link.href = url
+    link.click()
+    URL.revokeObjectURL(url)
+  }
+
   const copyImage = async () => {
     if (!canvasRef.current) return
     try {
@@ -339,7 +376,7 @@ export default function QrGeneratorPage() {
     }
   }
 
-  const inputCls = "flex-1 h-11 px-3 bg-white border border-black/[0.08] rounded-xl text-[#1A1A1A] text-sm font-mono focus:border-[#8B6B3D]/50 focus:ring-1 focus:ring-[#8B6B3D]/20 focus:outline-none transition-all"
+  const inputCls = "flex-1 h-11 px-3 bg-white border border-black/[0.08] rounded-xl text-[#1A1A1A] text-sm font-mono focus:border-[var(--accent)]/50 focus:ring-1 focus:ring-[var(--accent)]/20 focus:outline-none transition-all"
 
   return (
     <main className="relative min-h-screen" style={{ background: "var(--page-bg)" }}>
@@ -351,7 +388,7 @@ export default function QrGeneratorPage() {
         </Link>
 
         <div className="mb-12">
-          <div className="text-[11px] font-semibold tracking-[0.12em] uppercase" style={{ color: "#8B6B3D" }}>
+          <div className="text-[11px] font-semibold tracking-[0.12em] uppercase" style={{ color: "var(--accent)" }}>
             Free Tool
           </div>
           <h1 className="text-4xl md:text-5xl font-serif italic tracking-tighter leading-[1.1] mb-4 mt-3" style={{ color: "var(--ink-strong)" }}>
@@ -373,7 +410,7 @@ export default function QrGeneratorPage() {
                   onChange={e => setText(e.target.value)}
                   placeholder="Enter text or URL..."
                   rows={4}
-                  className="w-full px-4 py-3 bg-white/[0.02] border border-black/[0.08] rounded-xl text-white placeholder:text-[#B8B8B0] focus:border-[#8B6B3D]/50 focus:ring-1 focus:ring-[#8B6B3D]/20 focus:outline-none text-sm font-mono resize-none transition-all"
+                  className="w-full px-4 py-3 bg-white/[0.02] border border-black/[0.08] rounded-xl text-[#1A1A1A] placeholder:text-[#B8B8B0] focus:border-[var(--accent)]/50 focus:ring-1 focus:ring-[var(--accent)]/20 focus:outline-none text-sm font-mono resize-none transition-all"
                 />
                 <span className="text-xs text-[#B8B8B0] mt-1.5 block font-mono">{text.length} characters</span>
               </div>
@@ -423,7 +460,7 @@ export default function QrGeneratorPage() {
                   max={16}
                   value={moduleSize}
                   onChange={e => setModuleSize(Number(e.target.value))}
-                  className="w-full accent-[#8B6B3D]"
+                  className="w-full accent-[var(--accent)]"
                 />
                 <div className="flex justify-between text-xs text-[#B8B8B0] mt-1 font-mono">
                   <span>Small</span>
@@ -436,7 +473,7 @@ export default function QrGeneratorPage() {
                 <label className="text-xs text-[#7A7A72] mb-2 block">Quick Presets</label>
                 <div className="flex flex-wrap gap-2">
                   {[
-                    { label: "9Ruby Dark", fg: "#8B6B3D", bg: "#000000" },
+                    { label: "9Ruby Dark", fg: "#C8102E", bg: "#000000" },
                     { label: "Classic", fg: "#000000", bg: "#ffffff" },
                     { label: "Inverted", fg: "#ffffff", bg: "#000000" },
                     { label: "Ocean", fg: "#0891b2", bg: "#f0fdfa" },
@@ -456,12 +493,18 @@ export default function QrGeneratorPage() {
             </div>
 
             {/* Actions */}
-            <div className="flex gap-3">
+            <div className="flex flex-wrap gap-3">
               <button
                 onClick={downloadPNG}
                 className="flex-1 h-11 bg-[#1A1A1A] text-[#F8F7F4] text-sm font-medium rounded-full hover:bg-[#333] transition-all flex items-center justify-center gap-2"
               >
                 <Download size={16} /> Download PNG
+              </button>
+              <button
+                onClick={downloadSVG}
+                className="h-11 px-5 bg-white/[0.02] border border-black/[0.08] rounded-xl text-[#7A7A72] hover:text-[#1A1A1A] hover:border-black/[0.12] transition-all flex items-center gap-2"
+              >
+                <Download size={16} /> SVG
               </button>
               <button
                 onClick={copyImage}
@@ -493,6 +536,8 @@ export default function QrGeneratorPage() {
             </p>
           </div>
         </div>
+
+        <ToolServiceCta slug="qr-generator" />
       </div>
     </main>
   )

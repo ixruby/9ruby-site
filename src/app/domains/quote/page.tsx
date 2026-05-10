@@ -142,7 +142,7 @@ export default function QuoteBuilder() {
                 ))}
               </div>
 
-              <button onClick={addItem} className="mt-3 inline-flex items-center gap-2 text-sm px-3 py-2 rounded-lg hover:bg-black/5" style={{ color: "#8B6B3D" }}>
+              <button onClick={addItem} className="mt-3 inline-flex items-center gap-2 text-sm px-3 py-2 rounded-lg hover:bg-black/5" style={{ color: "var(--accent)" }}>
                 <Plus size={14}/> Add line item
               </button>
             </section>
@@ -169,7 +169,7 @@ export default function QuoteBuilder() {
                 <button onClick={() => save("draft")} disabled={saving} className="w-full px-4 py-3 rounded-lg font-medium border disabled:opacity-50" style={{ borderColor: "rgba(0,0,0,0.1)", color: "var(--ink)" }}>
                   {saving ? "Saving…" : "Save draft"}
                 </button>
-                <button onClick={() => save("sent")} disabled={saving} className="w-full px-4 py-3 rounded-lg font-medium text-white disabled:opacity-50 inline-flex items-center justify-center gap-2" style={{ background: "#8B6B3D" }}>
+                <button onClick={() => save("sent")} disabled={saving} className="w-full px-4 py-3 rounded-lg font-medium text-white disabled:opacity-50 inline-flex items-center justify-center gap-2" style={{ background: "var(--accent)" }}>
                   <Send size={14}/> {saving ? "…" : "Save + send on WhatsApp"}
                 </button>
               </div>
@@ -180,7 +180,7 @@ export default function QuoteBuilder() {
                   <input readOnly value={result.url} className="flex-1 px-3 py-2 rounded border bg-transparent text-xs" style={{ borderColor: "rgba(0,0,0,0.1)", color: "var(--ink)" }}/>
                   <button onClick={copyLink} className="px-3 py-2 rounded border hover:bg-black/5" style={{ borderColor: "rgba(0,0,0,0.1)" }}>{copied ? <Check size={14}/> : <Copy size={14}/>}</button>
                 </div>
-                <a href={result.url} target="_blank" className="block mt-3 text-sm text-center px-4 py-2 rounded-lg text-white" style={{ background: "#8B6B3D" }}>Open quote</a>
+                <a href={result.url} target="_blank" className="block mt-3 text-sm text-center px-4 py-2 rounded-lg text-white" style={{ background: "var(--accent)" }}>Open quote</a>
               </div>
             )}
           </aside>
@@ -195,10 +195,10 @@ function Row({ label, value, sub, highlight }: { label: string; value: string; s
   return (
     <div className={`flex items-end justify-between ${highlight ? "p-3 -mx-3 rounded-lg" : ""}`} style={highlight ? { background: "rgba(139,107,61,0.06)" } : {}}>
       <div>
-        <div className="text-sm" style={{ color: "var(--ink-muted)" }}>{label}{highlight && <span className="ml-2 text-[10px] uppercase tracking-wider" style={{ color: "#8B6B3D" }}>Best value</span>}</div>
+        <div className="text-sm" style={{ color: "var(--ink-muted)" }}>{label}{highlight && <span className="ml-2 text-[10px] uppercase tracking-wider" style={{ color: "var(--accent)" }}>Best value</span>}</div>
         {sub && <div className="text-xs" style={{ color: "var(--ink-soft)" }}>{sub}</div>}
       </div>
-      <div className="text-xl font-semibold" style={{ color: highlight ? "#8B6B3D" : "var(--ink)" }}>{value}</div>
+      <div className="text-xl font-semibold" style={{ color: highlight ? "var(--accent)" : "var(--ink)" }}>{value}</div>
     </div>
   )
 }

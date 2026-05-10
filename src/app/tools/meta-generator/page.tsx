@@ -2,9 +2,10 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { ArrowLeft, Copy, Check, Eye, Code, Globe } from "lucide-react"
+import { ArrowLeft, Copy, Check, Eye, Code, Globe, Download } from "lucide-react"
 import Navbar from "@/components/Navbar"
 import Breadcrumb from "@/components/Breadcrumb"
+import ToolServiceCta from "@/components/tools/ToolServiceCta"
 
 interface MetaForm {
   title: string
@@ -80,6 +81,15 @@ function escapeHtml(str: string): string {
   return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;")
 }
 
+function safeHostname(url: string): string {
+  if (!url.trim()) return "example.com"
+  try {
+    return new URL(/^https?:\/\//i.test(url) ? url : `https://${url}`).hostname
+  } catch {
+    return "example.com"
+  }
+}
+
 export default function MetaGeneratorPage() {
   const [form, setForm] = useState<MetaForm>(defaultForm)
   const [copied, setCopied] = useState(false)
@@ -97,16 +107,26 @@ export default function MetaGeneratorPage() {
     setTimeout(() => setCopied(false), 2000)
   }
 
+  const downloadMetaTags = () => {
+    const blob = new Blob([output], { type: "text/html" })
+    const url = URL.createObjectURL(blob)
+    const a = document.createElement("a")
+    a.href = url
+    a.download = "meta-tags.html"
+    a.click()
+    URL.revokeObjectURL(url)
+  }
+
   const highlightHtml = (code: string): string => {
     return code
-      .replace(/(&lt;\/?[\w-]+)/g, '<span style="color:#8B6B3D">$1</span>')
+      .replace(/(&lt;\/?[\w-]+)/g, '<span style="color:var(--accent)">$1</span>')
       .replace(/([\w-]+)=(&quot;)/g, '<span style="color:#3b82f6">$1</span>=<span style="color:#10b981">&quot;</span>')
       .replace(/(&quot;)/g, '<span style="color:#10b981">&quot;</span>')
       .replace(/(&lt;!--.*?--&gt;)/g, '<span style="color:rgba(0,0,0,0.25)">$1</span>')
   }
 
-  const inputCls = "w-full h-11 px-4 bg-white border border-black/[0.08] rounded-xl placeholder:text-[#B8B8B0] focus:border-[#8B6B3D]/50 focus:ring-1 focus:ring-[#8B6B3D]/20 focus:outline-none text-sm transition-all"
-  const selectCls = "w-full h-11 px-4 bg-white border border-black/[0.08] rounded-xl text-sm focus:border-[#8B6B3D]/50 focus:ring-1 focus:ring-[#8B6B3D]/20 focus:outline-none appearance-none transition-all"
+  const inputCls = "w-full h-11 px-4 bg-white border border-black/[0.08] rounded-xl placeholder:text-[#B8B8B0] focus:border-[var(--accent)]/50 focus:ring-1 focus:ring-[var(--accent)]/20 focus:outline-none text-sm transition-all"
+  const selectCls = "w-full h-11 px-4 bg-white border border-black/[0.08] rounded-xl text-sm focus:border-[var(--accent)]/50 focus:ring-1 focus:ring-[var(--accent)]/20 focus:outline-none appearance-none transition-all"
 
   return (
     <main className="relative min-h-screen" style={{ background: "var(--page-bg)" }}>
@@ -118,7 +138,7 @@ export default function MetaGeneratorPage() {
         </Link>
 
         <div className="mb-12">
-          <div className="text-[11px] font-semibold tracking-[0.12em] uppercase" style={{ color: "#8B6B3D" }}>
+          <div className="text-[11px] font-semibold tracking-[0.12em] uppercase" style={{ color: "var(--accent)" }}>
             Free Tool
           </div>
           <h1 className="text-4xl md:text-5xl font-serif italic tracking-tighter leading-[1.1] mb-4 mt-3" style={{ color: "var(--ink-strong)" }}>
@@ -133,7 +153,7 @@ export default function MetaGeneratorPage() {
           {/* Form */}
           <div className="space-y-4">
             <div className="p-6 bg-white border border-black/[0.04] rounded-2xl space-y-4">
-              <h3 className="text-[11px] font-semibold tracking-[0.12em] uppercase" style={{ color: "#8B6B3D" }}>Basic SEO</h3>
+              <h3 className="text-[11px] font-semibold tracking-[0.12em] uppercase" style={{ color: "var(--accent)" }}>Basic SEO</h3>
 
               <div>
                 <label className="text-xs mb-1.5 block" style={{ color: "var(--ink-muted)" }}>Page Title *</label>
@@ -155,7 +175,7 @@ export default function MetaGeneratorPage() {
                   value={form.description} onChange={e => update("description", e.target.value)}
                   placeholder="A brief description of your page content..."
                   rows={3}
-                  className="w-full px-4 py-3 bg-white border border-black/[0.08] rounded-xl placeholder:text-[#B8B8B0] focus:border-[#8B6B3D]/50 focus:ring-1 focus:ring-[#8B6B3D]/20 focus:outline-none text-sm resize-none transition-all"
+                  className="w-full px-4 py-3 bg-white border border-black/[0.08] rounded-xl placeholder:text-[#B8B8B0] focus:border-[var(--accent)]/50 focus:ring-1 focus:ring-[var(--accent)]/20 focus:outline-none text-sm resize-none transition-all"
                   style={{ color: "var(--ink-strong)" }}
                 />
                 <div className="flex justify-between mt-1.5">
@@ -181,7 +201,7 @@ export default function MetaGeneratorPage() {
             </div>
 
             <div className="p-6 bg-white border border-black/[0.04] rounded-2xl space-y-4">
-              <h3 className="text-[11px] font-semibold tracking-[0.12em] uppercase" style={{ color: "#8B6B3D" }}>Social / Open Graph</h3>
+              <h3 className="text-[11px] font-semibold tracking-[0.12em] uppercase" style={{ color: "var(--accent)" }}>Social / Open Graph</h3>
 
               <div>
                 <label className="text-xs mb-1.5 block" style={{ color: "var(--ink-muted)" }}>OG Image URL</label>
@@ -230,7 +250,7 @@ export default function MetaGeneratorPage() {
                   <label className="text-xs mb-1.5 block" style={{ color: "var(--ink-muted)" }}>Theme Color</label>
                   <div className="flex gap-2">
                     <input type="color" value={form.themeColor} onChange={e => update("themeColor", e.target.value)} className="w-11 h-11 bg-transparent border border-black/[0.08] rounded-xl cursor-pointer" />
-                    <input type="text" value={form.themeColor} onChange={e => update("themeColor", e.target.value)} className="flex-1 h-11 px-4 bg-white border border-black/[0.08] rounded-xl text-sm font-mono focus:border-[#8B6B3D]/50 focus:ring-1 focus:ring-[#8B6B3D]/20 focus:outline-none transition-all" style={{ color: "var(--ink-strong)" }} />
+                    <input type="text" value={form.themeColor} onChange={e => update("themeColor", e.target.value)} className="flex-1 h-11 px-4 bg-white border border-black/[0.08] rounded-xl text-sm font-mono focus:border-[var(--accent)]/50 focus:ring-1 focus:ring-[var(--accent)]/20 focus:outline-none transition-all" style={{ color: "var(--ink-strong)" }} />
                   </div>
                 </div>
               </div>
@@ -241,7 +261,7 @@ export default function MetaGeneratorPage() {
           <div className="space-y-4">
             {/* Google preview */}
             <div className="p-5 bg-white border border-black/[0.04] rounded-2xl">
-              <h3 className="text-[11px] font-semibold tracking-[0.12em] uppercase mb-4 flex items-center gap-2" style={{ color: "#8B6B3D" }}>
+              <h3 className="text-[11px] font-semibold tracking-[0.12em] uppercase mb-4 flex items-center gap-2" style={{ color: "var(--accent)" }}>
                 <Globe size={14} /> Google Preview
               </h3>
               <div className="bg-[#F8F7F4] rounded-xl p-4 border border-black/[0.04]">
@@ -253,7 +273,7 @@ export default function MetaGeneratorPage() {
 
             {/* Social preview */}
             <div className="p-5 bg-white border border-black/[0.04] rounded-2xl">
-              <h3 className="text-[11px] font-semibold tracking-[0.12em] uppercase mb-4 flex items-center gap-2" style={{ color: "#8B6B3D" }}>
+              <h3 className="text-[11px] font-semibold tracking-[0.12em] uppercase mb-4 flex items-center gap-2" style={{ color: "var(--accent)" }}>
                 <Eye size={14} /> Social Preview
               </h3>
               <div className="border border-black/[0.06] rounded-xl overflow-hidden bg-[#F8F7F4]">
@@ -265,7 +285,7 @@ export default function MetaGeneratorPage() {
                   </div>
                 )}
                 <div className="p-4">
-                  <div className="text-xs uppercase font-mono" style={{ color: "var(--ink-soft)" }}>{form.siteName || (form.url ? new URL(form.url).hostname : "example.com")}</div>
+                  <div className="text-xs uppercase font-mono" style={{ color: "var(--ink-soft)" }}>{form.siteName || safeHostname(form.url)}</div>
                   <div className="font-semibold mt-1 truncate" style={{ color: "var(--ink-strong)" }}>{form.title || "Page Title"}</div>
                   <div className="text-sm mt-1 line-clamp-2" style={{ color: "var(--ink-muted)" }}>{form.description || "Description..."}</div>
                 </div>
@@ -309,8 +329,20 @@ export default function MetaGeneratorPage() {
                 )}
               </div>
             </div>
+            <div className="flex flex-wrap gap-3">
+              <button
+                onClick={downloadMetaTags}
+                disabled={!output.trim()}
+                className="h-10 px-4 bg-white border border-black/[0.08] rounded-xl text-sm hover:border-black/[0.12] disabled:opacity-30 disabled:cursor-not-allowed transition-all flex items-center gap-2"
+                style={{ color: "var(--ink-muted)" }}
+              >
+                <Download size={14} /> Download HTML
+              </button>
+            </div>
           </div>
         </div>
+
+        <ToolServiceCta slug="meta-generator" />
       </div>
     </main>
   )

@@ -170,7 +170,7 @@ function PriorityPill({ priority }: { priority: 'high' | 'medium' | 'low' }) {
 function TaskStatusBadge({ status }: { status: 'done' | 'active' | 'pending' }) {
   const config = {
     done: { text: 'text-emerald-400', bg: 'bg-emerald-500/10', icon: CheckCircle },
-    active: { text: 'text-[#8B6B3D]', bg: 'bg-[#8B6B3D]/10', icon: Zap },
+    active: { text: 'text-[var(--accent)]', bg: 'bg-[var(--accent)]/10', icon: Zap },
     pending: { text: 'text-[#7A7A72]', bg: 'bg-[#F8F7F4]', icon: Clock },
   }
   const c = config[status]

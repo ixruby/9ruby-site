@@ -394,7 +394,7 @@ function RatingStars({ rating }: { rating: number }) {
               ? "fill-amber-400 text-amber-400"
               : i === full && half
                 ? "fill-amber-400/50 text-amber-400"
-                : "text-[#B8B8B0]"
+                : "text-white/30"
           }
         />
       ))}
@@ -406,7 +406,7 @@ function PricingBadge({ type, label }: { type: PricingType; label: string }) {
   const colors: Record<PricingType, string> = {
     free: "bg-emerald-500/15 text-emerald-400 border-emerald-500/20",
     freemium: "bg-sky-500/15 text-sky-400 border-sky-500/20",
-    paid: "bg-[#8B6B3D]/15 text-[#ff6b81] border-[#8B6B3D]/20",
+    paid: "bg-[#C8102E]/15 text-[#ff6b81] border-[#C8102E]/20",
     subscription: "bg-purple-500/15 text-purple-400 border-purple-500/20",
   }
   return (
@@ -442,8 +442,8 @@ function AppBadge({ badge }: { badge: Badge }) {
 function AppCard({ app, view }: { app: App; view: "grid" | "list" }) {
   if (view === "list") {
     return (
-      <div className="group flex items-center gap-5 p-4 bg-white border border-black/[0.04] rounded-xl hover:border-black/[0.12] hover:bg-black/[0.03] transition-all duration-300">
-        <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-black/[0.03] border border-black/[0.04] flex items-center justify-center text-2xl">
+      <div className="group flex items-center gap-5 p-4 bg-white/[0.03] border border-white/[0.08] rounded-xl hover:border-white/[0.18] hover:bg-black/[0.03] transition-all duration-300">
+        <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-black/[0.03] border border-white/[0.08] flex items-center justify-center text-2xl">
           {app.icon}
         </div>
         <div className="flex-1 min-w-0">
@@ -451,19 +451,19 @@ function AppCard({ app, view }: { app: App; view: "grid" | "list" }) {
             <h3 className="font-semibold text-sm text-white truncate">{app.name}</h3>
             <AppBadge badge={app.badge} />
           </div>
-          <p className="text-xs text-[#7A7A72] truncate">{app.description}</p>
+          <p className="text-xs text-white/44 truncate">{app.description}</p>
           <div className="flex items-center gap-3 mt-1">
-            <span className="text-xs text-[#7A7A72]">{app.developer}</span>
+            <span className="text-xs text-white/44">{app.developer}</span>
             <span className="flex items-center gap-1">
               <RatingStars rating={app.rating} />
-              <span className="text-[10px] text-[#7A7A72]">{app.rating}</span>
+              <span className="text-[10px] text-white/44">{app.rating}</span>
             </span>
-            <span className="text-[10px] text-[#B8B8B0]">({formatReviews(app.reviews)})</span>
+            <span className="text-[10px] text-white/30">({formatReviews(app.reviews)})</span>
           </div>
         </div>
         <div className="flex-shrink-0 flex items-center gap-3">
           <PricingBadge type={app.pricingType} label={app.pricing} />
-          <button className="px-4 py-1.5 text-xs font-medium rounded-lg bg-black/[0.04] border border-black/[0.08] text-[#1A1A1A] hover:bg-[#8B6B3D] hover:border-[#8B6B3D] hover:text-white transition-all duration-300">
+          <button className="px-4 py-1.5 text-xs font-medium rounded-lg bg-black/[0.04] border border-white/[0.12] text-white hover:bg-[#C8102E] hover:border-[#C8102E] hover:text-white transition-all duration-300">
             Install
           </button>
         </div>
@@ -472,31 +472,31 @@ function AppCard({ app, view }: { app: App; view: "grid" | "list" }) {
   }
 
   return (
-    <div className="group relative flex flex-col p-5 bg-white border border-black/[0.04] rounded-2xl hover:border-black/[0.12] hover:bg-black/[0.03] transition-all duration-300">
+    <div className="group relative flex flex-col p-5 bg-white/[0.03] border border-white/[0.08] rounded-2xl hover:border-white/[0.18] hover:bg-black/[0.03] transition-all duration-300">
       <div className="flex items-start justify-between mb-4">
-        <div className="w-12 h-12 rounded-xl bg-black/[0.03] border border-black/[0.04] flex items-center justify-center text-2xl group-hover:scale-105 transition-transform duration-300">
+        <div className="w-12 h-12 rounded-xl bg-black/[0.03] border border-white/[0.08] flex items-center justify-center text-2xl group-hover:scale-105 transition-transform duration-300">
           {app.icon}
         </div>
         <AppBadge badge={app.badge} />
       </div>
       <h3 className="font-semibold text-sm text-white mb-1 group-hover:text-white transition-colors">{app.name}</h3>
-      <p className="text-xs text-[#7A7A72] mb-1">{app.developer}</p>
-      <p className="text-xs text-[#7A7A72] leading-relaxed mb-4 line-clamp-2 flex-1">{app.description}</p>
+      <p className="text-xs text-white/44 mb-1">{app.developer}</p>
+      <p className="text-xs text-white/44 leading-relaxed mb-4 line-clamp-2 flex-1">{app.description}</p>
       <div className="flex items-center gap-1.5 mb-4">
         <RatingStars rating={app.rating} />
-        <span className="text-[11px] text-[#7A7A72] font-medium">{app.rating}</span>
-        <span className="text-[10px] text-[#B8B8B0]">({formatReviews(app.reviews)})</span>
+        <span className="text-[11px] text-white/44 font-medium">{app.rating}</span>
+        <span className="text-[10px] text-white/30">({formatReviews(app.reviews)})</span>
       </div>
       <div className="flex items-center justify-between">
         <PricingBadge type={app.pricingType} label={app.pricing} />
-        <button className="flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-medium rounded-lg bg-black/[0.04] border border-black/[0.08] text-[#1A1A1A] hover:bg-[#8B6B3D] hover:border-[#8B6B3D] hover:text-white transition-all duration-300 group/btn">
+        <button className="flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-medium rounded-lg bg-black/[0.04] border border-white/[0.12] text-white hover:bg-[#C8102E] hover:border-[#C8102E] hover:text-white transition-all duration-300 group/btn">
           <Download size={12} />
           Install
         </button>
       </div>
-      <div className="flex items-center gap-1 mt-3 pt-3 border-t border-black/[0.04]">
-        <Download size={10} className="text-[#B8B8B0]" />
-        <span className="text-[10px] text-[#B8B8B0]">{app.installs} installs</span>
+      <div className="flex items-center gap-1 mt-3 pt-3 border-t border-white/[0.08]">
+        <Download size={10} className="text-white/30" />
+        <span className="text-[10px] text-white/30">{app.installs} installs</span>
       </div>
     </div>
   )
@@ -508,9 +508,9 @@ function AppCard({ app, view }: { app: App; view: "grid" | "list" }) {
 
 function FeaturedCard({ app }: { app: App }) {
   return (
-    <div className="group flex-shrink-0 w-[320px] snap-start p-5 bg-white border border-black/[0.04] rounded-2xl hover:border-black/[0.12] hover:bg-black/[0.03] transition-all duration-300">
+    <div className="group flex-shrink-0 w-[320px] snap-start p-5 bg-white/[0.03] border border-white/[0.08] rounded-2xl hover:border-white/[0.18] hover:bg-black/[0.03] transition-all duration-300">
       <div className="flex items-start gap-4 mb-4">
-        <div className="w-14 h-14 rounded-xl bg-black/[0.03] border border-black/[0.04] flex items-center justify-center text-3xl group-hover:scale-105 transition-transform duration-300">
+        <div className="w-14 h-14 rounded-xl bg-black/[0.03] border border-white/[0.08] flex items-center justify-center text-3xl group-hover:scale-105 transition-transform duration-300">
           {app.icon}
         </div>
         <div className="flex-1 min-w-0">
@@ -518,19 +518,19 @@ function FeaturedCard({ app }: { app: App }) {
             <h3 className="font-semibold text-white truncate">{app.name}</h3>
             <AppBadge badge={app.badge} />
           </div>
-          <p className="text-xs text-[#7A7A72]">{app.developer}</p>
+          <p className="text-xs text-white/44">{app.developer}</p>
         </div>
       </div>
-      <p className="text-sm text-[#7A7A72] leading-relaxed mb-4 line-clamp-2">{app.description}</p>
+      <p className="text-sm text-white/44 leading-relaxed mb-4 line-clamp-2">{app.description}</p>
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
           <RatingStars rating={app.rating} />
-          <span className="text-xs text-[#7A7A72]">{app.rating}</span>
-          <span className="text-[10px] text-[#B8B8B0]">({formatReviews(app.reviews)})</span>
+          <span className="text-xs text-white/44">{app.rating}</span>
+          <span className="text-[10px] text-white/30">({formatReviews(app.reviews)})</span>
         </div>
         <PricingBadge type={app.pricingType} label={app.pricing} />
       </div>
-      <button className="mt-4 w-full py-2 text-sm font-medium rounded-lg bg-black/[0.04] border border-black/[0.08] text-[#1A1A1A] hover:bg-[#8B6B3D] hover:border-[#8B6B3D] hover:text-white transition-all duration-300">
+      <button className="mt-4 w-full py-2 text-sm font-medium rounded-lg bg-black/[0.04] border border-white/[0.12] text-white hover:bg-[#C8102E] hover:border-[#C8102E] hover:text-white transition-all duration-300">
         View App
       </button>
     </div>
@@ -628,36 +628,36 @@ export default function AppStorePage() {
       <Navbar />
       <Breadcrumb items={[{ label: "App Store" }]} />
 
-      <main className="min-h-screen pt-20" style={{ background: "var(--page-bg)" }}>
+      <main className="min-h-screen pt-20" style={{ background: "#000" }}>
         {/* ============================================================ */}
         {/*  HERO                                                         */}
         {/* ============================================================ */}
-        <section className="relative overflow-hidden border-b border-black/[0.04]">
+        <section className="relative overflow-hidden border-b border-white/[0.08]">
           {/* Background glow */}
           <div className="absolute inset-0 pointer-events-none">
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[#8B6B3D]/[0.04] rounded-full blur-[120px]" />
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[#C8102E]/[0.04] rounded-full blur-[120px]" />
             <div className="absolute top-1/4 left-1/4 w-[300px] h-[300px] bg-purple-500/[0.03] rounded-full blur-[100px]" />
           </div>
 
           <div className="relative max-w-[1400px] mx-auto px-6 lg:px-8 py-20 lg:py-28">
             <div className="text-center max-w-3xl mx-auto">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-black/[0.03] border border-black/[0.04] text-xs text-[#7A7A72] mb-8">
-                <Sparkles size={14} className="text-[#8B6B3D]" />
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-black/[0.03] border border-white/[0.08] text-xs text-white/44 mb-8">
+                <Sparkles size={14} className="text-[#C8102E]" />
                 Powering 13,000+ businesses worldwide
               </div>
 
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif italic leading-[0.92] tracking-tight mb-6" style={{ color: "var(--ink-strong)" }}>
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-sans leading-[0.92] tracking-tight mb-6" style={{ color: "#fff" }}>
                 9Ruby{" "}
-                <span style={{ color: "var(--ink-muted)" }}>App Store</span>
+                <span style={{ color: "rgba(255,255,255,0.5)" }}>App Store</span>
               </h1>
 
-              <p className="text-lg md:text-xl text-[#7A7A72] leading-relaxed mb-10 max-w-2xl mx-auto">
+              <p className="text-lg md:text-xl text-white/44 leading-relaxed mb-10 max-w-2xl mx-auto">
                 {totalApps.toLocaleString()} apps to supercharge your business. Find everything from AI tools and marketing to developer infrastructure and automation.
               </p>
 
               {/* Search bar */}
               <div className="relative max-w-2xl mx-auto mb-12">
-                <Search size={20} className="absolute left-5 top-1/2 -translate-y-1/2 text-[#B8B8B0]" />
+                <Search size={20} className="absolute left-5 top-1/2 -translate-y-1/2 text-white/30" />
                 <input
                   type="text"
                   placeholder="Search apps, integrations, and tools..."
@@ -666,12 +666,12 @@ export default function AppStorePage() {
                     setSearchQuery(e.target.value)
                     setVisibleCount(ITEMS_PER_PAGE)
                   }}
-                  className="w-full pl-14 pr-5 py-4 bg-black/[0.03] border border-black/[0.08] rounded-2xl text-white placeholder:text-[#B8B8B0] focus:outline-none focus:border-white/[0.15] focus:bg-black/[0.04] transition-all duration-300 text-base backdrop-blur-sm"
+                  className="w-full pl-14 pr-5 py-4 bg-black/[0.03] border border-white/[0.12] rounded-2xl text-white placeholder:text-white/30 focus:outline-none focus:border-white/[0.15] focus:bg-black/[0.04] transition-all duration-300 text-base backdrop-blur-sm"
                 />
                 {searchQuery && (
                   <button
                     onClick={() => setSearchQuery("")}
-                    className="absolute right-5 top-1/2 -translate-y-1/2 text-[#B8B8B0] hover:text-[#7A7A72] transition-colors"
+                    className="absolute right-5 top-1/2 -translate-y-1/2 text-white/30 hover:text-white/44 transition-colors"
                   >
                     <X size={18} />
                   </button>
@@ -688,7 +688,7 @@ export default function AppStorePage() {
                 ].map((s) => (
                   <div key={s.label} className="text-center">
                     <div className="text-2xl md:text-3xl font-bold text-white font-mono">{s.value}</div>
-                    <div className="text-xs text-[#7A7A72] mt-1">{s.label}</div>
+                    <div className="text-xs text-white/44 mt-1">{s.label}</div>
                   </div>
                 ))}
               </div>
@@ -699,15 +699,15 @@ export default function AppStorePage() {
         {/* ============================================================ */}
         {/*  CATEGORY QUICK NAV                                           */}
         {/* ============================================================ */}
-        <section className="border-b border-black/[0.04] bg-white/50">
+        <section className="border-b border-white/[0.08] bg-white/[0.04]">
           <div className="max-w-[1400px] mx-auto px-6 lg:px-8 py-4">
             <div className="flex items-center gap-2 overflow-x-auto scrollbar-hide pb-1" style={{ scrollbarWidth: "none" }}>
               <button
                 onClick={() => { setSelectedCategory(null); setVisibleCount(ITEMS_PER_PAGE) }}
                 className={`flex-shrink-0 px-4 py-2 rounded-full text-xs font-medium transition-all duration-300 border ${
                   !selectedCategory
-                    ? "bg-[#1A1A1A] border-[#1A1A1A] text-[#F8F7F4]"
-                    : "bg-white border-black/[0.04] text-[#7A7A72] hover:text-[#1A1A1A] hover:border-black/[0.1]"
+                    ? "bg-[#C8102E] border-[#C8102E] text-white"
+                    : "bg-black/[0.3] border-white/[0.08] text-white/44 hover:text-white hover:border-white/[0.15]"
                 }`}
               >
                 All Apps
@@ -723,8 +723,8 @@ export default function AppStorePage() {
                     }}
                     className={`flex-shrink-0 flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-medium transition-all duration-300 border ${
                       selectedCategory === cat.id
-                        ? "bg-[#1A1A1A] border-[#1A1A1A] text-[#F8F7F4]"
-                        : "bg-white border-black/[0.04] text-[#7A7A72] hover:text-[#1A1A1A] hover:border-black/[0.1]"
+                        ? "bg-[#C8102E] border-[#C8102E] text-white"
+                        : "bg-black/[0.3] border-white/[0.08] text-white/44 hover:text-white hover:border-white/[0.15]"
                     }`}
                   >
                     <Icon size={13} />
@@ -741,17 +741,17 @@ export default function AppStorePage() {
         {/* ============================================================ */}
         {!searchQuery && !selectedCategory && (
           <>
-            <section className="border-b border-black/[0.04]">
+            <section className="border-b border-white/[0.08]" style={{ background: "rgba(200,16,46,0.04)" }}>
               <div className="max-w-[1400px] mx-auto px-6 lg:px-8 py-14">
                 <div className="flex items-center justify-between mb-8">
                   <div>
                     <div className="flex items-center gap-2 mb-2">
                       <Sparkles size={16} className="text-amber-400" />
-                      <h2 className="text-xl font-serif text-[#1A1A1A]">Staff Picks</h2>
+                      <h2 className="text-xl font-sans text-white">Staff Picks</h2>
                     </div>
-                    <p className="text-sm text-[#7A7A72]">Hand-selected by the 9Ruby team</p>
+                    <p className="text-sm text-white/44">Hand-selected by the 9Ruby team</p>
                   </div>
-                  <button className="flex items-center gap-1 text-sm text-[#7A7A72] hover:text-white/70 transition-colors">
+                  <button className="flex items-center gap-1 text-sm text-white/44 hover:text-white/70 transition-colors">
                     View all <ArrowRight size={14} />
                   </button>
                 </div>
@@ -764,25 +764,43 @@ export default function AppStorePage() {
             </section>
 
             {/* ============================================================ */}
-            {/*  TRENDING THIS WEEK                                          */}
+            {/*  TRENDING THIS WEEK — ranked list                           */}
             {/* ============================================================ */}
-            <section className="border-b border-black/[0.04]">
+            <section className="border-b border-white/[0.08]">
               <div className="max-w-[1400px] mx-auto px-6 lg:px-8 py-14">
                 <div className="flex items-center justify-between mb-8">
                   <div>
                     <div className="flex items-center gap-2 mb-2">
-                      <TrendingUp size={16} className="text-rose-400" />
-                      <h2 className="text-xl font-serif text-[#1A1A1A]">Trending This Week</h2>
+                      <TrendingUp size={16} className="text-[#C8102E]" />
+                      <h2 className="text-xl font-sans text-white">Trending This Week</h2>
                     </div>
-                    <p className="text-sm text-[#7A7A72]">The fastest-growing apps right now</p>
+                    <p className="text-sm text-white/44">The fastest-growing apps right now</p>
                   </div>
-                  <button className="flex items-center gap-1 text-sm text-[#7A7A72] hover:text-white/70 transition-colors">
-                    View all <ArrowRight size={14} />
-                  </button>
                 </div>
-                <div className="flex gap-4 overflow-x-auto pb-2 snap-x snap-mandatory" style={{ scrollbarWidth: "none" }}>
-                  {trending.map((app) => (
-                    <FeaturedCard key={app.id} app={app} />
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-px" style={{ border: "0.8px solid rgba(255,255,255,0.12)" }}>
+                  {trending.slice(0, 8).map((app, idx) => (
+                    <div key={app.id} className="flex items-center gap-5 p-5 hover:bg-white/[0.02] transition-colors" style={{ borderBottom: "0.8px solid rgba(255,255,255,0.08)", borderRight: idx % 2 === 0 ? "0.8px solid rgba(255,255,255,0.08)" : undefined }}>
+                      <span style={{ fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", fontWeight: 950, fontSize: 28, color: "rgba(255,255,255,0.1)", minWidth: 36, letterSpacing: "-0.05em", lineHeight: 1 }}>
+                        {String(idx + 1).padStart(2, "0")}
+                      </span>
+                      <div className="w-10 h-10 rounded-lg bg-black/[0.04] border border-white/[0.08] flex items-center justify-center text-xl flex-shrink-0">
+                        {app.icon}
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center gap-2 mb-0.5">
+                          <span className="font-semibold text-sm text-white truncate">{app.name}</span>
+                          <AppBadge badge={app.badge} />
+                        </div>
+                        <p className="text-xs text-white/44 truncate">{app.developer}</p>
+                      </div>
+                      <div className="flex-shrink-0 flex items-center gap-3">
+                        <div className="flex items-center gap-1">
+                          <Star size={11} className="fill-amber-400 text-amber-400" />
+                          <span className="text-xs text-white/44">{app.rating}</span>
+                        </div>
+                        <PricingBadge type={app.pricingType} label={app.pricing} />
+                      </div>
+                    </div>
                   ))}
                 </div>
               </div>
@@ -791,15 +809,15 @@ export default function AppStorePage() {
             {/* ============================================================ */}
             {/*  NEW & NOTEWORTHY                                            */}
             {/* ============================================================ */}
-            <section className="border-b border-black/[0.04]">
+            <section className="border-b border-white/[0.08]">
               <div className="max-w-[1400px] mx-auto px-6 lg:px-8 py-14">
                 <div className="flex items-center justify-between mb-8">
                   <div>
                     <div className="flex items-center gap-2 mb-2">
                       <Zap size={16} className="text-emerald-400" />
-                      <h2 className="text-xl font-serif text-[#1A1A1A]">New & Noteworthy</h2>
+                      <h2 className="text-xl font-sans text-white">New & Noteworthy</h2>
                     </div>
-                    <p className="text-sm text-[#7A7A72]">Fresh arrivals worth checking out</p>
+                    <p className="text-sm text-white/44">Fresh arrivals worth checking out</p>
                   </div>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -815,18 +833,18 @@ export default function AppStorePage() {
         {/* ============================================================ */}
         {/*  MAIN APP GRID WITH SIDEBAR                                   */}
         {/* ============================================================ */}
-        <section className="border-b border-black/[0.04]" id="browse">
+        <section className="border-b border-white/[0.08]" id="browse">
           <div className="max-w-[1400px] mx-auto px-6 lg:px-8 py-14">
             <div className="flex items-center justify-between mb-8">
               <div>
-                <h2 className="text-xl font-serif text-white mb-1">
+                <h2 className="text-xl font-sans text-white mb-1">
                   {selectedCategory
                     ? CATEGORIES.find((c) => c.id === selectedCategory)?.name || "All Apps"
                     : searchQuery
                       ? `Search results for "${searchQuery}"`
                       : "Browse All Apps"}
                 </h2>
-                <p className="text-sm text-[#7A7A72]">
+                <p className="text-sm text-white/44">
                   Showing {Math.min(visibleCount, filteredApps.length)} of{" "}
                   {filteredApps.length < ALL_APPS.length
                     ? filteredApps.length
@@ -840,18 +858,18 @@ export default function AppStorePage() {
               {/* ---- SIDEBAR ---- */}
               <aside className="hidden lg:block w-56 flex-shrink-0">
                 <div className="sticky top-28">
-                  <h3 className="text-xs font-semibold text-[#B8B8B0] uppercase tracking-wider mb-4">Categories</h3>
+                  <h3 className="text-xs font-semibold text-white/30 uppercase tracking-wider mb-4">Categories</h3>
                   <nav className="space-y-0.5">
                     <button
                       onClick={() => { setSelectedCategory(null); setVisibleCount(ITEMS_PER_PAGE) }}
                       className={`w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm transition-all duration-200 ${
                         !selectedCategory
-                          ? "bg-[#8B6B3D]/10 text-[#ff6b81] border border-[#8B6B3D]/20"
-                          : "text-[#7A7A72] hover:text-[#1A1A1A] hover:bg-white border border-transparent"
+                          ? "bg-[#C8102E]/10 text-[#ff6b81] border border-[#C8102E]/20"
+                          : "text-white/44 hover:text-white hover:bg-white/[0.05] border border-transparent"
                       }`}
                     >
                       <span>All Apps</span>
-                      <span className="text-xs text-[#B8B8B0]">{ALL_APPS.length}</span>
+                      <span className="text-xs text-white/30">{ALL_APPS.length}</span>
                     </button>
                     {CATEGORIES.map((cat) => {
                       const Icon = cat.icon
@@ -865,15 +883,15 @@ export default function AppStorePage() {
                           }}
                           className={`w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm transition-all duration-200 ${
                             selectedCategory === cat.id
-                              ? "bg-[#8B6B3D]/10 text-[#ff6b81] border border-[#8B6B3D]/20"
-                              : "text-[#7A7A72] hover:text-[#1A1A1A] hover:bg-white border border-transparent"
+                              ? "bg-[#C8102E]/10 text-[#ff6b81] border border-[#C8102E]/20"
+                              : "text-white/44 hover:text-white hover:bg-white/[0.05] border border-transparent"
                           }`}
                         >
                           <span className="flex items-center gap-2">
                             <Icon size={14} />
                             {cat.name}
                           </span>
-                          <span className="text-xs text-[#B8B8B0]">{count}</span>
+                          <span className="text-xs text-white/30">{count}</span>
                         </button>
                       )
                     })}
@@ -884,7 +902,7 @@ export default function AppStorePage() {
               {/* ---- MOBILE SIDEBAR TOGGLE ---- */}
               <button
                 onClick={() => setSidebarOpen(!sidebarOpen)}
-                className="lg:hidden fixed bottom-6 left-6 z-40 p-3 rounded-full bg-[#8B6B3D] text-white shadow-lg shadow-[#8B6B3D]/20"
+                className="lg:hidden fixed bottom-6 left-6 z-40 p-3 rounded-full bg-[#C8102E] text-white shadow-lg shadow-[#C8102E]/20"
               >
                 <Filter size={20} />
               </button>
@@ -893,12 +911,12 @@ export default function AppStorePage() {
               {sidebarOpen && (
                 <div className="lg:hidden fixed inset-0 z-50 bg-black/80 backdrop-blur-sm" onClick={() => setSidebarOpen(false)}>
                   <div
-                    className="absolute left-0 top-0 bottom-0 w-72 bg-black border-r border-black/[0.04] p-6 overflow-y-auto"
+                    className="absolute left-0 top-0 bottom-0 w-72 bg-black border-r border-white/[0.08] p-6 overflow-y-auto"
                     onClick={(e) => e.stopPropagation()}
                   >
                     <div className="flex items-center justify-between mb-6">
-                      <h3 className="text-sm font-semibold text-[#1A1A1A]">Categories</h3>
-                      <button onClick={() => setSidebarOpen(false)} className="text-[#7A7A72] hover:text-[#1A1A1A]">
+                      <h3 className="text-sm font-semibold text-white">Categories</h3>
+                      <button onClick={() => setSidebarOpen(false)} className="text-white/44 hover:text-white">
                         <X size={20} />
                       </button>
                     </div>
@@ -906,11 +924,11 @@ export default function AppStorePage() {
                       <button
                         onClick={() => { setSelectedCategory(null); setSidebarOpen(false); setVisibleCount(ITEMS_PER_PAGE) }}
                         className={`w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-sm transition-all ${
-                          !selectedCategory ? "bg-[#8B6B3D]/10 text-[#ff6b81]" : "text-[#7A7A72] hover:text-[#1A1A1A]"
+                          !selectedCategory ? "bg-[#C8102E]/10 text-[#ff6b81]" : "text-white/44 hover:text-white"
                         }`}
                       >
                         <span>All Apps</span>
-                        <span className="text-xs text-[#B8B8B0]">{ALL_APPS.length}</span>
+                        <span className="text-xs text-white/30">{ALL_APPS.length}</span>
                       </button>
                       {CATEGORIES.map((cat) => {
                         const Icon = cat.icon
@@ -925,15 +943,15 @@ export default function AppStorePage() {
                             }}
                             className={`w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-sm transition-all ${
                               selectedCategory === cat.id
-                                ? "bg-[#8B6B3D]/10 text-[#ff6b81]"
-                                : "text-[#7A7A72] hover:text-[#1A1A1A]"
+                                ? "bg-[#C8102E]/10 text-[#ff6b81]"
+                                : "text-white/44 hover:text-white"
                             }`}
                           >
                             <span className="flex items-center gap-2">
                               <Icon size={14} />
                               {cat.name}
                             </span>
-                            <span className="text-xs text-[#B8B8B0]">{count}</span>
+                            <span className="text-xs text-white/30">{count}</span>
                           </button>
                         )
                       })}
@@ -950,21 +968,21 @@ export default function AppStorePage() {
                   <div className="relative">
                     <button
                       onClick={() => { setSortOpen(!sortOpen); setPricingOpen(false) }}
-                      className="flex items-center gap-2 px-4 py-2 bg-white border border-black/[0.04] rounded-lg text-xs text-[#7A7A72] hover:text-[#1A1A1A] hover:border-black/[0.1] transition-all"
+                      className="flex items-center gap-2 px-4 py-2 bg-white/[0.03] border border-white/[0.08] rounded-lg text-xs text-white/44 hover:text-white hover:border-white/[0.15] transition-all"
                     >
                       Sort: {sortBy.charAt(0).toUpperCase() + sortBy.slice(1)}
                       <ChevronDown size={13} />
                     </button>
                     {sortOpen && (
-                      <div className="absolute top-full left-0 mt-1 w-40 bg-black border border-black/[0.08] rounded-xl overflow-hidden z-20 shadow-xl">
+                      <div className="absolute top-full left-0 mt-1 w-40 bg-black border border-white/[0.12] rounded-xl overflow-hidden z-20 shadow-xl">
                         {(["popular", "newest", "rating", "price"] as const).map((s) => (
                           <button
                             key={s}
                             onClick={() => { setSortBy(s); setSortOpen(false) }}
                             className={`w-full text-left px-4 py-2.5 text-xs transition-colors ${
                               sortBy === s
-                                ? "bg-[#8B6B3D]/10 text-[#ff6b81]"
-                                : "text-[#7A7A72] hover:bg-black/[0.03] hover:text-[#1A1A1A]"
+                                ? "bg-[#C8102E]/10 text-[#ff6b81]"
+                                : "text-white/44 hover:bg-black/[0.03] hover:text-white"
                             }`}
                           >
                             <div className="flex items-center gap-2">
@@ -981,21 +999,21 @@ export default function AppStorePage() {
                   <div className="relative">
                     <button
                       onClick={() => { setPricingOpen(!pricingOpen); setSortOpen(false) }}
-                      className="flex items-center gap-2 px-4 py-2 bg-white border border-black/[0.04] rounded-lg text-xs text-[#7A7A72] hover:text-[#1A1A1A] hover:border-black/[0.1] transition-all"
+                      className="flex items-center gap-2 px-4 py-2 bg-white/[0.03] border border-white/[0.08] rounded-lg text-xs text-white/44 hover:text-white hover:border-white/[0.15] transition-all"
                     >
                       Pricing: {pricingFilter === "all" ? "All" : pricingFilter.charAt(0).toUpperCase() + pricingFilter.slice(1)}
                       <ChevronDown size={13} />
                     </button>
                     {pricingOpen && (
-                      <div className="absolute top-full left-0 mt-1 w-40 bg-black border border-black/[0.08] rounded-xl overflow-hidden z-20 shadow-xl">
+                      <div className="absolute top-full left-0 mt-1 w-40 bg-black border border-white/[0.12] rounded-xl overflow-hidden z-20 shadow-xl">
                         {(["all", "free", "freemium", "paid", "subscription"] as const).map((p) => (
                           <button
                             key={p}
                             onClick={() => { setPricingFilter(p); setPricingOpen(false); setVisibleCount(ITEMS_PER_PAGE) }}
                             className={`w-full text-left px-4 py-2.5 text-xs transition-colors ${
                               pricingFilter === p
-                                ? "bg-[#8B6B3D]/10 text-[#ff6b81]"
-                                : "text-[#7A7A72] hover:bg-black/[0.03] hover:text-[#1A1A1A]"
+                                ? "bg-[#C8102E]/10 text-[#ff6b81]"
+                                : "text-white/44 hover:bg-black/[0.03] hover:text-white"
                             }`}
                           >
                             <div className="flex items-center gap-2">
@@ -1011,11 +1029,11 @@ export default function AppStorePage() {
                   <div className="flex-1" />
 
                   {/* View toggle */}
-                  <div className="flex items-center bg-white border border-black/[0.04] rounded-lg overflow-hidden">
+                  <div className="flex items-center bg-white/[0.03] border border-white/[0.08] rounded-lg overflow-hidden">
                     <button
                       onClick={() => setViewMode("grid")}
                       className={`p-2 transition-colors ${
-                        viewMode === "grid" ? "bg-white/[0.08] text-[#1A1A1A]" : "text-[#B8B8B0] hover:text-[#7A7A72]"
+                        viewMode === "grid" ? "bg-white/[0.08] text-white" : "text-white/30 hover:text-white/44"
                       }`}
                     >
                       <Grid3x3 size={16} />
@@ -1023,7 +1041,7 @@ export default function AppStorePage() {
                     <button
                       onClick={() => setViewMode("list")}
                       className={`p-2 transition-colors ${
-                        viewMode === "list" ? "bg-white/[0.08] text-[#1A1A1A]" : "text-[#B8B8B0] hover:text-[#7A7A72]"
+                        viewMode === "list" ? "bg-white/[0.08] text-white" : "text-white/30 hover:text-white/44"
                       }`}
                     >
                       <List size={16} />
@@ -1039,12 +1057,12 @@ export default function AppStorePage() {
                 {/* App grid / list */}
                 {filteredApps.length === 0 ? (
                   <div className="text-center py-20">
-                    <Search size={48} className="mx-auto text-[#B8B8B0] mb-4" />
-                    <h3 className="text-lg font-semibold text-[#7A7A72] mb-2">No apps found</h3>
+                    <Search size={48} className="mx-auto text-white/30 mb-4" />
+                    <h3 className="text-lg font-semibold text-white/44 mb-2">No apps found</h3>
                     <p className="text-sm text-white/35">Try adjusting your search or filters</p>
                     <button
                       onClick={() => { setSearchQuery(""); setSelectedCategory(null); setPricingFilter("all") }}
-                      className="mt-4 px-5 py-2 text-sm rounded-lg bg-black/[0.04] border border-black/[0.08] text-[#7A7A72] hover:text-white hover:border-black/[0.12] transition-all"
+                      className="mt-4 px-5 py-2 text-sm rounded-lg bg-black/[0.04] border border-white/[0.12] text-white/44 hover:text-white hover:border-white/[0.18] transition-all"
                     >
                       Clear all filters
                     </button>
@@ -1068,12 +1086,12 @@ export default function AppStorePage() {
                   <div className="text-center mt-10">
                     <button
                       onClick={() => setVisibleCount((v) => v + ITEMS_PER_PAGE)}
-                      className="inline-flex items-center gap-2 px-8 py-3 text-sm font-medium rounded-xl bg-black/[0.03] border border-black/[0.08] text-white/70 hover:bg-[#8B6B3D] hover:border-[#8B6B3D] hover:text-white transition-all duration-300"
+                      className="inline-flex items-center gap-2 px-8 py-3 text-sm font-medium rounded-xl bg-black/[0.03] border border-white/[0.12] text-white/70 hover:bg-[#C8102E] hover:border-[#C8102E] hover:text-white transition-all duration-300"
                     >
                       Load More Apps
                       <ChevronDown size={16} />
                     </button>
-                    <p className="text-xs text-[#B8B8B0] mt-3">
+                    <p className="text-xs text-white/30 mt-3">
                       Showing {Math.min(visibleCount, filteredApps.length)} of{" "}
                       {filteredApps.length < ALL_APPS.length ? filteredApps.length : totalApps.toLocaleString()}
                     </p>
@@ -1088,11 +1106,11 @@ export default function AppStorePage() {
         {/*  EXPLORE COLLECTIONS                                          */}
         {/* ============================================================ */}
         {!searchQuery && !selectedCategory && (
-          <section className="border-b border-black/[0.04]">
+          <section className="border-b border-white/[0.08]">
             <div className="max-w-[1400px] mx-auto px-6 lg:px-8 py-14">
               <div className="mb-10">
-                <h2 className="text-xl font-serif text-white mb-2">Explore Collections</h2>
-                <p className="text-sm text-[#7A7A72]">Curated app bundles for every use case</p>
+                <h2 className="text-xl font-sans text-white mb-2">Explore Collections</h2>
+                <p className="text-sm text-white/44">Curated app bundles for every use case</p>
               </div>
 
               <div className="space-y-12">
@@ -1101,9 +1119,9 @@ export default function AppStorePage() {
                     <div className="flex items-center justify-between mb-5">
                       <div>
                         <h3 className="text-base font-semibold text-white mb-0.5">{collection.title}</h3>
-                        <p className="text-xs text-[#7A7A72]">{collection.description}</p>
+                        <p className="text-xs text-white/44">{collection.description}</p>
                       </div>
-                      <button className="flex items-center gap-1 text-xs text-[#7A7A72] hover:text-white/70 transition-colors">
+                      <button className="flex items-center gap-1 text-xs text-white/44 hover:text-white/70 transition-colors">
                         See all <ChevronRight size={13} />
                       </button>
                     </div>
@@ -1128,32 +1146,32 @@ export default function AppStorePage() {
         {/* ============================================================ */}
         {/*  BUILD FOR 9RUBY — Developer CTA                              */}
         {/* ============================================================ */}
-        <section className="border-b border-black/[0.04]">
+        <section className="border-b border-white/[0.08]">
           <div className="max-w-[1400px] mx-auto px-6 lg:px-8 py-20">
-            <div className="relative overflow-hidden rounded-3xl border border-black/[0.04] bg-white p-10 lg:p-16">
+            <div className="relative overflow-hidden rounded-3xl border border-white/[0.08] bg-white/[0.02] p-10 lg:p-16">
               {/* Background glow */}
               <div className="absolute inset-0 pointer-events-none">
-                <div className="absolute -top-20 -right-20 w-[400px] h-[400px] bg-[#8B6B3D]/[0.06] rounded-full blur-[100px]" />
+                <div className="absolute -top-20 -right-20 w-[400px] h-[400px] bg-[#C8102E]/[0.06] rounded-full blur-[100px]" />
                 <div className="absolute -bottom-20 -left-20 w-[300px] h-[300px] bg-purple-500/[0.04] rounded-full blur-[80px]" />
               </div>
 
               <div className="relative grid lg:grid-cols-2 gap-10 items-center">
                 <div>
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#8B6B3D]/10 border border-[#8B6B3D]/20 text-xs text-[#ff6b81] mb-6">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#C8102E]/10 border border-[#C8102E]/20 text-xs text-[#ff6b81] mb-6">
                     <Cpu size={12} />
                     Developer Program
                   </div>
-                  <h2 className="text-3xl lg:text-4xl font-serif text-white mb-4">
+                  <h2 className="text-3xl lg:text-4xl font-sans text-white mb-4">
                     Build for <span className="gradient-text">9Ruby</span>
                   </h2>
-                  <p className="text-base text-[#7A7A72] leading-relaxed mb-8">
+                  <p className="text-base text-white/44 leading-relaxed mb-8">
                     Join 3,200+ developers building apps for 13,000+ merchants. Access our APIs, SDKs, and partner program to reach millions of businesses worldwide.
                   </p>
                   <div className="flex flex-wrap gap-3">
-                    <a href="#" className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold rounded-xl bg-[#8B6B3D] text-white hover:brightness-110 transition-all gold-btn-glow">
+                    <a href="#" className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold rounded-xl bg-[#C8102E] text-white hover:brightness-110 transition-all gold-btn-glow">
                       Start Building <ArrowRight size={16} />
                     </a>
-                    <a href="#" className="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium rounded-xl bg-black/[0.03] border border-black/[0.08] text-white/70 hover:text-white hover:border-black/[0.12] transition-all">
+                    <a href="#" className="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium rounded-xl bg-black/[0.03] border border-white/[0.12] text-white/70 hover:text-white hover:border-white/[0.18] transition-all">
                       <ExternalLink size={14} />
                       API Docs
                     </a>
@@ -1167,10 +1185,10 @@ export default function AppStorePage() {
                     { icon: Users, value: "3.2K+", label: "Developers" },
                     { icon: Shield, value: "99.99%", label: "Uptime" },
                   ].map((stat) => (
-                    <div key={stat.label} className="p-5 rounded-2xl bg-white border border-black/[0.04]">
-                      <stat.icon size={20} className="text-[#8B6B3D] mb-3" />
+                    <div key={stat.label} className="p-5 rounded-2xl bg-white/[0.03] border border-white/[0.08]">
+                      <stat.icon size={20} className="text-[#C8102E] mb-3" />
                       <div className="text-2xl font-bold text-white font-mono">{stat.value}</div>
-                      <div className="text-xs text-[#7A7A72] mt-1">{stat.label}</div>
+                      <div className="text-xs text-white/44 mt-1">{stat.label}</div>
                     </div>
                   ))}
                 </div>
@@ -1182,9 +1200,9 @@ export default function AppStorePage() {
         {/* ============================================================ */}
         {/*  RESOURCES FOOTER                                             */}
         {/* ============================================================ */}
-        <section className="border-b border-black/[0.04]">
+        <section className="border-b border-white/[0.08]">
           <div className="max-w-[1400px] mx-auto px-6 lg:px-8 py-14">
-            <h2 className="text-xl font-serif text-white mb-8">Resources</h2>
+            <h2 className="text-xl font-sans text-white mb-8">Resources</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
               {[
                 { icon: Globe, title: "Help Center", desc: "Get support for any app", href: "#" },
@@ -1196,11 +1214,11 @@ export default function AppStorePage() {
                 <a
                   key={resource.title}
                   href={resource.href}
-                  className="group p-5 rounded-2xl bg-white border border-black/[0.04] hover:border-black/[0.12] hover:bg-black/[0.03] transition-all duration-300"
+                  className="group p-5 rounded-2xl bg-white/[0.03] border border-white/[0.08] hover:border-white/[0.18] hover:bg-black/[0.03] transition-all duration-300"
                 >
-                  <resource.icon size={20} className="text-[#B8B8B0] group-hover:text-[#8B6B3D] transition-colors mb-3" />
+                  <resource.icon size={20} className="text-white/30 group-hover:text-[#C8102E] transition-colors mb-3" />
                   <h3 className="text-sm font-semibold text-white mb-1">{resource.title}</h3>
-                  <p className="text-xs text-[#7A7A72]">{resource.desc}</p>
+                  <p className="text-xs text-white/44">{resource.desc}</p>
                 </a>
               ))}
             </div>

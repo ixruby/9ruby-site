@@ -1,18 +1,34 @@
 import Link from "next/link"
 
+const NV = "'Helvetica Neue', Helvetica, Arial, sans-serif"
+const BORDER = "0.8px solid rgba(255,255,255,0.12)"
+
 export default function Footer() {
   return (
-    <footer style={{ background: "var(--page-bg-alt)", borderTop: "1px solid var(--border-subtle)" }}>
-      <div className="max-w-[1100px] mx-auto px-6 py-14">
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-14">
-          <div className="col-span-2">
-            <Link href="/" className="flex items-center gap-0.5 mb-4">
-              <span className="font-serif italic text-[1.4rem] font-bold tracking-tight text-[#8B6B3D]">9</span>
-              <span className="text-base font-bold tracking-tight" style={{ color: "var(--ink-strong)" }}>Ruby</span>
-            </Link>
-            <p className="text-[13px] leading-relaxed max-w-[260px]" style={{ color: "var(--ink-muted)" }}>
+    <footer style={{ background: "#000", borderTop: BORDER }}>
+      <div className="max-w-[1200px] mx-auto px-6 md:px-12 pt-16 pb-10">
+        {/* Big wordmark */}
+        <div
+          className="select-none mb-12"
+          style={{ fontFamily: NV, fontWeight: 950, fontSize: "clamp(3rem, 10vw, 8rem)", color: "rgba(255,255,255,0.08)", lineHeight: 1, letterSpacing: "-0.075em", textTransform: "uppercase" }}
+        >
+          9RUBY
+        </div>
+
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-10 mb-14">
+          {/* Brand col */}
+          <div className="col-span-2 md:col-span-1">
+            <p style={{ fontFamily: NV, fontSize: 13, color: "rgba(255,255,255,0.44)", lineHeight: 1.65, maxWidth: 240 }}>
               AI agents, websites, voice systems, and automation by IX Ruby.
             </p>
+            <div className="mt-6 flex flex-col gap-2">
+              <a href="mailto:hello@9ruby.com" style={{ fontFamily: NV, fontWeight: 700, fontSize: 13, color: "#C8102E", textDecoration: "none" }}>
+                hello@9ruby.com
+              </a>
+              <a href="https://ai.9ruby.com" style={{ fontFamily: NV, fontSize: 13, color: "rgba(255,255,255,0.44)", textDecoration: "none" }}>
+                ai.9ruby.com →
+              </a>
+            </div>
           </div>
 
           {[
@@ -48,16 +64,14 @@ export default function Footer() {
             },
           ].map((col) => (
             <div key={col.title}>
-              <h4 className="text-[11px] font-semibold tracking-[0.1em] uppercase mb-4" style={{ color: "var(--ink-soft)" }}>
-                {col.title}
-              </h4>
-              <div className="flex flex-col gap-2.5">
+              <p style={{ fontFamily: NV, fontWeight: 800, fontSize: 10, letterSpacing: "0.1em", textTransform: "uppercase", color: "rgba(255,255,255,0.35)", marginBottom: 20 }}>{col.title}</p>
+              <div className="flex flex-col gap-3">
                 {col.links.map((l) => (
                   <Link
                     key={l.label}
                     href={l.href}
-                    className="text-[13px] transition-colors"
-                    style={{ color: "var(--ink-muted)" }}
+                    className="hover:text-white transition-colors"
+                    style={{ fontFamily: NV, fontSize: 13, color: "rgba(255,255,255,0.44)", textDecoration: "none" }}
                   >
                     {l.label}
                   </Link>
@@ -67,13 +81,15 @@ export default function Footer() {
           ))}
         </div>
 
-        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3" style={{ borderTop: "1px solid var(--border-subtle)" }}>
-          <span className="text-[11px]" style={{ color: "var(--ink-soft)" }}>
+        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3" style={{ borderTop: BORDER }}>
+          <span style={{ fontFamily: NV, fontWeight: 700, fontSize: 10, letterSpacing: "0.08em", textTransform: "uppercase", color: "rgba(255,255,255,0.28)" }}>
             &copy; 2026 9Ruby / IX Ruby
           </span>
-          <div className="flex items-center gap-1.5 text-[11px]" style={{ color: "var(--ink-soft)" }}>
+          <div className="flex items-center gap-2">
             <div className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-            Official site live
+            <span style={{ fontFamily: NV, fontWeight: 700, fontSize: 10, letterSpacing: "0.1em", textTransform: "uppercase", color: "rgba(255,255,255,0.28)" }}>
+              Official site live
+            </span>
           </div>
         </div>
       </div>

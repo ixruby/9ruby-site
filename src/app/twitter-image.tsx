@@ -30,7 +30,7 @@ export default function TwitterImage() {
               width: 52,
               height: 52,
               borderRadius: 9999,
-              background: "#8B6B3D",
+              background: "#C8102E",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",

@@ -1,10 +1,1 @@
-{
-  "redirects": [
-    {
-      "source": "/(.*)",
-      "has": [{ "type": "host", "value": "www.9ruby.com" }],
-      "destination": "https://9ruby.com/$1",
-      "permanent": true
-    }
-  ]
-}
+{}

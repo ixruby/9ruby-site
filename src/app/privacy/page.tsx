@@ -1,33 +1,13 @@
 "use client"
 
 import Link from "next/link"
-import { useEffect, useRef } from "react"
 import { ArrowRight } from "lucide-react"
 import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer"
 import Breadcrumb from "@/components/Breadcrumb"
 
-function useScrollReveal() {
-  const ref = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    const el = ref.current
-    if (!el) return
-
-    const children = el.querySelectorAll("[data-reveal]")
-    children.forEach((child) => {
-      const el = child as HTMLElement
-      el.style.transition = "opacity 0.6s ease, transform 0.6s ease"
-      const delay = Number(child.getAttribute("data-reveal-delay") || 0)
-      setTimeout(() => {
-        el.style.opacity = "1"
-        el.style.transform = "translateY(0)"
-      }, delay)
-    })
-  }, [])
-
-  return ref
-}
+const NV = "'Helvetica Neue', Helvetica, Arial, sans-serif"
+const BORDER = "0.8px solid rgba(255,255,255,0.12)"
 
 const sections = [
   {
@@ -95,110 +75,87 @@ const sections = [
 ]
 
 export default function PrivacyPage() {
-  const revealRef = useScrollReveal()
-
   return (
-    <main id="main-content" className="relative min-h-screen" style={{ background: "var(--page-bg)" }}>
+    <main id="main-content" style={{ background: "#000", minHeight: "100vh", fontFamily: NV }}>
       <Navbar />
       <Breadcrumb items={[{ label: "Privacy Policy" }]} />
 
-      <section className="relative pt-32 lg:pt-40 pb-24 lg:pb-32">
-        <div ref={revealRef} className="relative max-w-[700px] mx-auto px-6">
-          {/* Hero */}
-          <div className="mb-16" data-reveal>
-            <div className="inline-flex items-center gap-2 mb-8">
-              <span
-                className="text-[11px] font-semibold tracking-[0.12em] uppercase"
-                style={{ color: "#8B6B3D" }}
-              >
-                Legal
-              </span>
-            </div>
-            <h1
-              className="text-5xl md:text-6xl font-serif italic tracking-tighter leading-[0.9] mb-6"
-              style={{ color: "var(--ink-strong)" }}
-            >
-              Privacy Policy
-            </h1>
-            <p className="text-sm" style={{ color: "var(--ink-soft)" }}>
-              Last updated: April 2026
-            </p>
-          </div>
+      {/* HERO */}
+      <section style={{ background: "#8C000E" }} className="pt-36 pb-16 md:pt-40 md:pb-20">
+        <div className="max-w-[1200px] mx-auto px-6 text-center">
+          <p style={{ fontFamily: NV, fontSize: 11, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,0.6)", marginBottom: 20 }}>Legal</p>
+          <h1 style={{ fontFamily: NV, fontWeight: 950, textTransform: "uppercase", letterSpacing: "-0.075em", lineHeight: 0.93, fontSize: "clamp(48px,9vw,100px)", color: "#fff", marginBottom: 24 }}>
+            PRIVACY<br />POLICY
+          </h1>
+          <p style={{ fontFamily: NV, fontSize: 13, color: "rgba(255,255,255,0.5)", letterSpacing: "0.04em" }}>
+            Last updated: April 2026
+          </p>
+        </div>
+      </section>
 
-          {/* Intro */}
-          <div className="mb-12" data-reveal>
-            <p className="text-[15px] leading-relaxed" style={{ color: "var(--ink-muted)" }}>
-              IX Ruby Agency (&quot;9Ruby&quot;, &quot;we&quot;, &quot;us&quot;, or &quot;our&quot;) operates the
-              9Ruby platform, including the website at home.9ruby.com, the AI platform at
-              ai.9ruby.com, and all related services. This policy describes how we collect,
-              use, store, and protect your personal information.
-            </p>
-          </div>
+      {/* BODY */}
+      <section className="py-16 md:py-20">
+        <div className="max-w-[1200px] mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-[220px_1fr]" style={{ border: BORDER }}>
 
-          {/* Table of contents */}
-          <div
-            className="mb-14 p-6 rounded-2xl bg-white"
-            style={{ border: "1px solid rgba(0,0,0,0.04)" }}
-            data-reveal
-          >
-            <h2
-              className="text-sm font-semibold mb-4"
-              style={{ color: "var(--ink-strong)" }}
-            >
-              Contents
-            </h2>
-            <ol className="space-y-2">
-              {sections.map((s, i) => (
-                <li key={s.id}>
-                  <a
-                    href={`#${s.id}`}
-                    className="text-[13px] hover:underline transition-colors"
-                    style={{ color: "var(--ink-muted)" }}
-                  >
-                    {i + 1}. {s.title}
-                  </a>
-                </li>
-              ))}
-            </ol>
-          </div>
-
-          {/* Policy sections */}
-          <div className="space-y-14">
-            {sections.map((s, i) => (
-              <section key={s.id} id={s.id} data-reveal>
-                <h2
-                  className="text-2xl font-serif italic tracking-tight mb-6"
-                  style={{ color: "var(--ink-strong)" }}
-                >
-                  {i + 1}. {s.title}
-                </h2>
-                <div className="space-y-4">
-                  {s.content.map((paragraph, j) => (
-                    <p
-                      key={j}
-                      className="text-[15px] leading-relaxed"
-                      style={{ color: "var(--ink-muted)" }}
+            {/* Sidebar TOC */}
+            <div className="p-8" style={{ borderRight: BORDER, borderBottom: BORDER }}>
+              <p style={{ fontFamily: NV, fontSize: 10, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,0.35)", marginBottom: 16 }}>Contents</p>
+              <ol className="flex flex-col gap-3">
+                {sections.map((s, i) => (
+                  <li key={s.id}>
+                    <a
+                      href={`#${s.id}`}
+                      style={{ fontFamily: NV, fontSize: 12, color: "rgba(255,255,255,0.44)", textDecoration: "none", display: "block", lineHeight: 1.4 }}
+                      className="hover:text-white transition-colors"
                     >
-                      {paragraph}
-                    </p>
-                  ))}
-                </div>
-              </section>
-            ))}
-          </div>
+                      {i + 1}. {s.title}
+                    </a>
+                  </li>
+                ))}
+              </ol>
+            </div>
 
-          {/* Bottom CTA */}
-          <div className="mt-20 text-center" data-reveal>
-            <p className="text-sm mb-6" style={{ color: "var(--ink-soft)" }}>
-              Questions about your data? We&apos;re happy to help.
-            </p>
-            <Link
-              href="/contact"
-              className="bg-[#1A1A1A] rounded-full px-7 h-10 text-sm font-medium hover:bg-[#1A1A1A]/90 transition-all inline-flex items-center gap-2"
-              style={{ color: "#F8F7F4" }}
-            >
-              Contact us <ArrowRight size={14} />
-            </Link>
+            {/* Content */}
+            <div className="p-8 md:p-12">
+              <p style={{ fontFamily: NV, fontSize: 14, lineHeight: 1.75, color: "rgba(255,255,255,0.5)", marginBottom: 48, maxWidth: 640 }}>
+                IX Ruby Agency (&quot;9Ruby&quot;, &quot;we&quot;, &quot;us&quot;, or &quot;our&quot;) operates the 9Ruby platform, including the website at home.9ruby.com, the AI platform at ai.9ruby.com, and all related services. This policy describes how we collect, use, store, and protect your personal information.
+              </p>
+
+              <div className="flex flex-col gap-14">
+                {sections.map((s, i) => (
+                  <div key={s.id} id={s.id} style={{ paddingBottom: 56, borderBottom: BORDER }}>
+                    <p style={{ fontFamily: NV, fontSize: 10, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,0.3)", marginBottom: 12 }}>
+                      {String(i + 1).padStart(2, "0")}
+                    </p>
+                    <h2 style={{ fontFamily: NV, fontWeight: 950, textTransform: "uppercase", letterSpacing: "-0.055em", lineHeight: 0.93, fontSize: "clamp(20px,2.5vw,28px)", color: "#fff", marginBottom: 20 }}>
+                      {s.title}
+                    </h2>
+                    <div className="flex flex-col gap-4">
+                      {s.content.map((paragraph, j) => (
+                        <p key={j} style={{ fontFamily: NV, fontSize: 14, lineHeight: 1.75, color: "rgba(255,255,255,0.5)", maxWidth: 640 }}>
+                          {paragraph}
+                        </p>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="pt-8 text-center">
+                <p style={{ fontFamily: NV, fontSize: 13, color: "rgba(255,255,255,0.35)", marginBottom: 20 }}>
+                  Questions about your data?
+                </p>
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-2 hover:opacity-90 transition-opacity"
+                  style={{ fontFamily: NV, fontWeight: 800, fontSize: 11, letterSpacing: "0.08em", textTransform: "uppercase", background: "#C8102E", color: "#fff", padding: "11px 26px", textDecoration: "none" }}
+                >
+                  Contact Us <ArrowRight size={11} />
+                </Link>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>

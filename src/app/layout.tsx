@@ -7,10 +7,9 @@ import {
   Playfair_Display,
 } from "next/font/google";
 import "./globals.css";
-import CookieConsent from "@/components/CookieConsent";
 
 const siteUrl = "https://www.9ruby.com";
-const themeInitScript = `(function(){try{var saved=localStorage.getItem("theme");var system=window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";var theme=saved||system;document.documentElement.dataset.theme=theme;document.documentElement.style.colorScheme=theme;}catch(e){document.documentElement.dataset.theme="light";document.documentElement.style.colorScheme="light";}})();`;
+const themeInitScript = `document.documentElement.dataset.theme="dark";document.documentElement.style.colorScheme="dark";`;
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -135,7 +134,7 @@ export default function RootLayout({
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
-        <meta name="theme-color" content="#8B6B3D" />
+        <meta name="theme-color" content="#C8102E" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta
           name="apple-mobile-web-app-status-bar-style"
@@ -156,7 +155,6 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
         {children}
-        <CookieConsent />
         <script
           dangerouslySetInnerHTML={{
             __html: `

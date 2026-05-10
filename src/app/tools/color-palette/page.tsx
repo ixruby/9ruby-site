@@ -2,9 +2,10 @@
 
 import { useState, useCallback, useRef, useEffect, useLayoutEffect } from "react"
 import Link from "next/link"
-import { ArrowLeft, RefreshCw, Copy, Check, Lock, Unlock, Palette } from "lucide-react"
+import { ArrowLeft, RefreshCw, Copy, Check, Lock, Unlock, Download } from "lucide-react"
 import Navbar from "@/components/Navbar"
 import Breadcrumb from "@/components/Breadcrumb"
+import ToolServiceCta from "@/components/tools/ToolServiceCta"
 
 interface PaletteColor {
   hex: string
@@ -52,6 +53,10 @@ function getTextColor(hex: string): string {
   const b = parseInt(hex.slice(5, 7), 16)
   const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255
   return luminance > 0.5 ? "#000000" : "#ffffff"
+}
+
+function paletteToCss(colors: PaletteColor[]): string {
+  return `:root {\n${colors.map((c, i) => `  --color-${i + 1}: ${c.hex};\n  --color-${i + 1}-rgb: ${hexToRgb(c.hex)};`).join("\n")}\n}`
 }
 
 type Harmony = "analogous" | "complementary" | "triadic" | "split-complementary" | "random"
@@ -109,10 +114,19 @@ export default function ColorPalettePage() {
   }
 
   const copyAllAsCSS = () => {
-    const css = `:root {\n${colors.map((c, i) => `  --color-${i + 1}: ${c.hex};`).join("\n")}\n}`
-    navigator.clipboard.writeText(css)
+    navigator.clipboard.writeText(paletteToCss(colors))
     setCopied(-1)
     setTimeout(() => setCopied(null), 1500)
+  }
+
+  const downloadCSS = () => {
+    const blob = new Blob([paletteToCss(colors)], { type: "text/css" })
+    const url = URL.createObjectURL(blob)
+    const a = document.createElement("a")
+    a.href = url
+    a.download = "9ruby-palette.css"
+    a.click()
+    URL.revokeObjectURL(url)
   }
 
   const undo = () => {
@@ -131,7 +145,7 @@ export default function ColorPalettePage() {
         </Link>
 
         <div className="mb-12">
-          <div className="text-[11px] font-semibold tracking-[0.12em] uppercase" style={{ color: "#8B6B3D" }}>
+          <div className="text-[11px] font-semibold tracking-[0.12em] uppercase" style={{ color: "var(--accent)" }}>
             Free Tool
           </div>
           <h1 className="text-4xl md:text-5xl font-serif italic tracking-tighter leading-[1.1] mb-4 mt-3" style={{ color: "var(--ink-strong)" }}>
@@ -147,7 +161,7 @@ export default function ColorPalettePage() {
           <select
             value={harmony}
             onChange={e => setHarmony(e.target.value as Harmony)}
-            className="h-10 px-4 bg-white border border-black/[0.08] rounded-xl text-sm focus:border-[#8B6B3D]/50 focus:ring-1 focus:ring-[#8B6B3D]/20 focus:outline-none appearance-none cursor-pointer"
+            className="h-10 px-4 bg-white border border-black/[0.08] rounded-xl text-sm focus:border-[var(--accent)]/50 focus:ring-1 focus:ring-[var(--accent)]/20 focus:outline-none appearance-none cursor-pointer"
             style={{ color: "var(--ink-strong)" }}
           >
             <option value="random">Random</option>
@@ -180,6 +194,14 @@ export default function ColorPalettePage() {
           >
             {copied === -1 ? <Check size={14} className="text-emerald-500" /> : <Copy size={14} />}
             {copied === -1 ? "Copied!" : "Copy CSS"}
+          </button>
+
+          <button
+            onClick={downloadCSS}
+            className="h-10 px-4 bg-white border border-black/[0.08] rounded-xl text-sm hover:border-black/[0.12] transition-all flex items-center gap-2"
+            style={{ color: "var(--ink-muted)" }}
+          >
+            <Download size={14} /> Download CSS
           </button>
 
           <span className="text-xs ml-auto hidden sm:block font-mono" style={{ color: "var(--ink-soft)" }}>Press spacebar to regenerate</span>
@@ -271,6 +293,8 @@ export default function ColorPalettePage() {
           <kbd className="px-3 py-1.5 bg-white border border-black/[0.06] rounded-lg text-xs font-mono" style={{ color: "var(--ink-muted)" }}>Space</kbd>
           <span className="text-xs ml-2" style={{ color: "var(--ink-soft)" }}>to generate new palette</span>
         </div>
+
+        <ToolServiceCta slug="color-palette" />
       </div>
 
       <SpacebarListener onSpace={regenerate} />

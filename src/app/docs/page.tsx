@@ -1,180 +1,87 @@
 "use client"
 
 import Link from "next/link"
-import { useEffect, useRef } from "react"
-import {
-  BookOpen, Bot, Terminal, Plug, LayoutTemplate, Webhook,
-  ArrowRight,
-} from "lucide-react"
+import { BookOpen, Bot, Terminal, Plug, LayoutTemplate, Webhook, ArrowRight } from "lucide-react"
 import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer"
 import Breadcrumb from "@/components/Breadcrumb"
 
+const NV = "'Helvetica Neue', Helvetica, Arial, sans-serif"
+const BORDER = "0.8px solid rgba(255,255,255,0.12)"
+
 const docSections = [
-  {
-    icon: <BookOpen size={20} />,
-    title: "Getting Started",
-    description:
-      "Quick start guide, first project setup, and core concepts. Go from zero to deployed in under five minutes.",
-    link: "#getting-started",
-  },
-  {
-    icon: <Bot size={20} />,
-    title: "AI Agents",
-    description:
-      "Creating, deploying, and managing autonomous agents. Learn how to configure behaviors, set goals, and monitor performance.",
-    link: "#ai-agents",
-  },
-  {
-    icon: <Terminal size={20} />,
-    title: "CLI Reference",
-    description:
-      "All commands, flags, and configuration options for the Rubix CLI. Install, authenticate, and manage projects from your terminal.",
-    link: "#cli-reference",
-  },
-  {
-    icon: <Plug size={20} />,
-    title: "API Reference",
-    description:
-      "REST endpoints, authentication, rate limits, and response schemas. Everything you need to integrate programmatically.",
-    link: "#api-reference",
-  },
-  {
-    icon: <LayoutTemplate size={20} />,
-    title: "Templates",
-    description:
-      "Using, customizing, and creating production-ready templates. Browse the library, fork a starter, or publish your own.",
-    link: "#templates",
-  },
-  {
-    icon: <Webhook size={20} />,
-    title: "Integrations",
-    description:
-      "Connecting external services, webhooks, and MCP servers. Extend 9Ruby with Slack, GitHub, Stripe, Supabase, and more.",
-    link: "#integrations",
-  },
+  { icon: <BookOpen size={18} />, title: "Getting Started", description: "Quick start guide, first project setup, and core concepts. Go from zero to deployed in under five minutes.", link: "#getting-started" },
+  { icon: <Bot size={18} />, title: "AI Agents", description: "Creating, deploying, and managing autonomous agents. Learn how to configure behaviors, set goals, and monitor performance.", link: "#ai-agents" },
+  { icon: <Terminal size={18} />, title: "CLI Reference", description: "All commands, flags, and configuration options for the Rubix CLI. Install, authenticate, and manage projects from your terminal.", link: "#cli-reference" },
+  { icon: <Plug size={18} />, title: "API Reference", description: "REST endpoints, authentication, rate limits, and response schemas. Everything you need to integrate programmatically.", link: "#api-reference" },
+  { icon: <LayoutTemplate size={18} />, title: "Templates", description: "Using, customizing, and creating production-ready templates. Browse the library, fork a starter, or publish your own.", link: "#templates" },
+  { icon: <Webhook size={18} />, title: "Integrations", description: "Connecting external services, webhooks, and MCP servers. Extend 9Ruby with Slack, GitHub, Stripe, Supabase, and more.", link: "#integrations" },
 ]
 
-function useScrollReveal() {
-  const ref = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    const el = ref.current
-    if (!el) return
-
-    const children = el.querySelectorAll("[data-reveal]")
-    children.forEach((child) => {
-      const el = child as HTMLElement
-      el.style.transition = "opacity 0.6s ease, transform 0.6s ease"
-      const delay = Number(child.getAttribute("data-reveal-delay") || 0)
-      setTimeout(() => {
-        el.style.opacity = "1"
-        el.style.transform = "translateY(0)"
-      }, delay)
-    })
-  }, [])
-
-  return ref
-}
-
 export default function DocsPage() {
-  const revealRef = useScrollReveal()
-
   return (
-    <main id="main-content" className="relative min-h-screen" style={{ background: "var(--page-bg)" }}>
+    <main id="main-content" style={{ background: "#000", minHeight: "100vh", fontFamily: NV }}>
       <Navbar />
       <Breadcrumb items={[{ label: "Documentation" }]} />
 
-      <section className="relative pt-32 lg:pt-40 pb-24 lg:pb-32">
-        <div ref={revealRef} className="relative max-w-[1200px] mx-auto px-6">
-          {/* Hero */}
-          <div className="mb-20 lg:mb-24" data-reveal>
-            <div className="inline-flex items-center gap-2 mb-8">
-              <span
-                className="text-[11px] font-semibold tracking-[0.12em] uppercase"
-                style={{ color: "#8B6B3D" }}
-              >
-                Docs
-              </span>
-            </div>
-            <h1
-              className="text-5xl md:text-6xl lg:text-[80px] font-serif italic tracking-tighter leading-[0.9] mb-8"
-              style={{ color: "var(--ink-strong)" }}
-            >
-              Documentation
-            </h1>
-            <p
-              className="text-lg md:text-xl leading-relaxed max-w-2xl"
-              style={{ color: "var(--ink-muted)" }}
-            >
-              Everything you need to build with 9Ruby. From quick starts to deep API
-              references — find the guide that fits your workflow.
-            </p>
-          </div>
+      {/* HERO */}
+      <section style={{ background: "#8C000E" }} className="pt-36 pb-16 md:pt-40 md:pb-20">
+        <div className="max-w-[1200px] mx-auto px-6 text-center">
+          <p style={{ fontFamily: NV, fontSize: 11, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,0.6)", marginBottom: 20 }}>Docs</p>
+          <h1 style={{ fontFamily: NV, fontWeight: 950, textTransform: "uppercase", letterSpacing: "-0.075em", lineHeight: 0.93, fontSize: "clamp(56px,10vw,120px)", color: "#fff", marginBottom: 28 }}>
+            DOCUMENTATION
+          </h1>
+          <p style={{ fontFamily: NV, fontSize: 18, lineHeight: 1.6, color: "rgba(255,255,255,0.7)", maxWidth: 520, margin: "0 auto" }}>
+            Everything you need to build with 9Ruby — from quick starts to deep API references.
+          </p>
+        </div>
+      </section>
 
-          {/* Doc sections grid */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-28">
-            {docSections.map((section) => (
+      {/* DOCS GRID */}
+      <section className="py-16 md:py-20" style={{ borderBottom: BORDER }}>
+        <div className="max-w-[1200px] mx-auto px-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3" style={{ border: BORDER }}>
+            {docSections.map((section, i) => (
               <Link
                 key={section.title}
                 href={section.link}
-                className="p-8 rounded-2xl bg-white hover:shadow-lg hover:shadow-black/[0.03] transition-all group block"
-                style={{ border: "1px solid rgba(0,0,0,0.04)" }}
-                data-reveal
+                className="flex flex-col gap-5 group hover:bg-white/[0.03] transition-colors"
+                style={{ padding: "32px 28px", borderRight: (i + 1) % 3 !== 0 ? BORDER : undefined, borderBottom: BORDER, textDecoration: "none" }}
               >
-                <div
-                  className="w-10 h-10 rounded-xl flex items-center justify-center mb-5"
-                  style={{
-                    background: "rgba(0,0,0,0.02)",
-                    border: "1px solid rgba(0,0,0,0.06)",
-                  }}
-                >
-                  <span
-                    className="group-hover:text-[#8B6B3D] transition-colors"
-                    style={{ color: "var(--ink-muted)" }}
-                  >
-                    {section.icon}
-                  </span>
+                <div style={{ width: 36, height: 36, border: BORDER, display: "flex", alignItems: "center", justifyContent: "center", color: "#C8102E" }}>
+                  {section.icon}
                 </div>
-                <h3
-                  className="text-lg font-semibold tracking-tight mb-2"
-                  style={{ color: "var(--ink-strong)" }}
-                >
-                  {section.title}
-                </h3>
-                <p className="leading-relaxed text-sm mb-4" style={{ color: "var(--ink-soft)" }}>
-                  {section.description}
-                </p>
-                <span
-                  className="text-[13px] font-medium inline-flex items-center gap-1 group-hover:gap-2 transition-all"
-                  style={{ color: "#8B6B3D" }}
-                >
-                  Read docs <ArrowRight size={13} />
+                <div className="flex-1">
+                  <h3 style={{ fontFamily: NV, fontWeight: 950, textTransform: "uppercase", letterSpacing: "-0.04em", fontSize: 16, color: "#fff", marginBottom: 8 }}>{section.title}</h3>
+                  <p style={{ fontFamily: NV, fontSize: 13, lineHeight: 1.65, color: "rgba(255,255,255,0.44)" }}>{section.description}</p>
+                </div>
+                <span className="inline-flex items-center gap-1.5 group-hover:gap-3 transition-all" style={{ fontFamily: NV, fontWeight: 800, fontSize: 11, letterSpacing: "0.08em", textTransform: "uppercase", color: "#C8102E" }}>
+                  Read Docs <ArrowRight size={11} />
                 </span>
               </Link>
             ))}
           </div>
+        </div>
+      </section>
 
-          {/* CTA */}
-          <div className="text-center py-8" data-reveal>
-            <h2
-              className="text-4xl md:text-5xl font-serif italic tracking-tighter mb-4"
-              style={{ color: "var(--ink-strong)" }}
-            >
-              Can&apos;t find what you need?
+      {/* CTA */}
+      <section style={{ background: "#8C000E" }} className="py-20 md:py-28">
+        <div className="max-w-[1200px] mx-auto px-6 flex flex-col md:flex-row md:items-center md:justify-between gap-8">
+          <div>
+            <h2 style={{ fontFamily: NV, fontWeight: 950, textTransform: "uppercase", letterSpacing: "-0.075em", lineHeight: 0.93, fontSize: "clamp(2rem,5vw,4rem)", color: "#fff", marginBottom: 16 }}>
+              CAN&apos;T FIND<br />WHAT YOU NEED?
             </h2>
-            <p
-              className="text-lg mb-10 max-w-md mx-auto"
-              style={{ color: "var(--ink-soft)" }}
-            >
+            <p style={{ fontFamily: NV, fontSize: 15, lineHeight: 1.6, color: "rgba(255,255,255,0.6)", maxWidth: 400 }}>
               Our team is here to help. Reach out and we&apos;ll point you in the right direction.
             </p>
+          </div>
+          <div className="shrink-0">
             <Link
               href="/contact"
-              className="bg-[#1A1A1A] rounded-full px-7 h-10 text-sm font-medium hover:bg-[#1A1A1A]/90 transition-all inline-flex items-center gap-2"
-              style={{ color: "#F8F7F4" }}
+              className="inline-flex items-center gap-2 hover:opacity-90 transition-opacity"
+              style={{ fontFamily: NV, fontWeight: 800, fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", background: "#fff", color: "#080808", padding: "12px 28px", textDecoration: "none" }}
             >
-              Contact support <ArrowRight size={14} />
+              Contact Support <ArrowRight size={11} />
             </Link>
           </div>
         </div>

@@ -1,0 +1,654 @@
+{
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\check-eco.mjs": {
+    "mtime": 1776517499.7886422,
+    "hash": "b7acbab2980a8534c810ab6da6e3f2de"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\eslint.config.mjs": {
+    "mtime": 1775596627.848473,
+    "hash": "dfa1f5f6a7037bf39dc510f30b180002"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\next-env.d.ts": {
+    "mtime": 1778442096.8182883,
+    "hash": "2a74d3909800ca5467fa83b0ab4a4890"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\next.config.ts": {
+    "mtime": 1776017618.0943024,
+    "hash": "6c7a30e2b859b2cdd7f9c9765123c18d"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\postcss.config.mjs": {
+    "mtime": 1775596627.8621094,
+    "hash": "239f3ebf717465dc636818a1a619398d"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\public\\sw.js": {
+    "mtime": 1775641877.0276551,
+    "hash": "719fcf307f0ee5569522456289922d1d"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\scripts\\generate-icons.mjs": {
+    "mtime": 1775641891.4278152,
+    "hash": "1e9387a194f1c4fdb57ef922519cd64e"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\src\\middleware.ts": {
+    "mtime": 1776509190.4993072,
+    "hash": "bb33f11d3c3db23c7b7c69394edbc974"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\src\\app\\layout.tsx": {
+    "mtime": 1778445254.1811006,
+    "hash": "5f2c355b34a3b03bab5638c7c90d5640"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\src\\app\\not-found.tsx": {
+    "mtime": 1775673907.7179763,
+    "hash": "9855d3885f3d93ec3ed29dffc58c9510"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\src\\app\\opengraph-image.tsx": {
+    "mtime": 1778192732.7384057,
+    "hash": "f43b00d986a5626fee820cb990cb4a2d"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\src\\app\\page.tsx": {
+    "mtime": 1778450626.1127737,
+    "hash": "61f7462040a3d3c370c2c3dea55f8d4c"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\src\\app\\robots.ts": {
+    "mtime": 1776031291.1981235,
+    "hash": "b291b234cf8906454e626747abb14922"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\src\\app\\sitemap.ts": {
+    "mtime": 1778444054.2003055,
+    "hash": "a0441d073292a5fdb5e25ac852f43d40"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\src\\app\\twitter-image.tsx": {
+    "mtime": 1778192813.3438914,
+    "hash": "5ab7e6dce28257728d930c6127c35a04"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\src\\app\\about\\page.tsx": {
+    "mtime": 1778444078.4871438,
+    "hash": "1bfed2eea2affa0a621cf0877ba8593e"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\src\\app\\api\\domains\\check\\route.ts": {
+    "mtime": 1776508304.3726888,
+    "hash": "77039aa929b5c918c3f8469c27842f34"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\src\\app\\api\\elevenlabs\\signed-url\\route.ts": {
+    "mtime": 1776017597.8417788,
+    "hash": "b24b6e565e189df7e488f56b56b2db69"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\src\\app\\api\\elevenlabs\\widget-event\\route.ts": {
+    "mtime": 1776017597.8417788,
+    "hash": "fceee265f09663f73773b9f096b7f8f1"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\src\\app\\api\\google-tts\\route.ts": {
+    "mtime": 1776026040.025637,
+    "hash": "f489516e0cea003e54e6522103dd98e9"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\src\\app\\api\\quotes\\route.ts": {
+    "mtime": 1776509872.2698517,
+    "hash": "5120d5db380fe8dbd9ef81bd184b901e"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\src\\app\\api\\quotes\\[slug]\\route.ts": {
+    "mtime": 1776509876.2977386,
+    "hash": "1a5501d51e38fb3dd458726bbff0785f"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\src\\app\\api\\razorpay\\order\\route.ts": {
+    "mtime": 1776509509.4171243,
+    "hash": "dc7eab0983cb1b1f897e7c768553b581"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\src\\app\\api\\razorpay\\verify\\route.ts": {
+    "mtime": 1776509512.538375,
+    "hash": "c70702e5367b37e524901ab15c326a7e"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\src\\app\\apps\\layout.tsx": {
+    "mtime": 1775673862.1230693,
+    "hash": "32ba50c33ab220c3b29610c055d3e8ba"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\src\\app\\apps\\page.tsx": {
+    "mtime": 1778279763.0065463,
+    "hash": "5efedd86c1da4510e3b0f0189b1430f9"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\src\\app\\blog\\layout.tsx": {
+    "mtime": 1775712367.9500833,
+    "hash": "198716129d2dac779f22b99f1ed67e6a"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\src\\app\\blog\\page.tsx": {
+    "mtime": 1778244584.8826277,
+    "hash": "a3332c4ac7fc68ee95a8b27ae9c7b5bb"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\src\\app\\blog\\[slug]\\page.tsx": {
+    "mtime": 1778186452.9769626,
+    "hash": "f351d50cc996f67a7759f1d1c72b6b52"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\src\\app\\careers\\layout.tsx": {
+    "mtime": 1775712401.561864,
+    "hash": "fec8c6c7854df8f3ae955e379243ded6"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\src\\app\\careers\\page.tsx": {
+    "mtime": 1778235655.360513,
+    "hash": "c8969085144cc8894757cf3b1c39d7d9"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\src\\app\\cases\\layout.tsx": {
+    "mtime": 1775712389.4335093,
+    "hash": "28b8a8b7ed6a3d7cf7abaab75279a24a"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\src\\app\\cases\\page.tsx": {
+    "mtime": 1778444082.7159195,
+    "hash": "d3f1c1f134c4088439cde88c94b2946d"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\src\\app\\contact\\layout.tsx": {
+    "mtime": 1778192420.8277001,
+    "hash": "9f2e7aada966c201ccb6194d114e7e56"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\src\\app\\contact\\page.tsx": {
+    "mtime": 1778244675.3173647,
+    "hash": "2aa4ea9ae2d3407e03ae214c253fffc1"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\src\\app\\dashboard\\layout.tsx": {
+    "mtime": 1776031303.220885,
+    "hash": "98066df1a8b80472e819a6f9854c4e51"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\src\\app\\dashboard\\page.tsx": {
+    "mtime": 1778186452.9799626,
+    "hash": "086e1d93beecc96621b156eebfd5b9b7"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\src\\app\\dashboard\\prospector\\page.tsx": {
+    "mtime": 1778186437.1519663,
+    "hash": "99a2a74f3e68dcf5f6068792509bbc4d"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\src\\app\\dashboard\\team\\page.tsx": {
+    "mtime": 1778186452.9809618,
+    "hash": "b3614f0efe2d68c132dd61ba892759b4"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\src\\app\\directory\\layout.tsx": {
+    "mtime": 1775673864.2315965,
+    "hash": "a339b7466cf8578ed95305a210c4d964"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\src\\app\\directory\\page.tsx": {
+    "mtime": 1778236346.7810357,
+    "hash": "bced862191fa46fa6c1259aff3a5863d"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\src\\app\\docs\\layout.tsx": {
+    "mtime": 1775712443.9960573,
+    "hash": "4d4a2c92d6d1128b96f6c2d0b02b4c23"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\src\\app\\docs\\page.tsx": {
+    "mtime": 1778235671.7870433,
+    "hash": "41ae0f7670b92b7a50ce310977e74bda"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\src\\app\\domains\\layout.tsx": {
+    "mtime": 1776508294.7881708,
+    "hash": "b95b5cc52147f15a301cd7c2ea98df1f"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\src\\app\\domains\\page.tsx": {
+    "mtime": 1778186452.9839625,
+    "hash": "1f6504dd17cae5d554380bb63950f07d"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\src\\app\\domains\\quote\\page.tsx": {
+    "mtime": 1778186437.1559744,
+    "hash": "4123399e311ba08b7f829ebd5f5dcf85"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\src\\app\\ecosystem\\page.tsx": {
+    "mtime": 1778236438.703475,
+    "hash": "fdca595b017867e8d9d8121c8f6370ee"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\src\\app\\pricing\\layout.tsx": {
+    "mtime": 1775673854.4584303,
+    "hash": "e3e7ced8287488c45ea1bd8330ddd890"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\src\\app\\pricing\\page.tsx": {
+    "mtime": 1778198796.7438428,
+    "hash": "808720500d8920e9e4e5ebf5e51389e9"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\src\\app\\privacy\\layout.tsx": {
+    "mtime": 1775712466.8667445,
+    "hash": "3194960fdc43b29b4dfd58dea095e544"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\src\\app\\privacy\\page.tsx": {
+    "mtime": 1778235619.2999642,
+    "hash": "ee7c18ae0feee055857b30e8fa594f94"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\src\\app\\products\\layout.tsx": {
+    "mtime": 1775673858.41418,
+    "hash": "6a08cd67f601e5740c0b0b3120760f16"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\src\\app\\products\\page.tsx": {
+    "mtime": 1778235794.356428,
+    "hash": "e28bf08b62ccc29255e30ec0172f69ab"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\src\\app\\quote\\[slug]\\page.tsx": {
+    "mtime": 1778186437.161967,
+    "hash": "20c58e0f8f972e1036abb3aec0a66835"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\src\\app\\services\\layout.tsx": {
+    "mtime": 1775673851.912381,
+    "hash": "311816e856a508ac3711cd879a9b6965"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\src\\app\\services\\page.tsx": {
+    "mtime": 1778444087.0144057,
+    "hash": "8bf16a613cdcb6aa51fefeff24556a0c"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\src\\app\\services\\voice-agents\\page.tsx": {
+    "mtime": 1778186452.9909618,
+    "hash": "29cde240121ff6d82bb38f840d115bf9"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\src\\app\\templates\\layout.tsx": {
+    "mtime": 1775673895.604782,
+    "hash": "0ea00d97f80261db361d61557cdbfae1"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\src\\app\\templates\\page.tsx": {
+    "mtime": 1778242007.9945264,
+    "hash": "7fca507f5b60dca9c973811593e59c14"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\src\\app\\tools\\page.tsx": {
+    "mtime": 1778444548.0902011,
+    "hash": "cd1d6473e885d635523d3caba89b0255"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\src\\app\\tools\\color-palette\\page.tsx": {
+    "mtime": 1778444002.514595,
+    "hash": "8a75567917df9eaf64acd8766f384915"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\src\\app\\tools\\json-formatter\\page.tsx": {
+    "mtime": 1778444022.651573,
+    "hash": "2909cd53795e28462001cb0c36d21b19"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\src\\app\\tools\\meta-generator\\page.tsx": {
+    "mtime": 1778444015.709766,
+    "hash": "af04669c8a1cdb60c21b4c4df17e7c44"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\src\\app\\tools\\qr-generator\\page.tsx": {
+    "mtime": 1778444045.868498,
+    "hash": "da1e40a80b866eb7b0639a8516c0ff0d"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\src\\app\\tools\\seo-checker\\page.tsx": {
+    "mtime": 1778443988.5055385,
+    "hash": "57c64726854780994eef8a505f048e17"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\src\\app\\tools\\[slug]\\page.tsx": {
+    "mtime": 1778443788.3154278,
+    "hash": "33ba6aef5771026e8db69840771aa2f1"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\src\\app\\universe\\layout.tsx": {
+    "mtime": 1775673868.1700213,
+    "hash": "818325932d6d5f10a48d97d3fc3b9811"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\src\\app\\universe\\page.tsx": {
+    "mtime": 1778235587.4013069,
+    "hash": "7957bdccd526ac4a6f0d84c997af1c42"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\src\\components\\BotanicalEffects.tsx": {
+    "mtime": 1775648663.337617,
+    "hash": "e08a870de28c491675223a86381d84df"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\src\\components\\Breadcrumb.tsx": {
+    "mtime": 1778447562.3960369,
+    "hash": "e03194fe0e26295cbb234b320f8f9422"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\src\\components\\ElevenLabsSupportWidget.tsx": {
+    "mtime": 1778186437.17598,
+    "hash": "6c15534491e029def24a9ef8c927a5f4"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\src\\components\\Footer.tsx": {
+    "mtime": 1778193005.5641828,
+    "hash": "2bcb7e0126fc99311873b0cd7975edd7"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\src\\components\\GlobeProjects.tsx": {
+    "mtime": 1778186437.1779878,
+    "hash": "0075f10080f82a26bbb299a3b201be66"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\src\\components\\GoogleTTSWidget.tsx": {
+    "mtime": 1776026072.0719216,
+    "hash": "98a7b362fecc73a84209bd2e4db2cc11"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\src\\components\\HomeFAQ.tsx": {
+    "mtime": 1778244475.217374,
+    "hash": "ad8fa4024ae06c25875f64bb6ad0a9a3"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\src\\components\\HomeWhy.tsx": {
+    "mtime": 1778244493.1207795,
+    "hash": "8e5068bad23e89a8168eb1efdd79af86"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\src\\components\\LogoMarquee.tsx": {
+    "mtime": 1778186312.1407964,
+    "hash": "55b930d8775161f8cd29c69ead38110b"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\src\\components\\Navbar.tsx": {
+    "mtime": 1778440694.9943204,
+    "hash": "9f50848889c41d97a5881e8bc6a3bb2c"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\src\\components\\PageHeader.tsx": {
+    "mtime": 1778235976.2907414,
+    "hash": "adda96c51bf091bdf2fe5a03196f8504"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\src\\components\\PixelRuby.tsx": {
+    "mtime": 1778444093.4657273,
+    "hash": "bb32d1cb5f7aa4a6b3c3a9f9158f7c14"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\src\\components\\ThemeToggle.tsx": {
+    "mtime": 1777770708.4960475,
+    "hash": "219bd8ca087370fcf7f7a36ef027807f"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\src\\components\\avatar\\AvatarScene.tsx": {
+    "mtime": 1775654057.234884,
+    "hash": "a04ea215d6566b2002873e93e7b09264"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\src\\components\\avatar\\AvatarTree.tsx": {
+    "mtime": 1776519599.7624056,
+    "hash": "4ada9cc6141c65d87010dd43c8600b45"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\src\\components\\avatar\\BioButterfly.tsx": {
+    "mtime": 1777770683.1705673,
+    "hash": "d07fad6889bb1512bdbd1278932a102f"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\src\\components\\avatar\\CoralReef.tsx": {
+    "mtime": 1776519599.7624056,
+    "hash": "f417160db982b6c778c0bf8ae5619191"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\src\\components\\avatar\\FloatingMountain.tsx": {
+    "mtime": 1775653839.8766747,
+    "hash": "7037b5207504f0b87553a89eb7f40cdb"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\src\\components\\avatar\\GlowMushroom.tsx": {
+    "mtime": 1777770693.1956146,
+    "hash": "4cd3d0107924133064fbc2d4df8c1a1c"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\src\\components\\avatar\\index.ts": {
+    "mtime": 1775654058.0202658,
+    "hash": "738fecc5b0a630c8fe58adde45fed2f6"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\src\\components\\avatar\\Jellyfish.tsx": {
+    "mtime": 1777770693.2785282,
+    "hash": "bb946c20322d4e4e4b53ca7cafeb5849"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\src\\components\\avatar\\SpiritSprite.tsx": {
+    "mtime": 1775654012.1758919,
+    "hash": "23e8e916090904247f4daffdba56b41e"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\src\\components\\avatar\\WaterDragon.tsx": {
+    "mtime": 1777770693.4020321,
+    "hash": "643f5d1c9334acf42383372d7ab9b1e2"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\src\\components\\home\\LivingHome.tsx": {
+    "mtime": 1778450907.7896266,
+    "hash": "c1493fd2182c4caf0ecd499de1fc2bdb"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\src\\components\\tools\\DynamicToolRunner.tsx": {
+    "mtime": 1778443967.5828867,
+    "hash": "815794e0a80b355d50634dad3fafa6e8"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\src\\components\\tools\\ToolServiceCta.tsx": {
+    "mtime": 1778443737.741877,
+    "hash": "5f049976288753f8bada8e3113b15dff"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\src\\data\\blog-articles.ts": {
+    "mtime": 1776051687.685886,
+    "hash": "ecdccaabb8727c7560936273a452a2db"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\src\\data\\vercel-projects.ts": {
+    "mtime": 1776517276.6048658,
+    "hash": "3efd2b1100f7cd61b41484ebd4f89530"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\src\\lib\\home-content.ts": {
+    "mtime": 1778450894.8017445,
+    "hash": "22eee65cfb1b0994fd517b6daaa24a08"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\src\\lib\\living-home.ts": {
+    "mtime": 1778450450.9514363,
+    "hash": "c531575d09259dd0cbbb4aa29b09c7c9"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\src\\lib\\quote.ts": {
+    "mtime": 1776509866.505075,
+    "hash": "436d82672e330fd2a61620223b8d85cf"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\src\\lib\\supabase.ts": {
+    "mtime": 1776509860.1632686,
+    "hash": "a78f28b0130a06025029e38cf0344b9d"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\src\\lib\\tools.ts": {
+    "mtime": 1778443726.473622,
+    "hash": "bdd6ca524c687bce14d98004fc0e1722"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\AGENTS.md": {
+    "mtime": 1775715170.7802238,
+    "hash": "7312ecb8cd45fd9eead3d103939330e0"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\CLAUDE.md": {
+    "mtime": 1775715170.7961864,
+    "hash": "c2d0798d1a43868dad4fff558a768b22"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\lovable-landing-page-brief.md": {
+    "mtime": 1775668326.5356112,
+    "hash": "cc6a7afa8c48d16592cb75e761184828"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\README.md": {
+    "mtime": 1776085414.7705498,
+    "hash": "2a61ca2313217a76ce61a914a0db5d3f"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\shopify-app-store-features.md": {
+    "mtime": 1775658388.195603,
+    "hash": "3b722a32bc5827ec0ee6d105ec0961bd"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\designs\\9ruby-antigravity\\index.html": {
+    "mtime": 1775627415.6267488,
+    "hash": "530730ca0f7af1413978801fdcd69a69"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\docs\\ai\\PUBLIC_ECOSYSTEM_INVENTORY.md": {
+    "mtime": 1778442835.2660587,
+    "hash": "fd320bbae61d3b5eb5ecaeda6c3d0cd5"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\docs\\ai\\SINGLE_SOURCE_STRATEGY.md": {
+    "mtime": 1778442672.013987,
+    "hash": "f2f9d3e9ea707f84f76234a5409350d4"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\docs\\ai\\TOOLS_V1.md": {
+    "mtime": 1778444062.0107234,
+    "hash": "de863a592cf36d5d0a8c36176310ab77"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\public\\offline.html": {
+    "mtime": 1775641877.1444333,
+    "hash": "0254c605c19a1bdfc63982774f5e4002"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\designs\\9ruby-antigravity\\reference.png": {
+    "mtime": 1775627415.6096735,
+    "hash": "629cdae441cec3e82b9bef0fa9320560"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\designs\\screenshots\\9ruby-check.png": {
+    "mtime": 1776517920.9846146,
+    "hash": "0652f1282a6a2195c0d300b89b093b8a"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\designs\\screenshots\\9ruby-final.png": {
+    "mtime": 1776518307.2651362,
+    "hash": "0b119e8b8e2a7f074d6eb22e555448f9"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\designs\\screenshots\\9ruby-full.png": {
+    "mtime": 1776517952.1846952,
+    "hash": "0129e419832ea9902338e7f49dc3b1bf"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\designs\\screenshots\\check-cases.png": {
+    "mtime": 1776518353.4385438,
+    "hash": "59414b47a2ad3117cf7f4dec8920afc3"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\designs\\screenshots\\check-ecosystem.png": {
+    "mtime": 1776518349.5471716,
+    "hash": "f2299f17917e6fbf318c5d11c867c497"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\designs\\screenshots\\check-home.png": {
+    "mtime": 1776518345.507904,
+    "hash": "c7e5184b7192eba7278fe2c6a43fc6b1"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\designs\\screenshots\\check-universe.png": {
+    "mtime": 1776518357.4110208,
+    "hash": "e4da502e3981ab1b8e9879f4eff97a7c"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\designs\\screenshots\\eco-cards.png": {
+    "mtime": 1776517815.6812665,
+    "hash": "f2299f17917e6fbf318c5d11c867c497"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\designs\\screenshots\\eco-cards2.png": {
+    "mtime": 1776517840.134667,
+    "hash": "9f77888e384c6aece41e025b82a82aa4"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\designs\\screenshots\\eco-check.png": {
+    "mtime": 1776517532.5909512,
+    "hash": "49a3743095789c65cb1f40ef94f6c3c1"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\designs\\screenshots\\eco-check2.png": {
+    "mtime": 1776517798.6689703,
+    "hash": "f2299f17917e6fbf318c5d11c867c497"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\designs\\screenshots\\eco-registry.png": {
+    "mtime": 1776517860.5022569,
+    "hash": "e901bb3616226307e58dd1adb9fa3414"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\designs\\screenshots\\gold-dark.png": {
+    "mtime": 1776519870.6857252,
+    "hash": "337e815ce0d27778197d15e101c9eabf"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\designs\\screenshots\\gold-light.png": {
+    "mtime": 1776519869.1631615,
+    "hash": "97720225ab994685f734a72131717338"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\designs\\screenshots\\redesign-before-cases.png": {
+    "mtime": 1776518582.3394246,
+    "hash": "10adb1bbd3e05d0646fa945d267ae023"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\designs\\screenshots\\redesign-before-home.png": {
+    "mtime": 1776518575.490933,
+    "hash": "07c960e9004e593be4d79dd111be3279"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\designs\\screenshots\\redesign-before-pricing.png": {
+    "mtime": 1776518584.9116387,
+    "hash": "321490966ede0cdf5f3142e417cba869"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\designs\\screenshots\\redesign-before-services.png": {
+    "mtime": 1776518578.633062,
+    "hash": "6beba9c5d1463d1e27957d39a2c5a9e8"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\designs\\screenshots\\redesign-dark.png": {
+    "mtime": 1776518969.7687602,
+    "hash": "ebe4dfd9bf742641774d48a9dd63548d"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\designs\\screenshots\\redesign-light.png": {
+    "mtime": 1776518968.5664794,
+    "hash": "bdaf8981c264fa6f65b5e074e0aa120b"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\designs\\screenshots\\redesign-services.png": {
+    "mtime": 1776518973.6788678,
+    "hash": "49eeaa8aaaa1ee27386278d907c6ed28"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\designs\\screenshots\\universe-final.png": {
+    "mtime": 1776518480.115396,
+    "hash": "24356f3a7ddd2a41cb01ba849db8acfe"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\public\\apple-touch-icon.png": {
+    "mtime": 1777009785.8947334,
+    "hash": "e173cd4176706f46d7bc2c91fe07a15f"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\public\\favicon.png": {
+    "mtime": 1777009785.8967628,
+    "hash": "092e24ee17360b2308da919e5ed3ad1c"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\public\\favicon.svg": {
+    "mtime": 1777009785.8882935,
+    "hash": "5d28aa343881fd31506ffc5cd41b66f4"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\public\\file.svg": {
+    "mtime": 1775596627.8777914,
+    "hash": "d09f95206c3fa0bb9bd9fefabfd0ea71"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\public\\globe.svg": {
+    "mtime": 1775596627.8777914,
+    "hash": "2aaafa6a49b6563925fe440891e32717"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\public\\next.svg": {
+    "mtime": 1775596627.8934479,
+    "hash": "8e061864f388b47f33a1c3780831193e"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\public\\vercel.svg": {
+    "mtime": 1775596627.8934479,
+    "hash": "c0af2f507b369b085b35ef4bbe3bcf1e"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\public\\window.svg": {
+    "mtime": 1775596627.9085188,
+    "hash": "a2760511c65806022ad20adf74370ff3"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\public\\icons\\icon-192.png": {
+    "mtime": 1775641906.079697,
+    "hash": "493045e54e00421e3aa9dad9b275e661"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\public\\icons\\icon-512.png": {
+    "mtime": 1775641906.0970793,
+    "hash": "eb21b7c118b331ba4a29bc107d92af2d"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\public\\images\\12582fd183df.jpg": {
+    "mtime": 1775619575.7315536,
+    "hash": "12582fd183df4973216e279fcad438f3"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\public\\images\\23b28bc580f1.png": {
+    "mtime": 1775619575.7437868,
+    "hash": "23b28bc580f112b400e69d798c2c43c2"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\public\\images\\5d3f07302fe7.png": {
+    "mtime": 1775619575.7476273,
+    "hash": "5d3f07302fe7429df03612b799a32f67"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\public\\images\\7f27b449b048.png": {
+    "mtime": 1775619575.7637527,
+    "hash": "7f27b449b048c38a2e226a6e765acc60"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\public\\images\\94c49ecc1eee.png": {
+    "mtime": 1775619575.770867,
+    "hash": "94c49ecc1eee3c7907ba198d663b9e43"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\public\\images\\a8b9e17ea8bf.png": {
+    "mtime": 1775619575.7796853,
+    "hash": "a8b9e17ea8bf4edc03253ea25bdb0a66"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\public\\images\\bonsai-tree.png": {
+    "mtime": 1775631576.1547008,
+    "hash": "94c49ecc1eee3c7907ba198d663b9e43"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\public\\images\\coral-hands.png": {
+    "mtime": 1775631576.216948,
+    "hash": "f4af7f9b7079966ea06663387342d450"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\public\\images\\e985317f2304.png": {
+    "mtime": 1775619575.7796853,
+    "hash": "e985317f2304441aa038bd406ba001b6"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\public\\images\\f4af7f9b7079.png": {
+    "mtime": 1775619575.798731,
+    "hash": "f4af7f9b7079966ea06663387342d450"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\public\\images\\flower-hill.png": {
+    "mtime": 1775631576.2494774,
+    "hash": "e985317f2304441aa038bd406ba001b6"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\public\\images\\garden-graph.png": {
+    "mtime": 1775631576.201912,
+    "hash": "23b28bc580f112b400e69d798c2c43c2"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\public\\images\\hanging-vines.png": {
+    "mtime": 1775631576.1757345,
+    "hash": "a8b9e17ea8bf4edc03253ea25bdb0a66"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\public\\images\\hero-banner.gif": {
+    "mtime": 1778438230.995062,
+    "hash": "a4f9b10563165e39aeed1543f9079a1b"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\public\\images\\mossy-stairs.png": {
+    "mtime": 1775631576.238842,
+    "hash": "5d3f07302fe7429df03612b799a32f67"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\public\\images\\neural-globe.png": {
+    "mtime": 1775631576.193463,
+    "hash": "7f27b449b048c38a2e226a6e765acc60"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\public\\images\\novasite-blue.png": {
+    "mtime": 1778191333.2969303,
+    "hash": "135512be3a786e8fb0c7581d02e4c257"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\public\\images\\novasite-hero.png": {
+    "mtime": 1778191332.9533105,
+    "hash": "c2d3ffe26ce2564dc80aa4eae394dd24"
+  },
+  "C:\\Users\\mrvis\\Projects\\9ruby-home\\public\\images\\ocean-coral.jpg": {
+    "mtime": 1775631576.2676494,
+    "hash": "12582fd183df4973216e279fcad438f3"
+  }
+}

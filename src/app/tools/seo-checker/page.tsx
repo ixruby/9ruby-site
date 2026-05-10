@@ -5,9 +5,11 @@ import Link from "next/link"
 import {
   ArrowLeft, Search, CheckCircle2, XCircle, AlertTriangle,
   Globe, FileText, Image as ImageIcon, Link2, Loader2,
+  Copy, Download, Check,
 } from "lucide-react"
 import Navbar from "@/components/Navbar"
 import Breadcrumb from "@/components/Breadcrumb"
+import ToolServiceCta from "@/components/tools/ToolServiceCta"
 
 interface SeoResult {
   score: number
@@ -157,11 +159,42 @@ function analyzeHtml(html: string, url: string): SeoResult {
   }
 }
 
+function formatSeoReport(result: SeoResult, url: string): string {
+  return [
+    "9Ruby SEO Checker Report",
+    `URL: ${url}`,
+    `Score: ${result.score}/100`,
+    "",
+    "Title",
+    `Value: ${result.title.value || "Missing"}`,
+    `Length: ${result.title.length}`,
+    `Status: ${result.title.status}`,
+    "",
+    "Meta Description",
+    `Value: ${result.description.value || "Missing"}`,
+    `Length: ${result.description.length}`,
+    `Status: ${result.description.status}`,
+    "",
+    "Structure",
+    `H1: ${result.headings.h1}`,
+    `H2: ${result.headings.h2}`,
+    `H3: ${result.headings.h3}`,
+    `H4: ${result.headings.h4}`,
+    `Images: ${result.images.total} (${result.images.withAlt} with alt, ${result.images.withoutAlt} missing alt)`,
+    `Links: ${result.links.total} (${result.links.internal} internal, ${result.links.external} external)`,
+    "",
+    "Recommendations",
+    ...result.issues.map((issue) => `- [${issue.type.toUpperCase()}] ${issue.message}`),
+  ].join("\n")
+}
+
 export default function SeoCheckerPage() {
   const [url, setUrl] = useState("")
   const [loading, setLoading] = useState(false)
   const [result, setResult] = useState<SeoResult | null>(null)
   const [error, setError] = useState("")
+  const [analyzedUrl, setAnalyzedUrl] = useState("")
+  const [copied, setCopied] = useState(false)
 
   async function handleAnalyze() {
     if (!url.trim()) return
@@ -171,6 +204,7 @@ export default function SeoCheckerPage() {
     setLoading(true)
     setError("")
     setResult(null)
+    setAnalyzedUrl("")
 
     try {
       // Use a CORS proxy for fetching external URLs
@@ -180,11 +214,32 @@ export default function SeoCheckerPage() {
       const html = await res.text()
       const analysis = analyzeHtml(html, fullUrl)
       setResult(analysis)
+      setAnalyzedUrl(fullUrl)
     } catch {
       setError("Could not fetch the URL. The site may block external requests, or the URL may be invalid. Try a different URL.")
     } finally {
       setLoading(false)
     }
+  }
+
+  const reportText = result ? formatSeoReport(result, analyzedUrl) : ""
+
+  const copyReport = async () => {
+    if (!reportText) return
+    await navigator.clipboard.writeText(reportText)
+    setCopied(true)
+    setTimeout(() => setCopied(false), 1500)
+  }
+
+  const downloadReport = () => {
+    if (!reportText) return
+    const blob = new Blob([reportText], { type: "text/plain" })
+    const downloadUrl = URL.createObjectURL(blob)
+    const a = document.createElement("a")
+    a.href = downloadUrl
+    a.download = "9ruby-seo-report.txt"
+    a.click()
+    URL.revokeObjectURL(downloadUrl)
   }
 
   return (
@@ -199,7 +254,7 @@ export default function SeoCheckerPage() {
 
         {/* Header */}
         <div className="mb-12">
-          <div className="text-[11px] font-semibold tracking-[0.12em] uppercase" style={{ color: "#8B6B3D" }}>
+          <div className="text-[11px] font-semibold tracking-[0.12em] uppercase" style={{ color: "var(--accent)" }}>
             Free Tool
           </div>
           <h1 className="text-4xl md:text-5xl font-serif italic tracking-tighter leading-[1.1] mb-4 mt-3" style={{ color: "var(--ink-strong)" }}>
@@ -220,7 +275,7 @@ export default function SeoCheckerPage() {
               onChange={e => setUrl(e.target.value)}
               onKeyDown={e => e.key === "Enter" && handleAnalyze()}
               placeholder="Enter a URL to analyze..."
-              className="w-full h-12 pl-12 pr-4 bg-white border border-black/[0.08] rounded-xl placeholder:text-[#B8B8B0] focus:border-[#8B6B3D]/50 focus:ring-1 focus:ring-[#8B6B3D]/20 focus:outline-none transition-all font-mono text-sm"
+              className="w-full h-12 pl-12 pr-4 bg-white border border-black/[0.08] rounded-xl placeholder:text-[#B8B8B0] focus:border-[var(--accent)]/50 focus:ring-1 focus:ring-[var(--accent)]/20 focus:outline-none transition-all font-mono text-sm"
               style={{ color: "var(--ink-strong)" }}
             />
           </div>
@@ -250,6 +305,15 @@ export default function SeoCheckerPage() {
               <p className="text-center text-sm mt-4" style={{ color: "var(--ink-muted)" }}>
                 {result.score >= 80 ? "Great! Your page is well-optimized." : result.score >= 50 ? "Decent, but there is room for improvement." : "Needs work. Check the recommendations below."}
               </p>
+              <div className="flex flex-wrap justify-center gap-3 mt-6">
+                <button onClick={copyReport} className="h-10 px-4 bg-white border border-black/[0.08] rounded-xl text-sm hover:border-black/[0.12] transition-all flex items-center gap-2" style={{ color: "var(--ink-muted)" }}>
+                  {copied ? <Check size={14} className="text-emerald-500" /> : <Copy size={14} />}
+                  {copied ? "Copied!" : "Copy report"}
+                </button>
+                <button onClick={downloadReport} className="h-10 px-4 bg-white border border-black/[0.08] rounded-xl text-sm hover:border-black/[0.12] transition-all flex items-center gap-2" style={{ color: "var(--ink-muted)" }}>
+                  <Download size={14} /> Download
+                </button>
+              </div>
             </div>
 
             {/* Title & Description */}
@@ -279,7 +343,7 @@ export default function SeoCheckerPage() {
             {/* Stats */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               <div className="p-5 bg-white border border-black/[0.04] rounded-2xl text-center">
-                <FileText size={18} className="text-[#8B6B3D] mx-auto mb-2" />
+                <FileText size={18} className="text-[var(--accent)] mx-auto mb-2" />
                 <div className="text-2xl font-bold font-mono" style={{ color: "var(--ink-strong)" }}>{result.headings.h1}</div>
                 <div className="text-xs mt-1" style={{ color: "var(--ink-muted)" }}>H1 Tags</div>
               </div>
@@ -307,7 +371,7 @@ export default function SeoCheckerPage() {
                 <div className="space-y-2">
                   {result.ogTags.map((og, i) => (
                     <div key={i} className="flex gap-3 text-sm">
-                      <span className="text-[#8B6B3D] font-mono whitespace-nowrap text-xs">{og.property}</span>
+                      <span className="text-[var(--accent)] font-mono whitespace-nowrap text-xs">{og.property}</span>
                       <span className="truncate text-xs" style={{ color: "var(--ink-muted)" }}>{og.content}</span>
                     </div>
                   ))}
@@ -329,6 +393,8 @@ export default function SeoCheckerPage() {
             </div>
           </div>
         )}
+
+        <ToolServiceCta slug="seo-checker" />
       </div>
     </main>
   )

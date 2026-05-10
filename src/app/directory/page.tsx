@@ -410,7 +410,7 @@ function CopyButton({ text }: { text: string }) {
 
 function DirectoryCard({ entry }: { entry: DirectoryEntry }) {
   return (
-    <div className="group relative rounded-2xl border border-black/[0.04] bg-white p-6 transition-all duration-300 hover:border-black/[0.12] hover:bg-white">
+    <div className="group relative rounded-2xl border border-black/[0.04] bg-white/[0.02] p-6 transition-all duration-300 hover:border-black/[0.12] hover:bg-white">
       {/* Header */}
       <div className="flex items-start justify-between gap-3 mb-3">
         <h3 className="text-[15px] font-semibold tracking-tight text-white group-hover:text-white transition-colors leading-tight">
@@ -463,7 +463,7 @@ function DirectoryCard({ entry }: { entry: DirectoryEntry }) {
             href={entry.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 text-xs font-medium text-[#7A7A72] hover:text-white bg-white hover:bg-white/[0.06] border border-black/[0.04] hover:border-black/[0.12] px-3 py-1.5 rounded-full transition-all"
+            className="inline-flex items-center gap-1.5 text-xs font-medium text-[#7A7A72] hover:text-white bg-white/[0.02] hover:bg-white/[0.06] border border-black/[0.04] hover:border-black/[0.12] px-3 py-1.5 rounded-full transition-all"
           >
             <ExternalLink size={11} /> Visit
           </a>
@@ -473,13 +473,13 @@ function DirectoryCard({ entry }: { entry: DirectoryEntry }) {
             href={entry.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 text-xs font-medium text-[#7A7A72] hover:text-white bg-white hover:bg-white/[0.06] border border-black/[0.04] hover:border-black/[0.12] px-3 py-1.5 rounded-full transition-all"
+            className="inline-flex items-center gap-1.5 text-xs font-medium text-[#7A7A72] hover:text-white bg-white/[0.02] hover:bg-white/[0.06] border border-black/[0.04] hover:border-black/[0.12] px-3 py-1.5 rounded-full transition-all"
           >
             <GitFork size={11} /> Source
           </a>
         )}
         {!entry.url && !entry.github && entry.slashCmd && (
-          <span className="inline-flex items-center gap-1.5 text-xs font-mono text-[#B8B8B0] bg-white border border-black/[0.04] px-3 py-1.5 rounded-full">
+          <span className="inline-flex items-center gap-1.5 text-xs font-mono text-[#B8B8B0] bg-white/[0.03] border border-white/[0.08] px-3 py-1.5 rounded-full">
             <Zap size={11} /> Built-in
           </span>
         )}
@@ -520,7 +520,7 @@ export default function DirectoryPage() {
   const activeCategoryLabel = categories.find((c) => c.id === activeCategory)?.label || "All"
 
   return (
-    <main className="relative min-h-screen overflow-x-hidden" style={{ background: "var(--page-bg)" }}>
+    <main className="relative min-h-screen overflow-x-hidden" style={{ background: "#000" }}>
       <Navbar />
       <Breadcrumb items={[{ label: "Directory" }]} />
 
@@ -533,10 +533,10 @@ export default function DirectoryPage() {
           </p>
 
           {/* Title */}
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif italic tracking-tighter leading-[0.95] mb-6" style={{ color: "var(--ink-strong)" }}>
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-sans tracking-tighter leading-[0.95] mb-6" style={{ color: "#fff" }}>
             The 9Ruby
             <br />
-            <span style={{ color: "var(--ink-muted)" }}>Directory</span>
+            <span style={{ color: "rgba(255,255,255,0.5)" }}>Directory</span>
           </h1>
 
           {/* Subtitle */}
@@ -575,7 +575,7 @@ export default function DirectoryPage() {
                 placeholder="Search tools, templates, frameworks..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full bg-white border border-black/[0.08] rounded-full pl-11 pr-10 py-2.5 text-sm text-white placeholder-[#B8B8B0] focus:outline-none focus:border-black/[0.15] focus:bg-black/[0.03] transition-all"
+                className="w-full bg-white/[0.02] border border-black/[0.08] rounded-full pl-11 pr-10 py-2.5 text-sm text-white placeholder-[#B8B8B0] focus:outline-none focus:border-black/[0.15] focus:bg-black/[0.03] transition-all"
               />
               {searchQuery && (
                 <button
@@ -590,7 +590,7 @@ export default function DirectoryPage() {
             {/* Mobile filter toggle */}
             <button
               onClick={() => setShowMobileFilters(!showMobileFilters)}
-              className="lg:hidden inline-flex items-center gap-2 text-sm text-[#7A7A72] bg-white border border-black/[0.08] px-4 py-2.5 rounded-full"
+              className="lg:hidden inline-flex items-center gap-2 text-sm text-[#7A7A72] bg-white/[0.02] border border-black/[0.08] px-4 py-2.5 rounded-full"
             >
               <Filter size={14} />
               {activeCategoryLabel}
@@ -666,7 +666,7 @@ export default function DirectoryPage() {
           </div>
         ) : (
           <div className="flex flex-col items-center justify-center py-24 text-center">
-            <div className="w-16 h-16 rounded-2xl bg-white border border-black/[0.04] flex items-center justify-center mb-6">
+            <div className="w-16 h-16 rounded-2xl bg-white/[0.03] border border-white/[0.08] flex items-center justify-center mb-6">
               <Search size={24} className="text-[#B8B8B0]" />
             </div>
             <h3 className="text-xl font-semibold tracking-tight text-[#1A1A1A]/80 mb-2">No tools found</h3>
@@ -703,7 +703,7 @@ export default function DirectoryPage() {
             </a>
             <Link
               href="/ecosystem"
-              className="h-11 px-7 rounded-full text-[#1A1A1A]/80 text-sm font-medium inline-flex items-center gap-2 border border-black/[0.08] hover:border-black/[0.15] bg-white hover:bg-black/[0.03] transition-all duration-200"
+              className="h-11 px-7 rounded-full text-[#1A1A1A]/80 text-sm font-medium inline-flex items-center gap-2 border border-black/[0.08] hover:border-black/[0.15] bg-white/[0.02] hover:bg-black/[0.03] transition-all duration-200"
             >
               Explore Ecosystem <ArrowRight size={14} />
             </Link>

@@ -1,216 +1,179 @@
 "use client"
 
-import {
-  ArrowRight,
-  Bot,
-  Globe,
-  Layers,
-  Mic,
-  Sparkles,
-  Wrench,
-  BarChart3,
-  Blocks,
-  Shield,
-} from "lucide-react"
+import { ArrowRight, Bot, Globe, Layers, Mic, Sparkles, Wrench, BarChart3, Blocks, Shield } from "lucide-react"
 import Link from "next/link"
 import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer"
 import Breadcrumb from "@/components/Breadcrumb"
 
+const NV = "'Helvetica Neue', Helvetica, Arial, sans-serif"
+const BORDER = "0.8px solid rgba(255,255,255,0.12)"
+
 const pillars = [
   {
-    title: "Starter access",
+    title: "Starter Access",
     label: "9Ruby AI",
     icon: Sparkles,
     desc: "Self-serve AI workspace for chat, prompts, design support, and launch tools.",
     items: ["AI workspace", "Templates and prompt kits", "Design Studio", "Fast onboarding"],
     cta: "Start with AI",
     href: "https://ai.9ruby.com",
+    external: true,
   },
   {
-    title: "Managed execution",
-    label: "IX Ruby services",
+    title: "Managed Execution",
+    label: "IX Ruby Services",
     icon: Globe,
     desc: "Websites, automation, SEO, analytics, content systems, and voice deployments under one delivery lane.",
     items: ["Website builds", "SEO and growth ops", "Automation systems", "Voice and chatbot deployments"],
-    cta: "See services",
+    cta: "See Services",
     href: "/services",
+    external: false,
   },
   {
-    title: "Flagship systems",
-    label: "Black tier",
+    title: "Flagship Systems",
+    label: "Black Tier",
     icon: Shield,
     desc: "Custom operating systems, product builds, and dedicated launch capacity for brands building bigger systems.",
     items: ["Custom product systems", "Deep AI infrastructure", "Executive delivery lane", "Launch operations"],
-    cta: "Book a call",
+    cta: "Book a Call",
     href: "/contact",
+    external: false,
   },
 ]
 
 const inventory = [
-  {
-    title: "Templates",
-    icon: Layers,
-    desc: "Production-ready starters for launches, products, and brand sites.",
-    href: "/templates",
-  },
-  {
-    title: "Tools",
-    icon: Wrench,
-    desc: "Free utilities for SEO, formatting, QR generation, and creative workflows.",
-    href: "/tools",
-  },
-  {
-    title: "Apps",
-    icon: Blocks,
-    desc: "Connected software stack with 13,000+ integrations across business workflows.",
-    href: "/apps",
-  },
-  {
-    title: "Voice agents",
-    icon: Mic,
-    desc: "Outbound calling, inbound support, and appointment booking with fast response times.",
-    href: "/services/voice-agents",
-  },
-  {
-    title: "Analytics",
-    icon: BarChart3,
-    desc: "Dashboards and decision systems that make the rest of the stack measurable.",
-    href: "/dashboard",
-  },
-  {
-    title: "Ecosystem map",
-    icon: Bot,
-    desc: "The full IX Ruby footprint, including public Vercel projects and product surfaces.",
-    href: "/ecosystem",
-  },
+  { title: "Templates", icon: Layers, desc: "Production-ready starters for launches, products, and brand sites.", href: "/templates" },
+  { title: "Tools", icon: Wrench, desc: "Free utilities for SEO, formatting, QR generation, and creative workflows.", href: "/tools" },
+  { title: "Apps", icon: Blocks, desc: "Connected software stack with 13,000+ integrations across business workflows.", href: "/apps" },
+  { title: "Voice Agents", icon: Mic, desc: "Outbound calling, inbound support, and appointment booking with fast response times.", href: "/services/voice-agents" },
+  { title: "Analytics", icon: BarChart3, desc: "Dashboards and decision systems that make the rest of the stack measurable.", href: "/dashboard" },
+  { title: "Ecosystem Map", icon: Bot, desc: "The full IX Ruby footprint, including public Vercel projects and product surfaces.", href: "/ecosystem" },
 ]
 
 export default function ProductsPage() {
   return (
-    <main id="main-content" className="relative min-h-screen" style={{ background: "var(--page-bg)" }}>
+    <main id="main-content" style={{ background: "#000", minHeight: "100vh", fontFamily: NV }}>
       <Navbar />
       <Breadcrumb items={[{ label: "Products" }]} />
 
-      <section className="relative pt-36 lg:pt-48 pb-20 lg:pb-24">
+      {/* HERO */}
+      <section style={{ background: "#8C000E" }} className="pt-36 pb-16 md:pt-40 md:pb-20">
         <div className="max-w-[1200px] mx-auto px-6 text-center">
-          <div className="text-[11px] font-semibold tracking-[0.12em] uppercase mb-6" style={{ color: "#8B6B3D" }}>
-            Products
-          </div>
-          <h1 className="text-5xl md:text-6xl lg:text-[80px] font-serif italic leading-[0.95] tracking-tighter mb-6" style={{ color: "var(--ink-strong)" }}>
-            One operating layer.
-            <br />
-            Every product inside it.
+          <p style={{ fontFamily: NV, fontSize: 11, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,0.6)", marginBottom: 20 }}>Products</p>
+          <h1 style={{ fontFamily: NV, fontWeight: 950, textTransform: "uppercase", letterSpacing: "-0.075em", lineHeight: 0.93, fontSize: "clamp(56px,10vw,120px)", color: "#fff", marginBottom: 28 }}>
+            ONE SYSTEM.<br />EVERY PRODUCT.
           </h1>
-          <p className="text-lg leading-relaxed max-w-2xl mx-auto" style={{ color: "var(--ink-muted)" }}>
-            9Ruby is not a loose catalog anymore. It is one structured system covering AI access, managed execution, and flagship builds.
+          <p style={{ fontFamily: NV, fontSize: 18, lineHeight: 1.6, color: "rgba(255,255,255,0.7)", maxWidth: 520, margin: "0 auto" }}>
+            AI access, managed execution, and flagship builds — all inside one structured operating layer.
           </p>
         </div>
       </section>
 
-      <section className="pb-20 lg:pb-24">
-        <div className="max-w-[1200px] mx-auto px-6 grid lg:grid-cols-3 gap-4">
-          {pillars.map((pillar) => (
-            <div
-              key={pillar.title}
-              className="rounded-2xl bg-white p-8 flex flex-col"
-              style={{ border: "1px solid rgba(0,0,0,0.06)" }}
-            >
-              <div className="w-11 h-11 rounded-xl flex items-center justify-center mb-5" style={{ background: "rgba(0,0,0,0.02)", border: "1px solid rgba(0,0,0,0.06)" }}>
-                <pillar.icon size={18} style={{ color: "var(--ink-muted)" }} />
-              </div>
-              <div className="font-mono text-[10px] uppercase tracking-[0.14em] mb-2" style={{ color: "var(--ink-soft)" }}>
-                {pillar.label}
-              </div>
-              <h2 className="text-2xl font-semibold tracking-tight mb-3" style={{ color: "var(--ink-strong)" }}>
-                {pillar.title}
-              </h2>
-              <p className="text-sm leading-relaxed mb-6" style={{ color: "var(--ink-muted)" }}>
-                {pillar.desc}
-              </p>
-              <ul className="space-y-3 mb-8 flex-1">
-                {pillar.items.map((item) => (
-                  <li key={item} className="flex items-center gap-2.5 text-sm" style={{ color: "var(--ink-muted)" }}>
-                    <span className="w-1.5 h-1.5 rounded-full shrink-0" style={{ background: "#8B6B3D" }} />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <a
-                href={pillar.href}
-                className="inline-flex items-center justify-center gap-2 h-10 rounded-full text-sm font-medium transition-all duration-300"
-                style={{ background: "var(--button-bg)", color: "var(--button-fg)" }}
+      {/* PILLARS */}
+      <section className="py-16 md:py-20" style={{ borderBottom: BORDER }}>
+        <div className="max-w-[1200px] mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-3" style={{ border: BORDER }}>
+            {pillars.map((pillar, i) => (
+              <div
+                key={pillar.title}
+                className="flex flex-col p-8 md:p-10"
+                style={{ borderRight: i < 2 ? BORDER : undefined, borderBottom: BORDER }}
               >
-                {pillar.cta} <ArrowRight size={14} />
-              </a>
-            </div>
-          ))}
+                <div style={{ width: 36, height: 36, border: BORDER, display: "flex", alignItems: "center", justifyContent: "center", color: "#C8102E", marginBottom: 20 }}>
+                  <pillar.icon size={16} />
+                </div>
+                <p style={{ fontFamily: NV, fontSize: 10, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,0.35)", marginBottom: 8 }}>
+                  {pillar.label}
+                </p>
+                <h2 style={{ fontFamily: NV, fontWeight: 950, textTransform: "uppercase", letterSpacing: "-0.055em", lineHeight: 0.93, fontSize: "clamp(20px,2.5vw,28px)", color: "#fff", marginBottom: 12 }}>
+                  {pillar.title}
+                </h2>
+                <p style={{ fontFamily: NV, fontSize: 13, lineHeight: 1.7, color: "rgba(255,255,255,0.44)", marginBottom: 24 }}>
+                  {pillar.desc}
+                </p>
+                <ul className="flex flex-col gap-3 mb-8 flex-1">
+                  {pillar.items.map((item) => (
+                    <li key={item} className="flex items-center gap-2.5" style={{ fontFamily: NV, fontSize: 13, color: "rgba(255,255,255,0.44)" }}>
+                      <span style={{ width: 4, height: 4, background: "#C8102E", borderRadius: "50%", flexShrink: 0 }} />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <a
+                  href={pillar.href}
+                  target={pillar.external ? "_blank" : undefined}
+                  rel={pillar.external ? "noopener noreferrer" : undefined}
+                  className="inline-flex items-center justify-center gap-2 hover:opacity-90 transition-opacity"
+                  style={{ fontFamily: NV, fontWeight: 800, fontSize: 11, letterSpacing: "0.08em", textTransform: "uppercase", background: "#C8102E", color: "#fff", padding: "11px 24px", textDecoration: "none" }}
+                >
+                  {pillar.cta} <ArrowRight size={11} />
+                </a>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
-      <section className="pb-20 lg:pb-24">
+      {/* INVENTORY */}
+      <section className="py-16 md:py-20" style={{ borderBottom: BORDER }}>
         <div className="max-w-[1200px] mx-auto px-6">
-          <div className="mb-10">
-            <div className="text-[11px] font-semibold tracking-[0.12em] uppercase mb-4" style={{ color: "#8B6B3D" }}>
-              Inventory
-            </div>
-            <h2 className="text-3xl md:text-4xl font-serif italic tracking-tighter mb-3" style={{ color: "var(--ink-strong)" }}>
-              The rest of the stack
+          <div className="mb-12">
+            <p style={{ fontFamily: NV, fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,0.4)", marginBottom: 16 }}>* Inventory</p>
+            <h2 style={{ fontFamily: NV, fontWeight: 950, textTransform: "uppercase", letterSpacing: "-0.075em", lineHeight: 0.93, fontSize: "clamp(2.5rem,6vw,4.5rem)", color: "#fff" }}>
+              THE REST<br />OF THE STACK
             </h2>
-            <p className="text-[15px] max-w-[720px]" style={{ color: "var(--ink-muted)" }}>
-              Templates, utilities, integrations, analytics, and public ecosystem surfaces all support the same operating model.
-            </p>
           </div>
-
-          <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-4">
-            {inventory.map((item) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3" style={{ border: BORDER }}>
+            {inventory.map((item, i) => (
               <Link
                 key={item.title}
                 href={item.href}
-                className="rounded-2xl bg-white p-6 transition-all duration-300 hover:shadow-lg hover:shadow-black/[0.03]"
-                style={{ border: "1px solid rgba(0,0,0,0.06)" }}
+                className="flex flex-col gap-4 p-8 hover:bg-white/[0.02] transition-colors group"
+                style={{ borderRight: (i + 1) % 3 !== 0 ? BORDER : undefined, borderBottom: BORDER, textDecoration: "none" }}
               >
-                <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-4" style={{ background: "rgba(0,0,0,0.02)", border: "1px solid rgba(0,0,0,0.06)" }}>
-                  <item.icon size={16} style={{ color: "var(--ink-muted)" }} />
+                <div style={{ width: 36, height: 36, border: BORDER, display: "flex", alignItems: "center", justifyContent: "center", color: "#C8102E" }}>
+                  <item.icon size={16} />
                 </div>
-                <h3 className="text-lg font-semibold tracking-tight mb-2" style={{ color: "var(--ink-strong)" }}>
-                  {item.title}
-                </h3>
-                <p className="text-sm leading-relaxed" style={{ color: "var(--ink-muted)" }}>
-                  {item.desc}
-                </p>
+                <div>
+                  <h3 style={{ fontFamily: NV, fontWeight: 950, textTransform: "uppercase", letterSpacing: "-0.04em", fontSize: 16, color: "#fff", marginBottom: 6 }}>{item.title}</h3>
+                  <p style={{ fontFamily: NV, fontSize: 13, lineHeight: 1.65, color: "rgba(255,255,255,0.44)" }}>{item.desc}</p>
+                </div>
+                <span className="inline-flex items-center gap-1.5 group-hover:gap-3 transition-all" style={{ fontFamily: NV, fontWeight: 800, fontSize: 10, letterSpacing: "0.08em", textTransform: "uppercase", color: "rgba(255,255,255,0.35)" }}>
+                  Explore <ArrowRight size={10} />
+                </span>
               </Link>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="pb-24 lg:pb-32">
-        <div className="max-w-[1200px] mx-auto px-6">
-          <div className="rounded-2xl bg-white p-10 lg:p-14 text-center" style={{ border: "1px solid rgba(0,0,0,0.06)" }}>
-            <Sparkles size={22} className="mx-auto mb-5" style={{ color: "var(--ink-soft)" }} />
-            <h2 className="text-3xl md:text-4xl font-serif italic tracking-tighter mb-4" style={{ color: "var(--ink-strong)" }}>
-              Need the right lane?
+      {/* CTA */}
+      <section style={{ background: "#8C000E" }} className="py-20 md:py-28">
+        <div className="max-w-[1200px] mx-auto px-6 flex flex-col md:flex-row md:items-center md:justify-between gap-8">
+          <div>
+            <h2 style={{ fontFamily: NV, fontWeight: 950, textTransform: "uppercase", letterSpacing: "-0.075em", lineHeight: 0.93, fontSize: "clamp(2rem,5vw,4rem)", color: "#fff", marginBottom: 16 }}>
+              NEED THE<br />RIGHT LANE?
             </h2>
-            <p className="text-sm leading-relaxed max-w-[640px] mx-auto mb-8" style={{ color: "var(--ink-muted)" }}>
-              Start with AI if you want access. Move into services if you need execution. Choose Black if you need a flagship build with dedicated capacity.
+            <p style={{ fontFamily: NV, fontSize: 15, lineHeight: 1.6, color: "rgba(255,255,255,0.6)", maxWidth: 400 }}>
+              Start with AI if you want access. Move into services if you need execution. Choose Black for a flagship build.
             </p>
-            <div className="flex flex-wrap items-center justify-center gap-4">
-              <a
-                href="https://ai.9ruby.com"
-                className="inline-flex items-center gap-2 h-10 px-7 rounded-full text-sm font-medium"
-                style={{ background: "var(--button-bg)", color: "var(--button-fg)" }}
-              >
-                Start with AI <ArrowRight size={14} />
-              </a>
-              <Link
-                href="/pricing"
-                className="inline-flex items-center gap-2 h-10 px-7 rounded-full text-sm font-medium"
-                style={{ border: "1px solid rgba(0,0,0,0.08)", color: "var(--ink-muted)" }}
-              >
-                View pricing
-              </Link>
-            </div>
+          </div>
+          <div className="flex flex-col sm:flex-row gap-4 shrink-0">
+            <a
+              href="https://ai.9ruby.com"
+              className="inline-flex items-center gap-2 hover:opacity-90 transition-opacity"
+              style={{ fontFamily: NV, fontWeight: 800, fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", background: "#fff", color: "#080808", padding: "12px 28px", textDecoration: "none" }}
+            >
+              Start with AI <ArrowRight size={11} />
+            </a>
+            <Link
+              href="/pricing"
+              className="inline-flex items-center hover:opacity-80 transition-opacity"
+              style={{ fontFamily: NV, fontWeight: 800, fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", border: "0.8px solid rgba(255,255,255,0.4)", color: "#fff", padding: "12px 28px", textDecoration: "none" }}
+            >
+              View Pricing
+            </Link>
           </div>
         </div>
       </section>
