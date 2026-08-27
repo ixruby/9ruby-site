@@ -42,6 +42,7 @@ export function ProcessSection() {
               <span className="inline-flex items-center gap-3 text-sm font-[family-name:var(--font-jetbrains-mono)] text-white/25 mb-8">
                 <span className="w-12 h-px bg-white/20" />
                 Process
+                <span lang="ar" dir="rtl" className="text-white/20 text-xs">منهج العمل</span>
               </span>
             </ScrollReveal>
             <ScrollReveal delay={100}>

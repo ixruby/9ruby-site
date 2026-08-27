@@ -13,6 +13,7 @@ export function ServicesSection() {
               <span className="inline-flex items-center gap-3 text-sm font-[family-name:var(--font-jetbrains-mono)] text-white/25 mb-6">
                 <span className="w-12 h-px bg-white/30" />
                 Services
+                <span lang="ar" dir="rtl" className="text-white/20 text-xs">خدمات</span>
               </span>
               <ScrollReveal>
                 <h2 className="text-6xl md:text-7xl lg:text-[128px] font-[family-name:var(--font-instrument-serif)] tracking-tight leading-[0.9]">

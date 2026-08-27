@@ -4,11 +4,6 @@ import { Header } from "@/components/Header";
 import { HeroSection } from "@/components/HeroSection";
 import { ServicesSection } from "@/components/ServicesSection";
 import { ProcessSection } from "@/components/ProcessSection";
-import { InfraSection } from "@/components/InfraSection";
-import { MetricsSection } from "@/components/MetricsSection";
-import { IntegrationsSection } from "@/components/IntegrationsSection";
-import { SecuritySection } from "@/components/SecuritySection";
-import { SDKSection } from "@/components/SDKSection";
 import { TestimonialsSection } from "@/components/TestimonialsSection";
 import { PricingSection } from "@/components/PricingSection";
 import { CTASection } from "@/components/CTASection";
@@ -21,11 +16,6 @@ export default function Home() {
       <HeroSection />
       <ServicesSection />
       <ProcessSection />
-      <InfraSection />
-      <MetricsSection />
-      <IntegrationsSection />
-      <SecuritySection />
-      <SDKSection />
       <TestimonialsSection />
       <PricingSection />
       <CTASection />

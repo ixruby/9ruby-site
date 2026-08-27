@@ -81,6 +81,7 @@ export function PricingSection() {
             <span className="inline-flex items-center gap-3 text-sm font-[family-name:var(--font-jetbrains-mono)] text-white/25 mb-8">
               <span className="w-12 h-px bg-white/20" />
               Pricing
+              <span lang="ar" dir="rtl" className="text-white/20 text-xs">الأسعار</span>
               <span className="w-12 h-px bg-white/20" />
             </span>
             <h2 className="text-6xl md:text-7xl lg:text-[96px] font-[family-name:var(--font-instrument-serif)] tracking-tight leading-[0.9]">
