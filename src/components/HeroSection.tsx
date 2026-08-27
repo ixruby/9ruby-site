@@ -67,6 +67,9 @@ export function HeroSection() {
             <span className="inline-flex items-center gap-3 text-sm font-[family-name:var(--font-jetbrains-mono)] text-white/25">
               <span className="w-8 h-px bg-white/30" />
               AI-powered marketing agency that never sleeps
+              <span lang="ar" dir="rtl" className="text-white/20 font-[family-name:var(--font-noto-kufi)] text-xs">
+                نقطة البداية
+              </span>
             </span>
           </div>
 

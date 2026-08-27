@@ -57,13 +57,18 @@ export function Footer() {
             </p>
             {/* Social */}
             <div className="flex items-center gap-4 mt-6">
-              {["Twitter", "GitHub", "LinkedIn"].map((social) => (
+              {[
+                { name: "Twitter", href: "https://twitter.com/9ruby", label: "Follow on Twitter" },
+                { name: "GitHub", href: "https://github.com/ixruby", label: "View on GitHub" },
+                { name: "LinkedIn", href: "https://linkedin.com/company/9ruby", label: "Follow on LinkedIn" },
+              ].map((social) => (
                 <a
-                  key={social}
-                  href="#"
+                  key={social.name}
+                  href={social.href}
+                  aria-label={social.label}
                   className="text-xs text-white/25 hover:text-white/50 transition-colors font-[family-name:var(--font-jetbrains-mono)]"
                 >
-                  {social}
+                  {social.name}
                 </a>
               ))}
             </div>

@@ -10,6 +10,7 @@ export function TestimonialsSection() {
           <span className="inline-flex items-center gap-3 text-sm font-[family-name:var(--font-jetbrains-mono)] text-black/30 mb-8">
             <span className="w-12 h-px bg-black/20" />
             Testimonials
+            <span lang="ar" dir="rtl" className="text-black/20 text-xs">ثقة العملاء</span>
           </span>
           <h2 className="text-5xl md:text-6xl lg:text-7xl font-[family-name:var(--font-instrument-serif)] tracking-tight leading-[0.9] mb-16">
             Trusted by teams{" "}
