@@ -1,36 +1,32 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 9Ruby — www.9ruby.com
 
-## Getting Started
+Corporate website for **Nine Ruby Management FZ-LLC** — Dubai. Built on Next.js 16 + Tailwind 4, deployed to Vercel.
 
-First, run the development server:
+**Live:** https://www.9ruby.com · **Repo:** `ixruby/9ruby-site` · **Default branch:** `main`
 
+## Stack
+Next.js 16.2, React 19, Tailwind 4, Framer Motion, Lucide, TypeScript. Deploys via Vercel Git integration (push to `main` = production, PR = preview).
+
+## Local dev
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm ci
+npm run dev      # http://localhost:3000
+npm run build    # production build
+npm run lint
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+No env vars required for local build.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Deploy
+- **Production:** push/merge to `main` → Vercel auto-deploys `www.9ruby.com`
+- **Preview:** any branch/PR → `https://9ruby-site-<branch>-ixruby.vercel.app`
+- **CI:** `.github/workflows/ci.yml` (lint + build, required before merge — protected `main`)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Repo hygiene
+`main` protected: requires `check` (CI), no force push. Squash merge, delete branch on merge. See `ixruby/.github/NAMING_CONVENTION.md` (`9ruby-*` split, `ruby-*` platform).
 
-## Learn More
+## Contributing
+Branch `feat/*` or `fix/*` → PR to `main` → CI green → squash merge. Preview URL posts automatically.
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+© Nine Ruby Management FZ-LLC. Private corporate site — no public license.
